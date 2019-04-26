@@ -30,7 +30,7 @@ These REST calls are grouped together as **Postman collection** files.
 
 For some features we also provide **Postman environment** files (with suffix env.json). These make the REST calls easily configurable through the use of variables, whose values you can edit (see section below in importing).
 
-Both the FRINX **Postman collection** and **Postman environment** files are grouped by FRINX ODL release (starting with 3.1.1) and packaged as zip files [here](https://github.com/FRINXio/Postman/releases). 
+Both the FRINX **Postman collection** and **Postman environment** files are grouped by FRINX ODL release (starting with 4.2.0) and packaged as zip files [here](https://github.com/FRINXio/Postman/releases). 
 
 On that page, find your FRINX ODL version number and click on 'zip' to download to a location on your local machine. 
 
@@ -89,7 +89,7 @@ Distinct versions of the FRINX Postman API files are [available here](https://gi
 
 for example 
 
-    release-3.1.1.frinx
+    release-4.2.0.frinx
 
 ### Release candidates
 Between releases we also publish release candidate (RC) zip files [in the same location](https://github.com/FRINXio/Postman/releases) which are pre-release versions in the development stage. These correspond with pre-release versions of FRINX ODL. The naming format is:  
@@ -98,7 +98,7 @@ Between releases we also publish release candidate (RC) zip files [in the same l
 
 for example
 
-    release-3.1.1.rc2-frinx
+    release-4.2.0.rc1-frinx
 
 ### Backwards compatibility
 Backwards compatibility of FRINX Postman collections:   
