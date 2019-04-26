@@ -33,9 +33,9 @@ CentOS: Run a terminal and insert a command below:
 
 ## Download the FRINX ODL Distribution  
 
-Please click on the following link to download a zip archive of the latest Carbon FRINX ODL Distribution:
+Please click on the following link to download a zip archive of the latest Oxygen FRINX ODL Distribution:
 
-**Carbon**: [distribution-karaf-3.1.6.frinx.zip](https://license.frinx.io/download/distribution-karaf-3.1.6.frinx.zip)
+**Oxygen**: [distribution-karaf-4.2.0.frinx.zip](https://license.frinx.io/download/distribution-karaf-4.2.0.frinx.zip)
 
 By downloading the file you accept the FRINX software agreement: [EULA](7793505-v7-Frinx-ODL-Distribution-Software-End-User-License-Agreement.pdf)
 
