@@ -35,7 +35,7 @@ CentOS: In a terminal type
 *  **Telnet session authentication hardening** - Telnet session (during authentication) also checks whether the authentication was successful or not and waits for the device’s prompts
 
 *  **Lazy CLI connection mode** -  CLI connections can now be configured to only create the underlying SSH/Telnet session when needed and close the session when not used. Compared to default behavior, when the session is kept up as long as possible and reconnected immediately if drops, the lazy mode can save resources especially when managing networks with a large number of devices (thousands).
-  *  Docs: (https://docs.frinx.io/FRINX_ODL_Distribution/Carbon/FRINX_Features_User_Guide/cli/cli-service-module.html?highlight=lazy#lazycli-mechanism)<https://docs.frinx.io/FRINX_ODL_Distribution/Carbon/FRINX_Features_User_Guide/cli/cli-service-module.html?highlight=lazy#lazycli-mechanism>
+  *  Docs: <https://docs.frinx.io/FRINX_ODL_Distribution/Carbon/FRINX_Features_User_Guide/cli/cli-service-module.html?highlight=lazy#lazycli-mechanism>
 
 #### NETCONF
 
@@ -50,10 +50,10 @@ CentOS: In a terminal type
 *  **UniConfig native** - Enables UniConfig framework to work with native device models to manage configurations. So far, UniConfig was able to manage only unified (OpenConfig) configuration. But with UniConfig native, users can mount NETCONF devices, sync configuration in their native format and continue managing it without the need to develop translation units.
   *  Device models are loaded when a device is mounted (connected) into ODL’s global SchemaContext. The loading process is performed completely in runtime, there is no need to manually “pre-compile” the models.
   *  Users have to explicitly permit device types by whitelisting their capabilities
-  *  Example POSTMAN collection: (https://www.getpostman.com/collections/22237f7432181a885563)<https://www.getpostman.com/collections/22237f7432181a885563> 
+  *  Example POSTMAN collection: <https://www.getpostman.com/collections/22237f7432181a885563> 
 
 *  **Ability to blacklist root elements when syncing configuration from devices** - Users can configure blacklisted root configuration items so that they are ignored when reading configuration from devices
-Example POSTMAN collection: (https://www.getpostman.com/collections/22237f7432181a885563)<https://www.getpostman.com/collections/22237f7432181a885563>
+Example POSTMAN collection: <https://www.getpostman.com/collections/22237f7432181a885563>
 
 *  **Ability to “auto-sync” subtrees after each commit from UniConfig** - Users can configure paths, which will be automatically synced from device after a commit is invoked. This is useful in cases where device changes submitted configuration after it is committed (e.g. password auto encryption). UniConfig will be able to auto-sync with device and store the device update in its databases.
 
@@ -98,6 +98,6 @@ Example POSTMAN collection: (https://www.getpostman.com/collections/22237f743218
 #### Opendaylight Oxygen Release Notes
 The Frinx controller 4.2.0 is based on OpenDaylight Oxygen.
 
-(https://wiki.opendaylight.org/view/Simultaneous_Release/Oxygen/Release_Notes)<https://wiki.opendaylight.org/view/Simultaneous_Release/Oxygen/Release_Notes>  
-(https://wiki.opendaylight.org/view/Simultaneous_Release:Oxygen_Release_Plan)<https://wiki.opendaylight.org/view/Simultaneous_Release:Oxygen_Release_Plan>
-(https://wiki.opendaylight.org/view/BGP_LS_PCEP:Oxygen_Release_Notes)<https://wiki.opendaylight.org/view/BGP_LS_PCEP:Oxygen_Release_Notes>
+<https://wiki.opendaylight.org/view/Simultaneous_Release/Oxygen/Release_Notes>  
+<https://wiki.opendaylight.org/view/Simultaneous_Release:Oxygen_Release_Plan>  
+<https://wiki.opendaylight.org/view/BGP_LS_PCEP:Oxygen_Release_Notes>  
