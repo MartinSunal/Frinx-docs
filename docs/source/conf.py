@@ -19,14 +19,14 @@ sys.path.insert(0, os.path.abspath('../../simpleble/'))
 
 # -- Project information -----------------------------------------------------
 
-project = 'simpleble'
-copyright = '2018, Lyudmil Vladimirov'
-author = 'Lyudmil Vladimirov'
+project = 'FRINX'
+copyright = '2019, FRINX'
+author = 'FRINX'
 
 # The short X.Y version
 version = ''
 # The full version, including alpha/beta/rc tags
-release = '0.0.1'
+release = '1.0.0'
 
 
 # -- General configuration ---------------------------------------------------
@@ -104,7 +104,7 @@ html_static_path = ['_static']
 # -- Options for HTMLHelp output ---------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'simplebledoc'
+htmlhelp_basename = 'FRINX-Documentation'
 
 
 # -- Options for LaTeX output ------------------------------------------------
