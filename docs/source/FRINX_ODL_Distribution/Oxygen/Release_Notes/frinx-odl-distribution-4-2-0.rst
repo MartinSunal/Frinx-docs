@@ -2,7 +2,7 @@
 FRINX ODL Oxygen 4.2.0. Release Notes
 =====================================
 
-This document describes the latest changes, additions, known issues, and fixes for the Frinx ODL Distribution.\ :raw-html-m2r:`<!--more-->`
+This document describes the latest changes, additions, known issues, and fixes for the Frinx ODL Distribution.
 
 **Note that FRINX ODL distribution 4.2.0 requires Java 8 (Openjdk 1.8.0-171 or newer)**
 To install Java:\ :raw-html-m2r:`<br>`
@@ -69,7 +69,7 @@ UniConfig
 
   * Device models are loaded when a device is mounted (connected) into ODL’s global SchemaContext. The loading process is performed completely in runtime, there is no need to manually “pre-compile” the models.
   * Users have to explicitly permit device types by whitelisting their capabilities
-  * Example POSTMAN collection: (https://www.getpostman.com/collections/22237f7432181a885563)https://www.getpostman.com/collections/22237f7432181a885563 
+  * Example POSTMAN collection: https://www.getpostman.com/collections/22237f7432181a885563 
 
 * **Ability to blacklist root elements when syncing configuration from devices** - Users can configure blacklisted root configuration items so that they are ignored when reading configuration from devices
   Example POSTMAN collection: https://www.getpostman.com/collections/22237f7432181a885563 
