@@ -53,7 +53,7 @@ CentOS: In a terminal type
   *  Example POSTMAN collection: (https://www.getpostman.com/collections/22237f7432181a885563)<https://www.getpostman.com/collections/22237f7432181a885563> 
 
 *  **Ability to blacklist root elements when syncing configuration from devices** - Users can configure blacklisted root configuration items so that they are ignored when reading configuration from devices
-Example POSTMAN collection: https://www.getpostman.com/collections/22237f7432181a885563 
+Example POSTMAN collection: (https://www.getpostman.com/collections/22237f7432181a885563)<https://www.getpostman.com/collections/22237f7432181a885563>
 
 *  **Ability to “auto-sync” subtrees after each commit from UniConfig** - Users can configure paths, which will be automatically synced from device after a commit is invoked. This is useful in cases where device changes submitted configuration after it is committed (e.g. password auto encryption). UniConfig will be able to auto-sync with device and store the device update in its databases.
 
@@ -98,6 +98,6 @@ Example POSTMAN collection: https://www.getpostman.com/collections/22237f7432181
 #### Opendaylight Oxygen Release Notes
 The Frinx controller 4.2.0 is based on OpenDaylight Oxygen.
 
-<https://wiki.opendaylight.org/view/Simultaneous_Release/Carbon/Release_Notes>
-<https://wiki.opendaylight.org/view/Simultaneous_Release:Carbon_Release_Plan>
-<https://wiki.opendaylight.org/view/BGP_LS_PCEP:Carbon_Release_Notes>
+(https://wiki.opendaylight.org/view/Simultaneous_Release/Oxygen/Release_Notes)<https://wiki.opendaylight.org/view/Simultaneous_Release/Oxygen/Release_Notes>  
+(https://wiki.opendaylight.org/view/Simultaneous_Release:Oxygen_Release_Plan)<https://wiki.opendaylight.org/view/Simultaneous_Release:Oxygen_Release_Plan>
+(https://wiki.opendaylight.org/view/BGP_LS_PCEP:Oxygen_Release_Notes)<https://wiki.opendaylight.org/view/BGP_LS_PCEP:Oxygen_Release_Notes>
