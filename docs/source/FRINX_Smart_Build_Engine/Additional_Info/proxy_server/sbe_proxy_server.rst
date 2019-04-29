@@ -5,18 +5,12 @@ Proxy server configuration
 
 .. raw:: html
 
-   <!-- TOC START min:1 max:3 link:true update:true -->
-   - [SBE: Proxy server configuration](#sbe-proxy-server-configuration)
-     - [Proxy settings](#proxy-settings)
-     - [Proxy control](#proxy-control)
-
-   <!-- TOC END -->
-
-
+*  `Proxy settings <#proxy-settings>`__
+*  `Proxy control <#proxy-control>`__
 
 This part describes how to set up the SBE proxy server if you provide more SBE instances on more hosts. SBE proxy server is a reverse proxy server provided by NGINX.
 
-**Figure 1: Multi host provision** :raw-html-m2r:`<br>`
+**Figure 1: Multi host provision** 
 
 .. image:: 3-multi-host.png
    :target: 3-multi-host.png

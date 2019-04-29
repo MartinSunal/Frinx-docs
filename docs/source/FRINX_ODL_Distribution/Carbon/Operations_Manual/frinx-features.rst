@@ -1,29 +1,12 @@
-.. role:: raw-html-m2r(raw)
-   :format: html
-
-
-`Documentation main page <https://frinxio.github.io/Frinx-docs/>`_
-`Operations Manual main page <https://frinxio.github.io/Frinx-docs/FRINX_ODL_Distribution/Carbon/operations_manual.html>`_
 
 FRINX ODL Distribution: Features
 ================================
 
+* `Managing features <#managing-features>`__
 
-.. raw:: html
-
-   <!-- TOC -->
-
-
-
-
-* `FRINX ODL Distribution: Features <#frinx-odl-distribution-features>`_
-
-  * `Managing features <#managing-features>`_
-
-:raw-html-m2r:`<!-- /TOC -->`
 The FRINX distribution offers the following features:
 
-.. code-block::
+.. code-block:: guess
 
     odlparent
     yangtools
@@ -69,20 +52,20 @@ odlFeaturesBoot=odl-restconf,odl-netconf-connector-all
 
 For a list of available features, first start FRINX ODL (\ `see our guide <running-frinx-odl-after-activation>`_\ ) and enter the following command within the karaf terminal:
 
-.. code-block::
+.. code-block:: guess
 
    feature:list
 
 
 A list of installed features can be displayed with the command:
 
-.. code-block::
+.. code-block:: guess
 
    feature:list -i
 
 
 For a list of features whose names include a particular word e.g. 'restconf' you can use grep e.g.
 
-.. code-block::
+.. code-block:: guess
 
    feature:list | grep restconf

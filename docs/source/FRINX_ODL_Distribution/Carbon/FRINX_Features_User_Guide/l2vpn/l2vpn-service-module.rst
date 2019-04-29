@@ -1,76 +1,53 @@
-.. role:: raw-html-m2r(raw)
-   :format: html
-
-
-`Documentation main page <https://frinxio.github.io/Frinx-docs/>`_
-`FRINX Features User Guide main page <https://frinxio.github.io/Frinx-docs/FRINX_ODL_Distribution/Carbon/user_guide.html>`_
 
 L2VPN Service Module User Guide
 ===============================
 
+* `Usage - Setup <#usage-setup>`__
 
-.. raw:: html
+  * `FRINX ODL - Install features <#frinx-odl-install-features>`__
+  * `Postman - Import collection <#postman-import-collection>`__
 
-   <!-- TOC -->
+* `Introduction <#introduction>`__
 
+  * `Problem definition and L2VPN <#problem-definition-and-l2vpn>`__
+  * `Terminology <#terminology>`__
+  * `L2VPN types <#l2vpn-types>`__
 
+    * `VPWS <#vpws>`__
 
+* `Usage Operations Guide <#usage-operations-guide>`__
 
-* `L2VPN Service Module User Guide <#l2vpn-service-module-user-guide>`_
+  * `Set up an L2VPN connection <#set-up-an-l2vpn-connection>`__
 
-  * `Usage - Setup <#usage---setup>`_
+    * `Establish a NETCONF connection <#establish-a-netconf-connection>`__
+    * `Create a pseudo-wire (PW) template <#create-a-pseudo-wire-pw-template>`__
+    * `Create the L2VPN instance <#create-the-l2vpn-instance>`__
 
-    * `FRINX ODL - Install features <#frinx-odl---install-features>`_
-    * `Postman - Import collection <#postman---import-collection>`_
+  * `Delete the L2VPN connection <#delete-the-l2vpn-connection>`__
+  * `FRINX L2VPN demo video (setup and deletion) <#frinx-l2vpn-demo-video-setup-and-deletion>`__
+  * `Testing <#testing>`__
 
-  * `Introduction <#introduction>`_
+* `L2VPN Provider <#l2vpn-provider>`__
 
-    * `Problem definition and L2VPN <#problem-definition-and-l2vpn>`_
-    * `Terminology <#terminology>`_
-    * `L2VPN types <#l2vpn-types>`_
+  * `Use Case Specification <#use-case-specification>`__
+  * `Architecture <#architecture>`__
 
-      * `VPWS <#vpws>`_
+    * `API description <#api-description>`__
 
-  * `Usage - Operations Guide <#usage---operations-guide>`_
+      * `ietf-l2vpn@2017-08-02.yang <#ietf-l2vpn@2017-08-02.yang>`__
 
-    * `Set up an L2VPN connection <#set-up-an-l2vpn-connection>`_
+  * `Network Element Plugin <#network-element-plugin>`__
 
-      * `1. Establish a NETCONF connection <#1-establish-a-netconf-connection>`_
-      * `2. Create a pseudo-wire (PW) template <#2-create-a-pseudo-wire-pw-template>`_
-      * `3. Create the L2VPN instance <#3-create-the-l2vpn-instance>`_
+    * `IOS XRv Network Element Plugin <#ios-xrv-network-element-plugin>`__
+    * `Mock Network Element Plugin <#mock-network-element-plugin>`__
 
-    * `Delete the L2VPN connection <#delete-the-l2vpn-connection>`_
-    * `FRINX L2VPN demo video (setup and deletion) <#frinx-l2vpn-demo-video-setup-and-deletion>`_
-    * `Testing <#testing>`_
-
-  * `L2VPN Provider <#l2vpn-provider>`_
-
-    * `Use Case Specification <#use-case-specification>`_
-    * `Architecture <#architecture>`_
-
-      * `API description <#api-description>`_
-
-        * `ietf-l2vpn@2017-08-02.yang <#ietf-l2vpn2017-08-02yang>`_
-
-    * `Network Element Plugin <#network-element-plugin>`_
-
-      * `IOS-XRv Network Element Plugin <#ios-xrv-network-element-plugin>`_
-      * `Mock Network Element Plugin <#mock-network-element-plugin>`_
-
-    * `Known Limitations <#known-limitations>`_
-
-
-.. raw:: html
-
-   <!-- /TOC -->
-
-
+  * `Known Limitations <#known-limitations>`__
 
 Usage - Setup
 -------------
 
 FRINX ODL - Install features
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 #. First, `start FRINX ODL <../../Operations_Manual/running-frinx-odl-after-activation.md>`_. 
@@ -88,7 +65,7 @@ FRINX ODL - Install features
 **frinx-l2vpn-iosxrv** is an L2VPN Provider with the IOS-XRv (Network Element Plugin) NEP and a NETCONF connector. This particular feature is specific for IOS-XRv devices.  
 
 Postman - Import collection
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 #. To download and use FRINX pre-configured Postman REST calls with L2VPN - see `this page <../../API.md>`_. 
@@ -113,7 +90,7 @@ The goal of this project is to automate provisioning of Layer 2 Virtual Private 
 
 
 Problem definition and L2VPN
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Consider the scenario where a company needs to reconnect multiple sites with each other via an SP which provides L2 services to the company. 
 
@@ -138,7 +115,7 @@ In this case L2VPN provides site-to-site connectivity and the SP network behaves
 
 
 Terminology
-^^^^^^^^^^^
+~~~~~~~~~~~
 
 These terms are usually used in the L2VPN domain:
 
@@ -154,7 +131,7 @@ These terms are usually used in the L2VPN domain:
 
 
 L2VPN types
-^^^^^^^^^^^
+~~~~~~~~~~~
 
 There are two main types of L2VPN:
 
@@ -165,7 +142,7 @@ There are two main types of L2VPN:
 These types have many implementations. The FRINX ODL distribution supports Virtual Private Wire Service (VPWS) implementation.
 
 VPWS
-~~~~
+++++
 
 VPWS (Virtual Private Wire Service) is the simplest form for enabling Ethernet services over MPLS. 
 
@@ -189,21 +166,19 @@ To import the necessary Postman collection file see the section `Postman - Impor
 That file contains several REST calls for establishing a NETCONF connection and creating or deleting L2VPN instances, for which we provide guidance below:
 
 Set up an L2VPN connection
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Three steps are required to create an l2vpn connection between two routers (we perform these steps in our `video <https://youtu.be/UkHj9OgHHyo>`_ which you can use a reference):  
 
 1. Establish a NETCONF connection
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
++++++++++++++++++++++++++++++++++
 
 This is between FRINX ODL and each of the two routers which we'll use for the L2VPN. 
 
 
-* 
-  Use Postman REST calls: ``NETCONF connection/connect pe1`` (for router 1) and ``NETCONF connection/connect pe2`` (for router 2):  
+*  Use Postman REST calls: ``NETCONF connection/connect pe1`` (for router 1) and ``NETCONF connection/connect pe2`` (for router 2):  
 
-* 
-  First edit the body of the call ``NETCONF connection/connect pe1`` according to your setup for router 1. Only the fields with comments below should be edited:  
+*  First edit the body of the call ``NETCONF connection/connect pe1`` according to your setup for router 1. Only the fields with comments below should be edited:  
 
 .. code-block:: javascript
 
@@ -228,24 +203,20 @@ This is between FRINX ODL and each of the two routers which we'll use for the L2
 
 
 
-* 
-  Issue the call by hitting **Send**. You should receive the Response: Status **201 Created**
+*  Issue the call by hitting **Send**. You should receive the Response: Status **201 Created**
 
-* 
-  Now configure the call ``NETCONF connection/connect pe2`` in the same way, but this time editing the body according to your setup for router 2  
+*  Now configure the call ``NETCONF connection/connect pe2`` in the same way, but this time editing the body according to your setup for router 2  
 
-* 
-  Again, issue the call by hitting **Send**, ensuring you receive the Response: Status **201 Created**
+*  Again, issue the call by hitting **Send**, ensuring you receive the Response: Status **201 Created**
 
-* 
-  It can take a few minutes before the connections are formed. We can check if they're ready by issuing the call ``NETCONF connection/topology-netconf OPER``
+*  It can take a few minutes before the connections are formed. We can check if they're ready by issuing the call ``NETCONF connection/topology-netconf OPER``
 
 
   * You should receive the Response: Status **200 OK**
   * When you scroll through the Response body you should see a list **"available-capability"** for both **"node-id": "pe1"** and **"node-id": "pe2"**. If these are not listed, wait another minute and issue the call again.
 
 2. Create a pseudo-wire (PW) template
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
++++++++++++++++++++++++++++++++++++++
 
 This will be used in the next step when we create the L2VPN instance.  
 
@@ -274,7 +245,7 @@ This will be used in the next step when we create the L2VPN instance.
 * Issue the call by hitting **Send**. You should receive the Response: Status **201 Created**
 
 3. Create the L2VPN instance
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+++++++++++++++++++++++++++++
 
 Use the Postman REST call: ``L2VPN Service/create l2vpn instance ce1-ce2_vlan3001``  
 
@@ -340,40 +311,39 @@ Use the Postman REST call: ``L2VPN Service/create l2vpn instance ce1-ce2_vlan300
 
 
 
-* 
-  Issue the call by hitting **Send**. You should receive the Response: Status **201 Created**
+*  Issue the call by hitting **Send**. You should receive the Response: Status **201 Created**
 
-* 
-  We now need to commit by RPC: Issue the call ``L2VPN Service/RPC commit-l2vpn``. In the Response body you should receive "status": "complete". This shows the setup has been competed successfully.
+*  We now need to commit by RPC: Issue the call ``L2VPN Service/RPC commit-l2vpn``. In the Response body you should receive "status": "complete". This shows the setup has been competed successfully.
 
 Delete the L2VPN connection
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
++++++++++++++++++++++++++++
 
 If you want to remove the L2VPN connection:
 
 
-#. Delete the pseudo-wire template by:
+1. Delete the pseudo-wire template by:
 
    * using the Postman REST call: ``L2VPN Service/delete PW template PW1``. There is no body to the call.  
    * commit by RPC: Issue the Postman REST call: ``L2VPN Service/RPC commit-l2vpn``. There is no body to the call.  
 
      * In the Response body you should receive "status": "complete". This shows the deletion has been competed successfully.
 
-#. Delete the l2vpn instance by using the Postman REST call: ``L2VPN Service/delete l2vpn-instance ce1-ce2_vlan3001``. There is no body to the call. 
+2. Delete the l2vpn instance by using the Postman REST call: ``L2VPN Service/delete l2vpn-instance ce1-ce2_vlan3001``. There is no body to the call. 
 
    * commit by RPC: Issue the Postman REST call: ``L2VPN Service/RPC commit-l2vpn``. There is no body to the call.  
 
      * In the Response body you should receive "status": "complete". This shows the deletion has been competed successfully.
 
 FRINX L2VPN demo video (setup and deletion)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
++++++++++++++++++++++++++++++++++++++++++++
 
 See our `video <https://youtu.be/UkHj9OgHHyo>`_  
 
 Testing
-^^^^^^^
+~~~~~~~
 
-We also provide a feature which can be used for testing the l2vpn feature:\ :raw-html-m2r:`<br>`
+We also provide a feature which can be used for testing the l2vpn feature:
+
 **Karaf installation:**
 
 .. code-block:: javascript
@@ -381,7 +351,8 @@ We also provide a feature which can be used for testing the l2vpn feature:\ :raw
    feature:install frinx-l2vpn-testing
 
 
-**Description:**\ :raw-html-m2r:`<br>`
+**Description:**
+
 Installs L2VPN Provider with Mock NEP and RESTCONF. This feature can be used for testing and demonstration purposes where real PE devices are not available.
 
 L2VPN Provider
@@ -397,7 +368,7 @@ It exposes a domain specific API for L2VPN manipulation and declarative configur
 * *The rollback of a network wide transaction is done automatically* if there is failed configuration on at least one device.
 
 Use Case Specification
-^^^^^^^^^^^^^^^^^^^^^^
+----------------------
 
 L2VPN Provider can be used on a network where:
 
@@ -479,7 +450,7 @@ A list of PE nodes can be obtained from (replacing odl_ip with the IP of the sys
    GET http://odl_ip:8181/restconf/operational/network-topology:network-topology/topology/l2vpn-provider-edge-topology
 
 Architecture
-^^^^^^^^^^^^
+~~~~~~~~~~~~
 
 L2VPN Provider is composed of multiple components. The high level architecture is shown in the picture below.
 
@@ -504,7 +475,7 @@ An external application modifies **ietf-l2vpn** in CONF DS. L2VPN can be configu
 As stated earlier, NEP registers network elements to L2VPN Provider. L2VPN Provider stores network elements as nodes to abstract topology **l2vpn-provider-edge-topology** and this topology is a source of nodes which can be used for L2VPN configuration.
 
 API description
-~~~~~~~~~~~~~~~
++++++++++++++++
 
 The API is described using YANG modules. 
 
@@ -514,7 +485,7 @@ The API is described using YANG modules.
 * The FRINX ODL Distribution translates the abstraction to network element configuration.
 
 ietf-l2vpn@2017-08-02.yang
-""""""""""""""""""""""""""
+++++++++++++++++++++++++++
 
 
 * The original YANG is from `RFC draft - YANG Data Model for MPLS-based L2VPN <https://tools.ietf.org/html/draft-ietf-bess-l2vpn-yang-05>`_. 
@@ -528,7 +499,7 @@ The YANG module contains 2 root statements and one RPC:
 * **rpc commit-l2vpn** – configures intent of L2VPN service. The output of RPC is the result of service configuration.
 
 Network Element Plugin
-^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~
 
 Network Element Plugin (NEP) is a unit which implements SPI from the L2VPN Provider. This NEP is device API specific and is responsible for:
 
@@ -538,7 +509,7 @@ Network Element Plugin (NEP) is a unit which implements SPI from the L2VPN Provi
 * Rollback of configuration on a device
 
 IOS-XRv Network Element Plugin
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+++++++++++++++++++++++++++++++
 
 This plugin configures L2VPN on IOS-XRv using NETCONF. 
 
@@ -591,7 +562,7 @@ Here is an example of L2VPN configuration on IOS-XRv ``(parameters encapsulated 
 
 
 Mock Network Element Plugin
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
++++++++++++++++++++++++++++
 
 The purpose of this plugin is to mock functionality of the Network Element Plugin. It is mainly use for testing when you do not need to connect real devices. 
 
@@ -607,7 +578,7 @@ The purpose of this plugin is to mock functionality of the Network Element Plugi
 * When the L2VPN Provider calls the SPI which Mocks NEP implements, intead of configuration of real devices, the SPI DTOs are logged.
 
 Known Limitations
-^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~
 
 
 * Implementation of L2VPN provider does not support all statements in ietf-l2vpn@2017-08-02.yang.

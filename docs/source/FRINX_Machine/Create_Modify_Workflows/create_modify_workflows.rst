@@ -1,4 +1,4 @@
-.. role:: raw-html-m2r(raw)
+﻿.. role:: raw-html-m2r(raw)
    :format: html
 
 Create and Modify Workflows
@@ -160,8 +160,7 @@ The final (optional) step is to stop the microservice container "micro". You onl
 
    $ sudo docker-compose stop micro
    Stopping micros ... done
-   $
-   sudo docker-compose stop micro
+   $ sudo docker-compose stop micro
 
 FRINX Machine is now using the workers running on your host instead of the workers running in the FRINX Machine container. This allows you to modify existing workers and add new workers to your workflows directly on your host.
 
@@ -373,7 +372,9 @@ Finally, we need to register our new python worker. Add the highlighted text in 
    import time
    from conductor.ConductorWorker import ConductorWorker
 
-:raw-html-m2r:`<pre>
+:raw-html-m2r:
+
+<pre>
 <b>import add_integer_worker</b>
 </pre>`
 
@@ -394,7 +395,9 @@ Finally, we need to register our new python worker. Add the highlighted text in 
        print('Starting FRINX workers')
        cc = ConductorWorker(conductor_url_base, 1, 0.1)
 
-:raw-html-m2r:`<pre>
+:raw-html-m2r:
+
+<pre>
     <b>add_integer_worker.start(cc)</b>
 </pre>`
 

@@ -5,28 +5,22 @@
 `Documentation main page <https://frinxio.github.io/Frinx-docs/>`_
 `VPP operations manual <https://frinxio.github.io/Frinx-docs/FRINX_VPP_Distribution/operations_manual.html>`_  
 
-FRINX VPP Distribution: Introduction
-====================================
+Introduction
+============
 
 FRINX provides an FD.io distribution.\ :raw-html-m2r:`<br>`
 FD.io is an opensource project that among other things provides the Vector Packet Processor. More information can be found at `FD.io <http://fd.io>`_ :raw-html-m2r:`<br>`
 This page contains the details about the FRINX fd.io distribution.
 
 
-.. raw:: html
+Table of contents:
 
-   <!-- TOC START min:1 max:3 link:true update:true -->
-   - [FRINX VPP Distribution: Introduction](#frinx-vpp-distribution-introduction)
-       - [Features](#features)
-       - [Operations](#operations)
-       - [Jenkins jobs](#jenkins-jobs)
-
-   <!-- TOC END -->
-
-
+* `Features <#features>`__
+* `Operations <#operations>`__
+* `Jenkins jobs <#jenkins-jobs>`__
 
 Features
-^^^^^^^^
+--------
 
 **Project imported from open source:**
 
@@ -41,7 +35,7 @@ Features
 *     VPP-monitoring-agent (magent)
 
 Operations
-^^^^^^^^^^
+----------
 
 **CI/CD**
 
@@ -55,7 +49,7 @@ The following diagram shows the relationships between FD.io and FD.FRINX.io:
 
 
 Jenkins jobs
-^^^^^^^^^^^^
+------------
 
 The following diagrams list the jenkins jobs imported from opensource FD.io (green marks imported):
 

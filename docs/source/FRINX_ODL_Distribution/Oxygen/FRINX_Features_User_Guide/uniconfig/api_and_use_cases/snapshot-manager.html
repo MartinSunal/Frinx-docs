@@ -1,0 +1,125 @@
+module snapshot-manager {
+
+  yang-version 1;
+  namespace "urn:opendaylight:params:xml:ns:yang:uniconfig:snapshot:manager";
+  prefix "usm";
+
+  import network-topology { prefix nt; revision-date 2013-10-21; }
+  import ietf-yang-types { prefix types; }
+
+  revision "2018-04-20" {
+    description "Initial revision";
+  }
+
+  typedef operation-result-type {
+    description "A type describing result of operation.";
+      type enumeration {
+        enum complete {
+          value 0;
+          description "Operation completed successfully.";
+        }
+        enum fail {
+          value -1;
+          description "Operation did not complete successfully.";
+        }
+        enum ignored {
+          value -2;
+          description "Operating node entry was skipped.";
+        }
+      }
+  }
+
+  grouping max-snapshot-limit-fields {
+    leaf limit {
+      type uint32;
+      default 10;
+      description "Maximum number of snapshots created.";
+    }
+  }
+
+  grouping snapshot-fields {
+    leaf name {
+      type string;
+      description "Name of snapshot.";
+    }
+  }
+
+  grouping operation-result {
+    leaf result {
+      type operation-result-type;
+      description "Result of operation.";
+    }
+    leaf error-message {
+      type string;
+      description "Error message describing operation failure.";
+    }
+  }
+
+  grouping target-nodes-fields {
+    container target-nodes {
+      leaf-list node {
+        type nt:node-id;
+      }
+    }
+  }
+
+  container snapshots-metadata {
+    uses max-snapshot-limit-fields;
+    list snapshot {
+      key name;
+      leaf name {
+        type string;
+        description "Name of snapshot.";
+      }
+      leaf creation-time {
+        type types:date-and-time;
+        description "Time when the snapshot was created";
+      }
+    }
+  }
+
+  rpc maximum-snapshot-limit {
+    description "Sets a limit to maximum snapshots created.";
+    input {
+      uses max-snapshot-limit-fields;
+    }
+    output {
+      uses operation-result;
+    }
+  }
+
+  rpc create-snapshot {
+    description "Creates new network-topology with the given name
+      as a snapshot of actual uniconfig topology.";
+    input {
+      uses snapshot-fields;
+      uses target-nodes-fields;
+    }
+    output {
+      uses operation-result;
+    }
+  }
+
+  rpc delete-snapshot {
+    description "Deletes existing network-topology with the given name
+      as a snapshot.";
+    input {
+      uses snapshot-fields;
+    }
+    output {
+      uses operation-result;
+    }
+  }
+
+  rpc replace-config-with-snapshot {
+    description "Replaces intended uniconfig topology with a snapshot.";
+    input {
+      uses snapshot-fields;
+      uses target-nodes-fields;
+    }
+    output {
+      uses operation-result;
+    }
+  }
+
+}

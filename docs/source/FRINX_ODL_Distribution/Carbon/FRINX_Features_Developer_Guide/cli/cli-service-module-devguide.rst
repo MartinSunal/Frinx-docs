@@ -1,54 +1,37 @@
-.. role:: raw-html-m2r(raw)
-   :format: html
-
-
-`Documentation main page <https://frinxio.github.io/Frinx-docs/>`_
-`FRINX Features Developer Guide main page <https://frinxio.github.io/Frinx-docs/FRINX_ODL_Distribution/Carbon/developer_guide.html>`_
 
 CLI
 ===
 
+* `Building on honeycomb <#building-on-honeycomb>`__
+* `Major components <#major-components>`__
+* `Modules <#modules>`__
+* `Developing a device specific translation unit <#developing-a-device-specific-translation-unit>`__
 
-.. raw:: html
+  * `Installing to Opendaylight <#installing-to-opendaylight>`__
 
-   <!-- TOC -->
+    * `As a feature <#as-a-feature>`__
 
+  * `Testing <#testing>`__
+  * `Choosing the right YANG models <#choosing-the-right-yang-models>`__
+  * `Implementing handlers <#implementing-handlers>`__
 
+    * `Dependencies between writing handlers (writers) <#dependencies-between-writing-handlers-writers>`__
 
+  * `Implementing RPCs <#implementing-rpcs>`__
+  * `Mounting and managing IOS devices from an application <#mounting-and-managing-ios-devices-from-an-application>`__
 
-* `Developer Guide: CLI <#developer-guide--cli>`_
+* `Reading of CLI and device configuraiton <#reading-of-cli-and-device-configuraiton>`__
 
-  * `Building on honeycomb <#building-on-honeycomb>`_
-  * `Major components <#major-components>`_
-  * `Modules <#modules>`_
-  * `Developing a device specific translation unit <#developing-a-device-specific-translation-unit>`_
+  * `Process of reading CLI configuration from device <#process-of-reading-cli-configuration-from-device>`__
+  * `Reading of configuration from CLI network device - different scenarios <#reading-of-configuration-from-cli-network-device---different-scenarios>`__
 
-    * `Installing to Opendaylight <#installing-to-opendaylight>`_
-
-      * `As a feature <#as-a-feature>`_
-
-    * `Testing <#testing>`_
-    * `Choosing the right YANG models <#choosing-the-right-yang-models>`_
-    * `Implementing handlers <#implementing-handlers>`_
-
-      * `Dependencies between writing handlers (writers) <#dependencies-between-writing-handlers--writers->`_
-
-    * `Implementing RPCs <#implementing-rpcs>`_
-    * `Mounting and managing IOS devices from an application <#mounting-and-managing-ios-devices-from-an-application>`_
-
-  * `Reading of CLI and device configuraiton <#reading-of-cli-and-device-configuraiton>`_
-
-    * `Process of reading CLI configuration from device <#process-of-reading-cli-configuration-from-device>`_
-    * `Reading of configuration from CLI network device - different scenarios <#reading-of-configuration-from-cli-network-device---different-scenarios>`_
-
-:raw-html-m2r:`<!-- /TOC -->`
 This document provides developer-level details for the FRINX CLI southbound plugin, both for the framework itself as well as for the pluggable translation units.
 
-Pre-requisite reading: - Honeycomb design documentation:\ :raw-html-m2r:`<br>`
-https://wiki.fd.io/view/Honeycomb\ :raw-html-m2r:`<br>`
-https://docs.fd.io/honeycomb/1.17.04/release-notes-aggregator/release_notes.html\ :raw-html-m2r:`<br>`
-CLI plugin available presentations:\ :raw-html-m2r:`<br>`
-https://frinxhelpdesk.atlassian.net/wiki/display/~mmarsalek/CLI+southbound+plugin+docs\ :raw-html-m2r:`<br>`
+Pre-requisite reading: - Honeycomb design documentation:
+https://wiki.fd.io/view/Honeycomb
+https://docs.fd.io/honeycomb/1.17.04/release-notes-aggregator/release_notes.html
+CLI plugin available presentations:
+https://frinxhelpdesk.atlassian.net/wiki/display/~mmarsalek/CLI+southbound+plugin+docs
 `CLI plugin user guide <../../FRINX_Features_User_Guide/cli/cli-service-module.html>`_  
 
 Building on honeycomb
@@ -93,7 +76,7 @@ How Honeycomb is encapsulated as a mount point in Opendaylight:
 Major components
 ----------------
 
-The following diagram shows the major components of the CLI southbound plugin and their relationships:\ :raw-html-m2r:`<br>`
+The following diagram shows the major components of the CLI southbound plugin and their relationships:
 
 .. image:: cliInComponents.png
    :target: cliInComponents.png
@@ -103,7 +86,7 @@ The following diagram shows the major components of the CLI southbound plugin an
 Modules
 -------
 
-The following diagram shows project modules and their dependencies:\ :raw-html-m2r:`<br>`
+The following diagram shows project modules and their dependencies:
 
 .. image:: projectComponents.png
    :target: projectComponents.png
@@ -141,11 +124,11 @@ What you need to add:
 * add your unit as a karaf feature
 
 Installing to Opendaylight
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 For how to run Opendaylight with the CLI southbound plugin, please refer to the `user guide <../../FRINX_Features_User_Guide/cli/cli-service-module.html>`_. To install a bundle with a new unit (e.g. previously built with maven) it is sufficient to run the following command in the karaf console:
 
-.. code-block::
+.. code-block:: guess
 
    bundle:install -s file:///home/devel/ios-vrfs-unit/target/ios-vrfs-unit-1.0-SNAPSHOT.jar
 
@@ -154,17 +137,17 @@ For how to run Opendaylight with the CLI southbound plugin, please refer to the 
 Now the new unit should be reported by the CLI southbound plugin as being available. To verify its presence from RESTCONF, use the provided postman collection, *CLI registry* folder.
 
 As a feature
-~~~~~~~~~~~~
+++++++++++++
 
 It is also possible to include this bundle into a karaf feature and make it install with that particular feature instead of using the *bundle:install* command.
 
 Testing
-^^^^^^^
+~~~~~~~
 
 Please see the `user guide <../../FRINX_Features_User_Guide/cli/cli-service-module.html>`_ for how to mount a CLI device. If there is a new unit installed in Opendaylight, it will be possible to use the new unit's YANG model and its handlers.
 
 Choosing the right YANG models
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Before writing a custom YANG model for a unit, it is important to check whether such a model doesn't already exist. There are plenty of YANG models available, modeling many aspects of network device management. The biggest groups of models are:
 
@@ -175,12 +158,12 @@ Before writing a custom YANG model for a unit, it is important to check whether 
 It is usually wiser to choose an existing YANG model instead of developing a custom one. Also, it is very important to check for existing units already implemented for a device. If there are any, the best approach will most likely be to use YANG models from the same family as existing units use.
 
 Implementing handlers
-^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~
 
 There are 2 types of handlers. Those which handle writes of configuration data and those which handle reads of operational data. The responsibility of a handler is just to transform between CLI commands and the YANG data. There is nothing more a handler needs to do. For an example, refer to the section discussing unit archetype.
 
 Dependencies between writing handlers (writers)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
++++++++++++++++++++++++++++++++++++++++++++++++
 
 A writer may be registered with or without dependency on another writer.
 The dependency between writers reflects the actual dependency between CLI
@@ -190,7 +173,7 @@ The following sample shows a CLI translation unit with dependency between 2
 writers. The unit is dedicated for interface configuration on a Cisco IOS
 device.
 
-.. code-block::
+.. code-block:: guess
 
    R2(config)#interface loopback 1
    R2(config-if)#ip address 10.0.0.1 255.255.255.255
@@ -204,7 +187,7 @@ translating the *interface* command and `Ipv4ConfigWriter <https://github.com/FR
 the *ip address* command. `IosInterfaceUnit <https://github.com/FRINXio/cli-units/blob/master/ios/interface/src/main/java/io/frinx/cli/unit/ios/ifc/IosInterfaceUnit.java>`_ contains registration of these
 writers where dependency between writers is described:
 
-.. code-block::
+.. code-block:: guess
 
    wRegistry.add(new GenericWriter<>(IIDs.IN_IN_CONFIG, new InterfaceConfigWriter(cli)));
    wRegistry.addAfter(new GenericWriter<>(SUBIFC_IPV4_CFG_ID, new Ipv4ConfigWriter(cli)), IIDs.IN_IN_CONFIG);
@@ -221,12 +204,12 @@ Writers can be registered by using methods:
 * addBefore - execute registered writer before dependency writer
 
 Implementing RPCs
-^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~
 
 An RPC handler is a special kind of handler, different to the data handlers. RPC handler can encapsulate any commands. The biggest difference is that any configuration processing in RPCs is not part of transactions, reconciliation etc.
 
 Mounting and managing IOS devices from an application
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Besides mounting using Postman collections of RESTCONF calls (see the `user guide <../../FRINX_Features_User_Guide/cli/cli-service-module.html>`_\ ) it is also possible to manage an IOS device in a similar fashion from within an OpenDaylight application. It is however necessary to acquire an appropriate mountpoint instance from MD-SAL's mountpoint service.
 
@@ -234,7 +217,7 @@ To do so, first make sure to generate an appropriate Opendaylight application us
 
 Next make sure to add a Mountpoint service as a dependency of the application, so update your blueprint:
 
-.. code-block::
+.. code-block:: guess
 
    <reference id="mountpointService"
               interface="org.opendaylight.mdsal.binding.api.MountPointService"/>
@@ -243,7 +226,7 @@ Next make sure to add a Mountpoint service as a dependency of the application, s
 
 and add an argument to your component:
 
-.. code-block::
+.. code-block:: guess
 
    <bean id="SOMEBEAN"
      class="PACKAGE.SOMEBEAN"
@@ -257,7 +240,7 @@ and add an argument to your component:
 
 Also add that argument to your constructor:
 
-.. code-block::
+.. code-block:: guess
 
      final MountPointService mountpointService
 
@@ -265,7 +248,7 @@ Also add that argument to your constructor:
 
 So now to get a connected mountpoint from the service:
 
-.. code-block::
+.. code-block:: guess
 
    Optional [MountPoint] mountPoint = a.getMountPoint(InstanceIdentifier.create(NetworkTopology.class) .child(Topology.class, new TopologyKey(new TopologyId("cli"))) .child(Node.class, new NodeKey(new NodeId("IOS1"))));
 
@@ -283,7 +266,7 @@ So now to get a connected mountpoint from the service:
 
 And finally DataBroker service can be used to manage the device:
 
-.. code-block::
+.. code-block:: guess
 
    ReadWriteTransaction readWriteTransaction = dataBroker.get().newReadWriteTransaction(); // Perform read // reading operational data straight from device CheckedFuture<Optional<Version>, ReadFailedException> read = readWriteTransaction.read(LogicalDatastoreType.OPERATIONAL, InstanceIdentifier.create(Version.class)); try { Version version = read.get().get(); } catch (InterruptedException | ExecutionException e) { e.printStackTrace(); }
 
@@ -307,7 +290,7 @@ Reading of CLI and device configuraiton
 CLI readers maintain translation between device and yang models. We're sending read commands to the device and outputs are cached. This process is shown below.
 
 Process of reading CLI configuration from device
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The diagram below shows the general use of the process
 
@@ -318,7 +301,7 @@ The diagram below shows the general use of the process
 
 
 Reading of configuration from CLI network device - different scenarios
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The diagram below shows four specific scenarios:
 

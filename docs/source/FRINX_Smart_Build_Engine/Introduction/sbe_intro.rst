@@ -1,29 +1,17 @@
 
-`Documentation main page <https://frinxio.github.io/Frinx-docs/>`_
-`SBE operations manual <https://frinxio.github.io/Frinx-docs/FRINX_Smart_Build_Engine/operations_manual.html>`_
-
 Introduction
 ============
 
+*  `What is FRINX SBE? <#1-what-is-frinx-sbe>`__
+*  `Components Overview <#2-components-overview>`__
+*  `Components Description <#3-components-description>`__
 
-.. raw:: html
-
-   <!-- TOC START min:1 max:3 link:true update:true -->
-   - [FRINX Smart Build Engine (SBE): Introduction](#frinx-smart-build-engine-sbe-introduction)
-     - [1\. What is FRINX SBE?](#1-what-is-frinx-sbe)
-     - [2\. Components Overview](#2-components-overview)
-     - [3\. Components Description](#3-components-description)
-
-   <!-- TOC END -->
-
-
-
-1. What is FRINX SBE?
----------------------
+What is FRINX SBE?
+------------------
 
 The Frinx Smart Build Engine is a continuous integration and continuous deployment system based on Docker containers. It leverages well-known open source projects and comes pre-integrated to get you up and running quicker. The system is container based and can run on one or multiple host VMs.
 
-For an introduction, see our `SBE video <https://www.useloom.com/share/f4ce6cc0e96011e69309454fac1abeab>`_
+For an introduction, see our `SBE video <https://www.useloom.com/share/f4ce6cc0e96011e69309454fac1abeab>`__
 
 **It Includes:**  
 
@@ -69,8 +57,8 @@ For an introduction, see our `SBE video <https://www.useloom.com/share/f4ce6cc0e
    :alt: Figure 3: Continuous Integration
 
 
-2. Components Overview
-----------------------
+Components Overview
+-------------------
 
 **List of FRINX SBE components**
 
@@ -119,8 +107,8 @@ For an introduction, see our `SBE video <https://www.useloom.com/share/f4ce6cc0e
      - frinx/sonarqube
 
 
-3. Components Description
--------------------------
+Components Description
+----------------------
 
 **Apache Directory Server** ApacheDS is an extensible and embeddable directory server entirely written in Java, which has been certified LDAPv3 compatible by the Open Group. Besides LDAP it supports Kerberos 5 and the Change Password Protocol. It has been designed to introduce triggers, stored procedures, queues and views to the world of LDAP which has lacked these rich constructs.
 

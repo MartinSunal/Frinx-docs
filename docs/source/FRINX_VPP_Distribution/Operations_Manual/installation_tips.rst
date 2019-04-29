@@ -5,21 +5,12 @@
 Installation Tips
 =================
 
-
-.. raw:: html
-
-   <!-- TOC START min:1 max:3 link:true update:true -->
-   - [VPP Distribution: Installation Tips](#vpp-distribution-installation-tips)
-       - [VPP Installation](#vpp-installation)
-       - [Install VPP in a docker container](#install-vpp-in-a-docker-container)
-       - [Installing binary packages](#installing-binary-packages)
-
-   <!-- TOC END -->
-
-
+*  `VPP Installation <#vpp-installation>`__
+*  `Install VPP in a docker container <#install-vpp-in-a-docker-container>`__
+*  `Installing binary packages <#installing-binary-packages>`__
 
 VPP Installation
-^^^^^^^^^^^^^^^^
+----------------
 
 Described at: `VPP install packages <https://wiki.fd.io/view/VPP/Installing_VPP_binaries_from_packages>`_
 
@@ -44,7 +35,7 @@ If VPP does not pick up interfaces, it helps to build and install it manually:
 #. vpp-dev@lists.fd.io
 
 Install VPP in a docker container
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+---------------------------------
 
 After docker is installed start a centos7 container:
 
@@ -113,7 +104,7 @@ To save the modified container invoke from host:
 
 
 Installing binary packages
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+--------------------------
 
 Instructions for consuming publicly available binary packages of FD.FRINX.io distribution
 
@@ -140,7 +131,7 @@ Set content:
 
 
 
-**\ *Make sure to change the CustomerID and password in the repository settings*\ **
+**Make sure to change the CustomerID and password in the repository settings**
 
 Installation with YUM can be done with:
 

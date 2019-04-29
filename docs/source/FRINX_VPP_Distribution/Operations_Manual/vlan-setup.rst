@@ -6,20 +6,12 @@ VLAN Setup
 ==========
 
 
-.. raw:: html
-
-   <!-- TOC START min:1 max:3 link:true update:true -->
-   - [VPP Distribution: VLAN Setup](#vpp-distribution-vlan-setup)
-       - [Topology](#topology)
-       - [Config](#config)
-       - [Classifier API (ACLs)](#classifier-api-acls)
-
-   <!-- TOC END -->
-
-
+*  `Topology <#topology>`__
+*  `Config <#config>`__
+*  `Classifier API (ACLs) <#classifier-api-acls>`__
 
 Topology
-^^^^^^^^
+--------
 
 .. code-block:: guess
 
@@ -38,7 +30,7 @@ Topology
 
 
 Config
-^^^^^^
+------
 
 .. code-block:: guess
 
@@ -79,7 +71,7 @@ Config
 
 
 Classifier API (ACLs)
-^^^^^^^^^^^^^^^^^^^^^
+---------------------
 
 To disable ICMP traffic on an interface invoke following commands in VAT:
 

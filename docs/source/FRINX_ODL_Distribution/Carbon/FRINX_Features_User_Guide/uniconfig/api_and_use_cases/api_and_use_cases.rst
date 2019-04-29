@@ -1,17 +1,6 @@
 
-This document describes API and use cases how UniConfig framework can be used by
-an external or OpenDaylight application.\ :raw-html-m2r:`<br>`
-`RESTCONF <https://frinxio.github.io/Frinx-docs/FRINX_ODL_Distribution/Carbon/FRINX_Features_User_Guide/restconf.html>`_
-is used for API description and REST call examples in this document.
-
-UniConfig reference REST calls can be downloaded as `uniconfig demo postman collection <https://github.com/FRINXio/Postman/blob/carbon/development/Uniconfig%20Framework/postman_collection_uniconfig_demo.json>`_.
-
-`More about OpenDaylight controller and its concepts <http://docs.opendaylight.org/en/stable-carbon/developer-guide/controller.html?highlight=restconf>`_
-
 UniConfig framework
 ===================
-
-`Overview and architecture <../architecture/architecture.md>`_
 
 Mounting CLI or NETCONF network element
 ---------------------------------------
@@ -27,33 +16,33 @@ Mounting CLI or NETCONF network element.
 CLI
 ~~~
 
-More information about CLI mounting can be found `here <https://frinxio.github.io/Frinx-docs/FRINX_ODL_Distribution/Carbon/FRINX_Features_User_Guide/cli/cli-service-module.html#mounting-a-cli-device>`_
+More information about CLI mounting can be found `here <https://frinxio.github.io/Frinx-docs/FRINX_ODL_Distribution/Carbon/FRINX_Features_User_Guide/cli/cli-service-module.html#mounting-a-cli-device>`__
 
-`cli-topology.yang <yang/cli-topology.yang>`_
+:download:`cli-topology.yang <cli-topology.yang>`
 
-`Tree representation of cli-topology.yang <yang/cli-topology.html>`_
+:download:`Tree representation of a topology <yang/cli-topology.html>`
 
-`Examples in Postman collection <https://github.com/FRINXio/Postman/blob/carbon/development/Uniconfig%20Framework/postman_collection_uniconfig_demo.json>`_
+`Examples in Postman collection <https://github.com/FRINXio/Postman/blob/carbon/development/Uniconfig%20Framework/postman_collection_uniconfig_demo.json>`__
 
 NETCONF
 ~~~~~~~
 
-More information about NETCONF mounting can be found `here <http://docs.opendaylight.org/en/stable-carbon/user-guide/netconf-user-guide.html#southbound-netconf-connector>`_
+More information about NETCONF mounting can be found `here <http://docs.opendaylight.org/en/stable-carbon/user-guide/netconf-user-guide.html#southbound-netconf-connector>`__
 
-`netconf-node-topology.yang <yang/netconf-node-topology.yang>`_
+:download:`netconf-node-topology.yang <netconf-node-topology.yang>`
 
-`Tree representation of netconf-node-topology.yang <yang/netconf-node-topology.html>`_
+:download:`Tree representation of netconf-node-topology.yang <netconf-node-topology.html>`
 
-`Examples in Postman collection <https://github.com/FRINXio/Postman/blob/carbon/development/Uniconfig%20Framework/postman_collection_uniconfig_demo.json>`_
+`Examples in Postman collection <https://github.com/FRINXio/Postman/blob/carbon/development/Uniconfig%20Framework/postman_collection_uniconfig_demo.json>`__
 
 UniConfig API description
 -------------------------
 
-`uniconfig-manager.yang <yang/uniconfig-manager.yang>`_
+:download:`uniconfig-manager.yang <uniconfig-manager.yang>`
 
 *NOTE: mouse hover on elements in tree representation shows description*
 
-`Tree representation of uniconfig-manager.yang <yang/uniconfig-manager.html>`_
+:download:`Tree representation of uniconfig-manager.yang <yang/uniconfig-manager.html>`
 
 Config initialization
 ~~~~~~~~~~~~~~~~~~~~~
@@ -75,7 +64,7 @@ RPC sync-from-network
 ~~~~~~~~~~~~~~~~~~~~~
 
 Purpose of this RPC is to synchronize configuration from network
-elements to uniconfig nodes in operational datastore.\ :raw-html-m2r:`<br>`
+elements to uniconfig nodes in operational datastore
 RPC input contains list of uniconfig nodes where to refresh configuration
 from network. Empty input means all nodes.
 
@@ -128,11 +117,11 @@ RPC commit
 
 External or ODL application stores intended configuration under nodes
 in uniconfig topology. Trigger for execution of configuration is RPC
-commit.\ :raw-html-m2r:`<br>`
+commit.
 RPC input contains list of uniconfig nodes where to commit configuration.
 Empty input means all nodes. Output of RPC describes result of commit.
 
-`List of supported configuration data <https://github.com/FRINXio/translation-units-docs/tree/master/Configuration%20datasets>`_
+`List of supported configuration data <https://github.com/FRINXio/translation-units-docs/tree/master/Configuration%20datasets>`__
 
 Successful RPC commit is on figure below.
 
@@ -196,11 +185,11 @@ External or ODL application stores intended configuration under nodes
 in uniconfig topology. Trigger for execution of checked configuration is
 RPC checked-commit. Checked commit is similar to RPC commit but it also
 checks if nodes are in sync with network before configuration.
-RPC fails if some node is out of sync.\ :raw-html-m2r:`<br>`
+RPC fails if some node is out of sync.
 RPC input contains list of uniconfig nodes where to commit configuration.
 Empty input means all nodes. Output of RPC describes result of commit.
 
-`List of supported configuration data <https://github.com/FRINXio/translation-units-docs/tree/master/Configuration%20datasets>`_
+`List of supported configuration data <https://github.com/FRINXio/translation-units-docs/tree/master/Configuration%20datasets>`__
 
 Successful RPC checked-commit is on figure below.
 
@@ -261,7 +250,7 @@ RPC calculate-diff
 ~~~~~~~~~~~~~~~~~~
 
 This RPC creates diff between actual uniconfig topology and intended
-uniconfig topology.\ :raw-html-m2r:`<br>`
+uniconfig topology.
 RPC input contains list of uniconfig nodes where to calculate diff.
 Empty input means all nodes. Output contains list of statements representing diff.
 
@@ -319,7 +308,7 @@ RPC replace-config-with-operational
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 RPC replaces uniconfig topology in config datastore with uniconfig
-topology from operational datastore.\ :raw-html-m2r:`<br>`
+topology from operational datastore.
 RPC input contains list of uniconfig nodes to replace from operational
 to config datastore. Empty input means all nodes.
 PRC output contains result of operation.
@@ -370,11 +359,11 @@ when intended uniconfig nodes are overwritten by snapshot nodes.
 Snapshot Manager API description
 --------------------------------
 
-`snapshot-manager.yang <yang/snapshot-manager.yang>`_
+`snapshot-manager.yang <yang/snapshot-manager.yang>`__
 
 *NOTE: mouse hover on elements in tree representation shows description*
 
-`Tree representation of snapshot-manager.yang <yang/snapshot-manager.html>`_
+`Tree representation of snapshot-manager.yang <yang/snapshot-manager.html>`__
 
 Obtaining snapshots-metadata
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -409,7 +398,7 @@ RPC response - success:
 RPC maximum-snapshot-limit
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-RPC maximum-snapshot-limit sets limit how many snapshots can be created.\ :raw-html-m2r:`<br>`
+RPC maximum-snapshot-limit sets limit how many snapshots can be created.
 RPC input contains limit of snapshot. RPC output contains result of operation.
 
 Example
@@ -445,7 +434,7 @@ RPC create-snapshot
 ~~~~~~~~~~~~~~~~~~~
 
 RPC creates snapshot of uniconfig topology. This snapshot can be used
-for manual rollback.\ :raw-html-m2r:`<br>`
+for manual rollback.
 RPC input contains name for topology snapshot. RPC output contains
 result of operation.
 
@@ -487,7 +476,7 @@ RPC response - success:
 RPC delete-snapshot
 ~~~~~~~~~~~~~~~~~~~
 
-RPC removes snapshot from CONF DS.\ :raw-html-m2r:`<br>`
+RPC removes snapshot from CONF DS.
 RPC input contains name of topology snapshot which should be removed.
 RPC output contains result of operation.
 
@@ -530,7 +519,7 @@ RPC replace-config-with-snapshot
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 RPC replaces uniconfig topology in config datastore with snapshot containing only
-target nodes.\ :raw-html-m2r:`<br>`
+target nodes.
 RPC input contains name of topology snapshot and target nodes which should replace
 uniconfig nodes in config datastore. PRC output contains result of operation.
 
@@ -592,7 +581,7 @@ Uniconfig Node Manager. After diff is resolved it filters only changes
 made on cli nodes. Changes for cli nodes are applied by using cli-dryrun
 mountpoint which only stores translated CLI commands to cli-dry-run journal.
 After all changes are applied, cli-dryrun journal is read and RPC output
-is created and returned.\ :raw-html-m2r:`<br>`
+is created and returned.
 RPC input contains list of uniconfig nodes for which to execute dry run.
 Empty input means all nodes. Output contains list of commands for the given nodes.
 

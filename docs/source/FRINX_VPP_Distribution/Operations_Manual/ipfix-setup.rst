@@ -5,24 +5,15 @@
 IPFIX Setup
 ===========
 
+Table of content
 
-.. raw:: html
-
-   <!-- TOC -->
-
-
-
-
-* `VPP Distribution: IPFIX Setup <#vpp-distribution-ipfix-setup>`_
-  .. code-block:: guess
-
-       - [Configure VPP using VAT](#configure-vpp-using-vat)
-       - [Start a UDP server](#start-a-udp-server)
-       - [Further configuration options](#further-configuration-options)
-       - [IPFIX limitations as of 17.01](#ipfix-limitations-as-of-1701)
+*  `Configure VPP using VAT <#configure-vpp-using-vat>`__
+*  `Start a UDP server <#start-a-udp-server>`__
+*  `Further configuration options <#further-configuration-options>`__
+*  `IPFIX limitations as of 17.01 <#ipfix-limitations-as-of-17-01>`__
 
 Configure VPP using VAT
-^^^^^^^^^^^^^^^^^^^^^^^
+-----------------------
 
 **Set interface on index 1: up + IP**
 
@@ -70,7 +61,7 @@ Start a UDP server
 
 
 Further configuration options
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+-----------------------------
 
 To export IP source, IP destination, Protocol configure classifier with:
 
@@ -91,7 +82,7 @@ To also export ports, configure with:
 
 
 IPFIX limitations as of 17.01
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+-----------------------------
 
 IPFIX has some limitations that (might) limit its usage within real use cases:
 

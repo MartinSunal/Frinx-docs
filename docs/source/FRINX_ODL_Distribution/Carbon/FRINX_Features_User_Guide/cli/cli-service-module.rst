@@ -10,51 +10,48 @@ CLI Service Module User Guide
 
 Table of Contents:
 
+* `Usage - Setup <#usage---setup>`__
 
-* `CLI Service Module User Guide <#cli-service-module-user-guide>`_
+  * `FRINX ODL - Install features <#frinx-odl-install-features>`__
+  * `Optional - Change logging level <#optional-change-logging-level>`__
+  * `Postman - Import collection <#postman-import-collection>`__
 
-  * `Usage - Setup <#usage---setup>`_
+* `Introduction <#introduction>`__
+* `Usage - Operations Guide <#usage-operations-guide>`__
 
-    * `FRINX ODL - Install features <#frinx-odl---install-features>`_
-    * `Optional - Change logging level <#optional---change-logging-level>`_
-    * `Postman - Import collection <#postman---import-collection>`_
+  * `Mounting a CLI device <#mounting-a-cli-device>`__
 
-  * `Introduction <#introduction>`_
-  * `Usage - Operations Guide <#usage---operations-guide>`_
+    * `How to mount and manage IOS devices over REST <#how-to-mount-and-manage-ios-devices-over-rest>`__
+    * `How to mount and manage generic Linux VM devices over REST <#how-to-mount-and-manage-generic-linux-vm-devices-over-rest>`__
+    * `Pushing a config to a mounted node in dry run mode <#pushing-a-config-to-a-mounted-node-in-dry-run-mode>`__
 
-    * `Mounting a CLI device <#mounting-a-cli-device>`_
+* `Architecture <#architecture>`__
 
-      * `How to mount and manage IOS devices over REST <#how-to-mount-and-manage-ios-devices-over-rest>`_
-      * `How to mount and manage generic Linux VM devices over REST <#how-to-mount-and-manage-generic-linux-vm-devices-over-rest>`_
-      * `Pushing a config to a mounted node in dry run mode <#pushing-a-config-to-a-mounted-node-in-dry-run-mode>`_
+  * `CLI topology <#cli-topology>`__
 
-  * `Architecture <#architecture>`_
+    * `APIs <#cli-topology-apis>`__
 
-    * `CLI topology <#cli-topology>`_
+  * `CLI mountpoint <#cli-mountpoint>`__
 
-      * `APIs <#apis>`_
+    * `APIs <#cli-mountpoint-apis>`__
+    * `Translation layer <#translation-layer>`__
 
-    * `CLI mountpoint <#cli-mountpoint>`_
+      * `Device specific translation plugin <#device-specific-translation-plugin>`__
 
-      * `APIs <#apis-1>`_
-      * `Translation layer <#translation-layer>`_
+        * `Units <#units>`__
 
-        * `Device specific translation plugin <#device-specific-translation-plugin>`_
+    * `Transport layer <#transport-layer>`__
 
-          * `Units <#units>`_
+* `Data processing <#data-processing>`__
 
-      * `Transport layer <#transport-layer>`_
+  * `Transactions and revert <#transactions-and-revert>`__
+  * `Reconciliation <#reconciliation>`__
 
-  * `Data processing <#data-processing>`_
+* `Supported devices <#supported-devices>`__
+* `Strategies to connect to CLI devices <#strategies-to-connect-to-cli-devices>`__
 
-    * `Transactions and revert <#transactions-and-revert>`_
-    * `Reconciliation <#reconciliation>`_
-
-  * `Supported devices <#supported-devices>`_
-  * `Strategies to connect to CLI devices <#strategies-to-connect-to-cli-devices>`_
-
-    * `KeepaliveCli mechanism <#keepalivecli-mechanism>`_
-    * `LazyCli mechanism <#lazycli-mechanism>`_
+  * `KeepaliveCli mechanism <#keepalivecli-mechanism>`__
+  * `LazyCli mechanism <#lazycli-mechanism>`__
 
 Usage - Setup
 -------------
@@ -86,7 +83,7 @@ If you require more detailed logging, run the following command in the karaf ter
 Postman - Import collection
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-First follow the instructions `here <../../API.md>`_ to download and use FRINX pre-configured Postman REST calls.
+First follow the instructions `here <../../API.md>`__ to download and use FRINX pre-configured Postman REST calls.
 
 You'll be able to select the FRINX API version that maps to the version of FRINX ODL you are using. The ``Uniconfig Framework`` subdirectory contains the files needed to interact with the CLI.
 
@@ -134,7 +131,7 @@ How to mount and manage IOS devices over REST
 The easiest way is to use one of the REST calls FRINX has already created and packaged in the `FRINX API <../../API.md>`_.
 The **FRINX UNIFIED** postman collection (\ ``postman_collection_unified.json``\ ) accessible via that link is  contained within the ``Uniconfig Framework`` directory of the download. It can be imported into Postman and contains subfolders with collections for various devices e.g. **IOS XR**\ , **IOS Classic**\ , **Junos**.  
 
-These contain subfolders **XR Mount**\ , **Classic Mount** and **Junos Mount** respectively, with pre-configured calls for mounting those devices. As explained `here <../../API.md>`_ you will need to import the relevant environment file and update its variables - this is because the calls contains several of these variables (visible in double sets of curly braces in the following image)
+These contain subfolders **XR Mount**\ , **Classic Mount** and **Junos Mount** respectively, with pre-configured calls for mounting those devices. As explained `here <../../API.md>`__ you will need to import the relevant environment file and update its variables - this is because the calls contains several of these variables (visible in double sets of curly braces in the following image)
 
 Once mounted, several other operations can be undertaken using the calls contained within the other Postman collection subfolders e.g. *General Information, Interface, static route*.
 
@@ -273,8 +270,8 @@ The CLI topology is a dedicated topology instance where users and applications c
 
 In fact, this topology can be seen as an equivalent of topology-netconf, providing the same features for netconf devices.
 
-APIs
-++++
+CLI topology APIs
++++++++++++++++++
 
 The topology APIs are YANG APIs based on the ietf-topology model. Similarly to netconf topology, CLI topology augments the model with some basic configuration data and also some state to monitor mountpoints. For details please refer to the latest CLI topology YANG model.
 
@@ -296,8 +293,8 @@ The following diagram shows the layers of a CLI mountpoint:
    :alt: CLI mountpoint
 
 
-APIs
-++++
+CLI mountpoint APIs
++++++++++++++++++++
 
 The mountpoint exposes standard APIs and those are:
 
@@ -352,7 +349,7 @@ The following diagram shows an IOS device translation plugin split into multiple
 
 
 Transport layer
-++++++++++++++
++++++++++++++++
 
 There are transport protocols available such as:
 
@@ -426,9 +423,9 @@ That's why it is advised to turn off reconciliation on the CLI layer when using 
 Supported devices
 -----------------
 
-Please click `here <cli_supported_devices.md>`_ for a structured list of device types currently supported by the CLI southbound plugin and configuration aspects implemented for them.
+Please click `here <cli_supported_devices.md>`__ for a structured list of device types currently supported by the CLI southbound plugin and configuration aspects implemented for them.
 
-*For a hands-on tour of the CLI service module from within your browser, please try our `playground <http://46.229.232.136:7777/>`_\ *
+For a hands-on tour of the CLI service module from within your browser, please try our `playground <http://46.229.232.136:7777/>`__
 
 *For more information, please contact us at info@frinx.io*
 
@@ -439,7 +436,6 @@ Currently we use two strategies to connect to CLI devices. The first bares the n
 
 KeepaliveCli mechanism
 ~~~~~~~~~~~~~~~~~~~~~~
-
 
 * Keepalive CLI strategy attempts to keep the conneciton always open
 * It manages the connection to stay open by invoking a keepalive command (ENTER) in periodic cycles

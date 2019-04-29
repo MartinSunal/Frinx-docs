@@ -10,47 +10,40 @@ Qemu + VPP + Vhost user
 
 This article shows you how to set up a VM or a bare metal machine with qemu and KVM and VPP handling L2 networking between VMs.
 
-
-.. raw:: html
-
-   <!-- TOC START min:1 max:3 link:true update:true -->
-   - [VPP Distribution: Qemu + VPP + Vhost user](#vpp-distribution-qemu--vpp--vhost-user)
-       - [Resources](#resources)
-       - [Install Qemu/KVM](#install-qemukvm)
-       - [Inside PROXMOX](#inside-proxmox)
-       - [Install VPP](#install-vpp)
-       - [Configure VPP](#configure-vpp)
-       - [Start VMs](#start-vms)
-       - [Network config in VMs](#network-config-in-vms)
-       - [Ifconfig](#ifconfig)
-       - [Troubleshooting](#troubleshooting)
-
-   <!-- TOC END -->
-
-
+*  `Resources <#resources>`__
+*  `Install Qemu/KVM <#install-qemu-kvm>`__
+*  `Inside PROXMOX <#inside-proxmox>`__
+*  `Install VPP <#install-vpp>`__
+*  `Configure VPP <#configure-vpp>`__
+*  `Start VMs <#start-vms>`__
+*  `Network config in VMs <#network-config-in-vms>`__
+*  `Ifconfig <#ifconfig>`__
+*  `Troubleshooting <#troubleshooting>`__
 
 Resources
-^^^^^^^^^
+---------
 
 The main resource for the setup was: https://gist.github.com/egernst/5982ae6f0590cd83330faafacc3fd545
 
 Install Qemu/KVM
-^^^^^^^^^^^^^^^^
+----------------
 
-The installation is straightforward when following this guide *(Make sure KVM is available)*\ : https://help.ubuntu.com/community/KVM/Installation
+The installation is straightforward when following this guide *(Make sure KVM is available)* : https://help.ubuntu.com/community/KVM/Installation
 
 Inside PROXMOX
-^^^^^^^^^^^^^^
+--------------
 
-It is also possible to do all this within a VM utilizing nested virtualisation. With e.g. PROXMOX, it's just a matter of turning on nested virtualisation according to: https://pve.proxmox.com/wiki/Nested_Virtualization After that, a VM can be installed with Qemu and KVM as if it were a bare metal machine.
+It is also possible to do all this within a VM utilizing nested virtualisation. With e.g. PROXMOX, it's just a matter of turning on nested virtualisation according to: https://pve.proxmox.com/wiki/Nested_Virtualization 
+After that, a VM can be installed with Qemu and KVM as if it were a bare metal machine.
 
 Install VPP
-^^^^^^^^^^^
+-----------
 
-Just install VPP (\ `see this guide <https://wiki.fd.io/view/VPP/Installing_VPP_binaries_from_packages>`_\ ) and start it up...
+To install VPP, see this guide: https://wiki.fd.io/view/VPP/Installing_VPP_binaries_from_packages
+and start it up...
 
 Configure VPP
-^^^^^^^^^^^^^
+-------------
 
 The following configuration can be used to connect two VMs using VPP as the vhost interface server side:
 
@@ -70,7 +63,7 @@ The following configuration can be used to connect two VMs using VPP as the vhos
 This configuration is SERVER for VPP and CLIENT for VMs and there is a bridge domain between interfaces in VPP
 
 Start VMs
-^^^^^^^^^
+---------
 
 **FreeBSD**\ :raw-html-m2r:`<br>`
 The following command starts FreeBSD VM and attaches it to the opened socket by VPP:
@@ -93,7 +86,7 @@ The following command starts FreeBSD VM and attaches it to the opened socket by 
 
 The image was taken from: `http://ftp.freebsd.org/pub/FreeBSD/releases/VM-IMAGES/10.3-RELEASE/amd64/Latest/ <https://pve.proxmox.com/wiki/Nested_Virtualization>`_
 
-**Ubuntu 14**\ :raw-html-m2r:`<br>`
+**Ubuntu 14** :raw-html-m2r:`<br>`
 The following command starts Ubuntu14 VM and attaches it to the opened socket by VPP:
 
 .. code-block:: guess
@@ -119,9 +112,9 @@ The image was taken from: https://uec-images.ubuntu.com/releases/14.04/release/ 
 
 
 Network config in VMs
-^^^^^^^^^^^^^^^^^^^^^
+---------------------
 
-**Accessing VMs**\ :raw-html-m2r:`<br>`
+**Accessing VMs** :raw-html-m2r:`<br>`
 Each VM can be accessed using VNC at:
 
 .. code-block:: guess
@@ -147,12 +140,12 @@ Credentials:
       The default credentials for VMs are:
 
 
-   **FreeBSD**\ : root, no password\ :raw-html-m2r:`<br>`
-   **Ubuntu**\ : ubuntu, passw0rd
+   **FreeBSD** : root, no password\ :raw-html-m2r:`<br>`
+   **Ubuntu** : ubuntu, passw0rd
 
 
 Ifconfig
-^^^^^^^^
+--------
 
 The configuration for the VMs could look like:  
 
@@ -179,6 +172,6 @@ Ubuntu:
 Now, ping and any other traffic should be working fine between VMs.
 
 Troubleshooting
-^^^^^^^^^^^^^^^
+---------------
 
 VPP vhost user bug: Fix: https://gerrit.fd.io/r/#/c/6735

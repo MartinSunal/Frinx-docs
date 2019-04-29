@@ -1,0 +1,77 @@
+module cli-translate-registry {
+
+    yang-version 1;
+    namespace "urn:opendaylight:params:xml:ns:yang:cli:translate:registry";
+    prefix "trans-reg";
+    description "This is a reflection of current state of the global translate registry instance";
+
+    revision "2017-05-20" {
+        description "Initial revision";
+    }
+
+    grouping device {
+        leaf device-type {
+            type string;
+        }
+
+        leaf device-version {
+            type string;
+        }
+    }
+
+    // Utility implementation
+    container device-id {
+        config false;
+
+        uses device;
+    }
+
+    grouping translation-unit {
+
+        leaf id {
+            type string;
+        }
+
+        container models {
+            list model {
+
+                key "id";
+
+                leaf id {
+                    type string;
+                }
+
+                leaf-list implemented-writers {
+                    type string;
+                }
+
+                leaf-list implemented-readers {
+                    type string;
+                }
+
+                leaf-list implemented-rpcs {
+                    type string;
+                }
+            }
+        }
+    }
+
+    container available-cli-device-translations {
+        config false;
+
+        list available-cli-device-translation {
+            key "device-type device-version";
+
+            uses device;
+
+            container units {
+                list unit {
+                    key "id";
+
+                    uses translation-unit;
+                }
+            }
+        }
+    }
+
+}

@@ -1,0 +1,327 @@
+{
+    "id": "c34e8e1f-d4f3-5e3c-aa71-360bf5bdfb46",
+    "name": "daexim example",
+    "description": "",
+    "order": [],
+    "folders": [
+       {
+          "id": "7e06e88d-c0ea-1794-2eee-92d17db72d84",
+          "name": "daexim",
+          "description": "",
+          "order": [
+             "1a453e01-b797-f3c9-4ab3-7f8734044878",
+             "16acc8fc-2d06-b9f8-0f6c-277178865011",
+             "928a5422-d1b2-732a-2612-60ab309c1c2a",
+             "f69fa55d-7dcf-ea78-881c-f8305a7c4037"
+          ],
+          "owner": "1612870"
+       },
+       {
+          "id": "218d64c0-b8e8-27d0-cb78-994d84e41019",
+          "name": "gbp",
+          "description": "",
+          "order": [
+             "6cf8e6d5-8650-24eb-a641-98fa050b4988",
+             "2cf1d83c-c66b-6146-d46b-0400b160dfb8"
+          ],
+          "owner": "1612870"
+       },
+       {
+          "id": "5fed773d-04fc-1f6b-921d-f9b91119d729",
+          "name": "netconf",
+          "description": "",
+          "order": [
+             "c974583e-9ecb-e53f-7247-84a3c62c2617",
+             "d6d11d7a-794e-34d7-5ea9-f7bd4bb0f7f6",
+             "acc70a2d-99f6-118b-a270-42db74c5a723",
+             "592ba8d9-7b37-ed57-5007-7ae23dcf2c9e",
+             "e3e952c5-bdd5-f09a-96bc-6a17a6050b2e"
+          ],
+          "owner": "1612870",
+          "collectionId": "c34e8e1f-d4f3-5e3c-aa71-360bf5bdfb46"
+       }
+    ],
+    "timestamp": 1487685764095,
+    "owner": "1612870",
+    "public": false,
+    "requests": [
+       {
+          "id": "16acc8fc-2d06-b9f8-0f6c-277178865011",
+          "headers": "Authorization: Basic YWRtaW46YWRtaW4=\nContent-Type: application/json\n",
+          "url": "http://{{frinx_ip}}:8181/restconf/operations/data-export-import:schedule-export/",
+          "preRequestScript": null,
+          "pathVariables": [],
+          "method": "POST",
+          "data": [],
+          "dataMode": "raw",
+          "version": 2,
+          "tests": null,
+          "currentHelper": "normal",
+          "helperAttributes": [],
+          "time": 1487709082478,
+          "name": "export user data",
+          "description": "",
+          "collectionId": "c34e8e1f-d4f3-5e3c-aa71-360bf5bdfb46",
+          "responses": [],
+          "rawModeData": {
+             "input": {
+                "run-at": "2017-02-21T20:28:20Z",
+                "excluded-modules": [
+                   {
+                      "module-name": "opendaylight-inventory",
+                      "data-store": "operational"
+                   },
+                   {
+                      "module-name": "opendaylight-inventory",
+                      "data-store": "config"
+                   },
+                   {
+                      "module-name": "network-topology",
+                      "data-store": "operational"
+                   }
+                ]
+             }
+          }
+       },
+       {
+          "id": "1a453e01-b797-f3c9-4ab3-7f8734044878",
+          "headers": "Authorization: Basic YWRtaW46YWRtaW4=\nContent-Type: application/json\n",
+          "url": "http://{{frinx_ip}}:8181/restconf/operations/data-export-import:schedule-export/",
+          "preRequestScript": null,
+          "pathVariables": [],
+          "method": "POST",
+          "data": [],
+          "dataMode": "raw",
+          "version": 2,
+          "tests": null,
+          "currentHelper": "normal",
+          "helperAttributes": [],
+          "time": 1487705177855,
+          "name": "export all",
+          "description": "",
+          "collectionId": "c34e8e1f-d4f3-5e3c-aa71-360bf5bdfb46",
+          "responses": [],
+          "rawModeData": {
+             "input": {
+                "run-at": "2017-02-21T19:11:10Z"
+             }
+          }
+       },
+       {
+          "id": "2cf1d83c-c66b-6146-d46b-0400b160dfb8",
+          "headers": "Authorization: Basic YWRtaW46YWRtaW4=\nAccept: application/yang.data+json\n",
+          "url": "http://{{frinx_ip}}:8181/restconf/operational/endpoint:endpoints",
+          "preRequestScript": null,
+          "pathVariables": [],
+          "method": "GET",
+          "data": [],
+          "dataMode": "raw",
+          "version": 2,
+          "tests": null,
+          "currentHelper": "normal",
+          "helperAttributes": [],
+          "time": 1487691874499,
+          "name": "endpoint OPER",
+          "description": "",
+          "collectionId": "c34e8e1f-d4f3-5e3c-aa71-360bf5bdfb46",
+          "responses": [],
+          "folder": "218d64c0-b8e8-27d0-cb78-994d84e41019",
+          "rawModeData": {
+             "input": {}
+          }
+       },
+       {
+          "id": "592ba8d9-7b37-ed57-5007-7ae23dcf2c9e",
+          "headers": "Authorization: Basic YWRtaW46YWRtaW4=\nAccept: application/yang.data+json\n",
+          "url": "http://{{frinx_ip}}:8181/restconf/operational/opendaylight-inventory:nodes",
+          "preRequestScript": null,
+          "pathVariables": [],
+          "method": "GET",
+          "data": [],
+          "dataMode": "raw",
+          "version": 2,
+          "tests": null,
+          "currentHelper": "normal",
+          "helperAttributes": [],
+          "time": 1487694738012,
+          "name": "netconf inventory OPER",
+          "description": "",
+          "collectionId": "c34e8e1f-d4f3-5e3c-aa71-360bf5bdfb46",
+          "responses": [],
+          "rawModeData": {
+             "input": {}
+          }
+       },
+       {
+          "id": "6cf8e6d5-8650-24eb-a641-98fa050b4988",
+          "headers": "Authorization: Basic YWRtaW46YWRtaW4=\nContent-Type: application/json\n",
+          "url": "http://{{frinx_ip}}:8181/restconf/operations/endpoint:register-endpoint/",
+          "preRequestScript": null,
+          "pathVariables": [],
+          "method": "POST",
+          "data": [],
+          "dataMode": "raw",
+          "version": 2,
+          "tests": null,
+          "currentHelper": "normal",
+          "helperAttributes": [],
+          "time": 1487691781287,
+          "name": "register endpoint",
+          "description": "",
+          "collectionId": "c34e8e1f-d4f3-5e3c-aa71-360bf5bdfb46",
+          "responses": [],
+          "folder": "218d64c0-b8e8-27d0-cb78-994d84e41019",
+          "rawModeData": {
+             "input": {
+                "l2-context": "8c5b70e8-f847-11e6-bc64-92361f002671",
+                "mac-address": "11:11:11:11:11:11",
+                "endpoint-group": "94223a3c-f847-11e6-bc64-92361f002671",
+                "network-containment": "9b5b2124-f847-11e6-bc64-92361f002671",
+                "tenant": "a0ad8ebe-f847-11e6-bc64-92361f002671"
+             }
+          }
+       },
+       {
+          "id": "928a5422-d1b2-732a-2612-60ab309c1c2a",
+          "headers": "Authorization: Basic YWRtaW46YWRtaW4=\nContent-Type: application/json\n",
+          "url": "http://{{frinx_ip}}:8181/restconf/operations/data-export-import:immediate-import/",
+          "preRequestScript": null,
+          "pathVariables": [],
+          "method": "POST",
+          "data": [],
+          "dataMode": "raw",
+          "version": 2,
+          "tests": null,
+          "currentHelper": "normal",
+          "helperAttributes": [],
+          "time": 1487693497785,
+          "name": "import",
+          "description": "",
+          "collectionId": "c34e8e1f-d4f3-5e3c-aa71-360bf5bdfb46",
+          "responses": [],
+          "rawModeData": {
+             "input": {
+                "check-models": false,
+                "clear-stores": "none"
+             }
+          }
+       },
+       {
+          "id": "acc70a2d-99f6-118b-a270-42db74c5a723",
+          "headers": "Authorization: Basic YWRtaW46YWRtaW4=\nAccept: application/yang.data+json\n",
+          "url": "http://{{frinx_ip}}:8181/restconf/config/network-topology:network-topology/topology/topology-netconf/node/router",
+          "preRequestScript": null,
+          "pathVariables": [],
+          "method": "GET",
+          "data": [],
+          "dataMode": "raw",
+          "version": 2,
+          "tests": null,
+          "currentHelper": "normal",
+          "helperAttributes": [],
+          "time": 1487688401450,
+          "name": "netconf node CONF",
+          "description": "",
+          "collectionId": "c34e8e1f-d4f3-5e3c-aa71-360bf5bdfb46",
+          "responses": [],
+          "isFromCollection": true,
+          "collectionRequestId": "acc70a2d-99f6-118b-a270-42db74c5a723",
+          "folder": "5fed773d-04fc-1f6b-921d-f9b91119d729",
+          "rawModeData": {
+             "input": {}
+          }
+       },
+       {
+          "id": "c974583e-9ecb-e53f-7247-84a3c62c2617",
+          "headers": "Authorization: Basic YWRtaW46YWRtaW4=\nContent-Type: application/json\n",
+          "url": "http://{{frinx_ip}}:8181/restconf/config/network-topology:network-topology/topology/topology-netconf/node/router",
+          "preRequestScript": null,
+          "pathVariables": [],
+          "method": "PUT",
+          "data": [],
+          "dataMode": "raw",
+          "version": 2,
+          "tests": null,
+          "currentHelper": "normal",
+          "helperAttributes": [],
+          "time": 1487693653440,
+          "name": "connect netconf node",
+          "description": "",
+          "collectionId": "c34e8e1f-d4f3-5e3c-aa71-360bf5bdfb46",
+          "responses": [],
+          "rawModeData": "{\n  \"node\": [\n    {\n      \"node-id\": \"router\",\n      \"netconf-node-topology:host\": {{router_ip}},\n      \"netconf-node-topology:port\": 17830,\n      \"netconf-node-topology:keepalive-delay\": 0,\n      \"netconf-node-topology:tcp-only\": false,\n      \"netconf-node-topology:username\": \"admin\",\n      \"netconf-node-topology:password\": \"admin\"\n    }\n  ]\n}"
+       },
+       {
+          "id": "d6d11d7a-794e-34d7-5ea9-f7bd4bb0f7f6",
+          "headers": "Authorization: Basic YWRtaW46YWRtaW4=\nAccept: application/yang.data+json\n",
+          "url": "http://{{frinx_ip}}:8181/restconf/operational/network-topology:network-topology/topology/topology-netconf/node/router",
+          "preRequestScript": null,
+          "pathVariables": [],
+          "method": "GET",
+          "data": [],
+          "dataMode": "raw",
+          "version": 2,
+          "tests": null,
+          "currentHelper": "normal",
+          "helperAttributes": [],
+          "time": 1487688398585,
+          "name": "netconf node OPER",
+          "description": "",
+          "collectionId": "c34e8e1f-d4f3-5e3c-aa71-360bf5bdfb46",
+          "responses": [],
+          "isFromCollection": true,
+          "collectionRequestId": "d6d11d7a-794e-34d7-5ea9-f7bd4bb0f7f6",
+          "folder": "5fed773d-04fc-1f6b-921d-f9b91119d729",
+          "rawModeData": {
+             "input": {}
+          }
+       },
+       {
+          "id": "e3e952c5-bdd5-f09a-96bc-6a17a6050b2e",
+          "headers": "Authorization: Basic YWRtaW46YWRtaW4=\nAccept: application/yang.data+json\n",
+          "url": "http://{{frinx_ip}}:8181/restconf/config/opendaylight-inventory:nodes",
+          "preRequestScript": null,
+          "pathVariables": [],
+          "method": "GET",
+          "data": [],
+          "dataMode": "raw",
+          "version": 2,
+          "tests": null,
+          "currentHelper": "normal",
+          "helperAttributes": [],
+          "time": 1487694727122,
+          "name": "netconf inventory CONF",
+          "description": "",
+          "collectionId": "c34e8e1f-d4f3-5e3c-aa71-360bf5bdfb46",
+          "responses": [],
+          "rawModeData": {
+             "input": {}
+          }
+       },
+       {
+          "id": "f69fa55d-7dcf-ea78-881c-f8305a7c4037",
+          "headers": "Authorization: Basic YWRtaW46YWRtaW4=\nAccept: application/yang.data+json\n",
+          "url": "http://{{frinx_ip}}:8181/restconf/operational/data-export-import-internal:daexim/",
+          "preRequestScript": null,
+          "pathVariables": [],
+          "method": "GET",
+          "data": [],
+          "dataMode": "raw",
+          "version": 2,
+          "tests": null,
+          "currentHelper": "normal",
+          "helperAttributes": [],
+          "time": 1487688391865,
+          "name": "status",
+          "description": "",
+          "collectionId": "c34e8e1f-d4f3-5e3c-aa71-360bf5bdfb46",
+          "responses": [],
+          "isFromCollection": true,
+          "collectionRequestId": "f69fa55d-7dcf-ea78-881c-f8305a7c4037",
+          "folder": "7e06e88d-c0ea-1794-2eee-92d17db72d84",
+          "rawModeData": {
+             "input": {}
+          }
+       }
+    ]
+ }

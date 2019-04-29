@@ -5,7 +5,7 @@ NETCONF: Overview and use within the FRINX ODL Distribution
 Overview
 --------
 
-NETCONF is an Internet Engineering Task Force (IETF) protocol used for configuration and monitoring devices in the network. It can be used to “create, recover, update, and delete configurations of network devices”. The base NETCONF protocol is described in `RFC-6241 <https://tools.ietf.org/html/rfc6241>`_.  
+NETCONF is an Internet Engineering Task Force (IETF) protocol used for configuration and monitoring devices in the network. It can be used to “create, recover, update, and delete configurations of network devices”. The base NETCONF protocol is described in `RFC-6241 <https://tools.ietf.org/html/rfc6241>`__.  
 
 NETCONF operations are overlaid on the Remote Procedure Call (RPC) layer and may be described in either XML or JSON.  
 
@@ -20,10 +20,10 @@ The NETCONF southbound plugin is capable of connecting to remote NETCONF devices
 
 In terms of RFCs, the connector supports:  
 
-`RFC-6241 <https://tools.ietf.org/html/rfc6241>`_\ :raw-html-m2r:`<br>`
-`RFC-5277 <https://tools.ietf.org/html/rfc5277>`_\ :raw-html-m2r:`<br>`
-`RFC-6022 <https://tools.ietf.org/html/rfc6022>`_\ :raw-html-m2r:`<br>`
-`draft-ietf-netconf-yang-library-06 <https://tools.ietf.org/html/draft-ietf-netconf-yang-library-06>`_  
+`RFC-6241 <https://tools.ietf.org/html/rfc6241>`__
+`RFC-5277 <https://tools.ietf.org/html/rfc5277>`__
+`RFC-6022 <https://tools.ietf.org/html/rfc6022>`__
+`draft-ietf-netconf-yang-library-06 <https://tools.ietf.org/html/draft-ietf-netconf-yang-library-06>`__  
 
 **Netconf-connector is fully model-driven (utilizing the YANG modeling language) so in addition to the above RFCs, it supports any data/RPC/notifications described by a YANG model that is implemented by the device.**  
 
@@ -31,17 +31,17 @@ In terms of RFCs, the connector supports:
 NETCONF southbound can be activated by installing odl-netconf-connector-all Karaf feature.*  
 
 Netconf-connector configuration
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 There are 2 ways for configuring netconf-connector: NETCONF or RESTCONF. This guide focuses on using RESTCONF.  
 
 Default configuration
-~~~~~~~~~~~~~~~~~~~~~
++++++++++++++++++++++
 
 The default configuration contains all the necessary dependencies (file: 01-netconf.xml) and a single instance of netconf-connector (file: 99-netconf-connector.xml) called **controller-config** which connects itself to the NETCONF northbound in OpenDaylight in a loopback fashion. The connector mounts the NETCONF server for config-subsystem in order to enable RESTCONF protocol for config-subsystem. This RESTCONF still goes via NETCONF, but using RESTCONF is much more user friendly than using NETCONF.  
 
 Spawning additional netconf-connectors while the controller is running
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 Preconditions:  
 
@@ -50,7 +50,8 @@ Preconditions:
 #. In Karaf, you must have the netconf-connector installed (at the Karaf prompt, type: feature:install odl-netconf-connector-all); the loopback NETCONF mountpoint will be automatically configured and activated
 #. Wait until log displays following entry: RemoteDevice{controller-config}: NETCONF connector initialized successfully
    To configure a new netconf-connector you need to send following request to RESTCONF:
-   .. code-block::
+
+   .. code-block:: guess
 
       POST   http://localhost:8181/restconf/config/network-topology:network-topology/topology/topology-netconf/node/controller-config/yang-ext:mount/config:modules
    Headers:  
@@ -59,7 +60,7 @@ Preconditions:
 * Accept application/xml
 * Content-Type application/xml
 
-.. code-block:: xml
+   .. code-block:: guess
 
    <module xmlns="urn:opendaylight:params:xml:ns:yang:controller:config">
      <type xmlns:prefix="urn:opendaylight:params:xml:ns:yang:controller:md:sal:connector:netconf">prefix:sal-netconf-connector</type>
@@ -97,7 +98,7 @@ Preconditions:
 
 This spawns a new netconf-connector which tries to connect to (or mount) a NETCONF device at 127.0.0.1 and port 830. You can check the configuration of config-subsystem’s configuration datastore. The new netconf-connector will now be present there. Just invoke:  
 
-.. code-block::
+   .. code-block:: guess
 
    GET   http://localhost:8181/restconf/config/network-topology:network-topology/topology/topology-netconf/node/controller-config/yang-ext:mount/config:modules
 
@@ -105,7 +106,7 @@ The response will contain the module for new-netconf-device.
 
 Right after the new netconf-connector is created, it writes some useful metadata into the datastore of MD-SAL under the network-topology subtree. This metadata can be found at:  
 
-.. code-block::
+   .. code-block:: guess
 
    GET http://localhost:8181/restconf/operational/network-topology:network-topology/
 
@@ -121,12 +122,12 @@ The netconf-connector in OpenDaylight relies on ietf-netconf-monitoring support 
 
 This could be a device that internally uses only ietf-inet-types YANG model with revision 2010-09-24. In the HELLO message that is sent from this device there is this capability reported:
 
-.. code-block::
+   .. code-block:: guess
 
    urn:ietf:params:xml:ns:yang:ietf-inet-types?module=ietf-inet-types&revision=2010-09-24
    For such devices you only need to put the schema into folder cache/schema inside your Karaf distribution.
 
-**Important**\ :raw-html-m2r:`<br>`
+**Important**
 *The file with YANG schema for ietf-inet-types has to be called ietf-inet-types@2010-09-24.yang. It is the required naming format of the cache.*  
 
 
@@ -136,7 +137,7 @@ Compared to device that lists its YANG models in HELLO message, in this case the
 
 Netconf-connector has an optional configuration attribute called yang-module-capabilities and this attribute can contain a list of “YANG module based” capabilities. So by setting this configuration attribute, it is possible to override the “yang-module-based” capabilities reported in HELLO message of the device. To do this, we need to modify the configuration of netconf-connector by adding this XML (It needs to be added next to the address, port, username etc. configuration elements):  
 
-.. code-block::
+   .. code-block:: guess
 
    <yang-module-capabilities xmlns="urn:opendaylight:params:xml:ns:yang:controller:md:sal:connector:netconf">
      <capability xmlns="urn:opendaylight:params:xml:ns:yang:controller:md:sal:connector:netconf">
@@ -146,7 +147,7 @@ Netconf-connector has an optional configuration attribute called yang-module-cap
 
 **Remember to also put the YANG schemas into the cache folder.**  
 
-**Note**\ :raw-html-m2r:`<br>`
+**Note**
 *For putting multiple capabilities, you just need to replicate the capability xml element inside yang-module-capability element. Capability element is modeled as a leaf-list. With this configuration, we would make the remote device report usage of ietf-inet-types in the eyes of netconf-connector.*  
 
 Reconfiguring Netconf-Connector While the Controller is Running
@@ -156,11 +157,11 @@ It is possible to change the configuration of a running module while the whole c
 
 To update an existing netconf-connector you need to send following request to RESTCONF:  
 
-.. code-block::
+   .. code-block:: guess
 
    PUT   http://localhost:8181/restconf/config/network-topology:network-topology/topology/topology-netconf/node/controller-config/yang-ext:mount/config:modules/module/odl-sal-netconf-connector-cfg:sal-netconf-connector/new-netconf-device
 
-.. code-block:: xml
+   .. code-block:: guess
 
    <module xmlns="urn:opendaylight:params:xml:ns:yang:controller:config">
      <type xmlns:prefix="urn:opendaylight:params:xml:ns:yang:controller:md:sal:connector:netconf">prefix:sal-netconf-connector</type>
@@ -196,7 +197,7 @@ To update an existing netconf-connector you need to send following request to RE
 
 Since a PUT is a replace operation, the whole configuration must be specified along with the new values for username and password. This should result in a 2xx response and the instance of netconf-connector called new-netconf-device will be reconfigured to use username bob and password passwd. New configuration can be verified by executing:  
 
-.. code-block::
+   .. code-block:: guess
 
    GET   http://localhost:8181/restconf/config/network-topology:network-topology/topology/topology-netconf/node/controller-config/yang-ext:mount/config:modules/module/odl-sal-netconf-connector-cfg:sal-netconf-connector/new-netconf-device
 
@@ -207,14 +208,14 @@ Destroying Netconf-Connector While the Controller is Running
 
 Using RESTCONF one can also destroy an instance of a module. In case of netconf-connector, the module will be destroyed, NETCONF connection dropped and all resources will be cleaned. To do this, simply issue a request to following URL:  
 
-.. code-block::
+   .. code-block:: guess
 
    DELETE   http://localhost:8181/restconf/config/network-topology:network-topology/topology/topology-netconf/node/controller-config/yang-ext:mount/config:modules/module/odl-sal-netconf-connector-cfg:sal-netconf-connector/new-netconf-device
 
 The last element of the URL is the name of the instance and its predecessor is the type of that module (In our case the type is **sal-netconf-connector** and name **new-netconf-device**\ ). The type and name are actually the keys of the module list.  
 
-Adjusting reconnection settings :raw-html-m2r:`<a name="adjusting-reconnection-settings"></a>`
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Adjusting reconnection settings
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 There are three configurable parameters from REST API while mounting the device. Through these we can adjust reconnection settings:
 
@@ -225,7 +226,7 @@ There are three configurable parameters from REST API while mounting the device.
 
 Example of setting of described parameters at creation of netconf mountpoint - maximum connection attempts, initial delay between attempts and sleep factor:
 
-.. code-block::
+   .. code-block:: guess
 
    {
       "node": [
@@ -252,17 +253,17 @@ Netconf testtool (or netconf device simulator) is a tool that:
 * Supports notifications
 
 Increase the maximum number of opened files
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 How to increase the maximum possible number of opened files - descriptors in Linux system
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 If the buffering file for connection cannot be created on time it can cause continuous reconnection attempts and failure at the end. 
 Usually, the default soft limit is set to 1024 and hard limit to 4096. 
 
 Please, open "/etc/security/limits.conf" and modify the following lines (if they already are not defined):
 
-.. code-block::
+   .. code-block:: guess
 
    [user-name] soft nofile 4096
    [user-name] hard nofile 10240
@@ -272,7 +273,7 @@ Replace [user-name] by login-name of the user under whom you start ODL and logou
 
 You can check the current limits using following commands:
 
-.. code-block::
+   .. code-block:: guess
 
    ulimit -Hn
    ulimit -Sn

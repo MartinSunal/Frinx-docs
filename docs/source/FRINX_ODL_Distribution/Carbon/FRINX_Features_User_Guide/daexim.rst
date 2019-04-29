@@ -1,9 +1,3 @@
-.. role:: raw-html-m2r(raw)
-   :format: html
-
-
-`Documentation main page <https://frinxio.github.io/Frinx-docs/>`_
-`FRINX Features User Guide main page <https://frinxio.github.io/Frinx-docs/FRINX_ODL_Distribution/Carbon/developer_guide.html>`_
 
 User Guide: Daexim
 ==================
@@ -19,7 +13,7 @@ Important files
 After daexim export, the following files and folders are created in the karaf folder:
 
 
-* daexim/
+* daexim
 
   * odl_backup_config.json - snapshot of config datastore
   * odl_backup_operational.json - snapshot of operational datastore
@@ -38,67 +32,67 @@ FRINX daexim solves those problems by using many small transactions and triggeri
 
 Once import is done, karaf will continue booting other features. A consequence of running import before installing all bundles is that not all yang models are available. Thus, both import and export use the new folder:
 
-..
+.. code-block:: guess
 
    ${karaf.home}/schemas
 
 
 where all yang files are extracted from karaf's system folder and loaded during karaf startup. Json files that contain actual data are stored and read from the following folder:
 
-..
+.. code-block:: guess
 
    ${karaf.home}/daexim
 
 
 org.opendaylight.daexim.cfg
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The defaults that affect daexim are stored in the file etc/org.opendaylight.daexim.cfg. The defaults are:
 
-.. code-block::
+.. code-block:: guess
 
    daexim.importOnInit=false
    daexim.importBatchSize=1500
 
 Enabling automatic import during startup
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To enable automatic import, place the backed up json files into
 
-..
+.. code-block:: guess
 
    ${karaf.home}/daexim
 
 
 ,yang schemas into
 
-..
+.. code-block:: guess
 
    ${karaf.home}/schemas
 
 
 and make sure org.opendaylight.daexim.cfg contains the following on all nodes:
 
-.. code-block::
+.. code-block:: guess
 
    daexim.importOnInit=true
 
 
 Karaf property files affected by the FRINX daexim changes
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The changes mentioned here are already in place in the official FRINX distribution. However, if you are building your own karaf, ensure that your etc folder has no unintended deviations from FRINX karaf.
 
 Because frinx daexim needs to start before all other ODL features, the featuresBoot specified in
 
-..
+.. code-block:: guess
 
    ${karaf.home}/etc/org.apache.karaf.features.cfg
 
 
 must be split into two properties:
 
-.. code-block::
+.. code-block:: guess
 
    (config,standard,region,package,kar,ssh,management,odl-jolokia),(odl-restconf),(odl-daexim-all)
    odlFeaturesBoot=odl-netconf-topology,customer-feature1
@@ -109,25 +103,25 @@ Property featuresBoot must only contain core features necessary for loading daex
 
 Since karaf loads bundles of previously started features before loading featuresBoot, we must delete the following directory before every start:
 
-..
+.. code-block:: guess
 
    ${karaf.home}/data/cache
 
 
 This can be automated by changing a line in the file
 
-..
+.. code-block:: guess
 
    ${karaf.home}/etc/system.properties
 
 
-.. code-block::
+.. code-block:: guess
 
    karaf.clean.cache=true
 
 
 Changing batch size
-^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~
 
 The Daexim initial import process reads the content of json files and sends it as transactions to data stores. However, executing +100 MB transactions is risky as it may affect the stability of the cluster. That is why import splits the changes into many transactions. The number of changes per transaction is controlled by the property ``daexim.importBatchSize``. The default value is 1500. Setting it too high may result in AskTimeoutExceptions and leader isolation failures. Setting it too low will make startup very slow. Unless there are problems with the default it is not advised to change this value.
 
@@ -143,7 +137,7 @@ Daexim export was changed so that it is executed only on the node which was cont
 In this case, the export will be executed on ODL_NODE_1. Note that the RPC is slightly different than what Daexim supports by default - simple-export does not need time and date to be supplied, export will start immediately. For advanced use, the operator can specify a list of excluded tuples: model,data store (config, operational). This behavior is the same as with ODL's daexim project.
 
 Exporting from leader node
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Reading the whole datastore within a cluster can be slow and can cause pressure on the system leading to intermittent node failures. Therefore it is advised to run the export on the shard leader. This way all data will be read from local memory. To determine the node that contains the leaders of both shards (default-operational, default-config), call the following:
 
@@ -207,7 +201,7 @@ Details about both shards can be obtained by calling:
 General info on daexim
 ----------------------
 
-`OpenDaylight Wiki page on daexim <https://wiki.opendaylight.org/view/Daexim:Main>`_\ :raw-html-m2r:`<br>`
+`OpenDaylight Wiki page on daexim <https://wiki.opendaylight.org/view/Daexim:Main>`__
 Data Export/Import (daexim) is a project introduced in the OpenDaylight Carbon release. However, daexim has been back ported to FRINX distributions and is available from Beryllium 1.4.6 and Boron 2.3.0 and subsequent releases.
 
 The purpose of the project is to export/import data from files. Here are the key functions of the project:
@@ -215,16 +209,16 @@ The purpose of the project is to export/import data from files. Here are the key
 
 * Export of CONF and OPER DS
 * Export files in JSON format
-* Component is controlled via RPC API `see here <https://www.youtube.com/watch?v=fCWuuS-_xy4>`_
+* Component is controlled via RPC API `see here <https://www.youtube.com/watch?v=fCWuuS-_xy4>`__
 * Data can be excluded from export based on yang module and datastore type
 * Datastore can be cleared before data is imported
 * Export can be scheduled
 
-`Video tutorial with Postman collection <https://www.youtube.com/watch?v=fCWuuS-_xy4>`_\ :raw-html-m2r:`<br>`
+`Video tutorial with Postman collection <https://www.youtube.com/watch?v=fCWuuS-_xy4>`__
 `Postman collection <daexim_postman.json>`_
 
 Export data from datastore
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 RPC result is returned immediately after a task for export is scheduled. State of export can be shown via the RPC API.
 
@@ -233,6 +227,6 @@ When RPC schedule-export is invoked, the scheduled export is stored to OPER DS. 
 DataExportImportAppProvider, on each cluster node, receives a modification event about the scheduled export and schedules ExportTask which executes datastore export. Therefore, RPC for schedule export can be invoked on any cluster node and datastore is exported on each cluster node.
 
 Import data to datastore
-^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 Data import is done on startup when daexim.importOnInit is set to true. Data is imported from JSON files to CONF and OPER datastore in one transaction. In a cluster deployment, data import is executed only on a cluster node where RPC is invoked and data is replicated to other nodes within the transaction.

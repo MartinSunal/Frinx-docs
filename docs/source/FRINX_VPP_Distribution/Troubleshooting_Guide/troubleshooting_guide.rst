@@ -2,8 +2,8 @@
 `Documentation main page <https://frinxio.github.io/Frinx-docs/>`_
 `VPP operations manual <https://frinxio.github.io/Frinx-docs/FRINX_VPP_Distribution/operations_manual.html>`_  
 
-VPP Distribution: Troubleshooting Guide
-=======================================
+Troubleshooting Guide
+=====================
 
 This guide shows how to run VPP in debug mode. It enables you to:
 

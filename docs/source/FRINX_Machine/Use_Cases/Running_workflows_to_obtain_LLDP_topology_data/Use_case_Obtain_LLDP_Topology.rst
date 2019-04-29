@@ -16,8 +16,8 @@ In our first workflow we will create a device entry in our inventory via the FRI
 Click on "Metadata → Workflow Defs" and under the category "EXAMPLES" select the workflow called "EXAMPLE_add_leafspine_device". Select the tab "Input" and verify that the form is pre-filled with defaults for the first device "L1". The form should look similar to this:
 
 
-.. image:: conductor_user23.png
-   :target: conductor_user23.png
+.. image:: conductor_23.png
+   :target: conductor_23.png
    :alt: alt_text
 
 
@@ -27,109 +27,23 @@ Now enter the next device "L2" in the id field and also enter the port number fo
 
 Continue to enter the data for all seven devices L1, L2, L3, L4, L5, S1 and S2 with the following port numbers:
 
-
-.. raw:: html
-
-   <table>
-
-     <tr>
-
-      <td>Device ID
-
-      </td>
-
-      <td>Port Number
-
-      </td>
-
-     </tr>
-
-     <tr>
-
-      <td>L1
-
-      </td>
-
-      <td>11000
-
-      </td>
-
-     </tr>
-
-     <tr>
-
-      <td>L2
-
-      </td>
-
-      <td>11001
-
-      </td>
-
-     </tr>
-
-     <tr>
-
-      <td>L3
-
-      </td>
-
-      <td>11002
-
-      </td>
-
-     </tr>
-
-     <tr>
-
-      <td>L4
-
-      </td>
-
-      <td>11003
-
-      </td>
-
-     </tr>
-
-     <tr>
-
-      <td>L5
-
-      </td>
-
-      <td>11004
-
-      </td>
-
-     </tr>
-
-     <tr>
-
-      <td>S1
-
-      </td>
-
-      <td>12000
-
-      </td>
-
-     </tr>
-
-     <tr>
-
-      <td>S2
-
-      </td>
-
-      <td>12001
-
-      </td>
-
-     </tr>
-
-   </table>
-
++------------+-------------+
+| Device ID  | Port Number |
++============+=============+
+|     L1     |    11000    |
++------------+-------------+
+|     L2     |    11001    |
++------------+-------------+
+|     L3     |    11002    |
++------------+-------------+
+|     L4     |    11003    |
++------------+-------------+
+|     L5     |    11004    |
++------------+-------------+
+|     S1     |    12000    |
++------------+-------------+
+|     S2     |    12001    |
++------------+-------------+
 
 After you have entered all devices, go to Kibana and show the data under the index pattern "inventory". If you are using Kibana for the first time, you will have to create a new index pattern called "inventory". 
 
@@ -138,8 +52,8 @@ To create a new index pattern click on "Management" in the left hand side bar, s
 Now click on "Discover" in the left hand side bar and you should see all devices that you have entered in the step before. You should see a view similar to the following:
 
 
-.. image:: conductor_user24.png
-   :target: conductor_user24.png
+.. image:: conductor_24.png
+   :target: conductor_24.png
    :alt: alt_text
 
 
@@ -153,12 +67,10 @@ Click on "Metadata → Workflow Defs" and select the workflow to mount all devic
 The workflow requires no additional parameter to run. After you have clicked "Execute workflow" you should see a view similar to this:
 
 
-.. image:: conductor_user25.png
-   :target: conductor_user25.png
+.. image:: conductor_25.png
+   :target: conductor_25.png
    :alt: alt_text
 
-
-. 
 
 The workflow will only finish successfully if all devices have been mounted to FRINX ODL. You can verify that all devices are successfully connected by running the following workflow:
 
@@ -167,16 +79,16 @@ The workflow will only finish successfully if all devices have been mounted to F
 Execute the workflow and you should see a view similar to the following:
 
 
-.. image:: conductor_user26.png
-   :target: conductor_user26.png
+.. image:: conductor_26.png
+   :target: conductor_26.png
    :alt: alt_text
 
 
 Now click on the workflow ID. In the graphical representation of the workflow, click on the green box with the workflow name to see details about the workflow output. You should see a similar view like this:
 
 
-.. image:: conductor_user27.png
-   :target: conductor_user27.png
+.. image:: conductor_27.png
+   :target: conductor_27.png
    :alt: alt_text
 
 
@@ -190,18 +102,18 @@ Collect LLDP Information from Devices and Build Topology
 ​To run the workflow click on click on "Metadata → Workflow Defs" and select: "LLDP_build_read_store".
 
 ​Go to the input tab of the workflow. The workflow has default parameters filled out for you and you can click on "Execute workflow".
-
 ​
-.. image:: conductor_user28.png
-   :target: conductor_user28.png
+
+.. image:: conductor_28.png
+   :target: conductor_28.png
    :alt: alt_text
 
 
-​After the workflow has completed, go to Kibana and look for an entry called "lldp". You should see a similar view like the following:
+​After the workflow has completed, go to Kibana and look for an entry called "lldp". You should see a similar view like the following:​
 
-​
-.. image:: conductor_user29.png
-   :target: conductor_user29.png
+
+.. image:: conductor_29.png
+   :target: conductor_29.png
    :alt: alt_text
 
 
@@ -211,25 +123,25 @@ Collect LLDP Information from Devices and Build Topology
 
 ​Click on "Metadata → Workflow Defs" and select: "LLDP_export". You should see a similar view like this:
 
-​
-.. image:: conductor_user30.png
-   :target: conductor_user30.png
+
+.. image:: conductor_30.png
+   :target: conductor_30.png
    :alt: alt_text
 
 
-​Now click on the workflow ID and click on the green box with the workflow name to display the workflow output details. Copy the escaped string under "response body" / "output" / "export" and unescape the string with a tool like this "\ `https://www.freeformatter.com/json-escape.html <https://www.freeformatter.com/json-escape.html>`_\ ":
+​Now click on the workflow ID and click on the green box with the workflow name to display the workflow output details. Copy the escaped string under "response body" / "output" / "export" and unescape the string with a tool like this https://www.freeformatter.com/json-escape.html <https://www.freeformatter.com/json-escape.html>`__.
 
-​
-.. image:: conductor_user31.png
-   :target: conductor_user31.png
+
+.. image:: conductor_31.png
+   :target: conductor_31.png
    :alt: alt_text
 
 
-​Finally you can use any 3rd party visualization tool that can support the graphviz format like "\ `https://dreampuf.github.io/GraphvizOnline/ <https://dreampuf.github.io/GraphvizOnline/>`_\ ":
+​​Finally you can use any 3rd party visualization tool that can support the graphviz format like https://dreampuf.github.io/GraphvizOnline <https://dreampuf.github.io/GraphvizOnline/>`__.
 
-​
-.. image:: conductor_user32.png
-   :target: conductor_user32.png
+
+.. image:: conductor_32.png
+   :target: conductor_32.png
    :alt: alt_text
 
 

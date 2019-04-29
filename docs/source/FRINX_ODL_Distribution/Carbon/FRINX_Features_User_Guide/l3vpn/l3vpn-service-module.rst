@@ -1,70 +1,45 @@
 
-`Documentation main page <https://frinxio.github.io/Frinx-docs/>`_
-`FRINX Features User Guide main page <https://frinxio.github.io/Frinx-docs/FRINX_ODL_Distribution/Carbon/user_guide.html>`_
-
 L3VPN Service Module User Guide
 ===============================
 
+* `Usage - Setup <#usage-setup>`__
 
-.. raw:: html
+  * `FRINX ODL - Install features <#frinx-odl-install-features>`__
+  * `Postman - Import collection <#postman-import-collection>`__
 
-   <!-- TOC -->
+* `Introduction <#introduction>`__
 
+  * `Problem definition and L3VPN <#problem-definition-and-l3vpn>`__
+  * `Terminology <#terminology>`__
+  * `Topologies <#topologies>`__
 
+    * `Any to Any <#any-to-any>`__
+    * `Hub and Spoke <#hub-and-spoke>`__
 
+* `Usage - Operations Guide <#usage-operations-guide>`__
 
-* `L3VPN Service Module User Guide <#l3vpn-service-module-user-guide>`_
+  * `Set up an L3VPN connection <#set-up-an-l3vpn-connection>`__
 
-  * `Usage - Setup <#usage---setup>`_
+    * `Establish PE-routers connection <#establish-pe-routers-connection>`__
+    * `Create VPN service <#create-vpn-service>`__
+    * `Create sites <#create-sites>`__
 
-    * `FRINX ODL - Install features <#frinx-odl---install-features>`_
-    * `Postman - Import collection <#postman---import-collection>`_
+  * `Delete the L3VPN connection <#delete-the-l3vpn-connection>`__
 
-  * `Introduction <#introduction>`_
+* `L3VPN Provider <#l3vpn-provider>`__
 
-    * `Problem definition and L3VPN <#problem-definition-and-l3vpn>`_
-    * `Terminology <#terminology>`_
-    * `Topologies <#topologies>`_
+  * `Use Case Specification <#use-case-specification>`__
+  * `Architecture <#architecture>`__
 
-      * `Any to Any <#any-to-any>`_
-      * `Hub and Spoke <#hub-and-spoke>`_
+    * `API description <#api-description>`__
 
-  * `Usage - Operations Guide <#usage---operations-guide>`_
-
-    * `Set up an L3VPN connection <#set-up-an-l3vpn-connection>`_
-
-      * `1. Establish PE-routers connection <#1-establish-pe-routers-connection>`_
-      * `2. Create VPN service <#2-create-vpn-service>`_
-      * `3. Create sites <#3-create-sites>`_
-
-    * `Delete the L3VPN connection <#delete-the-l3vpn-connection>`_
-
-  * `L3VPN Provider <#l3vpn-provider>`_
-
-    * `Use Case Specification <#use-case-specification>`_
-    * `Architecture <#architecture>`_
-
-      * `API description <#api-description>`_
-
-    * `Network Element Plugin <#network-element-plugin>`_
-
-      * `IOS-XRv Network Element Plugin <#ios-xrv-network-element-plugin>`_
-      * `Mock Network Element Plugin <#mock-network-element-plugin>`_
-
-    * `Known Limitations <#known-limitations>`_
-
-
-.. raw:: html
-
-   <!-- /TOC -->
-
-
+  * `Known Limitations <#known-limitations>`__
 
 Usage - Setup
 -------------
 
 FRINX ODL - Install features
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 #. First, `start FRINX ODL <../../Operations_Manual/running-frinx-odl-after-activation.md>`_. 
@@ -78,7 +53,7 @@ FRINX ODL - Install features
    feature:install frinx-l3vpn-app cli-southbound-all-units unified-topology-all-units
 
 Postman - Import collection
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 #. To download and use FRINX pre-configured Postman REST calls with L3VPN - see `this page <../../API.md>`_. 
@@ -103,7 +78,7 @@ The goal of this project is to automate provisioning of Layer 3 Virtual Private 
 
 
 Problem definition and L3VPN
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 A company needs to reconnect multiple sites via a Service Provider which provides L3 connectivity for the company. 
 
@@ -128,7 +103,7 @@ In this case L3VPN provides site-to-site connectivity and the SP network behaves
 
 
 Terminology
-^^^^^^^^^^^
+~~~~~~~~~~~
 
 The following terms are often used in the L3VPN domain:
 
@@ -144,12 +119,12 @@ The following terms are often used in the L3VPN domain:
 
 
 Topologies
-^^^^^^^^^^
+~~~~~~~~~~
 
 Common topologies used in L3VPN.
 
 Any to Any
-~~~~~~~~~~
+++++++++++
 
 Sites can forward traffic directly to each other in a VPN. Communication is restricted to a particular VPN so it is not possible to communicate with sites on different VPNs. 
 
@@ -160,7 +135,7 @@ Sites can forward traffic directly to each other in a VPN. Communication is rest
 
 
 Hub and Spoke
-~~~~~~~~~~~~~
++++++++++++++
 
 Spoke sites in the VPN can communicate with each other only through the hub site. This is usually used when all sites must communicate through an access control device. 
 
@@ -178,21 +153,19 @@ To import the necessary Postman collection file see the section `Postman - Impor
 That file contains several REST calls for establishing a PE-routers connection and creating or deleting L3VPN instances, for which we provide guidance below:
 
 Set up an L3VPN connection
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Three steps are required to create a L3VPN connection between two routers (we demonstrate this on Huawei NE5000E router connected to FRINX ODL via cli interface and on Cisco XR6 router connected via NETCONF). We will configure L3VPN services using Postman collection:
 
-1. Establish PE-routers connection
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Establish PE-routers connection
++++++++++++++++++++++++++++++++
 
 This is between FRINX ODL and each of the two routers which we'll use for the L3VPN. 
 
 
-* 
-  Use Postman REST calls: ``PE-routers connection/connect xr6-pe`` (for Cisco XR6 router) and ``PE-routers connection/connect huawei-pe`` (for Huawei NE5000E router):
+*  Use Postman REST calls: ``PE-routers connection/connect xr6-pe`` (for Cisco XR6 router) and ``PE-routers connection/connect huawei-pe`` (for Huawei NE5000E router):
 
-* 
-  First edit the body of the call ``PE-routers connection/connect xr6-pe`` according to your setup for Cisco XR6 router:  
+*  First edit the body of the call ``PE-routers connection/connect xr6-pe`` according to your setup for Cisco XR6 router:  
 
 .. code-block:: guess
 
@@ -220,11 +193,9 @@ This is between FRINX ODL and each of the two routers which we'll use for the L3
 
 
 
-* 
-  Issue the call by hitting **Send**. You should receive the Response: Status **201 Created**
+*  Issue the call by hitting **Send**. You should receive the Response: Status **201 Created**
 
-* 
-  Now configure the call ``PE-routers connection/connect huawei-pe``\ , but this time edit the body according to your setup for Huawei NE5000E router:
+*  Now configure the call ``PE-routers connection/connect huawei-pe``, but this time edit the body according to your setup for Huawei NE5000E router:
 
 .. code-block:: guess
 
@@ -256,11 +227,9 @@ This is between FRINX ODL and each of the two routers which we'll use for the L3
 
 
 
-* 
-  Again, issue the call by hitting **Send**\ , you should receive the Response: Status **201 Created**
+*  Again, issue the call by hitting **Send**, you should receive the Response: Status **201 Created**
 
-* 
-  It can take a few minutes before the connections are formed. We can check if they're ready by issuing the call ``PE-routers connection/topology-netconf OPER`` and ``PE-routers connection/topology-cli OPER`` respectively
+*  It can take a few minutes before the connections are formed. We can check if they're ready by issuing the call ``PE-routers connection/topology-netconf OPER`` and ``PE-routers connection/topology-cli OPER`` respectively
 
 
   * You should receive the Response: Status **200 OK**
@@ -271,8 +240,8 @@ This is between FRINX ODL and each of the two routers which we'll use for the L3
   * You should receive the Response: Status **200 OK**
   * When you scroll through the Response body you should see both PE nodes in the **"node"** list. If they are not listed, wait another minute and issue the call again.
 
-2. Create VPN service
-~~~~~~~~~~~~~~~~~~~~~
+Create VPN service
+++++++++++++++++++
 
 This will be used in the next step when we create the L3VPN sites.  
 
@@ -308,8 +277,8 @@ This will be used in the next step when we create the L3VPN sites.
 
 * Issue the call by hitting **Send**. You should receive the Response: Status **201 Created**
 
-3. Create sites
-~~~~~~~~~~~~~~~
+Create sites
+++++++++++++
 
 Use the Postman REST calls: ``L3VPN Service/create site cus1_ce1`` and ``L3VPN Service/create site cus1_ce2``  
 
@@ -395,7 +364,7 @@ Note: Route policy with name RPL_PASS_ALL must exist on the router before this i
   Finally, we need to commit by RPC again: Issue the same RPC call ``L3VPN Service/RPC commit-l3vpn-svc``. In the Response body you should receive "status": "complete". This shows the setup has been competed successfully.
 
 Delete the L3VPN connection
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you want to remove the L3VPN connection:
 
@@ -429,7 +398,7 @@ L3VPN Provider is an implementation which automatically provisions L3VPN on PE r
 * The rollback of a network-wide transaction is done *automatically* if there is failed configuration on at least one device.
 
 Use Case Specification
-^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~
 
 L3VPN Provider can be used on a network where:
 
@@ -522,7 +491,7 @@ You can see the if the particular node is suitable as PE router by calling (repl
 You should see the above mentioned modules in the node's **"capability"** list.
 
 Architecture
-^^^^^^^^^^^^
+~~~~~~~~~~~~
 
 L3VPN Provider is composed of multiple components and takes advantage of the UniConfig framework. The high level architecture is shown in the picture below.
 
@@ -533,20 +502,20 @@ L3VPN Provider is composed of multiple components and takes advantage of the Uni
 
 
 
-* L3VPN provider takes the same approach as Uniconfig Node Manager, **\ *l3vpn-svc*\ ** in CONF DS contains intended L3VPN service configuration and **\ *l3vpn-svc*\ ** in OPER DS conatins actual L3VPN service caonfiguration.
-* An external application modifies **\ *l3vpn-svc*\ ** in CONF DS. L3VPN configuration can be put directly to nodes which are present in uniconfig topology and support necessary capabilities.
+* L3VPN provider takes the same approach as Uniconfig Node Manager, **l3vpn-svc** in CONF DS contains intended L3VPN service configuration and **l3vpn-svc** in OPER DS conatins actual L3VPN service caonfiguration.
+* An external application modifies **l3vpn-svc** in CONF DS. L3VPN configuration can be put directly to nodes which are present in uniconfig topology and support necessary capabilities.
 * When all changes are done, the external application calls RPC *commit-l3vpn-svc*. 
 * The RPC reads the intended state from CONF DS, schedules processing, calculates diff between intended and actual configuration.
 * 
   This diff is configured inside the network-wide transaction on the necessary PE routers by translating the diff into the openconfig data and pushes it into the uniconfig layer.
 
 * 
-  If configuration of routers is successful then OPER DS **\ *l3vpn-svc*\ ** is updated with intended state. 
+  If configuration of routers is successful then OPER DS **l3vpn-svc** is updated with intended state. 
 
 * If configuration on one of the devices fails, the uniconfig layer will rollback configuration on each affected PE node.
 
 API description
-~~~~~~~~~~~~~~~
++++++++++++++++
 
 The API is described using YANG modules. An external application can consume the API via RESTCONF, NETCONF, or JAVA. 
 
@@ -554,9 +523,9 @@ The API is described using YANG modules. An external application can consume the
 * The L3VPN service module provides domain-specific abstraction where the abstraction describes attributes of VPNs and sites instead of configuration of network elements. 
 * The FRINX ODL controller translates the abstraction to network element configuration.
 
-`ietf-l3vpn-svc@2018-01-19.yang <ietf-l3vpn-svc@2018-01-19.yang>`_ (Click link to download)
+`ietf-l3vpn-svc@2018-01-19.yang <ietf-l3vpn-svc@2018-01-19.yang>`__ (Click link to download)
 
-The original YANG is from `RFC 8299 <https://tools.ietf.org/html/rfc8299>`_. This YANG module is modified in order to reuse its parts and is extended with L3VPN Provider elements.
+The original YANG is from `RFC 8299 <https://tools.ietf.org/html/rfc8299>`__. This YANG module is modified in order to reuse its parts and is extended with L3VPN Provider elements.
 
 The YANG module contains one root statement and one RPC:
 
@@ -564,12 +533,12 @@ The YANG module contains one root statement and one RPC:
 * **container l3vpn-svc** – represents intended state which is stored in CONF DS and actual state stored in OPER DS
 * **rpc commit-l3vpn-svc** – starts processing intent of L3VPN service.
 
-`l3vpn-svc-aug@2018-04-04.yang <l3vpn-svc-aug@2018-04-04.png>`_ (Click link to download)
+`l3vpn-svc-aug@2018-04-04.yang <l3vpn-svc-aug@2018-04-04.png>`__ (Click link to download)
 
 Augments ietf-l3vpn-svc module with statements which are needed for configuration of L3VPN.
 
 Known Limitations
-^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~
 
 
 * Implementation of L3VPN provider does not support all statements in ietf-l3vpn-svc@2018-01-19.yang. Unsupported statements can be found in YANG deviations.

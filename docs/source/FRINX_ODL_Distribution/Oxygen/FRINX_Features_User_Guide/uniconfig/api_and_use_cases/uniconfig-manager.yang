@@ -1,0 +1,251 @@
+module uniconfig-manager {
+
+  yang-version 1;
+  namespace "urn:opendaylight:params:xml:ns:yang:uniconfig:manager";
+  prefix "um";
+
+  import network-topology { prefix nt; revision-date 2013-10-21; }
+
+  revision "2017-11-21" {
+    description "Initial revision";
+  }
+
+  typedef operation-result-type {
+    description "A type describing result of operation.";
+      type enumeration {
+        enum complete {
+          value 0;
+          description "Operation completed successfully.";
+        }
+        enum fail {
+          value -1;
+          description "Operation did not complete successfully.";
+        }
+        enum ignored {
+          value -2;
+          description "Operating node entry was skipped.";
+        }
+      }
+  }
+
+
+  typedef error-type {
+    type enumeration {
+      enum no-connection {
+        value 0;
+        description "No connection to device.";
+      }
+      enum processing-error {
+        value -1;
+        description "Error occurs during processing.";
+      }
+    }
+  }
+
+  grouping error-fields {
+    leaf error-type {
+      type error-type;
+      description "Type of error.";
+    }
+    leaf error-message {
+      type string;
+      description "Error message describing cause of error.";
+    }
+  }
+
+  grouping config-status-fields {
+    leaf configuration-status {
+      type operation-result-type;
+      description "Status of configuration.";
+    }
+    leaf rollback-status {
+      type operation-result-type;
+      description "Status of rollback.";
+    }
+    uses error-fields;
+  }
+
+  grouping journal-fields {
+    leaf cli-configuration {
+      type string;
+      description "Cli commands that needs to be executed on node to reach intended
+       configuration state";
+       default "";
+    }
+  }
+
+  grouping node-config-results {
+    list node-config-result {
+      key nodeId;
+      description "Result of configuration and rollback on the given node.
+        Rollback status is empty if rollback was not executed.";
+      leaf nodeId {
+        type nt:node-id;
+      }
+      uses config-status-fields;
+      uses journal-fields;
+    }
+  }
+
+  grouping snapshot-fields {
+    leaf name {
+      type string;
+      description "Name of snapshot.";
+    }
+  }
+
+  grouping operation-result {
+    leaf result {
+      type operation-result-type;
+      description "Result of operation.";
+    }
+    leaf error-message {
+      type string;
+      description "Error message describing operation failure.";
+    }
+  }
+
+  grouping node-sync-status-results {
+    list node-sync-status-result {
+      key nodeId;
+      description "Result of synchronization of configuration from network element
+        to actual uniconfig node.";
+      leaf nodeId {
+        type nt:node-id;
+      }
+      uses error-fields;
+    }
+  }
+
+  grouping target-nodes-fields {
+    container target-nodes {
+      leaf-list node {
+        type nt:node-id;
+      }
+    }
+  }
+
+  grouping commit-output-fields {
+    leaf overall-configuration-status {
+      type operation-result-type;
+      description "If configuration on all network elements is successful returns Complete,
+      Fail otherwise.";
+    }
+    container node-config-results {
+      description "Result of configuration and rollback on each configured network element.";
+      uses node-config-results;
+    }
+  }
+
+  rpc commit {
+    description "Executes configuration of network elements based on
+      diff between actual configuration and intended configuration.
+      If an error occurs, automatic rollback is executed. Result of execution
+      is returned in RPC output.";
+
+    input {
+      uses target-nodes-fields;
+    }
+
+    output {
+      uses commit-output-fields;
+    }
+  }
+
+  rpc replace-config-with-operational {
+    description "Replaces intended uniconfig topology with actual uniconfig topology.";
+
+    input {
+      uses target-nodes-fields;
+    }
+
+    output {
+      uses operation-result;
+    }
+  }
+
+  rpc sync-from-network {
+    description "Synchronises configuration from network element to given uniconfig node.";
+    input {
+      uses target-nodes-fields;
+    }
+
+    output {
+      leaf overall-sync-status {
+        type operation-result-type;
+        description "If sync from all nodes is successful returns Complete,
+          Fail otherwise.";
+      }
+      container node-sync-status-results {
+        description "Individual result of sync for given nodes.";
+        uses node-sync-status-results;
+      }
+    }
+  }
+
+  rpc calculate-diff {
+    description "Calculates differences between intended and actual uniconfig topology.";
+
+    input {
+      uses target-nodes-fields;
+    }
+
+    output {
+      list node-with-diff {
+        key node-id;
+        description "Differences between intended and actual uniconfig node.";
+        leaf node-id {
+          type nt:node-id;
+        }
+        list created-data {
+          description "Created intended configuration against actual.";
+          key path;
+          leaf path {
+            type instance-identifier;
+          }
+          leaf data {
+            type string;
+          }
+        }
+        list deleted-data {
+          description "Removed intended configuration against actual.";
+          key path;
+          leaf path {
+            type instance-identifier;
+          }
+          leaf data {
+            type string;
+          }
+        }
+        list updated-data {
+          description "Updated intended configuration against actual.";
+          key path;
+          leaf path {
+            type instance-identifier;
+          }
+          leaf data-actual {
+            type string;
+          }
+          leaf data-intended {
+            type string;
+          }
+        }
+      }
+    }
+  }
+
+  rpc checked-commit {
+    description "Executes configuration of network elements based on
+      diff between actual configuration and intended configuration.
+      Before execution a fingerprint check is executed. If an error occurs,
+      automatic rollback is executed. Result of execution
+      is returned in RPC output.";
+    input {
+        uses target-nodes-fields;
+    }
+    output {
+        uses commit-output-fields;
+    }
+  }
+
+}

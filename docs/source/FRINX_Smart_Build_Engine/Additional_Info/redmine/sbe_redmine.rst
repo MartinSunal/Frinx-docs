@@ -6,30 +6,22 @@ This is the Redmine manual for users to develop, track and manage tasks in the S
 The translation of the Redmine guide is available in Japanese language `here <http://redmine.jp/guide/>`_
 
 
-.. raw:: html
-
-   <!-- TOC START min:1 max:3 link:true update:true -->
-   - [SBE: Redmine](#sbe-redmine)
-       - [1 Sign Up](#1-sign-up)
-       - [2 Adding new members to your project](#2-adding-new-members-to-your-project)
-       - [3 Creation of a project](#3-creation-of-a-project)
-       - [4 Creation of a new issue in the project: bug, feature or support](#4-creation-of-a-new-issue-in-the-project-bug-feature-or-support)
-       - [5 Issue management](#5-issue-management)
-       - [6 Issues in Calendar view](#6-issues-in-calendar-view)
-       - [7 Gantt chart](#7-gantt-chart)
-       - [8 Sharing the news with your team](#8-sharing-the-news-with-your-team)
-       - [9 Documentation](#9-documentation)
-       - [10 Project’s Wiki page](#10-projects-wiki-page)
-       - [11 Files](#11-files)
-       - [12 Settings](#12-settings)
-       - [13 Useful to know](#13-useful-to-know)
-
-   <!-- TOC END -->
-
-
+*  `1 Sign Up <#1-sign-up>`__
+*  `2 Adding new members to your project <#2-adding-new-members-to-your-project>`__
+*  `3 Creation of a project <#3-creation-of-a-project>`__
+*  `4 Creation of a new issue in the project: bug, feature or support <#4-creation-of-a-new-issue-in-the-project-bug-feature-or-support>`__
+*  `5 Issue management <#5-issue-management>`__
+*  `6 Issues in Calendar view <#6-issues-in-calendar-view>`__
+*  `7 Gantt chart <#7-gantt-chart>`__
+*  `8 Sharing the news with your team <#8-sharing-the-news-with-your-team>`__
+*  `9 Documentation <#9-documentation>`__
+*  `10 Project’s Wiki page <#10-projects-wiki-page>`__
+*  `11 Files <#11-files>`__
+*  `12 Settings <#12-settings>`__
+*  `13 Useful to know <#13-useful-to-know>1__
 
 1 Sign Up
-^^^^^^^^^
+---------
 
 Go to the Register button.
 
@@ -64,14 +56,14 @@ Activate and modify your account, change the password, choose the time zone and 
 Your account is ready!
 
 2 Adding new members to your project
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+------------------------------------
 
 Every new member must be signed up with his/her email address. Please read Section No. 1. When you are logged in, go to Settings and choose the Members tab.
 
 Choose your colleague from the list and assign him/her a role of Manager, a Developer or a Reporter. Then submitt with Add button.
 
 3 Creation of a project
-^^^^^^^^^^^^^^^^^^^^^^^
+-----------------------
 
 Go to the Project tab on the top of blue screen and click on New project button.
 
@@ -96,7 +88,7 @@ Complete the project’s form according to the picture below. Use the project id
 Start 123 is an example of a project that will be shown many times in this documentation. Your project is ready to manage!
 
 4 Creation of a new issue in the project: bug, feature or support
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+-----------------------------------------------------------------
 
 It’s very easy to create a new issue in Redmine. If you are in your project area, go to the New issue tab. The Type of issue can be: bug feature support
 
@@ -121,7 +113,7 @@ For a better overview, you can even link a bug to your Redmine Wiki or your corp
 
 
 5 Issue management
-^^^^^^^^^^^^^^^^^^
+------------------
 
 All issues are listed in the Issues tab under your Project. Searching of the concrete issues or a bunch of the issues from the same category has been never easier. You can use the Add filter drop down menu on the right side and choose the filter you need. On the other hand, you have a possibility choose the concrete state of the bug in the left corner. For more details please see the picture below.
 
@@ -152,7 +144,7 @@ You can see the project’s issues in multiple ways. Reporting and logical struc
 
 
 6 Issues in Calendar view
-^^^^^^^^^^^^^^^^^^^^^^^^^
+-------------------------
 
 The next level of information is provided by the calendar feature. By clicking on the Calendar tab under your project you can see the calendar filled with all issues that can give you a nice overview with respect to planning. Please see the picture below.
 
@@ -165,7 +157,7 @@ The next level of information is provided by the calendar feature. By clicking o
 
 
 7 Gantt chart
-^^^^^^^^^^^^^
+-------------
 
 Visibility of all issues with regard to planning is provided in the Gantt tab under your project. The Gantt chart shows you a very detailed progress overview with the percentage of completion and the possibility to view issues from many different point of views by using filters. For more info please see the picture below.
 
@@ -178,7 +170,7 @@ Visibility of all issues with regard to planning is provided in the Gantt tab un
 
 
 8 Sharing the news with your team
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+---------------------------------
 
 If you would like to share the newest information with your team and you don’t want to spam everybody, you can use News tab under your project. News will allow you to share very important information in a creative way and what is important, visible to everybody. Your colleagues can comment the article and reply to you immediately after publishing.
 
@@ -199,7 +191,7 @@ If you would like to share the newest information with your team and you don’t
 
 
 9 Documentation
-^^^^^^^^^^^^^^^
+---------------
 
 Redmine allows you to create two different types of documentation. Creation of User documentation and Technical documentation is available under your project in Documents tab. After creation of documents, you can find a list of documents in logical order with the option to sort by category, date, title and author.
 
@@ -212,7 +204,7 @@ Redmine allows you to create two different types of documentation. Creation of U
 
 
 10 Project’s Wiki page
-^^^^^^^^^^^^^^^^^^^^^^
+----------------------
 
 Redmine allows you to create your own project’s wiki page. Wiki articles can be paired with created bugs, features or supports. More about linking to bugs can be found in Section No. 4. Output can be seen in pdf, html and txt form.
 
@@ -225,7 +217,7 @@ Redmine allows you to create your own project’s wiki page. Wiki articles can b
 
 
 11 Files
-^^^^^^^^
+--------
 
 Share the files with your team. The Files tab under your project will allow you to share different files up to 100 MB organized by date and size.
 
@@ -238,12 +230,12 @@ Share the files with your team. The Files tab under your project will allow you 
 
 
 12 Settings
-^^^^^^^^^^^
+-----------
 
 You are allowed to change the design of your Redmine, set up new modules, organize the members group, use, categorize the issues and use forums for further discussions. What can be modified: **Information** The basic information of your project and type of issues (bugs, features and support) **Modules** Many different types of modules/tabs taht will be used in your project for instance Time tracking, Wiki etc **Members** Add a new member or modigy the gropups and editing the existing members **Issue categories** Create an issue category as you wish and use it for issue management **Wiki** Change the name of your wiki page **Forums** Create and manage a forum for your colleagues **Activities (time tracking)** Choose a method for how Design and Development will be tracked
 
 13 Useful to know
-^^^^^^^^^^^^^^^^^
+-----------------
 
 **Table 1 Useful links**\ :raw-html-m2r:`<br>`
 `Redmine overview <http://www.redmine.org/>`_\ :raw-html-m2r:`<br>`

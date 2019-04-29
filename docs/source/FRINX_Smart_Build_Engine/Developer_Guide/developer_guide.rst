@@ -2,29 +2,19 @@
 Developer Guide
 ===============
 
-
-.. raw:: html
-
-   <!-- TOC START min:1 max:4 link:true update:true -->
-   - [SBE: Developer Guide](#sbe-developer-guide)
-       - [Git/Gerrit Workflow](#gitgerrit-workflow)
-         - [Repositories](#repositories)
-         - [Cloning a repository](#cloning-a-repository)
-         - [Add and commit](#add-and-commit)
-         - [Commit message - subject](#commit-message---subject)
-         - [Commit message - body](#commit-message---body)
-         - [Pushing changes](#pushing-changes)
-         - [Creating a Code-Review in Gerrit](#creating-a-code-review-in-gerrit)
-         - [Branches](#branches)
-         - [Update and merge](#update-and-merge)
-         - [Log](#log)
-         - [Replace local changes](#replace-local-changes)
-         - [Other Git commands](#other-git-commands)
-       - [Revert a change](#revert-a-change)
-
-   <!-- TOC END -->
-
-
+*  `Repositories <#repositories>`__
+*  `Cloning a repository <#cloning-a-repository>`__
+*  `Add and commit <#add-and-commit>`__
+*  `Commit message - subject <#commit-message---subject>`__
+*  `Commit message - body <#commit-message---body>`__
+*  `Pushing changes <#pushing-changes>`__
+*  `Creating a Code-Review in Gerrit <#creating-a-code-review-in-gerrit>`__
+*  `Branches <#branches>`__
+*  `Update and merge <#update-and-merge>`__
+*  `Log <#log>`__
+*  `Replace local changes <#replace-local-changes>`__
+*  `Other Git commands <#other-git-commands>`__
+*  `Revert a change <#revert-a-change>`__
 
 The FRINX SBE uses Git and Gerrit to manage version control. Version control is a system that records changes to a file or set of files over time so that you can recall specific versions later.
 
@@ -34,16 +24,15 @@ Hence Gerrit makes it simple for all committers on a project to ensure that chan
 
 Below we take you through how to configure git and some of the standard functionality you can use.
 
-**Downloading and setting up Git** :raw-html-m2r:`<br>`
+**Downloading and setting up Git**
+
 To download Git on Ubuntu:
 
 .. code-block:: guess
 
    sudo apt-get install git
 
-
-
-For other installations see :raw-html-m2r:`<a href="https://git-scm.com/download/linux" title="Installations">Installations</a>`
+For other installations see https://git-scm.com/download/linux
 
 When you first install Git you must set your name and email address, because every Git commit uses this information. To set these properties use the following commands:
 
@@ -52,15 +41,11 @@ When you first install Git you must set your name and email address, because eve
    git config --global user.name "User Name"  
    git config --global user.email "username@frinx.io"
 
-
-
 To check your Git config settings
 
 .. code-block:: guess
 
    git config --list
-
-
 
 Git uses your system's default text editor. To change this, for example to emacs
 
@@ -68,26 +53,24 @@ Git uses your system's default text editor. To change this, for example to emacs
 
    git config --global core.editor emacs
 
-
-
 Git/Gerrit Workflow
-^^^^^^^^^^^^^^^^^^^
+===================
 
 Repositories
-~~~~~~~~~~~~
+------------
 
 The purpose of Git is to manage a project, or a set of files, as they change over time. Git stores this information in a data structure called a repository. what is. can either create or clone
 
 Your local repository consists of three "trees" maintained by git:
 
-The first is your **Working directory** which holds the actual files.\ :raw-html-m2r:`<br>`
-The second is the **Index** which acts as a staging area.\ :raw-html-m2r:`<br>`
+The first is your **Working directory** which holds the actual files.
+The second is the **Index** which acts as a staging area.
 The third is the **HEAD** which points to the last commit you've made.
 
 The flow of changes is: **Working directory** > **Index (stage)** > **HEAD**
 
 Cloning a repository
-~~~~~~~~~~~~~~~~~~~~
+--------------------
 
 The first thing we need to do is access the source that we’re going to be modifying. As with any Git project you do this by cloning the central repository that Gerrit is hosting. e.g.
 
@@ -133,11 +116,11 @@ Configure Git review
 
 
 Add and commit
-~~~~~~~~~~~~~~
+--------------
 
 The next step is to make the change and commit it locally. (Gerrit isn't involved here - we just use standard editing and Git).
 
-If you have not cloned an existing repository and want to connect your repository to a remote server, you need to add it with git remote add origin :raw-html-m2r:`<server>` Now you are able to push your changes to the selected remote server
+If you have not cloned an existing repository and want to connect your repository to a remote server, you need to add it with git remote add origin. Now you are able to push your changes to the selected remote server
 
 To propose a changes (add it to the Index) use
 
@@ -168,20 +151,21 @@ This commits the file to the **HEAD**. Note that no changes are made to the remo
 The commit message is text which you enter in order to explain what changes you made in the commit. Here are some guidelines on entering text for the commit message:
 
 Commit message - subject
-~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------
 
 Use the imperative mood (e.g. "Update file1"; not "Updates file1", "Updating file1", nor "Updated file1").
 
 Commit message - body
-~~~~~~~~~~~~~~~~~~~~~
+---------------------
 
-Use the body of the commit message to describe your change in more detail. It is useful to separate the body from the subject with an empty line.\ :raw-html-m2r:`<br>`
--- Give an overview of why you're committing this change.\ :raw-html-m2r:`<br>`
--- Explain what the commit changes.\ :raw-html-m2r:`<br>`
+Use the body of the commit message to describe your change in more detail. It is useful to separate the body from the subject with an empty line.
+
+-- Give an overview of why you're committing this change
+-- Explain what the commit changes
 -- Explain any new design choices made.
 
 Pushing changes
-~~~~~~~~~~~~~~~
+---------------
 
 After you’ve made your change and committed it locally the next step is to push it to Gerrit so that it can be reviewed using the Gerrit User Interface. This is done with a Git push to the Gerrit server (the command is shown below).
 
@@ -196,7 +180,7 @@ To send changes from the *HEAD** of your working copy to your remote repository,
 origin is the name of the remote repository. master is the name of the branch. You can change master to whatever branch you want to push your changes to (see more info on branches further below).
 
 Creating a Code-Review in Gerrit
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------------
 
 Now that the commit has been pushed to the remote repository, it is ready for review in Gerrit.
 
@@ -209,7 +193,7 @@ Non-committers can typically vote with -1 and +1 in Code-Review to indicate an o
 If the change is not accepted the creator is required to rework it. Once the Publish Comments button has been clicked, the cover message and any comments on the files become visible to all users.
 
 Branches
-~~~~~~~~
+--------
 
 Branches are used to develop features isolated from each other. The master branch is the "default" branch when you create a repository. You can use other branches for development and then merge them back to the master branch when you have completed your work.
 
@@ -238,7 +222,7 @@ To delete the new branch
 
 
 Update and merge
-~~~~~~~~~~~~~~~~
+----------------
 
 To update your local repository to the newest commit (fetching and merging remote changes), use
 
@@ -273,7 +257,7 @@ Before merging, you can preview changes using
 
 
 Log
-~~~
+---
 
 You can study repository history (by viewing a log of all commits starting from HEAD back to the initial commit) using
 
@@ -310,7 +294,7 @@ To see only which files have changed
 For more info, see git log --help
 
 Replace local changes
-~~~~~~~~~~~~~~~~~~~~~
+---------------------
 
 If you made a mistake you can replace local changes using
 
@@ -334,7 +318,7 @@ If you would rather abandon all your local changes and commits, you can fetch th
 Read More: [Git Commit Messages][2]
 
 Other Git commands
-~~~~~~~~~~~~~~~~~~
+------------------
 
 To show which files have changed between the current project state and HEAD.
 
@@ -377,7 +361,7 @@ To mark files to be deleted
 
 
 Revert a change
-^^^^^^^^^^^^^^^
+---------------
 
 If you need to revert a change use git revert **Never use git reset!** Use git log to get the commit number of the change
 

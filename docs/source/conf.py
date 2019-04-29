@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+﻿# -*- coding: utf-8 -*-
 #
 # Configuration file for the Sphinx documentation builder.
 #
@@ -104,7 +104,7 @@ html_static_path = ['_static']
 # -- Options for HTMLHelp output ---------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'FRINX-Documentation'
+htmlhelp_basename = 'Frinx-docs'
 
 
 # -- Options for LaTeX output ------------------------------------------------
@@ -131,8 +131,8 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'simpleble.tex', 'simpleble Documentation',
-     'Lyudmil Vladimirov', 'manual'),
+#    (master_doc, 'simpleble.tex', 'simpleble Documentation',
+#     'Lyudmil Vladimirov', 'manual'),
 ]
 
 
@@ -167,5 +167,6 @@ def r_heading_level(self, text, level):
   if level==2: self.heading(text, char='-')
   if level==3: self.heading(text, char='~')
   if level==4: self.heading(text, char='+')
+  if level==5: self.heading(text, char='#')
 
 # -- Extension configuration -------------------------------------------------

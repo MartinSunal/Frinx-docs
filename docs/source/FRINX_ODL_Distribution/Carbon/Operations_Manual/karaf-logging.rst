@@ -1,29 +1,14 @@
-.. role:: raw-html-m2r(raw)
-   :format: html
-
-
-`Documentation main page <https://frinxio.github.io/Frinx-docs/>`_
-`Operations Manual main page <https://frinxio.github.io/Frinx-docs/FRINX_ODL_Distribution/Carbon/operations_manual.html>`_
 
 Configuring logging level within karaf
 ======================================
 
+* `Configuring logging level within karaf <#configuring-logging-level-within-karaf>`__
 
-.. raw:: html
+  * `Check logging level <#check-logging-level>`__
+  * `Add or change logging level for a particular feature <#add-or-change-logging-level-for-a-particular-feature>`__
 
-   <!-- TOC -->
-
-
-
-
-* `Configuring logging level within karaf <#configuring-logging-level-within-karaf>`_
-
-  * `Check logging level <#check-logging-level>`_
-  * `Add or change logging level for a particular feature <#add-or-change-logging-level-for-a-particular-feature>`_
-
-:raw-html-m2r:`<!-- /TOC -->`
-It's possible to adjust the verbosity of logging for each FRINX ODL feature.\ :raw-html-m2r:`<br>`
-The following levels are available (most verbose listed first) - TRACE, DEBUG, WARN, INFO, ERROR.\ :raw-html-m2r:`<br>`
+It's possible to adjust the verbosity of logging for each FRINX ODL feature.
+The following levels are available (most verbose listed first) - TRACE, DEBUG, WARN, INFO, ERROR.
 INFO is less verbose and is a good compromise in terms of verbosity and effectiveness.  
 
 Check logging level
@@ -33,13 +18,13 @@ After `starting FRINX ODL <running-frinx-odl-after-activation>`_\ , first check 
 
 Within the karaf console type:
 
-.. code-block::
+.. code-block:: guess
 
    log:list
 
 This will display output similar to the following:
 
-.. code-block::
+.. code-block:: guess
 
    Logger                                                           | Level
    ------------------------------------------------------------------------
@@ -57,19 +42,19 @@ Add or change logging level for a particular feature
 
 To add or change the logging level for a particular feature e.g. io.frinx.cli type
 
-.. code-block::
+.. code-block:: guess
 
    log:set INFO io.frinx.cli
 
 You will see the logging level has been updated when you again type
 
-.. code-block::
+.. code-block:: guess
 
    log:list
 
 The output will now be similar to the following, with the level for io.frinx.cli having been changed from DEBUG to INFO:
 
-.. code-block::
+.. code-block:: guess
 
    Logger                                                           | Level
    ------------------------------------------------------------------------
@@ -85,7 +70,7 @@ The output will now be similar to the following, with the level for io.frinx.cli
 
 To begin viewing the log type:
 
-.. code-block::
+.. code-block:: guess
 
    log:tail
 

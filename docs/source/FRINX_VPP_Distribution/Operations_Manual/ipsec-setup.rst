@@ -5,34 +5,17 @@
 IPsec Setup
 ===========
 
+Table of content
 
-.. raw:: html
-
-   <!-- TOC -->
-
-
-
-
-* `VPP Distribution: IPsec Setup <#vpp-distribution-ipsec-setup>`_
-  .. code-block:: guess
-
-       - [Configure VPP from the console using the following commands:](#configure-vpp-from-the-console-using-the-following-commands)
-       - [VPP1 (hub)](#vpp1-hub)
-       - [VPP2 (spoke1)](#vpp2-spoke1)
-       - [VPP3 (spoke2)](#vpp3-spoke2)
-
-
-.. raw:: html
-
-   <!-- /TOC -->
-
+*  `VPP1 hub <#vpp1-hub>`__
+*  `VPP2 (spoke1) <#vpp2-spoke1>`__
+*  `VPP3 (spoke2) <#vpp3-spoke2>`__
 
 
 Configure VPP from the console using the following commands:
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 VPP1 (hub)
-^^^^^^^^^^
+----------
 
 .. code-block:: guess
 
@@ -73,7 +56,7 @@ VPP1 (hub)
 
 
 VPP2 (spoke1)
-^^^^^^^^^^^^^
+-------------
 
 .. code-block:: guess
 
@@ -104,7 +87,7 @@ VPP2 (spoke1)
 
 
 VPP3 (spoke2)
-^^^^^^^^^^^^^
+-------------
 
 .. code-block:: guess
 
