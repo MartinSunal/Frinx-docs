@@ -1,6 +1,6 @@
 
-API - Postman
-=============
+FRINX API
+=========
 
 Download Postman (free)
 -----------------------

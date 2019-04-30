@@ -3,12 +3,14 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-FRINX Features: Developer Guide
+FRINX Features Developer Guide
 ===============================
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents
+   :caption: Content
    :glob:
    
    cli/cli-service-module-devguide.rst
+   `Translation Units <https://github.com/FRINXio/translation-units-docs>`__
+   `Translation Framework 101 <https://github.com/FRINXio/translation-units-docs/blob/master/Translation%20framework%20101.md>`__

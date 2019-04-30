@@ -11,5 +11,15 @@ Operations Manual
    :caption: Content
    :glob:
    
-   Operations_Manual/*
+   running-frinx-odl-after-activation.rst
+   running-frinx-odl-initial.rst
+   karaf-logging.rst
+   frinx-features.rst
+   restconf.rst
+   netconf-intro.rst
+   netconf-mounting.rst
+   netconf-deleting.rst
+   clustering-overview.rst
+   elastic-search.rst
+   glossary-of-terms.rst
    *

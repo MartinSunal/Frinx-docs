@@ -1,6 +1,6 @@
 
-NETCONF: Overview and use within the FRINX ODL Distribution
-===========================================================
+NETCONF Overview and use within the FRINX ODL Distribution
+==========================================================
 
 What is NETCONF?
 ----------------

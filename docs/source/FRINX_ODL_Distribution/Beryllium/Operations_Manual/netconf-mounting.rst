@@ -1,6 +1,6 @@
 
-NETCONF: Mounting a device
-==========================
+NETCONF Mounting a device
+=========================
 
 *  `Step 1 Install features <#step-1-install-features>`__
 *  `Step 2 Wait until controller-config is connected <#step-2-wait-until-controller-config-is-connected>`__

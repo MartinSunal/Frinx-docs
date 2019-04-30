@@ -11,8 +11,8 @@ FRINX ODL Beryllium
    :caption: Content
    :glob:
    
-   FRINX_Features_User_Guide/index1
+   API.rst
    Operations_Manual/index1
-   Release_Notes/index1
+   FRINX_Features_User_Guide/index1
    Troubleshooting_Guide/troubleshooting_guide.rst
-   *
+   Release_Notes/index1

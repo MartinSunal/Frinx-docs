@@ -3,13 +3,16 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-FRINX Features: User Guide
-==========================
+FRINX Features User Guide
+=========================
 
 .. toctree::
    :maxdepth: 1
    :caption: Content
    :glob:
    
-   FRINX_Features_User_Guide/*
-   *
+   daexim.rst
+   radius.rst
+   using-frinx-api-bundle.rst
+   netconf-clustering.rst
+   elasticsearch-with-tsdr-datastore.rst

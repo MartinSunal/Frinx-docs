@@ -1,6 +1,6 @@
 
-FRINX ODL Distribution: Troubleshooting Guide
-=============================================
+FRINX ODL Distribution Troubleshooting Guide
+============================================
 
 The troubleshooting guide is based around a `flow chart <http://i.imgur.com/2fwTem4.png>`__
 

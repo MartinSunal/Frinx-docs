@@ -1,6 +1,5 @@
 *This feature was deprecated in FRINX 2.3.1. For using Elasticsearch with FRINX ODL logs see `here <../Operations_Manual/elastic-search.md>`_\ *
 
-
 Elasticsearch with TSDR datastore
 =================================
 
@@ -102,13 +101,13 @@ Installing the necessary features to the Frinx distribution
 
 The distribution has to be able to process the data sent by the OpenFlow capable switch. In order to do so, we need to install two additional features:
 
-.. code-block::
+.. code-block:: guess
 
    feature:install odl-tsdr-openflow-statistics-collector
 
 We can check whether the distribution is now listening on port 6653:
 
-.. code-block::
+.. code-block:: guess
 
    netstat -an | grep 6653
 
@@ -121,7 +120,7 @@ Follow these instructions to download and install mininet. We recommend th
 
 After successfully booting up and running the mininet VM, run the following command to set up a small network:
 
-.. code-block::
+.. code-block:: guess
 
    sudo mn --topo single,3 --controller 'remote,ip=distro_ip,port=6653' --switch ovsk,protocols=OpenFlow13
 
@@ -129,13 +128,13 @@ where the distro_ip is the IP address of the machine where the Frinx dis
 
 We can check whether some data was stored in the elasticsearch by running the following command in the distribution console:
 
-.. code-block::
+.. code-block:: guess
 
    tsdr:list FLOWTABLESTATS
 
 The output should look similar to the following:
 
-.. code-block::
+.. code-block:: guess
 
    [NID=openflow:1][DC=FLOWTABLESTATS][MN=ActiveFlows][RK=Node:openflow:1,Table:50][TS=1473427383598][0]
    [NID=openflow:1][DC=FLOWTABLESTATS][MN=PacketMatch][RK=Node:openflow:1,Table:50][TS=1473427383598][0]

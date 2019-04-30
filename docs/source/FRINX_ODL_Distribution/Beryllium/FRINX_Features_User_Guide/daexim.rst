@@ -1,6 +1,6 @@
 
-User Guide: Daexim
-==================
+Daexim
+======
 
 *  Overview <#overview>`__
 *  Important files <#important-files>`__

@@ -1,6 +1,6 @@
 
-NETCONF: Deleting a mounted device
-==================================
+NETCONF Deleting a mounted device
+=================================
 
 *HTTP Method: DELETE*
 *HTTP URL:* http://localhost:8181/restconf/config/opendaylight-inventory:nodes/node/controller-config/yang-ext:mount/config:modules/module/odl-sal-netconf-connector-cfg:sal-netconf-connector/device

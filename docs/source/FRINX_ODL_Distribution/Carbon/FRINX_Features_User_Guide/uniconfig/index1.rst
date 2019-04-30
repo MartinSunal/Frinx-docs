@@ -8,7 +8,7 @@ Uniconfig
 
 .. toctree::
    :maxdepth: 1
-   :caption: Contents
+   :caption: Content
    :glob:
    
    api_and_use_cases/api_and_use_cases.rst

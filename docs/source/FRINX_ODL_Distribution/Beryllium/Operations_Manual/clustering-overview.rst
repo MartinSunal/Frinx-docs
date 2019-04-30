@@ -1,6 +1,6 @@
 
-Clustering: Overview
-====================
+Clustering Overview
+===================
 
 * `High availability (HA) <#high-availability-ha>`__
 * `Data persistence <#data-persistence>`__

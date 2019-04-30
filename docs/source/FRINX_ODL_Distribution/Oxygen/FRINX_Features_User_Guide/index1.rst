@@ -8,7 +8,7 @@ FRINX Features User Guide
 
 .. toctree::
    :maxdepth: 1
-   :caption: Contents
+   :caption: Content
    :glob:
    
    cli/index1
