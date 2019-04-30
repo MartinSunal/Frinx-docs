@@ -3,12 +3,12 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-FRINX ODL Distributions
-=======================
+FRINX ODL & UniConfig
+=====================
 
 .. toctree::
    :maxdepth: 1
-   :caption: Contents
+   :caption: Content
    :glob:
    
    Oxygen/index1

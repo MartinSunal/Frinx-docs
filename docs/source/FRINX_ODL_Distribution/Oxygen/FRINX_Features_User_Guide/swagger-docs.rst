@@ -9,7 +9,7 @@ Following files provide OpenAPI files for FRINX ODL's REST interface (in context
 ----
 
 Uniconfig REST API documented with OpenAPI v2
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 * OpenAPI document generated from Uniconfig model + Openconfig models
@@ -21,7 +21,7 @@ Uniconfig REST API documented with OpenAPI v2
 ----
 
 Uniconfig client code generated from OpenAPI definition available for Python and Go clients
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 * Client code library, encapsulating REST calls no available for external applications interacting with Uniconfig
@@ -37,7 +37,7 @@ Uniconfig client code generated from OpenAPI definition available for Python and
 ----
 
 Unified REST API documented with OpenAPI v2
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 * OpenAPI document generated from Unified topology model + Openconfig models
@@ -49,7 +49,7 @@ Unified REST API documented with OpenAPI v2
 ----
 
 Unified client code generated from OpenAPI definition available for Python and Go clients
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 * Client code library, encapsulating REST calls no available for external applications interacting with unified topology
@@ -65,7 +65,7 @@ Unified client code generated from OpenAPI definition available for Python and G
 ----
 
 Southbound REST API documented with OpenAPI v2
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 * OpenAPI document generated from Cli tipology + Netconf topology models
@@ -77,7 +77,7 @@ Southbound REST API documented with OpenAPI v2
 ----
 
 Southbound client code generated from OpenAPI definition available for Python and Go clients
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 * Client code library, encapsulating REST calls no available for external applications interacting with southbound (cli and netconf topology)
@@ -100,21 +100,16 @@ How to launch Swagger-UI
 ------------------------
 
 
-1. 
-   Download swagger-uniconfig-4.2.0.frinx.zip (The first download link on top)
+1. Download swagger-uniconfig-4.2.0.frinx.zip (The first download link on top)
 
-2. 
-   Unzip the file
+2. Unzip the file
 
-3. 
-   Go to the directory which you extracted the file in
+3. Go to the directory which you extracted the file in
 
-4. 
-   Run following command in your terminal:
+4. Run following command in your terminal:
 
-.. code-block::
+.. code-block:: guess
 
    sudo docker run -p 80:8080 -e SWAGGER_JSON=/foo/uniconfig.yaml -v $PWD:/foo swaggerapi/swagger-ui
-
 
 5. Open your browser and visit: localhost

@@ -1,13 +1,10 @@
 
-`Documentation main page <https://frinxio.github.io/Frinx-docs/>`_
-`Operations Manual main page <https://frinxio.github.io/Frinx-docs/FRINX_ODL_Distribution/Beryllium/operations_manual.html>`_
-
 FRINX ODL Distribution: Features
 ================================
 
 The FRINX distribution offers the following features:
 
-.. code-block::
+.. code-block:: guess
 
     odlparent
     yangtools

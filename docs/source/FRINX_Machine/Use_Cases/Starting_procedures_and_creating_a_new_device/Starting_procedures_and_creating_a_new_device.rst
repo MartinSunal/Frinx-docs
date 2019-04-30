@@ -1,6 +1,3 @@
-.. role:: raw-html-m2r(raw)
-   :format: html
-
 
 FRINX Machine starting procedures
 =================================
@@ -31,7 +28,7 @@ Click on:
 
   * Workflow Defs
 
-Then, search for the workflow called "INVENTORY_add_cli_device".\ :raw-html-m2r:`<br>`
+Then, search for the workflow called "INVENTORY_add_cli_device".
 Select the given workflow.
 
 Then, select the tab “Input” and fill out the form.

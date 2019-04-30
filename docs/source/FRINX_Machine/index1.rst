@@ -8,6 +8,7 @@ FRINX Machine
 
 .. toctree::
    :maxdepth: 2
+   :caption: Content
    :glob: 
    
    Create_Modify_Workflows/create_modify_workflows.rst

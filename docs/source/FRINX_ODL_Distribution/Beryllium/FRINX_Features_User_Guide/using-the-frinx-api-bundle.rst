@@ -1,35 +1,28 @@
-.. role:: raw-html-m2r(raw)
-   :format: html
 
+Using the FRINX API bundle
+==========================
 
-`Documentation main page <https://frinxio.github.io/Frinx-docs/>`_
-`FRINX Features User Guide main page <https://frinxio.github.io/Frinx-docs/FRINX_ODL_Distribution/Beryllium/user_guide.html>`_
-:raw-html-m2r:`<!-- TOC -->`
+* `Usage - Setup <#usage-setup>`__
 
+  * `FRINX ODL - Install features <#frinx-odl-install-features>`__
+  * `Postman - Import collection <#postman-import-collection>`__
 
-* `Usage - Setup <#usage---setup>`_
+* `Usage - Operations Guide <#usage-operations-guide>`__
 
-  * `FRINX ODL - Install features <#frinx-odl---install-features>`_
-  * `Postman - Import collection <#postman---import-collection>`_
-
-* `Usage - Operations Guide <#usage---operations-guide>`_
-
-  * `Show version <#show-version>`_
-  * `Feature list <#feature-list>`_
-  * `Monitor resources <#monitor-resources>`_
-  * `Upload a KAR file <#upload-a-kar-file>`_
-
-:raw-html-m2r:`<!-- /TOC -->`
+  * `Show version <#show-version>`__
+  * `Feature list <#feature-list>`__
+  * `Monitor resources <#monitor-resources>`__
+  * `Upload a KAR file <#upload-a-kar-file>`__
 
 Usage - Setup
 -------------
 
 FRINX ODL - Install features
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To use this functionality, run the following command in the karaf console:
 
-.. code-block::
+.. code-block:: guess
 
    feature:install frinx-installer-backend
 
@@ -37,42 +30,41 @@ To use this functionality, run the following command in the karaf console:
 The bundle comprises four REST services which can be implemented using either CURL or Postman REST calls:  
 
 Postman - Import collection
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-
-#. To download and use FRINX pre-configured Postman REST calls - see `this page <../API.md>`_. 
-#. Follow that guide to import the file ``postman_collection_FRINX API Bundle.json`` from the directory ``Infrastructure``.
-#. `Configure an environment in Postman <../API.md>`_ where you set a value for ``odl_ip``.
+1. To download and use FRINX pre-configured Postman REST calls - see :doc:`this page <../API>`. 
+2. Follow that guide to import the file ``postman_collection_FRINX API Bundle.json`` from the directory ``Infrastructure``.
+3. :doc:`Configure an environment in Postman <../API>` where you set a value for ``odl_ip``.
 
 Usage - Operations Guide
 ------------------------
 
 Show version
-^^^^^^^^^^^^
+~~~~~~~~~~~~
 
 This displays the current Karaf distribution version. 
 
-You can run either:\ :raw-html-m2r:`<br>`
+You can run either:
 With Postman REST call ``show-version`` which is already set up as follows:  
 
 
 * POST. (username: admin password: admin).  
-  .. code-block::
+
+.. code-block:: guess
 
      http://[host]:[port]/restconf/operations/installer:show-version
 
 * Issue the call by hitting **Send**.
 
-Example output from using Postman REST call\ :raw-html-m2r:`<br>`
+Example output from using Postman REST call
 
 .. image:: show-version.JPG
    :target: show-version.JPG
    :alt: show version example
   
-
-
 * Or by typing the following in a terminal window:
-  .. code-block:: bash
+  
+.. code-block:: bash
 
      curl 'http://localhost:8181/restconf/operations/installer:show-version' -H 'Host: localhost:8181' -H 'Content-Type: application/json;charset=utf-8' -H 'Authorization: Basic YWRtaW46YWRtaW4=' -X post
 
@@ -83,13 +75,13 @@ Whether using curl or Postman, the output will be in the following format:
    {"output":{"versions":{"controller-version":"1.2.6.frinx-SNAPSHOT"}}}
 
 Feature list
-^^^^^^^^^^^^
+~~~~~~~~~~~~
 
 This allows a list of features to be extracted without starting up karaf. Each feature must have the following properties:
 
 name - version - repository - description - installed (boolean value, whether it is installed or not)
 
-You can run either:\ :raw-html-m2r:`<br>`
+You can run either:
 With Postman REST call ``features list`` which is already set up as follows:  
 
 
@@ -100,16 +92,15 @@ With Postman REST call ``features list`` which is already set up as follows:
 
    http://[host]:[port]/restconf/operational/installer:features
 
-Example output:\ :raw-html-m2r:`<br>`
+Example output:
 
 .. image:: features-list.JPG
    :target: features-list.JPG
    :alt: features list example
 
-
-
 * Or by typing the following in a terminal window:
-  .. code-block:: bash
+
+.. code-block:: bash
 
      curl 'http://localhost:8181/restconf/operational/installer:features' -H 'Host: localhost:8181' -H 'Accept: application/json, text/plain, */*' -H 'Accept-Language: en-US,en;q=0.5' -H 'Authorization: Basic YWRtaW46YWRtaW4=' -X get
 
@@ -195,7 +186,7 @@ Whether using curl or Postman, output will be in the following format: (if using
    }
 
 Monitor resources
-^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~
 
 This displays base information about system, memory and disk management
 
@@ -203,24 +194,23 @@ You can run either:
 
 With Postman REST call ``monitor-resources`` which is already set up as follows:  
 
-
 * POST. (username: admin password: admin).  
 * Issue the call by hitting **Send**.
 
-.. code-block::
+.. code-block:: guess
 
    http://[host]:[port]/restconf/operations/installer:monitor-resources
 
-Example output:\ :raw-html-m2r:`<br>`
+Example output:
 
 .. image:: monitor-resources.JPG
    :target: monitor-resources.JPG
    :alt: monitor resources example
 
 
-
 * Or by typing the following in a terminal window:
-  .. code-block:: bash
+  
+.. code-block:: bash
 
      curl 'http://localhost:8181/restconf/operations/installer:monitor-resources' -H 'Host: localhost:8181' -H 'Content-Type: application/json;charset=utf-8' -H 'Authorization: Basic YWRtaW46YWRtaW4=' -X post
 
@@ -307,17 +297,17 @@ In each case, output will be in the following format (if using curl, the output 
    }
 
 Upload a KAR file
-^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~
 
 This function allows the user to easily upload any KAR file to the Karaf distribution. Before installing, the KAR file is validated. There is an HTTP servlet which listens on
 
-.. code-block::
+.. code-block:: guess
 
    http://[host]:[port]/kar-uploader
 
 
 
-The POST request contains one parameter which indicates the binary data of the KAR file. The parameter should be specified in `base64 binary data format <https://tools.ietf.org/html/rfc6020#section-9.8.2>`_ (as in the example curl command below).
+The POST request contains one parameter which indicates the binary data of the KAR file. The parameter should be specified in `base64 binary data format <https://tools.ietf.org/html/rfc6020#section-9.8.2>`__ (as in the example curl command below).
 
 For example the CURL has a function to convert file location to binary data. You can upload a KAR file by typing the following in a terminal window:
 

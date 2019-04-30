@@ -1,54 +1,45 @@
-.. role:: raw-html-m2r(raw)
-   :format: html
-
-
-`Documentation main page <https://frinxio.github.io/Frinx-docs/>`_
-`Beryllium Release Notes main page <https://frinxio.github.io/Frinx-docs/FRINX_ODL_Distribution/Beryllium/release_notes.html>`_
 
 frinx-odl-base-feature-content-rel-1-4-13
 =========================================
 
-This document describes the latest changes, additions, known issues, and fixes for the Frinx ODL Distribution. :raw-html-m2r:`<!--more-->`
+This document describes the latest changes, additions, known issues, and fixes for the Frinx ODL Distribution.
 
-**Note that FRINX ODL Distribution 1.4.13 requires Java 8**\ :raw-html-m2r:`<br>`
-To install Java:\ :raw-html-m2r:`<br>`
+**Note that FRINX ODL Distribution 1.4.13 requires Java 8**
+To install Java:
 Ubuntu: In a terminal type
 
-.. code-block::
+.. code-block:: guess
 
    sudo apt-get install openjdk-8-jre
 
 
 CentOS: In a terminal type
 
-.. code-block::
+.. code-block:: guess
 
    sudo yum install java-1.8.0-openjdk
-
 
 New Features, Improvements
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Netconf:**  
 
-
-#. Disable chunking for netconf-customization-alu-ignore-candidate and netconf-customization-alu
+1. Disable chunking for netconf-customization-alu-ignore-candidate and netconf-customization-alu
 
 Known Issues
 ~~~~~~~~~~~~
 
-
-#. Clustering related issues with feature “odl-netconf-clustered-topology” – please use “odl-netconf-topology” instead.
-#. Netconf topology does not report connection issues – reports connected even if keepalive message is not received. Underlying connection reconnect functionality works as expected.
+1. Clustering related issues with feature “odl-netconf-clustered-topology” – please use “odl-netconf-topology” instead.
+2. Netconf topology does not report connection issues – reports connected even if keepalive message is not received. Underlying connection reconnect functionality works as expected.
 
 Opendaylight Beryllium SR4 Release Notes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The Frinx controller 1.4.13 is based on Opendaylight Beryllium SR4. Where a feature is present in both controllers, the same Release Notes apply
 
-https://wiki.opendaylight.org/view/Simultaneous_Release/Beryllium/SR4/Release_Notes\ :raw-html-m2r:`<br>`
-odlparent https://wiki.opendaylight.org/view/Simultaneous_Release/Beryllium/SR4/Release_Notes#ODL_Root_Parent\ :raw-html-m2r:`<br>`
-yangtools https://wiki.opendaylight.org/view/Simultaneous_Release/Beryllium/SR4/Release_Notes#YANG_Tools\ :raw-html-m2r:`<br>`
+https://wiki.opendaylight.org/view/Simultaneous_Release/Beryllium/SR4/Release_Notes
+odlparent https://wiki.opendaylight.org/view/Simultaneous_Release/Beryllium/SR4/Release_Notes#ODL_Root_Parent
+yangtools https://wiki.opendaylight.org/view/Simultaneous_Release/Beryllium/SR4/Release_Notes#YANG_Tools
 mdsal https://wiki.opendaylight.org/view/Simultaneous_Release/Beryllium/SR4/Release_Notes#MD-SAL\ :raw-html-m2r:`<br>`
 controller (without xsql) https://wiki.opendaylight.org/view/Simultaneous_Release/Beryllium/SR4/Release_Notes#Controller\ :raw-html-m2r:`<br>`
 netconf https://wiki.opendaylight.org/view/Simultaneous_Release/Beryllium/SR4/Release_Notes#NETCONF\ :raw-html-m2r:`<br>`

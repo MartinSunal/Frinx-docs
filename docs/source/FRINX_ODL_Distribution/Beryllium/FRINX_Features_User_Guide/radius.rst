@@ -1,32 +1,12 @@
-.. role:: raw-html-m2r(raw)
-   :format: html
-
-
-`Documentation main page <https://frinxio.github.io/Frinx-docs/>`_
-`FRINX Features User Guide main page <https://frinxio.github.io/Frinx-docs/FRINX_ODL_Distribution/Beryllium/user_guide.html>`_
 
 RADIUS
 ======
 
-
-.. raw:: html
-
-   <!-- TOC -->
-
-
-
-
-* `RADIUS <#radius>`_
-
-  * `Introduction <#introduction>`_
-
-    * `Quick Start <#quick-start>`_
-    * `RADIUS configuration <#radius-configuration>`_
-    * `Prepare the environment <#prepare-the-environment>`_
-    * `Change RADIUS credentials <#change-radius-credentials>`_
-    * `What is Apache Shiro? <#what-is-apache-shiro>`_
-
-:raw-html-m2r:`<!-- /TOC -->`
+* `Quick Start <#quick-start>`__
+* `RADIUS configuration <#radius-configuration>`__
+* `Prepare the environment <#prepare-the-environment>`__
+* `Change RADIUS credentials <#change-radius-credentials>`__
+* `What is Apache Shiro? <#what-is-apache-shiro>`__
 
 Introduction
 ------------
@@ -42,7 +22,7 @@ The NAS sends a RADIUS *AccessRequest* message to the RADIUS server, in our case
 The response from the Radius server can be either: Access Accept - The user is granted access. This information may be stored locally on the RADIUS server, or may be looked up in an external source such as LDAP. Access Reject - The user is unconditionally denied access to all requested network resources. Reasons may include failure to provide proof of identification or an unknown or inactive user account.
 
 Quick Start
-^^^^^^^^^^^
+~~~~~~~~~~~
 
 Within the FRINX distribution, the AAA feature extends authentication capabilities via the RADIUS protocol. In order to be able to authenticate the user it is necessary to start freeRADIUS, which acts as a RADIUS server.
 
@@ -59,7 +39,7 @@ To run the freeRADIUS server:
    docker run -it docker.io/unico/freeradius
 
 RADIUS configuration
-^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~
 
 Within your FRINX distribution directory structure, go to the /etc directory and edit the *shiro.ini* file. Under "[main]" enter the following four lines of text:
 
@@ -73,7 +53,7 @@ Within your FRINX distribution directory structure, go to the /etc directory and
 The final two lines set the RADIUS server ip address and shared secret string. The shared secret string is Base64 encoded.
 
 Prepare the environment
-^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~
 
 Start the controller Karaf container:
 
@@ -92,7 +72,7 @@ Open the browser and type the following link: http://localhost:8181/index.html#/
 If the credentials are correct, the RADIUS server sends *AccessAccept* and the user can access protected resources.
 
 Change RADIUS credentials
-^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Start the freeRADIUS docker image:
 
@@ -118,12 +98,12 @@ Change the username and password and save the file. Next, exit from the containe
    docker start <CONTAINER_ID>
 
 What is Apache Shiro?
-^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~
 
-A Java Security Framework that performs authentication, authorization, cryptography, and session management and can be used to secure any application - from command line applications through mobile applications to the largest Web and enterprise applications. Its benefits are:\ :raw-html-m2r:`<br>`
-• Cryptography - Keeping data secure using a cryptographic algorithm\ :raw-html-m2r:`<br>`
-• Session management - Managing user-specific sessions, even in non-Web or EJB applications\ :raw-html-m2r:`<br>`
-• Easy to use - It has a long history (5 years), previously known as the JSecurity project. Detailed documentation is available and the API is easy to use\ :raw-html-m2r:`<br>`
+A Java Security Framework that performs authentication, authorization, cryptography, and session management and can be used to secure any application - from command line applications through mobile applications to the largest Web and enterprise applications. Its benefits are:
+• Cryptography - Keeping data secure using a cryptographic algorithm
+• Session management - Managing user-specific sessions, even in non-Web or EJB applications
+• Easy to use - It has a long history (5 years), previously known as the JSecurity project. Detailed documentation is available and the API is easy to use
 • It can use many connectors, for example LDAP, RADIUS, TACAS, Diameter
 
 .. list-table::

@@ -4,7 +4,7 @@ LACP workflow using FRINX Machine
 
 This workflow is using uniconfig to create LAG interface on two nodes and assigns the bundle id to given interfaces on both nodes.
 
-**Supported device**\ : ios-xr mounted as a cli device
+**Supported device**: ios-xr mounted as a cli device
 
 Creating a link aggregation between two nodes
 ---------------------------------------------
@@ -26,7 +26,7 @@ Then select the workflow: **Link_aggregation**
    :alt: preview10
 
 
-**Example of input parameters**\ :
+**Example of input parameters**:
 
 
 .. image:: workflow-inputs.png
@@ -55,7 +55,7 @@ The workflow diagram in progress will color the steps according to the progress.
    :alt: preview10
 
 
-**NOTE**\ : Diagram with progress of the workflow can be updated by hiting F5 key.
+**NOTE**: Diagram with progress of the workflow can be updated by hiting F5 key.
 
 
 .. image:: completed-lacp-workflow-diagram.png

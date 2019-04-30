@@ -5,7 +5,7 @@ RADIUS
 Introduction
 ------------
 
-**RADIUS - How FRINX contributes to OpenDaylight authentication**
+**RADIUS: How FRINX contributes to OpenDaylight authentication**
 
 Within OpenDaylight, authentication and authorization is handled by the AAA feature, of which Apache Shiro is the core component. Apache Shiro can itself cooperate with third party authentication and authorization tools. However, in its current implementation within OpenDaylight it supports only LDAP.
 
@@ -16,7 +16,7 @@ The NAS sends a RADIUS *AccessRequest* message to the RADIUS server, in our case
 The response from the Radius server can be either: Access Accept - The user is granted access. This information may be stored locally on the RADIUS server, or may be looked up in an external source such as LDAP. Access Reject - The user is unconditionally denied access to all requested network resources. Reasons may include failure to provide proof of identification or an unknown or inactive user account.
 
 Quick Start
-^^^^^^^^^^^
+~~~~~~~~~~~
 
 Within the FRINX distribution, the AAA feature extends authentication capabilities via the RADIUS protocol. In order to be able to authenticate the user it is necessary to start freeRADIUS, which acts as a RADIUS server.
 
@@ -33,7 +33,7 @@ To run the freeRADIUS server:
    docker run -it docker.io/unico/freeradius
 
 RADIUS configuration
-^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~
 
 Within your FRINX distribution directory structure, go to the /etc directory and edit the *shiro.ini* file. Under "[main]" enter the following four lines of text:
 
@@ -47,7 +47,7 @@ Within your FRINX distribution directory structure, go to the /etc directory and
 The final two lines set the RADIUS server ip address and shared secret string. The shared secret string is Base64 encoded.
 
 Prepare the environment
-^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~
 
 Start the controller Karaf container:
 
@@ -66,7 +66,7 @@ Open the browser and type the following link: http://localhost:8181/index.html#/
 If the credentials are correct, the RADIUS server sends *AccessAccept* and the user can access protected resources.
 
 Change RADIUS credentials
-^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Start the freeRADIUS docker image:
 
@@ -92,7 +92,7 @@ Change the username and password and save the file. Next, exit from the containe
    docker start <CONTAINER_ID>
 
 What is Apache Shiro?
-^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~
 
 A Java Security Framework that performs authentication, authorization, cryptography, and session management and can be used to secure any application - from command line applications through mobile applications to the largest Web and enterprise applications. Its benefits are:
 • Cryptography - Keeping data secure using a cryptographic algorithm

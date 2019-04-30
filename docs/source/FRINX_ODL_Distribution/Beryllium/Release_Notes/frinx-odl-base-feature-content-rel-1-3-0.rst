@@ -1,20 +1,8 @@
-.. role:: raw-html-m2r(raw)
-   :format: html
 
 frinx-odl-base-feature-content-rel-1-3-0
 ========================================
 
-`Documentation main page <https://frinxio.github.io/Frinx-docs/>`_
-`Beryllium Release Notes main page <https://frinxio.github.io/Frinx-docs/FRINX_ODL_Distribution/Beryllium/release_notes.html>`_
-
-:raw-html-m2r:`<table width="489">`
-  :raw-html-m2r:`<tbody>`
-    :raw-html-m2r:`<tr>`
-      :raw-html-m2r:`<td width="295">
-        Name
-      </td>`
-
-.. code-block::
+.. code-block:: guess
 
      <td width="195">
        Version
@@ -3564,8 +3552,4 @@ frinx-odl-base-feature-content-rel-1-3-0
   </tbody>
 </table>   
 
-
-.. raw:: html
-
-   <pre>[/wpmem_form]</pre>
 

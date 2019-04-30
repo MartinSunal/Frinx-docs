@@ -1,6 +1,3 @@
-.. role:: raw-html-m2r(raw)
-   :format: html
-
 
 Running workflows to obtain platform inventory data
 ===================================================
@@ -23,7 +20,7 @@ Click on:
 
   * Workflow Defs
 
-Then select the workflow:\ :raw-html-m2r:`<br>`
+Then select the workflow:
 **PLATFORM_read_components_all_from_unified_update_inventory**
 
 

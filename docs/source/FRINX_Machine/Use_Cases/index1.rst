@@ -8,7 +8,7 @@ Use Cases
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents
+   :caption: Content
    :glob:
    
    Running_the_LACP_Workflow/LACP_workflow_using_FRINX_Machine.rst

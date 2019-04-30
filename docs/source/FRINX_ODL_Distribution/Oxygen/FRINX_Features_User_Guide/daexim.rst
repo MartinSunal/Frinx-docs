@@ -1,6 +1,6 @@
 
-User Guide: Daexim
-==================
+Daexim
+======
 
 Introduction
 ------------

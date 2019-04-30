@@ -1,21 +1,18 @@
 
-`Documentation main page <https://frinxio.github.io/Frinx-docs/>`_
-`Operations Manual main page <https://frinxio.github.io/Frinx-docs/FRINX_ODL_Distribution/Carbon/operations_manual.html>`_
-
 Configuring logging level within karaf
 ======================================
 
 It's possible to adjust the verbosity of logging for each Frinx ODL feature. Two levels are available - INFO and DEBUG. INFO is less verbose and is a good compromise in terms of verbosity and effectiveness.
 
-After `starting Frinx ODL <running-frinx-odl-after-activation>`_\ , first check the logging level currently set for each feature: within the karaf console type
+After :doc:`starting Frinx ODL <running-frinx-odl-after-activation>`, first check the logging level currently set for each feature: within the karaf console type
 
-.. code-block::
+.. code-block:: guess
 
    log:list
 
 This will display output similar to the following
 
-.. code-block::
+.. code-block:: guess
 
    Logger                                                           | Level
    ------------------------------------------------------------------------
@@ -33,19 +30,19 @@ This will display output similar to the following
 
 To change the logging level for a particular feature e.g. io.frinx.cli type
 
-.. code-block::
+.. code-block:: guess
 
    log:set INFO io.frinx.cli
 
 You will see the logging level has been updated when you again type
 
-.. code-block::
+.. code-block:: guess
 
    log:list
 
 The output will now be similar to the following, with the level for io.frinx.cli having been changed from DEBUG to INFO:
 
-.. code-block::
+.. code-block:: guess
 
    Logger                                                           | Level
    ------------------------------------------------------------------------
@@ -63,7 +60,7 @@ The output will now be similar to the following, with the level for io.frinx.cli
 
 To begin viewing the log type
 
-.. code-block::
+.. code-block:: guess
 
    log:tail
 

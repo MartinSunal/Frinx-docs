@@ -1,26 +1,14 @@
-.. role:: raw-html-m2r(raw)
-   :format: html
-
-
-`Documentation main page <https://frinxio.github.io/Frinx-docs/>`_
-`Operations Manual main page <https://frinxio.github.io/Frinx-docs/FRINX_ODL_Distribution/Beryllium/operations_manual.html>`_
-:raw-html-m2r:`<!-- TOC -->`
-
-
-* `Clustering: Overview <#clustering-overview>`_
-
-  * `High availability (HA) <#high-availability-ha>`_
-  * `Data persistence <#data-persistence>`_
-  * `Scaling <#scaling>`_
-  * `Multiple node clustering <#multiple-node-clustering>`_
-
-    * `a. Setting up <#a-setting-up>`_
-    * `b. Info on clustering functionality <#b-info-on-clustering-functionality>`_
-
-:raw-html-m2r:`<!-- /TOC -->`
 
 Clustering: Overview
 ====================
+
+* `High availability (HA) <#high-availability-ha>`__
+* `Data persistence <#data-persistence>`__
+* `Scaling <#scaling>`__
+* `Multiple node clustering <#multiple-node-clustering>`__
+
+  * `a. Setting up <#a-setting-up>`__
+  * `b. Info on clustering functionality <#b-info-on-clustering-functionality>`__
 
 Clustering enables multiple instances of the Frinx ODL Distribution to work together as one entity. Data from the in-memory MD-SAL tree is split into smaller sub-trees (inventory, topology, and default) and distributed across the machines (referred to as nodes) which are part of the cluster.
 
@@ -45,30 +33,30 @@ Multiple node clustering
 ------------------------
 
 a. Setting up
-^^^^^^^^^^^^^
+~~~~~~~~~~~~~
 
-To run the Frinx ODL distribution in a three node cluster (that is, on three machines), do the following:\ :raw-html-m2r:`<br>`
+To run the Frinx ODL distribution in a three node cluster (that is, on three machines), do the following:
 1. Determine the three machines (nodes) that will make up the cluster and copy the Frinx ODL distribution to each of those machines.  
 
 2. Unzip the controller distribution.  
 
 3. Run Karaf: In your ``{Frinx ODL main}`` directory, type
 
-.. code-block::
+.. code-block:: guess
 
    ./bin/karaf 
 
 
 4.\ In the karaf terminal, type:
 
-.. code-block::
+.. code-block:: guess
 
    feature:install odl-mdsal-clustering
 
 
 To check whether odl-mdsal-clustering has finished installing, type the following within the karaf terminal
 
-.. code-block::
+.. code-block:: guess
 
    feature:list |grep odl-mdsal-clustering
 
@@ -83,21 +71,21 @@ Change directory to ``{Frinx ODL main}/bin``
 
 Type the following command, where the first argument is an index (1,2 or 3 - according to machine 1,2 or 3) and the final three arguments are the IP addresses (example IPs are used below - replace these with IPs of your machines) of the machines in the cluster (note when you run the command on each machine you list the same three IP addresses each time). On the first machine you would run:
 
-.. code-block::
+.. code-block:: guess
 
    ./configure_cluster.sh 1 10.10.199.6 10.10.199.7 10.10.199.8
 
 
 On the second machine you would run:
 
-.. code-block::
+.. code-block:: guess
 
    ./configure_cluster.sh 2 10.10.199.6 10.10.199.7 10.10.199.8
 
 
 On the third machine you would run:   
 
-.. code-block::
+.. code-block:: guess
 
    ./configure_cluster.sh 3 10.10.199.6 10.10.199.7 10.10.199.8
 
@@ -106,7 +94,7 @@ When you restart Frinx ODL (on each machine), clustering will be active.
 To restart from within the karaf terminal hold the 'CTRL' key and type the 'd' key.
 Wait for three minutes. Then in the terminal window, still in the ``{Frinx ODL main}/bin`` directory, type
 
-.. code-block::
+.. code-block:: guess
 
    ./karaf
 
@@ -119,7 +107,7 @@ Once karaf has fully started (which can take three minutes) you will be able to 
 
 If prompted, enter admin as both the username and password.  
 
-*HTTP: EXPECTED RESPONSE*\ :raw-html-m2r:`<br>`
+*HTTP: EXPECTED RESPONSE*
 The request should return the following information:  
 
 .. code-block:: json
@@ -181,7 +169,7 @@ The request should return the following information:
 
 The key parameter from the above output is ShardName, whose structure is as follows:
 
-.. code-block::
+.. code-block:: guess
 
    <member-name>-shard-<shard-name-as-per-configuration>-<store-type>  
 
@@ -189,7 +177,7 @@ The key parameter from the above output is ShardName, whose structure is as foll
 These *Data shards* are used to house all or a certain segment of various types of Frinx ODL data. For example, one shard may contain all of a particular module’s inventory data while another shard contains all of its topology data. Each shard has replicas configured, which means the same data is stored on different nodes, ensuring data persistence in the event that one node becomes unoperational.
 
 b. Info on clustering functionality
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 After a cluster 'node' (sometimes referred to as a 'member') is started, it sends a message to each other node within the cluster, which are referred to as 'seed' nodes. The cluster node then sends a join command to the first seed node that responds. If none of its seed nodes reply, the cluster member repeats this process until it successfully establishes a connection or is shutdown.
 

@@ -1,6 +1,3 @@
-.. role:: raw-html-m2r(raw)
-   :format: html
-
 
 Running workflows to execute saved command on devices
 =====================================================
@@ -21,7 +18,7 @@ Click on:
 
   * Workflow Defs
 
-Then select the workflow:\ :raw-html-m2r:`<br>`
+Then select the workflow:
 **INVENTORY_add_cli_show_command**
 
 

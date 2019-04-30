@@ -1,28 +1,13 @@
-.. role:: raw-html-m2r(raw)
-   :format: html
-
-
-`Documentation main page <https://frinxio.github.io/Frinx-docs/>`_
-`FRINX Features User Guide main page <https://frinxio.github.io/Frinx-docs/FRINX_ODL_Distribution/Beryllium/user_guide.html>`_
 
 User Guide: Daexim
 ==================
 
-
-.. raw:: html
-
-   <!-- TOC START min:1 max:3 link:true update:true -->
-   - [User Guide: Daexim](#user-guide-daexim)
-     - [Overview](#overview)
-     - [Important files](#important-files)
-     - [Import](#import)
-     - [Export](#export)
-       - [Exporting from leader node](#exporting-from-leader-node)
-     - [General info on daexim](#general-info-on-daexim)
-
-   <!-- TOC END -->
-
-
+*  Overview <#overview>`__
+*  Important files <#important-files>`__
+*  Import <#import>`__
+*  Export <#export>`__
+  *  Exporting from leader node <#exporting-from-leader-node>`__
+*  General info on daexim <#general-info-on-daexim>`__
 
 **daexim - datastore export import**
 
@@ -72,7 +57,7 @@ where all yang files are extracted from karaf's system folder and loaded during 
 
 The defaults that affect daexim are stored in the file etc/org.opendaylight.daexim.cfg. The defaults are:
 
-.. code-block::
+.. code-block:: guess
 
    daexim.importOnInit=false
    daexim.importBatchSize=1500
@@ -95,11 +80,9 @@ To enable automatic import, place the backed up json files into
 
 and make sure org.opendaylight.daexim.cfg contains the following on all nodes:
 
-.. code-block::
+.. code-block:: guess
 
    daexim.importOnInit=true
-
-
 
 **Karaf property files affected by the Frinx daexim changes**
 
@@ -114,12 +97,10 @@ Because frinx daexim needs to start before all other ODL features, the featuresB
 
 must be split into two properties:
 
-.. code-block::
+.. code-block:: guess
 
    (config,standard,region,package,kar,ssh,management,odl-jolokia),(odl-restconf),(odl-daexim-all)
    odlFeaturesBoot=odl-netconf-topology,customer-feature1
-
-
 
 Property featuresBoot must only contain core features necessary for loading daexim, optionally with jolokia and restconf for troubleshooting. It is recommended not to modify this line. ODL features should be placed into the new odlFeaturesBoot property, where multiple features are delimited with the comma(,) sign.
 
@@ -137,7 +118,7 @@ This can be automated by changing a line in the file
    ${karaf.home}/etc/system.properties
 
 
-.. code-block::
+.. code-block:: guess
 
    karaf.clean.cache=true
 
@@ -151,7 +132,7 @@ Export
 
 Daexim export was changed so that it is executed only on the node which was contacted via restconf:
 
-.. code-block::
+.. code-block:: guess
 
    curl -u admin:admin  "ODL_NODE_1:8181/restconf/operations/data-export-import:simple-export" -X POST -H "Content-Type: application/json" -d '{"input": {}}' -v
 
@@ -160,11 +141,11 @@ Daexim export was changed so that it is executed only on the node which was cont
 In this case, the export will be executed on ODL_NODE_1. Note that the RPC is slightly different than what Daexim supports by default - simple-export does not need time and date to be supplied, export will start immediately. For advanced use, the operator can specify a list of excluded tuples: model,data store (config, operational). This behavior is the same as with ODL's daexim project.
 
 Exporting from leader node
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Reading the whole datastore within a cluster can be slow and can cause pressure on the system leading to intermittent node failures. Therefore it is advised to run the export on the shard leader. This way all data will be read from local memory. To determine the node that contains the leaders of both shards (default-operational, default-config), call the following:
 
-.. code-block::
+.. code-block:: guess
 
    curl -u admin:admin  "ODL_NODE_1:8181/jolokia/read/org.opendaylight.controller:Category=ShardManager,name=shard-manager-config,type=DistributedConfigDatastore
    curl -u admin:admin  "ODL_NODE_1:8181/jolokia/read/org.opendaylight.controller:Category=ShardManager,name=shard-manager-operational,type=DistributedOperationalDatastore
@@ -173,7 +154,7 @@ Reading the whole datastore within a cluster can be slow and can cause pressure 
 
 Example output:
 
-.. code-block::
+.. code-block:: guess
 
    {
        "request": {
@@ -215,7 +196,7 @@ Note that leaderId points to the node containing the shard leader, attributes sh
 
 Details about both shards can be obtained by calling:
 
-.. code-block::
+.. code-block:: guess
 
    ID=1
    SHARD_NAME=default-operational
@@ -225,33 +206,30 @@ Details about both shards can be obtained by calling:
    TYPE=DistributedConfigDatastore
    curl -u admin:admin  "ODL_NODE_1:8181/jolokia/read/org.opendaylight.controller:Category=Shards,name=member-${ID}-shard-${SHARD_NAME},type=${TYPE}
 
-
-
 General info on daexim
 ----------------------
 
-`OpenDaylight Wiki page on daexim <https://wiki.opendaylight.org/view/Daexim:Main>`_
+`OpenDaylight Wiki page on daexim <https://wiki.opendaylight.org/view/Daexim:Main>`__
 Data Export/Import (daexim) is a project introduced in the OpenDaylight Carbon release. However, daexim has been back ported to FRINX distributions and is available from Beryllium 1.4.6 and Boron 2.3.0 and subsequent releases.
 
 The purpose of the project is to export/import data from files. Here are the key functions of the project:
 
-
 * Export of CONF and OPER DS
 * Export files in JSON format
-* Component is controlled via RPC API `see here <https://www.youtube.com/watch?v=fCWuuS-_xy4>`_
+* Component is controlled via RPC API `see here <https://www.youtube.com/watch?v=fCWuuS-_xy4>`__
 * Data can be excluded from export based on yang module and datastore type
 * Datastore can be cleared before data is imported
 * Export can be scheduled
 
-`Video tutorial with Postman collection <https://www.youtube.com/watch?v=fCWuuS-_xy4>`_\ :raw-html-m2r:`<br>`
-`Postman collection <daexim_postman.json>`_
+`Video tutorial with Postman collection <https://www.youtube.com/watch?v=fCWuuS-_xy4>`__
+`Postman collection <daexim_postman.json>`__
 
-**Export data from datastore**\ :raw-html-m2r:`<br>`
+**Export data from datastore**
 RPC result is returned immediately after a task for export is scheduled. State of export can be shown via the RPC API.
 
 When RPC schedule-export is invoked, the scheduled export is stored to OPER DS. Therefore, the scheduled export is replicated on other nodes in a cluster deployment.
 
 DataExportImportAppProvider, on each cluster node, receives a modification event about the scheduled export and schedules ExportTask which executes datastore export. Therefore, RPC for schedule export can be invoked on any cluster node and datastore is exported on each cluster node.
 
-**Import data to datastore**\ :raw-html-m2r:`<br>`
+**Import data to datastore**
 Data import is done on startup when daexim.importOnInit is set to true. Data is imported from JSON files to CONF and OPER datastore in one transaction. In a cluster deployment, data import is executed only on a cluster node where RPC is invoked and data is replicated to other nodes within the transaction.

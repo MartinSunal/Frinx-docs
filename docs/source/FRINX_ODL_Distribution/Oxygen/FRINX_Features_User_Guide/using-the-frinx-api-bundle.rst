@@ -14,18 +14,18 @@ To use this functionality, run the following command in the karaf console:
 
 The bundle comprises four REST services which can be implemented using either CURL or Postman REST calls:  
 
-Postman - Import collection
----------------------------
+Import Postman collection
+-------------------------
 
 1. To download and use FRINX pre-configured Postman REST calls - see :doc`API`. 
 2. Follow that guide to import the file ``postman_collection_FRINX API Bundle.json`` from the directory ``Infrastructure``.
 3. Configure an environment in Postman :doc`API` where you set a value for ``odl_ip``.
 
-Usage - Operations Guide
-------------------------
+Operations Guide
+----------------
 
 Feature list
-^^^^^^^^^^^^
+~~~~~~~~~~~~
 
 This allows a list of features to be extracted without starting up karaf. Each feature must have the following properties:
 
@@ -47,8 +47,6 @@ Example output:
 .. image:: features-list.JPG
    :target: features-list.JPG
    :alt: features list example
-
-
 
 * Or by typing the following in a terminal window:
   
@@ -138,7 +136,7 @@ Whether using curl or Postman, output will be in the following format: (if using
    }
 
 Monitor resources
-^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~
 
 This displays base information about system, memory and disk management
 
@@ -250,14 +248,13 @@ In each case, output will be in the following format (if using curl, the output 
    }
 
 Upload a KAR file
-^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~
 
 This function allows the user to easily upload any KAR file to the Karaf distribution. Before installing, the KAR file is validated. There is an HTTP servlet which listens on
 
 .. code-block:: guess
 
    http://[host]:[port]/kar-uploader
-
 
 
 The POST request contains one parameter which indicates the binary data of the KAR file. The parameter should be specified in `base64 binary data format <https://tools.ietf.org/html/rfc6020#section-9.8.2>`__ (as in the example curl command below).

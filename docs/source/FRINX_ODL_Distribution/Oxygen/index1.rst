@@ -7,10 +7,10 @@ FRINX ODL Oxygen
    :caption: Contents
    :glob:
    
+   *
+   Operations_Manual/index1
    FRINX_Features_Developer_Guide/index1
    FRINX_Features_User_Guide/index1
-   Operations_Manual/index1
-   Release_Notes/index1
    Troubleshooting_Guide/troubleshooting_guide.rst
-   *
+   Release_Notes/index1
 

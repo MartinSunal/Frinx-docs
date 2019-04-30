@@ -1,6 +1,6 @@
 
-FRINX ODL Distribution: Features
-================================
+FRINX ODL Distribution Features
+===============================
 
 * `Managing features <#managing-features>`__
 

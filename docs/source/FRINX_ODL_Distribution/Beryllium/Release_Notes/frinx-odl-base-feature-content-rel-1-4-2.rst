@@ -1,7 +1,4 @@
 
-`Documentation main page <https://frinxio.github.io/Frinx-docs/>`_
-`Beryllium Release Notes main page <https://frinxio.github.io/Frinx-docs/FRINX_ODL_Distribution/Beryllium/release_notes.html>`_
-
 FRINX ODL Base feature content 1.4.2
 ====================================
 

@@ -8,7 +8,7 @@ FRINX ODL Beryllium
 
 .. toctree::
    :maxdepth: 1
-   :caption: Contents
+   :caption: Content
    :glob:
    
    FRINX_Features_User_Guide/index1

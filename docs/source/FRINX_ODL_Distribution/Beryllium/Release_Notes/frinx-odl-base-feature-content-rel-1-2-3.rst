@@ -1,11 +1,8 @@
 
-`Documentation main page <https://frinxio.github.io/Frinx-docs/>`_
-`Beryllium Release Notes main page <https://frinxio.github.io/Frinx-docs/FRINX_ODL_Distribution/Beryllium/release_notes.html>`_
-
 frinx-odl-base-feature-content-rel-1-2-3
 ========================================
 
-.. code-block::
+.. code-block:: guess
 
    Name                                           Version
 

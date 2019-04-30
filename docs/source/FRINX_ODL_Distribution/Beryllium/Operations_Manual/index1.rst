@@ -8,7 +8,7 @@ Operations Manual
 
 .. toctree::
    :maxdepth: 1
-   :caption: Contents
+   :caption: Content
    :glob:
    
    Operations_Manual/*

@@ -1,22 +1,8 @@
 
-`Documentation main page <https://frinxio.github.io/Frinx-docs/>`_
-`Beryllium Release Notes main page <https://frinxio.github.io/Frinx-docs/FRINX_ODL_Distribution/Beryllium/release_notes.html>`_
-
 frinx-odl-base-feature-content-rel-1-3-0
 ========================================
 
 This document describes the latest changes, additions, known issues, and fixes for the Frinx ODL Distribution.
-
-Additions
-~~~~~~~~~
-
-
-.. raw:: html
-
-   <div>
-     <span class="line">Fixed logo for Feature Manager</span>
-   </div>
-
 
 Opendaylight Beryllium SR3 Release Notes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -43,7 +29,7 @@ https://wiki.opendaylight.org/view/Simultaneous_Release/Beryllium/SR3/Release_No
 
 aaa
 
-`https://wiki.opendaylight.org/view/Simultaneous*Release/Beryllium/SR3/Release_Notes#Authentication.2C_Authorization_and_Accounting*.28AAA.29 <https://wiki.opendaylight.org/view/Simultaneous_Release/Beryllium/SR3/Release_Notes#Authentication.2C_Authorization_and_Accounting_.28AAA.29>`_
+https://wiki.opendaylight.org/view/Simultaneous_Release/Beryllium/SR3/Release_Notes#Authentication.2C_Authorization_and_Accounting_.28AAA.29
 
 dlux
 
@@ -61,7 +47,7 @@ https://wiki.opendaylight.org/view/Simultaneous_Release/Beryllium/SR3/Release_No
 
 neutron
 
-`https://wiki.opendaylight.org/view/Simultaneous_Release/Beryllium/SR3/Release_Notes#Neutron_Northbound <https://wiki.opendaylight.org/view/Simultaneous_Release/Beryllium/SR3/Release_Notes#OpenFlow_Plugin>`_
+`https://wiki.opendaylight.org/view/Simultaneous_Release/Beryllium/SR3/Release_Notes#Neutron_Northbound <https://wiki.opendaylight.org/view/Simultaneous_Release/Beryllium/SR3/Release_Notes#OpenFlow_Plugin>`__
 
 sfc
 
@@ -73,7 +59,7 @@ https://wiki.opendaylight.org/view/Simultaneous_Release/Beryllium/SR3/Release_No
 
 gbp
 
-`https://wiki.opendaylight.org/view/Simultaneous*Release/Beryllium/SR3/Release_Notes#Group_Based_Policy*.28 <https://wiki.opendaylight.org/view/Simultaneous_Release/Beryllium/SR3/Release_Notes#Group_Based_Policy_.28>`_
+`https://wiki.opendaylight.org/view/Simultaneous*Release/Beryllium/SR3/Release_Notes#Group_Based_Policy*.28 <https://wiki.opendaylight.org/view/Simultaneous_Release/Beryllium/SR3/Release_Notes#Group_Based_Policy_.28>`__
 
 l2switch
 

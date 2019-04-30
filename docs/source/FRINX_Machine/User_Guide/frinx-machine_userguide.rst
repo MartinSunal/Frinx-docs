@@ -1,6 +1,3 @@
-.. role:: raw-html-m2r(raw)
-   :format: html
-
 
 User Guide
 ========================
@@ -123,8 +120,8 @@ Navigate to:
 
   * Workflow Defs
 
-There is a list of all available workflow definitions.\ :raw-html-m2r:`<br>`
-Choose one and switch to tab **Input**\ :
+There is a list of all available workflow definitions.
+Choose one and switch to tab **Input**:
 
 
 .. image:: image_1.png
