@@ -5,7 +5,7 @@ FRINX API
 Download Postman (free)
 -----------------------
 
-FRINX uses the free Postman REST client as an API for the FRINX ODL distribution. `Download Postman for your system <https://www.getpostman.com/postman>`_
+FRINX uses the free Postman REST client as an API for the FRINX ODL distribution. `Download Postman for your system <https://www.getpostman.com/postman>`__
 
 Download FRINX Postman collection and environment files
 -------------------------------------------------------
@@ -15,7 +15,7 @@ These REST calls are grouped together as **Postman collection** files.
 
 For some features we also provide **Postman environment** files (with suffix env.json). These make the REST calls easily configurable through the use of variables, whose values you can edit (see section below in importing).
 
-Both the FRINX **Postman collection** and **Postman environment** files are grouped by FRINX ODL release (starting with 3.1.1) and packaged as zip files `here <https://github.com/FRINXio/Postman/releases>`_. 
+Both the FRINX **Postman collection** and **Postman environment** files are grouped by FRINX ODL release (starting with 3.1.1) and packaged as zip files `here <https://github.com/FRINXio/Postman/releases>`__. 
 
 On that page, find your FRINX ODL version number and click on 'zip' to download to a location on your local machine. 
 
@@ -29,10 +29,10 @@ In a terminal on your local machine, unzip the file. This will create a new dire
 following subdirectories, grouped by FRINX ODL features: 
 
 
-* ``Infrastructure``          - `Bundle API <FRINX_Features_User_Guide/using-the-frinx-api-bundle.md>`_\ , `Clustering <Operations_Manual/clustering-overview>`_
-* ``L2VPN Service Module``    - `L2VPN <FRINX_Features_User_Guide/l2vpn/l2vpn-service-module.md>`_
-* ``L3VPN Service Module``    - `L3VPN <FRINX_Features_User_Guide/l3vpn/l3vpn-service-module.md>`_
-* ``Uniconfig Framework``     - `CLI <FRINX_Features_User_Guide/cli/cli-service-module.md>`_\ , `Uniconfig <FRINX_Features_User_Guide/uniconfig/architecture/architecture.md>`_  
+* ``Infrastructure``          - :doc:`Bundle API <FRINX_Features_User_Guide/using-the-frinx-api-bundle>`, :doc:`Clustering <Operations_Manual/clustering-overview>`
+* ``L2VPN Service Module``    - :doc:`L2VPN <FRINX_Features_User_Guide/l2vpn/l2vpn-service-module>`__
+* ``L3VPN Service Module``    - :doc:`L3VPN <FRINX_Features_User_Guide/l3vpn/l3vpn-service-module>`__
+* ``Uniconfig Framework``     - :doc:`CLI <FRINX_Features_User_Guide/cli/cli-service-module.md>`__ , `Uniconfig <FRINX_Features_User_Guide/uniconfig/architecture/architecture.md>`__  
 
 Importing FRINX Postman collection & environment files into Postman
 -------------------------------------------------------------------
@@ -56,7 +56,7 @@ Imported **Collection files** appear as folders on the left of the screen. They 
   
 
 Configuring environments
-^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 The advantage of setting environments is that you can re-use the same variable name throughout the URL and body of multiple calls, and update its value in one location.
 
@@ -89,7 +89,7 @@ CLick on the environment you wish to edit. You are then able to set values for e
 Click on **Update** to save your changes.
 
 Activating an environment
-^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Next you need to select your choice of environment from the drop-down menu in the top right of screen:
 
@@ -111,9 +111,9 @@ Versioning
 ----------
 
 Main releases
-^^^^^^^^^^^^^
+~~~~~~~~~~~~~
 
-Distinct versions of the FRINX Postman API files are `available here <https://github.com/FRINXio/Postman/releases>`_\ , and named in the following format to correspond to analogous FRINX ODL distributions:  
+Distinct versions of the FRINX Postman API files are `available here <https://github.com/FRINXio/Postman/releases>`__ , and named in the following format to correspond to analogous FRINX ODL distributions:  
 
 .. code-block:: guess
 
@@ -128,7 +128,7 @@ for example
 
 
 Release candidates
-^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~
 
 Between releases we also publish release candidate (RC) zip files `in the same location <https://github.com/FRINXio/Postman/releases>`_ which are pre-release versions in the development stage. These correspond with pre-release versions of FRINX ODL. The naming format is:  
 
@@ -145,12 +145,12 @@ for example
 
 
 Backwards compatibility
-^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~
 
 Backwards compatibility of FRINX Postman collections:\ :raw-html-m2r:`<br>`
-``Infrastructure``        - Works with all releases of Carbon, Boron, Beryllium FRINX ODL\ :raw-html-m2r:`<br>`
-``L2VPN Service Module``  - Works with all releases of Carbon, Boron FRINX ODL\ :raw-html-m2r:`<br>`
-``L3VPN Service Module``  - Works with all releases of Carbon FRINX ODL since version 3.1.3\ :raw-html-m2r:`<br>`
+``Infrastructure``        - Works with all releases of Carbon, Boron, Beryllium FRINX ODL
+``L2VPN Service Module``  - Works with all releases of Carbon, Boron FRINX ODL
+``L3VPN Service Module``  - Works with all releases of Carbon FRINX ODL since version 3.1.3
 ``Uniconfig Framework``   - Works only with corresponding version of FRINX ODL  
 
 Swagger
@@ -163,63 +163,63 @@ Following files provide OpenAPI files for FRINX ODL’s REST interface (in conte
 ----
 
 Uniconfig REST API documented with OpenAPI v2
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 * OpenAPI document generated from Uniconfig model + Openconfig models
 
 **Download** document here:
 
-`https://license.frinx.io/download/swagger-uniconfig-3.1.7.frinx.zip <https://license.frinx.io/download/swagger-uniconfig-3.1.7.frinx.zip>`_
+`https://license.frinx.io/download/swagger-uniconfig-3.1.7.frinx.zip <https://license.frinx.io/download/swagger-uniconfig-3.1.7.frinx.zip>`__
 
 ----
 
 Uniconfig client code generated from OpenAPI definition available for Python and Go clients
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 * Client code library, encapsulating REST calls no available for external applications interacting with Uniconfig
 
 **Download** Python code library: 
 
-`https://license.frinx.io/download/swagger-uniconfig-python-3.1.7.frinx.zip <https://license.frinx.io/download/swagger-uniconfig-python-3.1.7.frinx.zip>`_
+`https://license.frinx.io/download/swagger-uniconfig-python-3.1.7.frinx.zip <https://license.frinx.io/download/swagger-uniconfig-python-3.1.7.frinx.zip>`__
 
 **Download** Go code library: 
 
-`https://license.frinx.io/download/swagger-uniconfig-go-3.1.7.frinx.zip <https://license.frinx.io/download/swagger-uniconfig-go-3.1.7.frinx.zip>`_
+`https://license.frinx.io/download/swagger-uniconfig-go-3.1.7.frinx.zip <https://license.frinx.io/download/swagger-uniconfig-go-3.1.7.frinx.zip>`__
 
 ----
 
 Unified REST API documented with OpenAPI v2
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 * OpenAPI document generated from Unified topology model + Openconfig models
 
 **Download** document here:
 
-`https://license.frinx.io/download/swagger-unified-3.1.7.frinx.zip <https://license.frinx.io/download/swagger-unified-3.1.7.frinx.zip>`_
+`https://license.frinx.io/download/swagger-unified-3.1.7.frinx.zip <https://license.frinx.io/download/swagger-unified-3.1.7.frinx.zip>`__
 
 ----
 
 Unified client code generated from OpenAPI definition available for Python and Go clients
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 * Client code library, encapsulating REST calls no available for external applications interacting with unified topology
 
 **Download** Python code library: 
 
-`https://license.frinx.io/download/swagger-unified-python-3.1.7.frinx.zip <https://license.frinx.io/download/swagger-unified-python-3.1.7.frinx.zip>`_
+`https://license.frinx.io/download/swagger-unified-python-3.1.7.frinx.zip <https://license.frinx.io/download/swagger-unified-python-3.1.7.frinx.zip>`__
 
 **Download** Go code library: 
 
-`https://license.frinx.io/download/swagger-unified-go-3.1.7.frinx.zip <https://license.frinx.io/download/swagger-unified-go-3.1.7.frinx.zip>`_ 
+`https://license.frinx.io/download/swagger-unified-go-3.1.7.frinx.zip <https://license.frinx.io/download/swagger-unified-go-3.1.7.frinx.zip>`__ 
 
 ----
 
 Southbound REST API documented with OpenAPI v2
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 * OpenAPI document generated from Cli tipology + Netconf topology models
@@ -231,44 +231,39 @@ Southbound REST API documented with OpenAPI v2
 ----
 
 Southbound client code generated from OpenAPI definition available for Python and Go clients
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 * Client code library, encapsulating REST calls no available for external applications interacting with southbound (cli and netconf topology)
 
 **Download** Python code library:
 
-`https://license.frinx.io/download/swagger-southbound-python-3.1.7.frinx.zip <https://license.frinx.io/download/swagger-southbound-python-3.1.7.frinx.zip>`_
+`https://license.frinx.io/download/swagger-southbound-python-3.1.7.frinx.zip <https://license.frinx.io/download/swagger-southbound-python-3.1.7.frinx.zip>`__
 
 **Download** Go code library: 
 
-`https://license.frinx.io/download/swagger-southbound-go-3.1.7.frinx.zip <https://license.frinx.io/download/swagger-southbound-go-3.1.7.frinx.zip>`_
+`https://license.frinx.io/download/swagger-southbound-go-3.1.7.frinx.zip <https://license.frinx.io/download/swagger-southbound-go-3.1.7.frinx.zip>`__
 
 ----
 
 Example LACP service implementation using generated Swagger based client code can be found in the link below:
 
-`https://github.com/FRINXio/Lacp-service-labdocs <https://github.com/FRINXio/Lacp-service-labdocs>`_
+`https://github.com/FRINXio/Lacp-service-labdocs <https://github.com/FRINXio/Lacp-service-labdocs>`__
 
 How to launch Swagger-UI
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
+1. Download swagger-uniconfig-3.1.7.frinx.zip (The first download link on top)
 
-#. 
-   Download swagger-uniconfig-3.1.7.frinx.zip (The first download link on top)
+2. Unzip the file
 
-#. 
-   Unzip the file
+3. Go to the directory which you extracted the file in
 
-#. 
-   Go to the directory which you extracted the file in
-
-#. 
-   Run following command in your terminal:
+4. Run following command in your terminal:
 
 .. code-block:: guess
 
    sudo docker run -p 80:8080 -e SWAGGER_JSON=/foo/uniconfig.yaml -v $PWD:/foo swaggerapi/swagger-ui
 
 
-#. Open your browser and visit: localhost
+5. Open your browser and visit: localhost

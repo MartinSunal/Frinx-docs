@@ -8,7 +8,7 @@ FRINX Features Developer Guide
 
 .. toctree::
    :maxdepth: 1
-   :caption: Contents
+   :caption: Content
    :glob:
    
    cli/cli-service-module-devguide.rst

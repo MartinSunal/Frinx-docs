@@ -1,36 +1,21 @@
-.. role:: raw-html-m2r(raw)
-   :format: html
 
+FRINX API
+=========
 
-`Documentation main page <https://frinxio.github.io/Frinx-docs/>`_  
+* `API - Postman <#api---postman>`__
 
-API - Postman
-=============
+  * `Download Postman (free) <#download-postman-free>`__
+  * `Download FRINX Postman collection and environment files <#download-frinx-postman-collection-and-environment-files>`__
+  * `Importing FRINX Postman collection & environment files into Postman <#importing-frinx-postman-collection--environment-files-into-postman>`__
 
+    * `Configuring environments <#configuring-environments>`__
+    * `Activating an environment <#activating-an-environment>`__
 
-.. raw:: html
+  * `Versioning <#versioning>`__
 
-   <!-- TOC -->
-
-
-
-
-* `API - Postman <#api---postman>`_
-
-  * `Download Postman (free) <#download-postman-free>`_
-  * `Download FRINX Postman collection and environment files <#download-frinx-postman-collection-and-environment-files>`_
-  * `Importing FRINX Postman collection & environment files into Postman <#importing-frinx-postman-collection--environment-files-into-postman>`_
-
-    * `Configuring environments <#configuring-environments>`_
-    * `Activating an environment <#activating-an-environment>`_
-
-  * `Versioning <#versioning>`_
-
-    * `Main releases <#main-releases>`_
-    * `Release candidates <#release-candidates>`_
-    * `Backwards compatibility <#backwards-compatibility>`_
-
-:raw-html-m2r:`<!-- /TOC -->`
+    * `Main releases <#main-releases>`__
+    * `Release candidates <#release-candidates>`__
+    * `Backwards compatibility <#backwards-compatibility>`__
 
 Download Postman (free)
 -----------------------
@@ -45,7 +30,7 @@ These REST calls are grouped together as **Postman collection** files.
 
 For some features we also provide **Postman environment** files (with suffix env.json). These make the REST calls easily configurable through the use of variables, whose values you can edit (see section below in importing).
 
-Both the FRINX **Postman collection** and **Postman environment** files are grouped by FRINX ODL release (starting with 3.1.1) and packaged as zip files `here <https://github.com/FRINXio/Postman/releases>`_. 
+Both the FRINX **Postman collection** and **Postman environment** files are grouped by FRINX ODL release (starting with 3.1.1) and packaged as zip files `here <https://github.com/FRINXio/Postman/releases>`__. 
 
 On that page, find your FRINX ODL version number and click on 'zip' to download to a location on your local machine. 
 
@@ -59,10 +44,10 @@ In a terminal on your local machine, unzip the file. This will create a new dire
 following subdirectories, grouped by FRINX ODL features: 
 
 
-* ``Infrastructure``          - `Bundle API <FRINX_Features_User_Guide/using-the-frinx-api-bundle.md>`_\ , `Clustering <Operations_Manual/clustering-overview>`_
-* ``L2VPN Service Module``    - `L2VPN <FRINX_Features_User_Guide/l2vpn/l2vpn-service-module.md>`_
-* ``L3VPN Service Module``    - `L3VPN <FRINX_Features_User_Guide/l3vpn/l3vpn-service-module.md>`_
-* ``Uniconfig Framework``     - `CLI <FRINX_Features_User_Guide/cli/cli-service-module.md>`_\ , `Uniconfig <FRINX_Features_User_Guide/uniconfig/architecture/architecture.md>`_  
+* ``Infrastructure``          - `Bundle API <FRINX_Features_User_Guide/using-the-frinx-api-bundle.md>`__ , `Clustering <Operations_Manual/clustering-overview>`__
+* ``L2VPN Service Module``    - `L2VPN <FRINX_Features_User_Guide/l2vpn/l2vpn-service-module.md>`__
+* ``L3VPN Service Module``    - `L3VPN <FRINX_Features_User_Guide/l3vpn/l3vpn-service-module.md>`__
+* ``Uniconfig Framework``     - `CLI <FRINX_Features_User_Guide/cli/cli-service-module.md>`__ , `Uniconfig <FRINX_Features_User_Guide/uniconfig/architecture/architecture.md>`__  
 
 Importing FRINX Postman collection & environment files into Postman
 -------------------------------------------------------------------
@@ -86,7 +71,7 @@ Imported **Collection files** appear as folders on the left of the screen. They 
   
 
 Configuring environments
-^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 The advantage of setting environments is that you can re-use the same variable name throughout the URL and body of multiple calls, and update its value in one location.
 
@@ -119,7 +104,7 @@ CLick on the environment you wish to edit. You are then able to set values for e
 Click on **Update** to save your changes.
 
 Activating an environment
-^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Next you need to select your choice of environment from the drop-down menu in the top right of screen:
 
@@ -141,44 +126,44 @@ Versioning
 ----------
 
 Main releases
-^^^^^^^^^^^^^
+~~~~~~~~~~~~~
 
-Distinct versions of the FRINX Postman API files are `available here <https://github.com/FRINXio/Postman/releases>`_\ , and named in the following format to correspond to analogous FRINX ODL distributions:  
+Distinct versions of the FRINX Postman API files are `available here <https://github.com/FRINXio/Postman/releases>`__ , and named in the following format to correspond to analogous FRINX ODL distributions:  
 
-.. code-block::
+.. code-block:: guess
 
    release-x.x.x.frinx  
 
 
 for example 
 
-.. code-block::
+.. code-block:: guess
 
    release-3.1.1.frinx
 
 
 Release candidates
-^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~
 
-Between releases we also publish release candidate (RC) zip files `in the same location <https://github.com/FRINXio/Postman/releases>`_ which are pre-release versions in the development stage. These correspond with pre-release versions of FRINX ODL. The naming format is:  
+Between releases we also publish release candidate (RC) zip files `in the same location <https://github.com/FRINXio/Postman/releases>`__ which are pre-release versions in the development stage. These correspond with pre-release versions of FRINX ODL. The naming format is:  
 
-.. code-block::
+.. code-block:: guess
 
    release-x.x.x.rcx-frinx
 
 
 for example
 
-.. code-block::
+.. code-block:: guess
 
    release-3.1.1.rc2-frinx
 
 
 Backwards compatibility
-^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~
 
-Backwards compatibility of FRINX Postman collections:\ :raw-html-m2r:`<br>`
-``Infrastructure``        - Works with all releases of Carbon, Boron, Beryllium FRINX ODL\ :raw-html-m2r:`<br>`
-``L2VPN Service Module``  - Works with all releases of Carbon, Boron FRINX ODL\ :raw-html-m2r:`<br>`
-``L3VPN Service Module``  - Works with all releases of Carbon, Boron FRINX ODL\ :raw-html-m2r:`<br>`
+Backwards compatibility of FRINX Postman collections:
+``Infrastructure``        - Works with all releases of Carbon, Boron, Beryllium FRINX ODL
+``L2VPN Service Module``  - Works with all releases of Carbon, Boron FRINX ODL
+``L3VPN Service Module``  - Works with all releases of Carbon, Boron FRINX ODL
 ``Uniconfig Framework``   - Works only with corresponding version of FRINX ODL  

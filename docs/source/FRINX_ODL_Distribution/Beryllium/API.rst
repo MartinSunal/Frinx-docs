@@ -1,10 +1,10 @@
 
 `Documentation main page <https://frinxio.github.io/Frinx-docs/>`_  
 
-API - Postman
-=============
+FRINX API
+=========
 
-* `Download Postman (free) <#download-postman-free>`_
+* `Download Postman (free) <#download-postman-free>`__
 * `Download FRINX Postman collection and environment files <#download-frinx-postman-collection-and-environment-files>`__
 * `Importing FRINX Postman collection & environment files into Postman <#importing-frinx-postman-collection--environment-files-into-postman>`__
 

@@ -1,11 +1,6 @@
-.. role:: raw-html-m2r(raw)
-   :format: html
 
-
-`Documentation main page <https://frinxio.github.io/Frinx-docs/>`_
-
-FRINX ODL Distribution: Troubleshooting Guide
-=============================================
+Troubleshooting Guide
+=====================
 
 The troubleshooting guide is based around a :raw-html-m2r:`<a href="http://i.imgur.com/2fwTem4.png" title="flow chart">flow chart</a>`.
 
