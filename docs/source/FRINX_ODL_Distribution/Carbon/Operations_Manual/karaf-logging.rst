@@ -14,7 +14,7 @@ INFO is less verbose and is a good compromise in terms of verbosity and effectiv
 Check logging level
 -------------------
 
-After `starting FRINX ODL <running-frinx-odl-after-activation>`_\ , first check the logging level currently set for each feature:  
+After :doc:`starting FRINX ODL <running-frinx-odl-after-activation>`, first check the logging level currently set for each feature:  
 
 Within the karaf console type:
 

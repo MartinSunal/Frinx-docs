@@ -37,7 +37,7 @@ RADIUS configuration
 
 Within your FRINX distribution directory structure, go to the /etc directory and edit the *shiro.ini* file. Under "[main]" enter the following four lines of text:
 
-..
+.. code-block:: guess
 
    radiusRealm = org.opendaylight.aaa.shiro.realm.RadiusRealm securityManager.realms = $radiusRealm\ :raw-html-m2r:`<br>`
    radiusRealm.serverIp = 172.17.0.2\ :raw-html-m2r:`<br>`
@@ -94,10 +94,10 @@ Change the username and password and save the file. Next, exit from the containe
 What is Apache Shiro?
 ^^^^^^^^^^^^^^^^^^^^^
 
-A Java Security Framework that performs authentication, authorization, cryptography, and session management and can be used to secure any application - from command line applications through mobile applications to the largest Web and enterprise applications. Its benefits are:\ :raw-html-m2r:`<br>`
-• Cryptography - Keeping data secure using a cryptographic algorithm\ :raw-html-m2r:`<br>`
-• Session management - Managing user-specific sessions, even in non-Web or EJB applications\ :raw-html-m2r:`<br>`
-• Easy to use - It has a long history (5 years), previously known as the JSecurity project. Detailed documentation is available and the API is easy to use\ :raw-html-m2r:`<br>`
+A Java Security Framework that performs authentication, authorization, cryptography, and session management and can be used to secure any application - from command line applications through mobile applications to the largest Web and enterprise applications. Its benefits are:
+• Cryptography - Keeping data secure using a cryptographic algorithm
+• Session management - Managing user-specific sessions, even in non-Web or EJB applications
+• Easy to use - It has a long history (5 years), previously known as the JSecurity project. Detailed documentation is available and the API is easy to use
 • It can use many connectors, for example LDAP, RADIUS, TACAS, Diameter
 
 .. list-table::

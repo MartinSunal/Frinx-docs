@@ -1,27 +1,21 @@
-.. role:: raw-html-m2r(raw)
-   :format: html
-
-
-`Documentation main page <https://frinxio.github.io/Frinx-docs/>`_
-`Carbon Release Notes main page <https://frinxio.github.io/Frinx-docs/FRINX_ODL_Distribution/Carbon/release_notes.html>`_
 
 frinx-odl-distribution-3-1-7
 ----------------------------
 
-This document describes the latest changes, additions, known issues, and fixes for the Frinx ODL Distribution.\ :raw-html-m2r:`<!--more-->`
+This document describes the latest changes, additions, known issues, and fixes for the Frinx ODL Distribution.
 
 **Note that FRINX ODL distribution 3.1.7 requires Java 8 (Openjdk 1.8.0-171 or newer)**
-To install Java:\ :raw-html-m2r:`<br>`
+To install Java:
 Ubuntu: In a terminal type
 
-.. code-block::
+.. code-block:: guess
 
    sudo apt-get install openjdk-8-jre
 
 
 CentOS: In a terminal type
 
-.. code-block::
+.. code-block:: guess
 
    sudo yum install java-1.8.0-openjdk
 
@@ -114,7 +108,7 @@ Unified topology
 
 * **AutoCommit is set to TRUE by default for all netconf sessions** - Auto commit sends any update to netconf devices in a dedicated transaction. This is to work around netconf issues of Network devices. To disable the auto commit feature for a specific device, set useAutoCommit() to false in any of its units
 
-  * **Current settings**\ :
+  * **Current settings**:
 
     * XR 6.1.X      TRUE
     * XR 6.2.X +    FALSE
@@ -155,25 +149,22 @@ Swagger
 * **Southbound client code generated from OpenAPI definition available for Python and Go clients** - Client code library, encapsulating REST calls no available for external applications interacting with southbound (cli and netconf topology)
 * **Example LACP service implementation using generated Swagger based client code**
 
-  * `https://github.com/FRINXio/Lacp-service-labdocs <https://github.com/FRINXio/Lacp-service-labdocs>`_
+  * `https://github.com/FRINXio/Lacp-service-labdocs <https://github.com/FRINXio/Lacp-service-labdocs>`__
 
-For more information and download links, please, visit `Swagger documentation page <https://frinxio.github.io/Frinx-docs/FRINX_ODL_Distribution/Carbon/FRINX_Features_User_Guide/swagger-docs.html>`_
+For more information and download links, please, visit `Swagger documentation page <https://frinxio.github.io/Frinx-docs/FRINX_ODL_Distribution/Carbon/FRINX_Features_User_Guide/swagger-docs.html>`__
 
 L3VPN service module
 ~~~~~~~~~~~~~~~~~~~~
-
 
 * **No longer supported** - The L3VPN implementation native to FRINX ODL will no longer be supported
 
 L2VPN service module
 ~~~~~~~~~~~~~~~~~~~~
 
-
 * **No longer supported** - The L2VPN implementation native to FRINX ODL will no longer be supported
 
 Known Issues
 ^^^^^^^^^^^^
-
 
 #. odl-netconf-clustered-topology:
 

@@ -42,11 +42,11 @@ FRINX ODL - Install features
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-#. First, `start FRINX ODL <../../Operations_Manual/running-frinx-odl-after-activation.md>`_. 
+1. First, :doc:`start FRINX ODL <../../Operations_Manual/running-frinx-odl-after-activation>`. 
 
    * Wait for 3 minutes to ensure the start up process is complete.  
 
-#. Once the karaf terminal is running, install the following features:  
+2. Once the karaf terminal is running, install the following features:  
 
 .. code-block:: guess
 
@@ -56,11 +56,11 @@ Postman - Import collection
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-#. To download and use FRINX pre-configured Postman REST calls with L3VPN - see `this page <../../API.md>`_. 
+#. To download and use FRINX pre-configured Postman REST calls with L3VPN - see :doc:`this page <../../API>`. 
 #. Follow that guide to import the file ``postman_collection_L3VPN_service.json`` from the directory ``L3VPN Service Module``.
-#. `Configure an environment in Postman <../../API.md>`_ where you set a value for ``odl_ip``.
+#. :doc:`Configure an environment in Postman <../../API>` where you set a value for ``odl_ip``.
 
-Your system is now ready. To provision L3VPN see the `Usage - Operations Guide <#usage---operations-guide>`_ below.
+Your system is now ready. To provision L3VPN see the `Usage - Operations Guide <#usage-operations-guide>`__ below.
 
 Introduction
 ------------
@@ -148,7 +148,7 @@ Spoke sites in the VPN can communicate with each other only through the hub site
 Usage - Operations Guide
 ------------------------
 
-To import the necessary Postman collection file see the section `Postman - Import collection <#postman---import-collection>`_ at the top of this page.  
+To import the necessary Postman collection file see the section `Postman - Import collection <#postman---import-collection>`__ at the top of this page.  
 
 That file contains several REST calls for establishing a PE-routers connection and creating or deleting L3VPN instances, for which we provide guidance below:
 
@@ -523,7 +523,7 @@ The API is described using YANG modules. An external application can consume the
 * The L3VPN service module provides domain-specific abstraction where the abstraction describes attributes of VPNs and sites instead of configuration of network elements. 
 * The FRINX ODL controller translates the abstraction to network element configuration.
 
-`ietf-l3vpn-svc@2018-01-19.yang <ietf-l3vpn-svc@2018-01-19.yang>`__ (Click link to download)
+:download:`ietf-l3vpn-svc@2018-01-19.yang <ietf-l3vpn-svc@2018-01-19.yang>` (Click link to download)
 
 The original YANG is from `RFC 8299 <https://tools.ietf.org/html/rfc8299>`__. This YANG module is modified in order to reuse its parts and is extended with L3VPN Provider elements.
 
@@ -533,7 +533,7 @@ The YANG module contains one root statement and one RPC:
 * **container l3vpn-svc** – represents intended state which is stored in CONF DS and actual state stored in OPER DS
 * **rpc commit-l3vpn-svc** – starts processing intent of L3VPN service.
 
-`l3vpn-svc-aug@2018-04-04.yang <l3vpn-svc-aug@2018-04-04.png>`__ (Click link to download)
+:download:`l3vpn-svc-aug@2018-04-04.yang <l3vpn-svc-aug@2018-04-04.yang>` (Click link to download)
 
 Augments ietf-l3vpn-svc module with statements which are needed for configuration of L3VPN.
 
@@ -541,7 +541,7 @@ Known Limitations
 ~~~~~~~~~~~~~~~~~
 
 
-* Implementation of L3VPN provider does not support all statements in ietf-l3vpn-svc@2018-01-19.yang. Unsupported statements can be found in YANG deviations.
+* Implementation of L3VPN provider does not support all statements in :download:`ietf-l3vpn-svc@2018-01-19.yang <ietf-l3vpn-svc@2018-01-19.yang>`. Unsupported statements can be found in YANG deviations.
 * L3VPN Provider does not support reconciliation, therefore only L3VPN created via L3VPN Provider are visible through the API.
 
 Other limitations:

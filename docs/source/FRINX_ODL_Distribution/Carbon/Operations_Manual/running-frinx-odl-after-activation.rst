@@ -9,14 +9,14 @@ Operating the FRINX ODL Distribution
 
 * `Operating in the background <#operating-in-the-background>`__
 
-  * `Starting <#starting-1>`__
+  * `Starting in the background <#starting-in-the-background>`__
   * `Confirming karaf is running <#confirming-karaf-is-running>`__
   * `Connecting to the background process <#connecting-to-the-background-process>`__
-  * `Stopping <#stopping-1>`__
+  * `Stopping in the background <#stopping-in-the-background>`__
 
 * `Operating in 'server' mode (karaf in the foreground, without the console) <#operating-in-server-mode-karaf-in-the-foreground-without-the-console>`_
 
-  * `Starting <#starting-2>`__
+  * `Starting in server mode <#starting-in-server-mode>`__
   * `Confirming karaf is running <#confirming-karaf-is-running-1>`__
   * `Stopping the background process <#stopping-the-background-process>`__
 
@@ -69,7 +69,7 @@ To stop from within the karaf console there are three options:
 
 3. Type:
 
-   .. code-block:: guess
+.. code-block:: guess
 
        shutdown
 
@@ -78,8 +78,8 @@ When prompted to confirm, type 'yes'.
 Operating in the background
 ---------------------------
 
-Starting
-~~~~~~~~
+Starting in the background
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In your Frinx ODL Distribution directory, for example /home/username/distribution-karaf-3.1.0.frinx, type
 
@@ -134,8 +134,8 @@ When connected to the background process, you can shutdown the FRINX ODL server 
 
        shutdown
 
-Stopping
-~~~~~~~~
+Stopping in the background
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Type
 
@@ -146,8 +146,8 @@ Type
 Operating in 'server' mode (karaf in the foreground, without the console)
 -------------------------------------------------------------------------
 
-Starting
-~~~~~~~~
+Starting in server mode
+~~~~~~~~~~~~~~~~~~~~~~~
 
 Start in your FRINX ODL Distribution directory, for example /home/username/distribution-karaf-3.1.0.frinx, type:
 

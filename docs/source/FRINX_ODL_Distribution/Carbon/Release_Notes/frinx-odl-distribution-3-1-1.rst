@@ -1,16 +1,10 @@
-.. role:: raw-html-m2r(raw)
-   :format: html
-
-
-`Documentation main page <https://frinxio.github.io/Frinx-docs/>`_
-`Carbon Release Notes main page <https://frinxio.github.io/Frinx-docs/FRINX_ODL_Distribution/Carbon/release_notes.html>`_
 
 frinx-odl-distribution-3-1-1
 ----------------------------
 
-This document describes the latest changes, additions, known issues, and fixes for the Frinx ODL Distribution.\ :raw-html-m2r:`<!--more-->`
+This document describes the latest changes, additions, known issues, and fixes for the Frinx ODL Distribution.
 
-**Note: Frinx CLI plugin safe command execution - Frinx ODL distribution 3.1.1 introduces safe command execution to the `Frinx CLI plugin <../FRINX_Features_User_Guide/cli/cli-service-module.md>`_. This forces the cli session to wait for the device to echo back each command before issuing another command. To implement safe command execution, remove the following line (boxed in red in the image below) when issuing the Mount IOS XR cli REST call within Postman. For more info on using the Frinx API and Postman see `our guide <../API.md>`_\ **
+**Note:** Frinx CLI plugin safe command execution - Frinx ODL distribution 3.1.1 introduces safe command execution to the :doc:`Frinx CLI plugin <../FRINX_Features_User_Guide/cli/cli-service-module>`. This forces the cli session to wait for the device to echo back each command before issuing another command. To implement safe command execution, remove the following line (boxed in red in the image below) when issuing the Mount IOS XR cli REST call within Postman. For more info on using the Frinx API and Postman see :doc:`our guide <../API>`.
 
 
 .. image:: safe-command-execution.png
@@ -19,7 +13,7 @@ This document describes the latest changes, additions, known issues, and fixes f
 
 
 **Note that FRINX ODL distribution 3.1.1 requires Java 8 (Openjdk 1.8.0-171 or newer)**
-To install Java: :raw-html-m2r:`<br>`
+To install Java:
 Ubuntu: In a terminal type
 
 .. code-block:: guess
@@ -67,10 +61,11 @@ Known Issues
    * *Workaround is to check connection status under CLI/NETCONF node*
    * Uniconfig node is not removed from CONF DS when CLI/NETCONF node is unmount
    * *Workaround is to remove uniconfig node manually e.g.:*
-     .. code-block:: guess
+     
+.. code-block:: guess
 
         curl -X DELETE \
-        http://192.168.56.11:8181/restconf/config/network-topology:network-topology/topology/uniconfig/node/IOSXR \
+        http://192.168.56.11:8181/restconf/config/network-topology:network-topology/topology/uniconfig/node/IOSXR
         -H 'content-type: application/json'
 
    * Create/update/delete of BFD attributes on LAG does not work

@@ -50,7 +50,7 @@ Edit the file to remove the '#' in front of **odlFeaturesBoot** and specify whic
 
 odlFeaturesBoot=odl-restconf,odl-netconf-connector-all
 
-For a list of available features, first start FRINX ODL (\ `see our guide <running-frinx-odl-after-activation>`_\ ) and enter the following command within the karaf terminal:
+For a list of available features, first start FRINX ODL :doc:`see our guide <running-frinx-odl-after-activation>` and enter the following command within the karaf terminal:
 
 .. code-block:: guess
 

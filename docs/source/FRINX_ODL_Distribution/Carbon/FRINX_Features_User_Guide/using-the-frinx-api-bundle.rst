@@ -7,7 +7,7 @@ FRINX ODL - Install features
 
 To use this functionality, run the following command in the karaf console:
 
-.. code-block::
+.. code-block:: guess
 
    feature:install frinx-installer-backend
 
@@ -18,9 +18,9 @@ Postman - Import collection
 ---------------------------
 
 
-#. To download and use FRINX pre-configured Postman REST calls - see `this page <../API.md>`_. 
+#. To download and use FRINX pre-configured Postman REST calls - see :doc:`this page <../API>`. 
 #. Follow that guide to import the file ``postman_collection_FRINX API Bundle.json`` from the directory ``Infrastructure``.
-#. `Configure an environment in Postman <../API.md>`_ where you set a value for ``odl_ip``.
+#. Configure an environment in Postman :doc:`here <../API>` where you set a value for ``odl_ip``.
 
 Usage - Operations Guide
 ------------------------
@@ -32,7 +32,7 @@ This allows a list of features to be extracted without starting up karaf. Each f
 
 name - version - repository - description - installed (boolean value, whether it is installed or not)
 
-You can run either:\ :raw-html-m2r:`<br>`
+You can run either:
 With Postman REST call ``features list`` which is already set up as follows:  
 
 
@@ -43,7 +43,7 @@ With Postman REST call ``features list`` which is already set up as follows:
 
    http://[host]:[port]/restconf/operational/installer:features
 
-Example output:\ :raw-html-m2r:`<br>`
+Example output:
 
 .. image:: features-list.JPG
    :target: features-list.JPG
@@ -52,7 +52,8 @@ Example output:\ :raw-html-m2r:`<br>`
 
 
 * Or by typing the following in a terminal window:
-  .. code-block:: bash
+
+.. code-block:: bash
 
      curl 'http://localhost:8181/restconf/operational/installer:features' -H 'Host: localhost:8181' -H 'Accept: application/json, text/plain, */*' -H 'Accept-Language: en-US,en;q=0.5' -H 'Authorization: Basic YWRtaW46YWRtaW4=' -X get
 
@@ -154,7 +155,7 @@ With Postman REST call ``monitor-resources`` which is already set up as follows:
 
    http://[host]:[port]/restconf/operations/installer:monitor-resources
 
-Example output:\ :raw-html-m2r:`<br>`
+Example output:
 
 .. image:: monitor-resources.JPG
    :target: monitor-resources.JPG
@@ -163,7 +164,8 @@ Example output:\ :raw-html-m2r:`<br>`
 
 
 * Or by typing the following in a terminal window:
-  .. code-block:: bash
+  
+.. code-block:: bash
 
      curl 'http://localhost:8181/restconf/operations/installer:monitor-resources' -H 'Host: localhost:8181' -H 'Content-Type: application/json;charset=utf-8' -H 'Authorization: Basic YWRtaW46YWRtaW4=' -X post
 

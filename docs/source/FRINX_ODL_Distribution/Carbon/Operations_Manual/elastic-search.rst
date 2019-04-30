@@ -13,7 +13,7 @@ Elasticsearch
 Installation
 ------------
 
-1. If you have not already done so, `download the FRINX ODL distribution <https://frinx.io//downloads>`__ and `install it <running-frinx-odl-initial.md>`__
+1. If you have not already done so, `download the FRINX ODL distribution <https://frinx.io//downloads>`__ and :doc:`install it <running-frinx-odl-initial>`
 2. `Install Elasticsearch <https://www.elastic.co/guide/en/elasticsearch/reference/current/install-elasticsearch.html>`__
 
 In the unpackaged folder, start elasticsearch with
@@ -66,7 +66,7 @@ Backup your old config file:
    cp org.ops4j.pax.logging.cfg org.ops4j.pax.logging.cfg.bkp
 
 
-Copy `org.ops4j.pax.logging.cfg <org.ops4j.pax.logging.cfg>`__ into the same folder. The root logger section (near the top) of this file has been adjusted to log to elastic search.
+Copy :download:`org.ops4j.pax.logging.cfg <org.ops4j.pax.logging.cfg>` into the same folder. The root logger section (near the top) of this file has been adjusted to log to elastic search.
 
 Configure Logstash
 ~~~~~~~~~~~~~~~~~~
@@ -80,11 +80,11 @@ From your logstash directory(the directory created from unpackaging the download
    cd config
 
 
-Copy this template `logstash.conf file <logstash.conf>`__ into that config directory.
+Copy this template :download:`logstash.conf file <logstash.conf>` into that config directory.
 
 Edit line 7 of logstash.conf to point to karaf_home/data/log/karaf.log (it is currently set to /mnt/karaf.log).
 
-Put the `odl file <odl>`_ in /mnt/patterns/ or whatever directory you choose to set in line 18 of logstash.conf. For more info on custom patterns please see https://www.elastic.co/guide/en/logstash/current/plugins-filters-grok.html#_custom_patterns
+Put the :download:`odl file <odl>` in /mnt/patterns/ or whatever directory you choose to set in line 18 of logstash.conf. For more info on custom patterns please see https://www.elastic.co/guide/en/logstash/current/plugins-filters-grok.html#_custom_patterns
 
 For more info on logstash and log4j see the link `here <https://www.elastic.co/guide/en/logstash/current/getting-started-with-logstash.html>`__ and `here <https://www.elastic.co/guide/en/logstash/current/plugins-inputs-log4j.html>`__
 
@@ -96,15 +96,11 @@ We now need to start logstash. Move to your main logstash folder:
 
    cd ..
 
-
-
 The start logstash with
 
 .. code-block:: guess
 
    ./bin/logstash -f config/frinx.conf
-
-
 
 Operation
 ---------
@@ -116,8 +112,6 @@ Then type
 .. code-block:: guess
 
    ./bin/karaf
-
-
 
 All logging information is now logged to an Elasticsearch node though Logstash. This information can be analysed with Kibana. Open Kibana in a Web browser by going to http://localhost:5601
 

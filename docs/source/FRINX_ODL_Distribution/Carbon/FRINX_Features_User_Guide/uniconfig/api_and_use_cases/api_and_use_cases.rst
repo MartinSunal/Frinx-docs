@@ -359,7 +359,7 @@ when intended uniconfig nodes are overwritten by snapshot nodes.
 Snapshot Manager API description
 --------------------------------
 
-`snapshot-manager.yang <yang/snapshot-manager.yang>`__
+:download:`snapshot-manager.yang <snapshot-manager.yang>`
 
 *NOTE: mouse hover on elements in tree representation shows description*
 

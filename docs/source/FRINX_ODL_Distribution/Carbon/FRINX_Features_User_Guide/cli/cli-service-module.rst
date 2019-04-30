@@ -83,7 +83,7 @@ If you require more detailed logging, run the following command in the karaf ter
 Postman - Import collection
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-First follow the instructions `here <../../API.md>`__ to download and use FRINX pre-configured Postman REST calls.
+First follow the instructions :doc:`here <../../API>` to download and use FRINX pre-configured Postman REST calls.
 
 You'll be able to select the FRINX API version that maps to the version of FRINX ODL you are using. The ``Uniconfig Framework`` subdirectory contains the files needed to interact with the CLI.
 
@@ -129,9 +129,9 @@ How to mount and manage IOS devices over REST
 +++++++++++++++++++++++++++++++++++++++++++++
 
 The easiest way is to use one of the REST calls FRINX has already created and packaged in the `FRINX API <../../API.md>`_.
-The **FRINX UNIFIED** postman collection (\ ``postman_collection_unified.json``\ ) accessible via that link is  contained within the ``Uniconfig Framework`` directory of the download. It can be imported into Postman and contains subfolders with collections for various devices e.g. **IOS XR**\ , **IOS Classic**\ , **Junos**.  
+The **FRINX UNIFIED** postman collection (``postman_collection_unified.json``) accessible via that link is  contained within the ``Uniconfig Framework`` directory of the download. It can be imported into Postman and contains subfolders with collections for various devices e.g. **IOS XR**, **IOS Classic**, **Junos**.  
 
-These contain subfolders **XR Mount**\ , **Classic Mount** and **Junos Mount** respectively, with pre-configured calls for mounting those devices. As explained `here <../../API.md>`__ you will need to import the relevant environment file and update its variables - this is because the calls contains several of these variables (visible in double sets of curly braces in the following image)
+These contain subfolders **XR Mount**, **Classic Mount** and **Junos Mount** respectively, with pre-configured calls for mounting those devices. As explained :doc:`here <../../API>`, you will need to import the relevant environment file and update its variables - this is because the calls contains several of these variables (visible in double sets of curly braces in the following image)
 
 Once mounted, several other operations can be undertaken using the calls contained within the other Postman collection subfolders e.g. *General Information, Interface, static route*.
 
@@ -423,7 +423,7 @@ That's why it is advised to turn off reconciliation on the CLI layer when using 
 Supported devices
 -----------------
 
-Please click `here <cli_supported_devices.md>`__ for a structured list of device types currently supported by the CLI southbound plugin and configuration aspects implemented for them.
+Please click :doc:`here <cli_supported_devices>` for a structured list of device types currently supported by the CLI southbound plugin and configuration aspects implemented for them.
 
 For a hands-on tour of the CLI service module from within your browser, please try our `playground <http://46.229.232.136:7777/>`__
 
@@ -458,7 +458,7 @@ LazyCli mechanism
 * If a command is executed while connection was silently closed, the connection will be reestablished
 * If the silent reconnect fails, error is reported to upper layers and full reconnect is issued. Just like in case of KeppaliveCli
 
-**Failure detection**\ : To verify that commands do not run infinitely after every command, (ENTER) command is executed. That has to be completed before *command-timeout* is reached. If the (ENTER) command fails to execute, full reconnect is issued.
+**Failure detection**: To verify that commands do not run infinitely after every command, (ENTER) command is executed. That has to be completed before *command-timeout* is reached. If the (ENTER) command fails to execute, full reconnect is issued.
 
 
 .. image:: LazyCli_connection.png

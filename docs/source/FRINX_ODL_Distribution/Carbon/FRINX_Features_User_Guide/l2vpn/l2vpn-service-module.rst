@@ -50,11 +50,11 @@ FRINX ODL - Install features
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-#. First, `start FRINX ODL <../../Operations_Manual/running-frinx-odl-after-activation.md>`_. 
+1. First, :doc:`start FRINX ODL <../../Operations_Manual/running-frinx-odl-after-activation>`. 
 
    * Wait for 3 minutes to ensure the start up process is complete.  
 
-#. Then, in the karaf terminal which will have started, install two features - RESTCONF and the l2vpn provider:  
+2. Then, in the karaf terminal which will have started, install two features - RESTCONF and the l2vpn provider:  
 
 .. code-block:: javascript
 
@@ -68,9 +68,9 @@ Postman - Import collection
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-#. To download and use FRINX pre-configured Postman REST calls with L2VPN - see `this page <../../API.md>`_. 
+#. To download and use FRINX pre-configured Postman REST calls with L2VPN - see :doc:`this page <../../API>`. 
 #. Follow that guide to import the file ``postman_collection_L2VPN_IOS-XRv.json`` from the directory ``L2VPN Service Module``.
-#. `Configure an environment in Postman <../../API.md>`_ where you set a value for ``odl_ip``.
+#. `Configure an environment in Postman :doc:'here <../../API.md>, where you set a value for ``odl_ip``.
 
 Your system is now ready. To provision L2VPN see the `Usage - Operations Guide <#usage---operations-guide>`_ below.
 
@@ -489,7 +489,7 @@ ietf-l2vpn@2017-08-02.yang
 
 
 * The original YANG is from `RFC draft - YANG Data Model for MPLS-based L2VPN <https://tools.ietf.org/html/draft-ietf-bess-l2vpn-yang-05>`_. 
-* This YANG module is modified due to compatibility with OpenDaylight and is extended with L2VPN Provider elements - see the modified YANG module `ietf-l2vpn@2017-08-02.yang <ietf-l2vpn@2017-08-02.yang>`_
+* This YANG module is modified due to compatibility with OpenDaylight and is extended with L2VPN Provider elements - see the modified YANG module :download:`ietf-l2vpn@2017-08-02.yang <ietf-l2vpn@2017-08-02.yang>`.
 
 The YANG module contains 2 root statements and one RPC:
 
@@ -581,7 +581,7 @@ Known Limitations
 ~~~~~~~~~~~~~~~~~
 
 
-* Implementation of L2VPN provider does not support all statements in ietf-l2vpn@2017-08-02.yang.
+* Implementation of L2VPN provider does not support all statements in :download:`ietf-l2vpn@2017-08-02.yang <ietf-l2vpn@2017-08-02.yang>`.
 
   * All supported elements are listed in the Postman collection. 
 

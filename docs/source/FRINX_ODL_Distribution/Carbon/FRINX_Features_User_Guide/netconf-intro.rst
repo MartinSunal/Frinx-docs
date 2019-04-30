@@ -51,7 +51,7 @@ Preconditions:
 #. Wait until log displays following entry: RemoteDevice{controller-config}: NETCONF connector initialized successfully
    To configure a new netconf-connector you need to send following request to RESTCONF:
 
-   .. code-block:: guess
+.. code-block:: guess
 
       POST   http://localhost:8181/restconf/config/network-topology:network-topology/topology/topology-netconf/node/controller-config/yang-ext:mount/config:modules
    Headers:  
@@ -60,7 +60,7 @@ Preconditions:
 * Accept application/xml
 * Content-Type application/xml
 
-   .. code-block:: guess
+.. code-block:: guess
 
    <module xmlns="urn:opendaylight:params:xml:ns:yang:controller:config">
      <type xmlns:prefix="urn:opendaylight:params:xml:ns:yang:controller:md:sal:connector:netconf">prefix:sal-netconf-connector</type>
@@ -98,7 +98,7 @@ Preconditions:
 
 This spawns a new netconf-connector which tries to connect to (or mount) a NETCONF device at 127.0.0.1 and port 830. You can check the configuration of config-subsystem’s configuration datastore. The new netconf-connector will now be present there. Just invoke:  
 
-   .. code-block:: guess
+.. code-block:: guess
 
    GET   http://localhost:8181/restconf/config/network-topology:network-topology/topology/topology-netconf/node/controller-config/yang-ext:mount/config:modules
 
@@ -106,7 +106,7 @@ The response will contain the module for new-netconf-device.
 
 Right after the new netconf-connector is created, it writes some useful metadata into the datastore of MD-SAL under the network-topology subtree. This metadata can be found at:  
 
-   .. code-block:: guess
+.. code-block:: guess
 
    GET http://localhost:8181/restconf/operational/network-topology:network-topology/
 
@@ -122,7 +122,7 @@ The netconf-connector in OpenDaylight relies on ietf-netconf-monitoring support 
 
 This could be a device that internally uses only ietf-inet-types YANG model with revision 2010-09-24. In the HELLO message that is sent from this device there is this capability reported:
 
-   .. code-block:: guess
+.. code-block:: guess
 
    urn:ietf:params:xml:ns:yang:ietf-inet-types?module=ietf-inet-types&revision=2010-09-24
    For such devices you only need to put the schema into folder cache/schema inside your Karaf distribution.
@@ -137,7 +137,7 @@ Compared to device that lists its YANG models in HELLO message, in this case the
 
 Netconf-connector has an optional configuration attribute called yang-module-capabilities and this attribute can contain a list of “YANG module based” capabilities. So by setting this configuration attribute, it is possible to override the “yang-module-based” capabilities reported in HELLO message of the device. To do this, we need to modify the configuration of netconf-connector by adding this XML (It needs to be added next to the address, port, username etc. configuration elements):  
 
-   .. code-block:: guess
+.. code-block:: guess
 
    <yang-module-capabilities xmlns="urn:opendaylight:params:xml:ns:yang:controller:md:sal:connector:netconf">
      <capability xmlns="urn:opendaylight:params:xml:ns:yang:controller:md:sal:connector:netconf">
@@ -157,11 +157,11 @@ It is possible to change the configuration of a running module while the whole c
 
 To update an existing netconf-connector you need to send following request to RESTCONF:  
 
-   .. code-block:: guess
+.. code-block:: guess
 
    PUT   http://localhost:8181/restconf/config/network-topology:network-topology/topology/topology-netconf/node/controller-config/yang-ext:mount/config:modules/module/odl-sal-netconf-connector-cfg:sal-netconf-connector/new-netconf-device
 
-   .. code-block:: guess
+.. code-block:: guess
 
    <module xmlns="urn:opendaylight:params:xml:ns:yang:controller:config">
      <type xmlns:prefix="urn:opendaylight:params:xml:ns:yang:controller:md:sal:connector:netconf">prefix:sal-netconf-connector</type>
@@ -197,7 +197,7 @@ To update an existing netconf-connector you need to send following request to RE
 
 Since a PUT is a replace operation, the whole configuration must be specified along with the new values for username and password. This should result in a 2xx response and the instance of netconf-connector called new-netconf-device will be reconfigured to use username bob and password passwd. New configuration can be verified by executing:  
 
-   .. code-block:: guess
+.. code-block:: guess
 
    GET   http://localhost:8181/restconf/config/network-topology:network-topology/topology/topology-netconf/node/controller-config/yang-ext:mount/config:modules/module/odl-sal-netconf-connector-cfg:sal-netconf-connector/new-netconf-device
 
@@ -208,7 +208,7 @@ Destroying Netconf-Connector While the Controller is Running
 
 Using RESTCONF one can also destroy an instance of a module. In case of netconf-connector, the module will be destroyed, NETCONF connection dropped and all resources will be cleaned. To do this, simply issue a request to following URL:  
 
-   .. code-block:: guess
+.. code-block:: guess
 
    DELETE   http://localhost:8181/restconf/config/network-topology:network-topology/topology/topology-netconf/node/controller-config/yang-ext:mount/config:modules/module/odl-sal-netconf-connector-cfg:sal-netconf-connector/new-netconf-device
 
@@ -226,7 +226,7 @@ There are three configurable parameters from REST API while mounting the device.
 
 Example of setting of described parameters at creation of netconf mountpoint - maximum connection attempts, initial delay between attempts and sleep factor:
 
-   .. code-block:: guess
+.. code-block:: guess
 
    {
       "node": [
@@ -263,7 +263,7 @@ Usually, the default soft limit is set to 1024 and hard limit to 4096.
 
 Please, open "/etc/security/limits.conf" and modify the following lines (if they already are not defined):
 
-   .. code-block:: guess
+.. code-block:: guess
 
    [user-name] soft nofile 4096
    [user-name] hard nofile 10240
@@ -273,7 +273,7 @@ Replace [user-name] by login-name of the user under whom you start ODL and logou
 
 You can check the current limits using following commands:
 
-   .. code-block:: guess
+.. code-block:: guess
 
    ulimit -Hn
    ulimit -Sn

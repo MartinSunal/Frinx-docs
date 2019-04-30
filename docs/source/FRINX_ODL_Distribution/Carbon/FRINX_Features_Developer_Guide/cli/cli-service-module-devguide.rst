@@ -28,10 +28,15 @@ CLI
 This document provides developer-level details for the FRINX CLI southbound plugin, both for the framework itself as well as for the pluggable translation units.
 
 Pre-requisite reading: - Honeycomb design documentation:
+
 https://wiki.fd.io/view/Honeycomb
+
 https://docs.fd.io/honeycomb/1.17.04/release-notes-aggregator/release_notes.html
+
 CLI plugin available presentations:
+
 https://frinxhelpdesk.atlassian.net/wiki/display/~mmarsalek/CLI+southbound+plugin+docs
+
 `CLI plugin user guide <../../FRINX_Features_User_Guide/cli/cli-service-module.html>`_  
 
 Building on honeycomb

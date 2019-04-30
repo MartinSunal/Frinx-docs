@@ -9,7 +9,7 @@ Activating the FRINX ODL Distribution
   * `Activating the FRINX ODL Distribution behind a proxy <#activating-the-frinx-odl-distribution-behind-a-proxy>`__
   * `Activating the FRINX ODL Distribution on a server without Internet access <#activating-the-frinx-odl-distribution-on-a-server-without-internet-access>`__
 
-This guide explains how to run the distribution for the first time. If you have run it previously, please see `this guide <running-frinx-odl-after-activation.md>`__
+This guide explains how to run the distribution for the first time. If you have run it previously, please see :doc:`this guide <running-frinx-odl-after-activation>`
 
 **System requirements**  
 
@@ -42,7 +42,7 @@ Please click on the following link to download a zip archive of the latest Carbo
 
 **Carbon**: `distribution-karaf-3.1.6.frinx.zip <https://license.frinx.io/download/distribution-karaf-3.1.6.frinx.zip>`_
 
-By downloading the file you accept the FRINX software agreement: `EULA <7793505-v7-Frinx-ODL-Distribution-Software-End-User-License-Agreement.pdf>`_
+By downloading the file you accept the FRINX software agreement: :download:`EULA <7793505-v7-Frinx-ODL-Distribution-Software-End-User-License-Agreement.pdf>`
 
 Activate your FRINX ODL Distribution
 ------------------------------------
@@ -75,7 +75,7 @@ In the event of interruption, the initial state can be restored by entering the 
    rm  -rf  data/ snapshots/ journal/
 
 To stop FRINX ODL safely from within the karaf console, hold the 'CTRL' key and press the 'D' key.
-For more info on operating karaf, see `Operating the FRINX ODL Distribution <running-frinx-odl-after-activation>`_
+For more info on operating karaf, see :doc:`Operating the FRINX ODL Distribution <running-frinx-odl-after-activation>`
 
 Non-standard setups
 -------------------

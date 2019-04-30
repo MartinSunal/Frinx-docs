@@ -7,12 +7,12 @@ Follow the steps below in order to configure NETCONF. Note that it doesn't matte
 Table of content
 
 * `Netconf mount <#netconf-mount>`__
-* `Add device via mdsal's netconf topology <#add-device-via-mdsals-netconf-topology>`__
+* `Add device via mdsal's netconf topology <#add-device-via-mdsal-s-netconf-topology>`__
 * `Getting config data from device <#getting-config-data-from-device>`__
 * `Getting operational data from device <#getting-operational-data-from-device>`__
 * `Getting a list of netconf devices + their connection status <#getting-a-list-of-netconf-devices-their-connection-status>`__
 * `Deleting device <#deleting-device>`__
-* `Vendor/device specific implementations <#vendordevice-specific-implementations>`__
+* `Vendor/device specific implementations <#vendor-device-specific-implementations>`__
 
   * `Using SROS 13 <#using-sros-13>`__
   * `Using SROS 140R04 <#using-sros-140r04>`__
@@ -37,7 +37,7 @@ Add device via mdsal's netconf topology
 
 Before you can add a device you must install one of the following OpenDaylight features:
 
-odl-netconf-topology\ :raw-html-m2r:`<br>`
+odl-netconf-topology
 odl-netconf-clustered-topology
 
 Then run the following curl command from a terminal, replacing the variables e.g. '${NETCONF_NAME}' with the values you configured in the previous step (Netconf mount)
@@ -99,7 +99,7 @@ Toaster example response:
 Getting operational data from device
 ------------------------------------
 
-*(SROS does not support this. For SROS devices, see the end of this document)*\ :raw-html-m2r:`<br>`
+*(SROS does not support this. For SROS devices, see the end of this document)*
 Similar to the above command, but extracts operational rather than config data. Again, replace ${ODL_HOST} with the IP address of the machine on which you are running the FRINX OpenDaylight distribution:
 
 .. code-block:: guess

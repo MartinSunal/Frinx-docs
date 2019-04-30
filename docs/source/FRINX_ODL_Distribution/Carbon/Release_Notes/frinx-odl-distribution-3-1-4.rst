@@ -1,34 +1,27 @@
-.. role:: raw-html-m2r(raw)
-   :format: html
-
-
-`Documentation main page <https://frinxio.github.io/Frinx-docs/>`_
-`Carbon Release Notes main page <https://frinxio.github.io/Frinx-docs/FRINX_ODL_Distribution/Carbon/release_notes.html>`_
 
 frinx-odl-distribution-3-1-4
 ----------------------------
 
-This document describes the latest changes, additions, known issues, and fixes for the Frinx ODL Distribution.\ :raw-html-m2r:`<!--more-->`
+This document describes the latest changes, additions, known issues, and fixes for the Frinx ODL Distribution.
 
 **Note that FRINX ODL distribution 3.1.4 requires Java 8 (Openjdk 1.8.0-171 or newer)**
-To install Java:\ :raw-html-m2r:`<br>`
+To install Java:
 Ubuntu: In a terminal type
 
-.. code-block::
+.. code-block:: guess
 
    sudo apt-get install openjdk-8-jre
 
 
 CentOS: In a terminal type
 
-.. code-block::
+.. code-block:: guess
 
    sudo yum install java-1.8.0-openjdk
 
 
 New Features, Improvements
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 
 * CLI plugin
 
@@ -46,7 +39,6 @@ New Features, Improvements
 
 Known Issues
 ~~~~~~~~~~~~
-
 
 #. odl-netconf-clustered-topology:
 

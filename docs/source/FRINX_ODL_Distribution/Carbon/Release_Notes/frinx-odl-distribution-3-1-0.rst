@@ -1,29 +1,23 @@
-.. role:: raw-html-m2r(raw)
-   :format: html
-
-
-`Documentation main page <https://frinxio.github.io/Frinx-docs/>`_
-`Carbon Release Notes main page <https://frinxio.github.io/Frinx-docs/FRINX_ODL_Distribution/Carbon/release_notes.html>`_
 
 frinx-odl-distribution-3-1-0
 ----------------------------
 
-This document describes the latest changes, additions, known issues, and fixes for the Frinx ODL Distribution.\ :raw-html-m2r:`<!--more-->`
+This document describes the latest changes, additions, known issues, and fixes for the Frinx ODL Distribution.
 
 **Update - currently the "./bin/status" command does not operate correctly - please refrain from using until further notice. We are working on a resolution to this issue.**
 
 **Note that FRINX ODL distribution 3.1.0 requires Java 8 (Openjdk 1.8.0-171 or newer)**
-To install Java:\ :raw-html-m2r:`<br>`
+To install Java:
 Ubuntu: In a terminal type
 
-.. code-block::
+.. code-block:: guess
 
    sudo apt-get install openjdk-8-jre
 
 
 CentOS: In a terminal type
 
-.. code-block::
+.. code-block:: guess
 
    sudo yum install java-1.8.0-openjdk
 
@@ -31,20 +25,16 @@ CentOS: In a terminal type
 New Features, Improvements
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-
-#. 
-   Clustering changes:
+#. Clustering changes:
 
 
    * Reduced number of shards to 4: default-config, default-operational, prefix-configuration-shard-config, prefix-configuration-shard-operational
    * Modified raft election mechanism to move shard leaders to the same node, all shards will eventually have leaders on one node
    * Entity ownership is based on which node hosts the shard leaders
 
-#. 
-   Modified daexim, including startup changes, described at https://frinxio.github.io/Frinx-docs/FRINX_ODL_Distribution/FRINX_Features_Developer_Guide/daexim.html
+#. Modified daexim, including startup changes, described at https://frinxio.github.io/Frinx-docs/FRINX_ODL_Distribution/FRINX_Features_Developer_Guide/daexim.html
 
-#. 
-   cli, unified-topology, l2vpn, l3vpn projects added
+#. cli, unified-topology, l2vpn, l3vpn projects added
 
 Known Issues
 ~~~~~~~~~~~~

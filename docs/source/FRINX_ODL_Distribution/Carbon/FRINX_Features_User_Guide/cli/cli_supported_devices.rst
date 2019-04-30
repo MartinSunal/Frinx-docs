@@ -1,7 +1,4 @@
 
-`Documentation main page <https://frinxio.github.io/Frinx-docs/>`_
-`FRINX Features User Guide main page <https://frinxio.github.io/Frinx-docs/FRINX_ODL_Distribution/Carbon/user_guide.html>`_
-
 CLI supported devices
 =====================
 
