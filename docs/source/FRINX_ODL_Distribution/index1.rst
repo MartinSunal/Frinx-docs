@@ -15,7 +15,6 @@ FRINX ODL & UniConfig
    Carbon/index1
    Beryllium/index1
    Boron/index1
-   `Translation Units Docs <https://frinxio.github.io/translation-units-docs/>`__
-
+   `Translation Units Docs <https://frinxio.github.io/translation-units-docs>`__
    Q&A.rst
    
