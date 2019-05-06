@@ -168,7 +168,7 @@ Uniconfig REST API documented with OpenAPI v2
 
 **Download** document here:
 
-`https://license.frinx.io/download/swagger-uniconfig-3.1.7.frinx.zip <https://license.frinx.io/download/swagger-uniconfig-3.1.7.frinx.zip>`__
+`https://license.frinx.io/download/swagger-uniconfig-4.2.0.frinx.zip <https://license.frinx.io/download/swagger-uniconfig-4.2.0.frinx.zip>`__
 
 ----
 
@@ -180,11 +180,11 @@ Uniconfig client code generated from OpenAPI definition available for Python and
 
 **Download** Python code library: 
 
-`https://license.frinx.io/download/swagger-uniconfig-python-3.1.7.frinx.zip <https://license.frinx.io/download/swagger-uniconfig-python-3.1.7.frinx.zip>`__
+`https://license.frinx.io/download/swagger-uniconfig-python-4.2.0.frinx.zip <https://license.frinx.io/download/swagger-uniconfig-python-4.2.0.frinx.zip>`__
 
 **Download** Go code library: 
 
-`https://license.frinx.io/download/swagger-uniconfig-go-3.1.7.frinx.zip <https://license.frinx.io/download/swagger-uniconfig-go-3.1.7.frinx.zip>`__
+`https://license.frinx.io/download/swagger-uniconfig-go-4.2.0.frinx.zip <https://license.frinx.io/download/swagger-uniconfig-go-4.2.0.frinx.zip>`__
 
 ----
 
@@ -196,7 +196,7 @@ Unified REST API documented with OpenAPI v2
 
 **Download** document here:
 
-`https://license.frinx.io/download/swagger-unified-3.1.7.frinx.zip <https://license.frinx.io/download/swagger-unified-3.1.7.frinx.zip>`__
+`https://license.frinx.io/download/swagger-unified-4.2.0.frinx.zip <https://license.frinx.io/download/swagger-unified-4.2.0.frinx.zip>`__
 
 ----
 
@@ -208,11 +208,11 @@ Unified client code generated from OpenAPI definition available for Python and G
 
 **Download** Python code library: 
 
-`https://license.frinx.io/download/swagger-unified-python-3.1.7.frinx.zip <https://license.frinx.io/download/swagger-unified-python-3.1.7.frinx.zip>`__
+`https://license.frinx.io/download/swagger-unified-python-4.2.0.frinx.zip <https://license.frinx.io/download/swagger-unified-python-4.2.0.frinx.zip>`__
 
 **Download** Go code library: 
 
-`https://license.frinx.io/download/swagger-unified-go-3.1.7.frinx.zip <https://license.frinx.io/download/swagger-unified-go-3.1.7.frinx.zip>`__
+`https://license.frinx.io/download/swagger-unified-go-4.2.0.frinx.zip <https://license.frinx.io/download/swagger-unified-go-4.2.0.frinx.zip>`__
 
 ----
 
@@ -224,7 +224,7 @@ Southbound REST API documented with OpenAPI v2
 
 **Download** document here:
 
-`https://license.frinx.io/download/swagger-southbound-3.1.7.frinx.zip <https://license.frinx.io/download/swagger-southbound-3.1.7.frinx.zip>`__
+`https://license.frinx.io/download/swagger-southbound-4.2.0.frinx.zip <https://license.frinx.io/download/swagger-southbound-4.2.0.frinx.zip>`__
 
 ----
 
@@ -236,11 +236,11 @@ Southbound client code generated from OpenAPI definition available for Python an
 
 **Download** Python code library:
 
-`https://license.frinx.io/download/swagger-southbound-python-3.1.7.frinx.zip <https://license.frinx.io/download/swagger-southbound-python-3.1.7.frinx.zip>`__
+`https://license.frinx.io/download/swagger-southbound-python-4.2.0.frinx.zip <https://license.frinx.io/download/swagger-southbound-python-4.2.0.frinx.zip>`__
 
 **Download** Go code library: 
 
-`https://license.frinx.io/download/swagger-southbound-go-3.1.7.frinx.zip <https://license.frinx.io/download/swagger-southbound-go-3.1.7.frinx.zip>`__
+`https://license.frinx.io/download/swagger-southbound-go-4.2.0.frinx.zip <https://license.frinx.io/download/swagger-southbound-go-4.2.0.frinx.zip>`__
 
 ----
 
@@ -252,21 +252,16 @@ How to launch Swagger-UI
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-#. 
-   Download swagger-uniconfig-3.1.7.frinx.zip (The first download link on top)
+1. Download swagger-uniconfig-4.2.0.frinx.zip (The first download link on top)
 
-#. 
-   Unzip the file
+2. Unzip the file
 
-#. 
-   Go to the directory which you extracted the file in
+3. Go to the directory which you extracted the file in
 
-#. 
-   Run following command in your terminal:
+4. Run following command in your terminal:
 
 .. code-block:: guess
 
    sudo docker run -p 80:8080 -e SWAGGER_JSON=/foo/uniconfig.yaml -v $PWD:/foo swaggerapi/swagger-ui
 
-
-#. Open your browser and visit: localhost
+5. Open your browser and visit: localhost
