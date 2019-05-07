@@ -11,7 +11,6 @@ FRINX ODL & UniConfig
    Carbon/index1
    Beryllium/index1
    Boron/index1
-   Translation_units_docs_link.rst
    Q&A.rst
 
 Other Documentation
