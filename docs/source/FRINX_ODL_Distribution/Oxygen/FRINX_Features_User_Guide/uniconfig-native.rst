@@ -1,26 +1,47 @@
 
-UniConfig Native documentation
-==============================
+UniConfig Native
+================
 
 UniConfig native allows to communicate with network devices using their native YANG data models (e.g.: Cisco YANG models, JunOS Yang models, CableLabs YANG models, ...) to manage configurations. With UniConfig native, it is possible to mount NETCONF devices, sync configuration in their native format and manage those devices without the need to develop translation units.
 
 Table of content
 ================
 
-ContentContentContentContentContentContentContentContentContentContentContent
-ContentContentContentContentContentContentContentContentContentContentContent
-ContentContentContentContentContentContentContentContentContentContentContent
-ContentContentContentContentContentContentContentContentContentContentContent
-ContentContentContentContentContentContentContentContentContentContentContent
-ContentContentContentContentContentContentContentContentContentContentContent
-ContentContentContentContentContentContentContentContentContentContentContent
+*  `Activate your FRINX ODL Distribution <activate-your-frinx-odl-distribution>`__
+  *  `How to set JVM max memory <how-to-set-jvm-max-memory>`__
+*  `UniConfig-native usage <uniconfig-native-usage>`__
+  *  `Usage for Cisco XR device <usage-for-cisco-xr-device>`__
+    *  `Device setup <device-setup>`__
+      *  `Set white list and black list <set-white-list-and-black-list>`__
+    *  `Mounting of a device <mounting-of-a-device>`__
+      *  `Check if the device is mounted succesfully <check-if-the-device-is-mounted-succesfully>`__
+      *  `Check availability of the command in UniConfig <check-availability-of-the-command-in-uniconfig>`__
+      *  `Check if an interface exists on a device <chcek-if-an-interface-exists-on-a-device>`__
+    *  `Sync configuration from network <sync-configuration-from-network>`__
+    *  `Add configuration to the config datastore <add-configuration-to-the-config-datastore>`__
+    *  `Commit configuration to the device <commit-configuration-to-the-device>`__
+    *  `Calculate diff <calculate-diff>`__
+    *  `Replace config with operational <replace_config_with_operational>`__
+    *  `Snapshot <snapshot>`__
+      *  `Create a snapshot <create-a-snapshot>`__
+      *  `Replace config with snapshot <replace-config-with-snapshot>`__
+      *  `Delete a snapshot <delete-a-snapshot>`__
+    *  `Unmount device <unmount-device>`__
+  *  `Usage for Junos devices <usage-for-junos-device>`__
+    *  `Enable whitelist <enable-whitelist>`__
+    *  `Mount JunOS device <mount-junos-device>`__
+    *  `Show config <show-config>`__
+    *  `Enable interface in configuration <enable-interface-in-configuration>`__
+    *  `Disable interface in configuration <disable-interface-in-configuration>`__
+  
+
 
 Activate your FRINX ODL Distribution
 ====================================
 
 1. Activate the FRINX ODL Distribution
 
-Follow the instructions :doc:`here <running-frinx-odl-initial>`
+Follow the instructions `here <https://docs.frinx.io/FRINX_ODL_Distribution/Oxygen/Operations_Manual/running-frinx-odl-initial.html>`__
 
 2. Run the FRINX ODL Distribution
 
@@ -32,51 +53,69 @@ Enter in the FRINX ODL Distribution directory, e.g.:
 
 **NOTE**: Before running FRINX ODL it is recommended to set the Java Virtual Machine maximum memory. For small networks, 4GB Java Virtual Machine maximum memory is sufficient. For medium to large networks JVM max memory should be increased to 8GB or more.
 
-How to set JVM max memory:
+How to set JVM max memory
+-------------------------
 
-open the file:
+Open the file:
+
+.. code-block:: guess
 
 gedit ./bin/setenv
 
 edit the variable to the desired value, e.g.:
 
+.. code-block:: guess
+
 export JAVA_MAX_MEM="4G"
 
-It is valid only an integer number, and must be added
+It is valid only in form of integer number.
+**NOTE**: Do not forget to add memory unit symbol
+
 “m” or “M” to specify MB otherwise
 “g”  or “G” to specify GB
 
-(for VB: end of note)
+Run the FRINX ODL Distribution
+==============================
 
+To initiate FRINX ODL running on Karaf, use this command:
 
-Run the FRINX ODL Distribution:
+.. code-block:: guess
 
 ./bin/karaf
 
+Install the features necessary to use UniConfig-native with command below:
 
-Install the features necessary to use UniConfig-native:
+.. code-block:: guess
 
 frinx-user@root>feature:install frinx-UniConfig-native frinx-unified-topology odl-netconf-topology
 
-
 In alternative, in order to avoid to install the frinx fetures at every execution it is possible to insert them inside a configuration file. To do this open the configuration file:
+
+.. code-block:: guess
 
 gedit ./etc/org.apache.karaf.features.cfg
 
-Add to the variable “featuresBoot”  the comma separated list of features to be installed,  the variable in this case will looks like:
+Add to the variable “featuresBoot” the comma separated list of features to be installed, the variable in this case will looks like:
+
+.. code-block:: guess
+
 featuresBoot = (config,standard,region,package,kar,ssh,management,odl-jolokia),(odl-daexim-all),frinx-uniconfig-native,frinx-unified-topology,odl-netconf-topology
 
 Save and exit. 
+
 Finally run:
+
+.. code-block:: guess
+
  ./bin/karaf
 
-
 To check if the desired features are properly installed run:
+
+.. code-block:: guess
 
 frinx-user@root>feature:list
 
 And check if the needed features have a ”x” in the “Required” column
-
 
 Now FRINX ODL Distribution is properly set up to run UniConfig-native.
 
