@@ -5,34 +5,34 @@ UniConfig Native
 UniConfig native allows to communicate with network devices using their native YANG data models (e.g.: Cisco YANG models, JunOS Yang models, CableLabs YANG models, ...) to manage configurations. With UniConfig native, it is possible to mount NETCONF devices, sync configuration in their native format and manage those devices without the need to develop translation units.
 
 Table of content
-================
+----------------
 
-*  `Activate your FRINX ODL Distribution <activate-your-frinx-odl-distribution>`__
-  *  `How to set JVM max memory <how-to-set-jvm-max-memory>`__
-*  `UniConfig-native usage <uniconfig-native-usage>`__
-  *  `Usage for Cisco XR device <usage-for-cisco-xr-device>`__
-    *  `Device setup <device-setup>`__
-      *  `Set white list and black list <set-white-list-and-black-list>`__
-    *  `Mounting of a device <mounting-of-a-device>`__
-      *  `Check if the device is mounted succesfully <check-if-the-device-is-mounted-succesfully>`__
-      *  `Check availability of the command in UniConfig <check-availability-of-the-command-in-uniconfig>`__
-      *  `Check if an interface exists on a device <chcek-if-an-interface-exists-on-a-device>`__
-    *  `Sync configuration from network <sync-configuration-from-network>`__
-    *  `Add configuration to the config datastore <add-configuration-to-the-config-datastore>`__
-    *  `Commit configuration to the device <commit-configuration-to-the-device>`__
-    *  `Calculate diff <calculate-diff>`__
-    *  `Replace config with operational <replace_config_with_operational>`__
-    *  `Snapshot <snapshot>`__
-      *  `Create a snapshot <create-a-snapshot>`__
-      *  `Replace config with snapshot <replace-config-with-snapshot>`__
-      *  `Delete a snapshot <delete-a-snapshot>`__
-    *  `Unmount device <unmount-device>`__
-  *  `Usage for Junos devices <usage-for-junos-device>`__
-    *  `Enable whitelist <enable-whitelist>`__
-    *  `Mount JunOS device <mount-junos-device>`__
-    *  `Show config <show-config>`__
-    *  `Enable interface in configuration <enable-interface-in-configuration>`__
-    *  `Disable interface in configuration <disable-interface-in-configuration>`__
+  *  `Activate your FRINX ODL Distribution <activate-your-frinx-odl-distribution>`__
+    *  `How to set JVM max memory <how-to-set-jvm-max-memory>`__
+  *  `UniConfig-native usage <uniconfig-native-usage>`__
+    *  `Usage for Cisco XR device <usage-for-cisco-xr-device>`__
+      *  `Device setup <device-setup>`__
+        *  `Set white list and black list <set-white-list-and-black-list>`__
+      *  `Mounting of a device <mounting-of-a-device>`__
+        *  `Check if the device is mounted succesfully <check-if-the-device-is-mounted-succesfully>`__
+        *  `Check availability of the command in UniConfig <check-availability-of-the-command-in-uniconfig>`__
+        *  `Check if an interface exists on a device <chcek-if-an-interface-exists-on-a-device>`__
+      *  `Sync configuration from network <sync-configuration-from-network>`__
+      *  `Add configuration to the config datastore <add-configuration-to-the-config-datastore>`__
+      *  `Commit configuration to the device <commit-configuration-to-the-device>`__
+      *  `Calculate diff <calculate-diff>`__
+      *  `Replace config with operational <replace_config_with_operational>`__
+      *  `Snapshot <snapshot>`__
+        *  `Create a snapshot <create-a-snapshot>`__
+        *  `Replace config with snapshot <replace-config-with-snapshot>`__
+        *  `Delete a snapshot <delete-a-snapshot>`__
+      *  `Unmount device <unmount-device>`__
+    *  `Usage for Junos devices <usage-for-junos-device>`__
+      *  `Enable whitelist <enable-whitelist>`__
+      *  `Mount JunOS device <mount-junos-device>`__
+      *  `Show config <show-config>`__
+      *  `Enable interface in configuration <enable-interface-in-configuration>`__
+      *  `Disable interface in configuration <disable-interface-in-configuration>`__
   
 
 
@@ -60,13 +60,13 @@ Open the file:
 
 .. code-block:: guess
 
-gedit ./bin/setenv
+   gedit ./bin/setenv
 
 edit the variable to the desired value, e.g.:
 
 .. code-block:: guess
 
-export JAVA_MAX_MEM="4G"
+   export JAVA_MAX_MEM="4G"
 
 It is valid only in form of integer number.
 **NOTE**: Do not forget to add memory unit symbol
@@ -81,25 +81,25 @@ To initiate FRINX ODL running on Karaf, use this command:
 
 .. code-block:: guess
 
-./bin/karaf
+   ./bin/karaf
 
 Install the features necessary to use UniConfig-native with command below:
 
 .. code-block:: guess
 
-frinx-user@root>feature:install frinx-UniConfig-native frinx-unified-topology odl-netconf-topology
+   frinx-user@root>feature:install frinx-UniConfig-native frinx-unified-topology odl-netconf-topology
 
 In alternative, in order to avoid to install the frinx fetures at every execution it is possible to insert them inside a configuration file. To do this open the configuration file:
 
 .. code-block:: guess
 
-gedit ./etc/org.apache.karaf.features.cfg
+   gedit ./etc/org.apache.karaf.features.cfg
 
 Add to the variable “featuresBoot” the comma separated list of features to be installed, the variable in this case will looks like:
 
 .. code-block:: guess
 
-featuresBoot = (config,standard,region,package,kar,ssh,management,odl-jolokia),(odl-daexim-all),frinx-uniconfig-native,frinx-unified-topology,odl-netconf-topology
+   featuresBoot = (config,standard,region,package,kar,ssh,management,odl-jolokia),(odl-daexim-all),frinx-uniconfig-native,frinx-unified-topology,odl-netconf-topology
 
 Save and exit. 
 
@@ -107,13 +107,13 @@ Finally run:
 
 .. code-block:: guess
 
- ./bin/karaf
+   ./bin/karaf
 
 To check if the desired features are properly installed run:
 
 .. code-block:: guess
 
-frinx-user@root>feature:list
+   frinx-user@root>feature:list
 
 And check if the needed features have a ”x” in the “Required” column
 
@@ -139,27 +139,27 @@ To set the whitelist run:
 
 .. code-block:: guess
 
-curl -X PUT \
-  http://localhost:8181/restconf/config/direct-unit-matcher:direct-unit-matchers/direct-unit-matcher/xr \
-  -H 'Accept: application/json' \
-  -H 'Authorization: Basic YWRtaW46YWRtaW4=' \
-  -H 'Content-Type: application/json' \
-  -d '{
+   curl -X PUT \
+     http://localhost:8181/restconf/config/direct-unit-matcher:direct-unit-matchers/direct-unit-matcher/xr \
+     -H 'Accept: application/json' \
+     -H 'Authorization: Basic YWRtaW46YWRtaW4=' \
+     -H 'Content-Type: application/json' \
+     -d '{
 
-    "direct-unit-matcher": [
-    	{
-    	  "name": "xr",
-    	  "capability-regex-matcher":[".*Cisco.*",".*cisco.*",".*openconfig.*", ".*ietf.*"]
-    	}
-    ]
+       "direct-unit-matcher": [
+    	   {
+    	     "name": "xr",
+    	     "capability-regex-matcher":[".*Cisco.*",".*cisco.*",".*openconfig.*", ".*ietf.*"]
+    	   }
+       ]
 
-}'
+   }'
 
 To set the blacklist run:
 
 .. code-block:: guess
 
-curl -X PUT \
+   curl -X PUT \
   http://localhost:8181/restconf/config/uniconfig-manager:blacklisted-reads/blacklisted-read/xr \
   -H 'Accept: application/json' \
   -H 'Authorization: Basic YWRtaW46YWRtaW4=' \
@@ -182,7 +182,7 @@ Now, the device can be mounted with the following request
 
 .. code-block:: guess
 
-curl -X PUT \
+   curl -X PUT \
   http://localhost:8181/restconf/config/network-topology:network-topology/topology/topology-netconf/node/R1 \
   -H 'Accept: application/json' \
   -H 'Authorization: Basic YWRtaW46YWRtaW4=' \
@@ -217,7 +217,7 @@ After the device has been mounted, the connection can be checked with the follow
 
 .. code-block:: guess
 
-curl -X GET \
+   curl -X GET \
   http://localhost:8181/restconf/operational/network-topology:network-topology/topology/topology-netconf/node/R1 \
   -H 'Accept: application/json' \
   -H 'Authorization: Basic YWRtaW46YWRtaW4=' \
@@ -228,7 +228,7 @@ In case the device is still connecting console will return:
 
 .. code-block:: guess
 
-{
+   {
     "node": [
         {
             "node-id": "R1",
@@ -237,7 +237,7 @@ In case the device is still connecting console will return:
             "netconf-node-topology:port": 830
         }
     ]
-}
+   }
 
 Send again the same GET request until the device will be connected.
 
@@ -245,7 +245,7 @@ When the device is connected, the response is similar to:
 
 .. code-block:: guess
 
-{
+   {
     "node": [
         {
             "node-id": "R1",
@@ -284,7 +284,7 @@ When the device is connected, the response is similar to:
             "netconf-node-topology:port": 830
         }
     ]
-}
+   }
 
 This response body shows which are the available capabilities that have been properly loaded and which are instead the unavailable capabilities that have not been loaded with the related failing reason.
 
@@ -295,7 +295,7 @@ The following command checks that the configuration of the device is available i
 
 .. code-block:: guess
 
-curl -X GET \
+   curl -X GET \
   http://localhost:8181/restconf/config/network-topology:network-topology/topology/UniConfig/node/R1/frinx-UniConfig-topology:configuration \
   -H 'Accept: application/json' \
   -H 'Authorization: Basic YWRtaW46YWRtaW4=' \
@@ -308,7 +308,7 @@ The example of output:
 
 .. code-block:: guess
 
-{
+   {
     "frinx-UniConfig-topology:configuration": {
         "Cisco-IOS-XR-crypto-sam-cfg:crypto": {
             "Cisco-IOS-XR-crypto-ssh-cfg:ssh": {
@@ -386,7 +386,7 @@ The example of output:
             }
         }
     }
-}
+   }
 
 Check if an interface exists on a device
 ########################################
@@ -397,7 +397,7 @@ To check if the interface Loopback123 is available on device R1 run:
 
 .. code-block:: guess
 
-curl -X GET \
+   curl -X GET \
   http://localhost:8181/restconf/operational/network-topology:network-topology/topology/UniConfig/node/R1/frinx-UniConfig-topology:configuration/Cisco-IOS-XR-ifmgr-cfg:interface-configurations/interface-configuration/act/Loopback123 \
   -H 'Authorization: Basic YWRtaW46YWRtaW4=' \
   -H 'Content-Type: application/json' \
@@ -407,7 +407,7 @@ If the interface exists the response is:
 
 .. code-block:: guess
 
-{
+   {
     "interface-configuration": [
         {
             "active": "act",
@@ -418,7 +418,7 @@ If the interface exists the response is:
             ]
         }
     ]
-}
+   }
 
 **NOTE:** If it doesn't exist, a 404 http error will be returned.
 
@@ -431,7 +431,7 @@ To sync configuration from device R1 states as follows:
 
 .. code-block:: guess
 
-curl -X POST \
+   curl -X POST \
   http://localhost:8181/restconf/operations/uniconfig-manager:sync-from-network \
   -H 'Accept: application/json' \
   -H 'Authorization: Basic YWRtaW46YWRtaW4=' \
@@ -451,7 +451,7 @@ The response of a successful sync is:
 
 .. code-block:: guess
 
-{
+   {
     "output": {
         "node-sync-status-results": {
             "node-sync-status-result": [
@@ -461,7 +461,7 @@ The response of a successful sync is:
             ]
         }
     }
-}
+   }
 
 Add configuration to the config datastore
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -472,7 +472,7 @@ To add an interface "Loopback123" on the device R1, run:
 
 .. code-block:: guess
 
-curl -X PUT \
+   curl -X PUT \
   http://localhost:8181/restconf/config/network-topology:network-topology/topology/uniconfig/node/R1/frinx-uniconfig-topology:configuration/Cisco-IOS-XR-ifmgr-cfg:interface-configurations/interface-configuration/act/Loopback123 \
   -H 'Authorization: Basic YWRtaW46YWRtaW4=' \
   -H 'Content-Type: application/json' \
@@ -497,7 +497,7 @@ curl -X PUT \
             ]
         }
     ]
-}'
+   }'
 
 
 In case of successful addition of configuration you will be presented with **status 201**.
@@ -511,7 +511,7 @@ To commit configurations on device R1 run:
 
 .. code-block:: guess
 
-curl -X POST \
+   curl -X POST \
   http://localhost:8181/restconf/operations/uniconfig-manager:commit \
   -H 'Accept: application/json' \
   -H 'Authorization: Basic YWRtaW46YWRtaW4=' \
@@ -531,7 +531,7 @@ A successful response will look like this:
 
 .. code-block:: guess
 
-{
+   {
     "output": {
         "node-sync-status-results": {
             "node-sync-status-result": [
@@ -541,7 +541,7 @@ A successful response will look like this:
             ]
         }
     }
-}
+   }
 
 Calculate diff
 ~~~~~~~~~~~~~~
@@ -552,7 +552,7 @@ To calculate the diff run:
 
 .. code-block:: guess
 
-curl -X POST \
+   curl -X POST \
   http://localhost:8181/restconf/operations/uniconfig-manager:calculate-diff \
   -H 'Authorization: Basic YWRtaW46YWRtaW4=' \
   -H 'Content-Type: application/json' \
@@ -564,7 +564,7 @@ curl -X POST \
                     "node": ["R1"]
                 }
             }
-        }'
+           }'
 
 To calculate diff on all the mounted devices just leave empty the "target-nodes" field.
 The output will show the differences between config and operational.
@@ -580,7 +580,7 @@ To replace config with operational for the node R1, run:
 
 .. code-block:: guess
 
-curl -X POST \
+   curl -X POST \
   http://localhost:8181/restconf/operations/UniConfig-manager:replace-config-with-operational \
   -H 'Authorization: Basic YWRtaW46YWRtaW4=' \
   -H 'Content-Type: application/json' \
@@ -592,7 +592,7 @@ curl -X POST \
                     "node": ["R1"]
                 }
             }
-        }'
+           }'
 
 To replace the config of all the mounted devices just leave the "target-nodes" field empty.
 
@@ -600,11 +600,11 @@ A successful response will look like this:
 
 .. code-block:: guess
 
-{
+   {
     "output": {
         "result": "complete"
     }
-}
+   }
 
 Snapshot
 ~~~~~~~~
