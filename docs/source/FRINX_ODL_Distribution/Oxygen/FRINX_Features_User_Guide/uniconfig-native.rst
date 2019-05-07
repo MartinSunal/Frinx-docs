@@ -8,26 +8,39 @@ Table of content
 ----------------
 
   *  `Activate and run your FRINX ODL Distribution <#activate-and-run-your-frinx-odl-distribution>`__
+
     *  `How to set JVM max memory <#how-to-set-jvm-max-memory>`__
+
   *  `UniConfig-native usage <#uniconfig-native-usage>`__
+
     *  `Usage for Cisco XR device <#usage-for-cisco-xr-device>`__
+
       *  `Device setup <#device-setup>`__
+
         *  `Set white list and black list <#set-white-list-and-black-list>`__
+
       *  `Mounting of a device <#mounting-of-a-device>`__
+
         *  `Check if the device is mounted succesfully <#check-if-the-device-is-mounted-succesfully>`__
         *  `Check availability of the command in UniConfig <#check-availability-of-the-command-in-uniconfig>`__
         *  `Check if an interface exists on a device <#check-if-an-interface-exists-on-a-device>`__
+
       *  `Sync configuration from network <#sync-configuration-from-network>`__
       *  `Add configuration to the config datastore <#add-configuration-to-the-config-datastore>`__
+
       *  `Commit configuration to the device <#commit-configuration-to-the-device>`__
       *  `Calculate diff <#calculate-diff>`__
       *  `Replace config with operational <#replace-config-with-operational>`__
       *  `Snapshot <#snapshot>`__
+
         *  `Create a snapshot <#create-a-snapshot>`__
         *  `Replace config with snapshot <#replace-config-with-snapshot>`__
         *  `Delete a snapshot <#delete-a-snapshot>`__
+
       *  `Unmount device <#unmount-device>`__
+
     *  `Usage for Junos devices <#usage-for-junos-devices>`__
+
       *  `Enable whitelist <#enable-whitelist>`__
       *  `Mount JunOS device <#mount-junos-device>`__
       *  `Show config <#show-config>`__
