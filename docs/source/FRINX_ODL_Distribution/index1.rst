@@ -14,4 +14,7 @@ FRINX ODL & UniConfig
    Translation_units_docs_link.rst
    Q&A.rst
 
-   
+Other Documentation
+-------------------
+
+`Translation Units Docs <https://frinxio.github.io/translation-units-docs>`__
