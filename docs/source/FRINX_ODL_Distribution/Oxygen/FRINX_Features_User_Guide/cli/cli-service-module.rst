@@ -2,7 +2,7 @@
 CLI Service Module User Guide
 =============================
 
-Table of Contents:
+Table of Content:
 
 * `Usage - Setup <#usage-setup>`__
 
