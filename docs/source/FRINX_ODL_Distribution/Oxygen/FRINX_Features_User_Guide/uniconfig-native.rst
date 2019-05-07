@@ -81,10 +81,13 @@ edit the variable to the desired value, e.g.:
    export JAVA_MAX_MEM="4G"
 
 It is valid only in form of integer number.
+
 **NOTE**: Do not forget to add memory unit symbol
 
-“m” or “M” to specify MB otherwise
-“g”  or “G” to specify GB
+.. code-block:: guess
+
+   “m” or “M” to specify MB
+   “g”  or “G” to specify GB
 
 Run the FRINX ODL Distribution
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
