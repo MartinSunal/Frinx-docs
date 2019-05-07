@@ -7,7 +7,7 @@ UniConfig native allows to communicate with network devices using their native Y
 Table of content
 ----------------
 
-  *  `Activate your FRINX ODL Distribution <#activate-your-frinx-odl-distribution>`__
+  *  `Activate and run your FRINX ODL Distribution <#activate-and-run-your-frinx-odl-distribution>`__
     *  `How to set JVM max memory <#how-to-set-jvm-max-memory>`__
   *  `UniConfig-native usage <#uniconfig-native-usage>`__
     *  `Usage for Cisco XR device <#usage-for-cisco-xr-device>`__
@@ -34,8 +34,8 @@ Table of content
       *  `Enable interface in configuration <#enable-interface-in-configuration>`__
       *  `Disable interface in configuration <#disable-interface-in-configuration>`__
   
-Activate your FRINX ODL Distribution
-====================================
+Activate and run your FRINX ODL Distribution
+--------------------------------------------
 
 1. Activate the FRINX ODL Distribution
 
@@ -73,7 +73,7 @@ It is valid only in form of integer number.
 “g”  or “G” to specify GB
 
 Run the FRINX ODL Distribution
-==============================
+------------------------------
 
 To initiate FRINX ODL running on Karaf, use this command:
 
@@ -118,7 +118,7 @@ And check if the needed features have a ”x” in the “Required” column
 Now FRINX ODL Distribution is properly set up to run UniConfig-native.
 
 UniConfig-native usage
-======================
+----------------------
 
 Usage for Cisco XR device
 -------------------------
