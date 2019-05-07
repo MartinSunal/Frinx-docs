@@ -40,9 +40,9 @@ Download the FRINX ODL Distribution
 
 Please click on the following link to download a zip archive of the latest Oxygen FRINX ODL Distribution:
 
-**Oxygen**: `distribution-karaf-4.2.0.frinx.zip <https://license.frinx.io/download/distribution-karaf-4.2.0.frinx.zip>`_
+**Oxygen**: `distribution-karaf-4.2.0.frinx.zip <https://license.frinx.io/download/distribution-karaf-4.2.0.frinx.zip>`__
 
-By downloading the file you accept the FRINX software agreement: `EULA <7793505-v7-Frinx-ODL-Distribution-Software-End-User-License-Agreement.pdf>`_
+By downloading the file you accept the FRINX software agreement: `EULA <7793505-v7-Frinx-ODL-Distribution-Software-End-User-License-Agreement.pdf>`__
 
 Activate your FRINX ODL Distribution
 ------------------------------------
@@ -51,7 +51,7 @@ To activate your installation, unzip the file and open the directory.
 Enter the following commands in a terminal to start and activate FRINX ODL  
 
 **Note**: The token is unique to your user account on frinx.io and cannot be shared with other users.
-It can be found `here <https://frinx.io/my-licenses-information>`_ (you need to be logged in frinx.io to view your token)
+It can be found `here <https://frinx.io/my-licenses-information>`__ (you need to be logged in frinx.io to view your token)
 
 .. code-block:: guess
 

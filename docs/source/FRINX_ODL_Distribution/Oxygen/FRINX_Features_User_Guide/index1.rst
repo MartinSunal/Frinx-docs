@@ -1,7 +1,3 @@
-.. simpleble documentation master file, created by
-   sphinx-quickstart on Fri Mar  9 04:07:53 2018.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
 
 FRINX Features User Guide
 =========================
@@ -13,4 +9,12 @@ FRINX Features User Guide
    
    cli/index1
    uniconfig/index1
+   uniconfig-native.rst
+   daexim.rst
+   radius.rst
+   using-the-frinx-api-bundle.rst
+   restconf.rst
+   netconf-intro.rst
+   netconf-clustering.rst
+   swagger-docs.rst
    *
