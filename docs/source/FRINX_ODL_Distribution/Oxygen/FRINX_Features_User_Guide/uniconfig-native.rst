@@ -16,18 +16,18 @@ Table of content
       *  `Mounting of a device <#mounting-of-a-device>`__
         *  `Check if the device is mounted succesfully <#check-if-the-device-is-mounted-succesfully>`__
         *  `Check availability of the command in UniConfig <#check-availability-of-the-command-in-uniconfig>`__
-        *  `Check if an interface exists on a device <#chcek-if-an-interface-exists-on-a-device>`__
+        *  `Check if an interface exists on a device <#check-if-an-interface-exists-on-a-device>`__
       *  `Sync configuration from network <#sync-configuration-from-network>`__
       *  `Add configuration to the config datastore <#add-configuration-to-the-config-datastore>`__
       *  `Commit configuration to the device <#commit-configuration-to-the-device>`__
       *  `Calculate diff <#calculate-diff>`__
-      *  `Replace config with operational <#replace_config_with_operational>`__
+      *  `Replace config with operational <#replace-config-with-operational>`__
       *  `Snapshot <#snapshot>`__
         *  `Create a snapshot <#create-a-snapshot>`__
         *  `Replace config with snapshot <#replace-config-with-snapshot>`__
-        *  `Delete a snapshot <d#elete-a-snapshot>`__
+        *  `Delete a snapshot <#delete-a-snapshot>`__
       *  `Unmount device <#unmount-device>`__
-    *  `Usage for Junos devices <#usage-for-junos-device>`__
+    *  `Usage for Junos devices <#usage-for-junos-devices>`__
       *  `Enable whitelist <#enable-whitelist>`__
       *  `Mount JunOS device <#mount-junos-device>`__
       *  `Show config <#show-config>`__
