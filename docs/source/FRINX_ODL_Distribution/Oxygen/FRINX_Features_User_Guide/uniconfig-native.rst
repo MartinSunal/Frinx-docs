@@ -7,35 +7,33 @@ UniConfig native allows to communicate with network devices using their native Y
 Table of content
 ----------------
 
-  *  `Activate your FRINX ODL Distribution <activate-your-frinx-odl-distribution>`__
-    *  `How to set JVM max memory <how-to-set-jvm-max-memory>`__
-  *  `UniConfig-native usage <uniconfig-native-usage>`__
-    *  `Usage for Cisco XR device <usage-for-cisco-xr-device>`__
-      *  `Device setup <device-setup>`__
-        *  `Set white list and black list <set-white-list-and-black-list>`__
-      *  `Mounting of a device <mounting-of-a-device>`__
-        *  `Check if the device is mounted succesfully <check-if-the-device-is-mounted-succesfully>`__
-        *  `Check availability of the command in UniConfig <check-availability-of-the-command-in-uniconfig>`__
-        *  `Check if an interface exists on a device <chcek-if-an-interface-exists-on-a-device>`__
-      *  `Sync configuration from network <sync-configuration-from-network>`__
-      *  `Add configuration to the config datastore <add-configuration-to-the-config-datastore>`__
-      *  `Commit configuration to the device <commit-configuration-to-the-device>`__
-      *  `Calculate diff <calculate-diff>`__
-      *  `Replace config with operational <replace_config_with_operational>`__
-      *  `Snapshot <snapshot>`__
-        *  `Create a snapshot <create-a-snapshot>`__
-        *  `Replace config with snapshot <replace-config-with-snapshot>`__
-        *  `Delete a snapshot <delete-a-snapshot>`__
-      *  `Unmount device <unmount-device>`__
-    *  `Usage for Junos devices <usage-for-junos-device>`__
-      *  `Enable whitelist <enable-whitelist>`__
-      *  `Mount JunOS device <mount-junos-device>`__
-      *  `Show config <show-config>`__
-      *  `Enable interface in configuration <enable-interface-in-configuration>`__
-      *  `Disable interface in configuration <disable-interface-in-configuration>`__
+  *  `Activate your FRINX ODL Distribution <#activate-your-frinx-odl-distribution>`__
+    *  `How to set JVM max memory <#how-to-set-jvm-max-memory>`__
+  *  `UniConfig-native usage <#uniconfig-native-usage>`__
+    *  `Usage for Cisco XR device <#usage-for-cisco-xr-device>`__
+      *  `Device setup <#device-setup>`__
+        *  `Set white list and black list <#set-white-list-and-black-list>`__
+      *  `Mounting of a device <#mounting-of-a-device>`__
+        *  `Check if the device is mounted succesfully <#check-if-the-device-is-mounted-succesfully>`__
+        *  `Check availability of the command in UniConfig <#check-availability-of-the-command-in-uniconfig>`__
+        *  `Check if an interface exists on a device <#chcek-if-an-interface-exists-on-a-device>`__
+      *  `Sync configuration from network <#sync-configuration-from-network>`__
+      *  `Add configuration to the config datastore <#add-configuration-to-the-config-datastore>`__
+      *  `Commit configuration to the device <#commit-configuration-to-the-device>`__
+      *  `Calculate diff <#calculate-diff>`__
+      *  `Replace config with operational <#replace_config_with_operational>`__
+      *  `Snapshot <#snapshot>`__
+        *  `Create a snapshot <#create-a-snapshot>`__
+        *  `Replace config with snapshot <#replace-config-with-snapshot>`__
+        *  `Delete a snapshot <d#elete-a-snapshot>`__
+      *  `Unmount device <#unmount-device>`__
+    *  `Usage for Junos devices <#usage-for-junos-device>`__
+      *  `Enable whitelist <#enable-whitelist>`__
+      *  `Mount JunOS device <#mount-junos-device>`__
+      *  `Show config <#show-config>`__
+      *  `Enable interface in configuration <#enable-interface-in-configuration>`__
+      *  `Disable interface in configuration <#disable-interface-in-configuration>`__
   
-
-
 Activate your FRINX ODL Distribution
 ====================================
 
@@ -618,7 +616,7 @@ To create a snapshot named "snapshot1" run:
 
 .. code-block:: guess
 
-curl -X POST \
+   curl -X POST \
   http://localhost:8181/restconf/operations/snapshot-manager:create-snapshot \
   -H 'Authorization: Basic YWRtaW46YWRtaW4=' \
   -H 'Content-Type: application/json' \
@@ -638,7 +636,7 @@ A successful response will look like this:
 
 .. code-block:: guess
 
-{
+   {
     "output": {
         "result": "complete"
     }
@@ -652,7 +650,7 @@ To replace the node R1 with "snapshot1" run:
 
 .. code-block:: guess
 
-curl -X POST \
+   curl -X POST \
   http://localhost:8181/restconf/operations/snapshot-manager:replace-config-with-snapshot \
   -H 'Accept: application/json' \
   -H 'Authorization: Basic YWRtaW46YWRtaW4=' \
@@ -674,7 +672,7 @@ A successful response will look like this:
 
 .. code-block:: guess
 
-{
+   {
     "output": {
         "result": "complete"
     }
@@ -684,7 +682,7 @@ In case of failure an error message will be provided:
 
 .. code-block:: guess
 
-{
+   {
     "output": {
         "error-message": "Snapshot with name snapshot1 does not exist.",
         "result": "fail"
@@ -698,7 +696,7 @@ To delete the snapshot named "snapshot1" instead run:
 
 .. code-block:: guess
 
-curl -X POST \
+   curl -X POST \
   http://localhost:8181/restconf/operations/snapshot-manager:delete-snapshot \
   -H 'Authorization: Basic YWRtaW46YWRtaW4=' \
   -H 'Content-Type: application/json' \
@@ -713,7 +711,7 @@ A successful response will look like this:
 
 .. code-block:: guess
 
-{
+   {
     "output": {
         "result": "complete"
     }
@@ -726,7 +724,7 @@ To unmount device R1 run:
 
 .. code-block:: guess
 
-curl -X DELETE \
+   curl -X DELETE \
   http://localhost:8181/restconf/config/network-topology:network-topology/topology/topology-netconf/node/R1 \
   -H 'Authorization: Basic YWRtaW46YWRtaW4=' \
   -H 'Postman-Token: c90ca034-f0ab-40b2-b386-564496773d74' \
@@ -750,7 +748,7 @@ To set the whitelist run:
 
 .. code-block:: guess
 
-curl -X PUT \
+   curl -X PUT \
   http://localhost:8181/restconf/config/direct-unit-matcher:direct-unit-matchers/direct-unit-matcher/junos \
   -H 'Accept: application/json' \
   -H 'Authorization: Basic YWRtaW46YWRtaW4=' \
@@ -769,8 +767,11 @@ curl -X PUT \
 Mount JunOS device
 ~~~~~~~~~~~~~~~~~~
 
-This is the request to mount Junos device
-curl -X PUT \
+This is the request to mount Junos device:
+
+.. code-block:: guess
+
+   curl -X PUT \
   http://localhost:8181/restconf/config/network-topology:network-topology/topology/topology-netconf/node/junos \
   -H 'Accept: */*' \
   -H 'Authorization: Basic YWRtaW46YWRtaW4=' \
@@ -806,7 +807,7 @@ To show all the configurations loaded in config database, run:
 
 .. code-block:: guess
 
-curl -X GET \
+   curl -X GET \
   http://localhost:8181/restconf/config/network-topology:network-topology/topology/uniconfig/node/junos \
   -H 'Accept: */*' \
   -H 'Authorization: Basic YWRtaW46YWRtaW4=' \
@@ -815,7 +816,9 @@ curl -X GET \
 
 In case of success it will respond something similar to:
 
-{
+.. code-block:: guess
+
+   {
     "node": [
         {
             "node-id": "junos",
@@ -982,7 +985,7 @@ To show the configuration related to a specific interface, in this case “ge-0/
 
 .. code-block:: guess
 
-curl -X GET \
+   curl -X GET \
   http://localhost:8181/restconf/config/network-topology:network-topology/topology/uniconfig/node/junos/frinx-uniconfig-topology:configuration/configuration:configuration/interfaces/interface/ge-0%2F0%2F2 \
   -H 'Accept: */*' \
   -H 'Authorization: Basic YWRtaW46YWRtaW4=' \
@@ -993,7 +996,7 @@ The response will show the status of the interface:
 
 .. code-block:: guess
 
-{
+   {
     "interface": [
         {
             "name": "ge-0/0/2",
@@ -1011,7 +1014,7 @@ To enable the interface “ge-0/0/2” in config database, run:
 
 .. code-block:: guess
 
-curl -X PUT \
+   curl -X PUT \
   http://localhost:8181/restconf/config/network-topology:network-topology/topology/uniconfig/node/junos/frinx-uniconfig-topology:configuration/configuration:configuration/interfaces/interface/ge-0%2F0%2F2 \
   -H 'Accept: */*' \
   -H 'Authorization: Basic YWRtaW46YWRtaW4=' \
@@ -1030,7 +1033,9 @@ Disable interface in configuration
 
 To disable the interface “ge-0/0/2” in config database, run:
 
-curl -X PUT \
+.. code-block:: guess
+
+   curl -X PUT \
   http://localhost:8181/restconf/config/network-topology:network-topology/topology/uniconfig/node/junos/frinx-uniconfig-topology:configuration/configuration:configuration/interfaces/interface/ge-0%2F0%2F2 \
   -H 'Accept: */*' \
   -H 'Authorization: Basic YWRtaW46YWRtaW4=' \
@@ -1048,8 +1053,5 @@ curl -X PUT \
 }'
 
 After the configuration changes have been done on the config database, it is possible to send to the junos device with the commit request. 
-
-
-
 
 
