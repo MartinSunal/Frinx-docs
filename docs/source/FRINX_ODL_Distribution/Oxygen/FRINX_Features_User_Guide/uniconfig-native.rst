@@ -59,7 +59,7 @@ Initiate the start of FRINX ODL Distribution
 
 Enter in the FRINX ODL Distribution directory, e.g.:
 
-.. code-block:: guess
+.. code-block:: bash
 
    cd  ./distribution-karaf-4.2.1.rc1-frinx
 
@@ -70,13 +70,13 @@ Before running FRINX ODL it is recommended to set the Java Virtual Machine maxim
 
 Open the file:
 
-.. code-block:: guess
+.. code-block:: bash
 
    gedit ./bin/setenv
 
 edit the variable to the desired value, e.g.:
 
-.. code-block:: guess
+.. code-block:: bash
 
    export JAVA_MAX_MEM="4G"
 
@@ -92,25 +92,25 @@ Run the FRINX ODL Distribution
 
 To initiate FRINX ODL running on Karaf, use this command:
 
-.. code-block:: guess
+.. code-block:: bash
 
    ./bin/karaf
 
 Install the features necessary to use UniConfig-native with command below:
 
-.. code-block:: guess
+.. code-block:: bash
 
    frinx-user@root>feature:install frinx-UniConfig-native frinx-unified-topology odl-netconf-topology
 
 In alternative, in order to avoid to install the frinx fetures at every execution it is possible to insert them inside a configuration file. To do this open the configuration file:
 
-.. code-block:: guess
+.. code-block:: bash
 
    gedit ./etc/org.apache.karaf.features.cfg
 
 Add to the variable “featuresBoot” the comma separated list of features to be installed, the variable in this case will looks like:
 
-.. code-block:: guess
+.. code-block:: bash
 
    featuresBoot = (config,standard,region,package,kar,ssh,management,odl-jolokia),(odl-daexim-all),frinx-uniconfig-native,frinx-unified-topology,odl-netconf-topology
 
@@ -118,13 +118,13 @@ Save and exit.
 
 Finally run:
 
-.. code-block:: guess
+.. code-block:: bash
 
    ./bin/karaf
 
 To check if the desired features are properly installed run:
 
-.. code-block:: guess
+.. code-block:: bash
 
    frinx-user@root>feature:list
 
@@ -150,7 +150,7 @@ In order to mount a device using UniConfig native, it is necessary to explicitly
 
 To set the whitelist run:
 
-.. code-block:: guess
+.. code-block:: bash
 
  curl -X PUT \
      http://localhost:8181/restconf/config/direct-unit-matcher:direct-unit-matchers/direct-unit-matcher/xr \
@@ -169,7 +169,7 @@ To set the whitelist run:
 
 To set the blacklist run:
 
-.. code-block:: guess
+.. code-block:: bash
 
  curl -X PUT \
   http://localhost:8181/restconf/config/uniconfig-manager:blacklisted-reads/blacklisted-read/xr \
@@ -192,7 +192,7 @@ Mounting of a device
 
 Now, the device can be mounted with the following request
 
-.. code-block:: guess
+.. code-block:: bash
 
  curl -X PUT \
    http://localhost:8181/restconf/config/network-topology:network-topology/topology/topology-netconf/node/R1 \
@@ -231,7 +231,7 @@ Check if the device is mounted succesfully
 
 After the device has been mounted, the connection can be checked with the following command:
 
-.. code-block:: guess
+.. code-block:: bash
 
  curl -X GET \
   http://localhost:8181/restconf/operational/network-topology:network-topology/topology/topology-netconf/node/R1 \
@@ -242,7 +242,7 @@ After the device has been mounted, the connection can be checked with the follow
 
 In case the device is still connecting console will return:
 
-.. code-block:: guess
+.. code-block:: bash
 
    {
     "node": [
@@ -259,7 +259,7 @@ Send again the same GET request until the device will be connected.
 
 When the device is connected, the response is similar to:
 
-.. code-block:: guess
+.. code-block:: bash
 
    {
     "node": [
@@ -309,7 +309,7 @@ Check availability of the command in UniConfig
 
 The following command checks that the configuration of the device is available in UniConfig:
 
-.. code-block:: guess
+.. code-block:: bash
 
  curl -X GET \
   http://localhost:8181/restconf/config/network-topology:network-topology/topology/UniConfig/node/R1/frinx-UniConfig-topology:configuration \
@@ -322,7 +322,7 @@ The following command checks that the configuration of the device is available i
 
 The example of output:
 
-.. code-block:: guess
+.. code-block:: bash
 
    {
     "frinx-UniConfig-topology:configuration": {
@@ -411,7 +411,7 @@ It is possible to check if an interface is available on a device by checking if 
 
 To check if the interface Loopback123 is available on device R1 run:
 
-.. code-block:: guess
+.. code-block:: bash
 
  curl -X GET \
   http://localhost:8181/restconf/operational/network-topology:network-topology/topology/UniConfig/node/R1/frinx-UniConfig-topology:configuration/Cisco-IOS-XR-ifmgr-cfg:interface-configurations/interface-configuration/act/Loopback123 \
@@ -421,7 +421,7 @@ To check if the interface Loopback123 is available on device R1 run:
 
 If the interface exists the response is:
 
-.. code-block:: guess
+.. code-block:: bash
 
    {
     "interface-configuration": [
@@ -445,7 +445,7 @@ This request allows to synchronize the information from the device and update th
 
 To sync configuration from device R1 states as follows:
 
-.. code-block:: guess
+.. code-block:: bash
 
  curl -X POST \
   http://localhost:8181/restconf/operations/uniconfig-manager:sync-from-network \
@@ -465,7 +465,7 @@ To sync all the devices run the same command leaving the target-nodes field empt
 
 The response of a successful sync is:
 
-.. code-block:: guess
+.. code-block:: bash
 
    {
     "output": {
@@ -486,7 +486,7 @@ This request allows to add a configuration in the config datastore.
 
 To add an interface "Loopback123" on the device R1, run:
 
-.. code-block:: guess
+.. code-block:: bash
 
  curl -X PUT \
   http://localhost:8181/restconf/config/network-topology:network-topology/topology/uniconfig/node/R1/frinx-uniconfig-topology:configuration/Cisco-IOS-XR-ifmgr-cfg:interface-configurations/interface-configuration/act/Loopback123 \
@@ -525,7 +525,7 @@ This request allows to commit the configurations stored in the config database t
 
 To commit configurations on device R1 run:
 
-.. code-block:: guess
+.. code-block:: bash
 
  curl -X POST \
   http://localhost:8181/restconf/operations/uniconfig-manager:commit \
@@ -545,7 +545,7 @@ To commit on all the mounted devices just leave empty the "target-nodes" field.
 
 A successful response will look like this:
 
-.. code-block:: guess
+.. code-block:: bash
 
    {
     "output": {
@@ -566,7 +566,7 @@ This request allows to show the difference between the config datastore and the 
 
 To calculate the diff run:
 
-.. code-block:: guess
+.. code-block:: bash
 
  curl -X POST \
   http://localhost:8181/restconf/operations/uniconfig-manager:calculate-diff \
@@ -594,7 +594,7 @@ It is also possible to directly replace the content of the config datastore with
 
 To replace config with operational for the node R1, run:
 
-.. code-block:: guess
+.. code-block:: bash
 
  curl -X POST \
   http://localhost:8181/restconf/operations/UniConfig-manager:replace-config-with-operational \
@@ -614,7 +614,7 @@ To replace the config of all the mounted devices just leave the "target-nodes" f
 
 A successful response will look like this:
 
-.. code-block:: guess
+.. code-block:: bash
 
    {
     "output": {
@@ -632,7 +632,7 @@ Create a snapshot
 
 To create a snapshot named "snapshot1" run:
 
-.. code-block:: guess
+.. code-block:: bash
 
  curl -X POST \
   http://localhost:8181/restconf/operations/snapshot-manager:create-snapshot \
@@ -652,7 +652,7 @@ To create a snapshot of all the mounted devices just leave the "target-nodes" fi
 
 A successful response will look like this:
 
-.. code-block:: guess
+.. code-block:: bash
 
    {
     "output": {
@@ -666,7 +666,7 @@ Replace config with snapshot
 Once a snapshot has been created, can be used to replace the config datastore.
 To replace the node R1 with "snapshot1" run:
 
-.. code-block:: guess
+.. code-block:: bash
 
  curl -X POST \
   http://localhost:8181/restconf/operations/snapshot-manager:replace-config-with-snapshot \
@@ -688,7 +688,7 @@ To replace the config of all the mounted devices just leave the "target-nodes" f
 
 A successful response will look like this:
 
-.. code-block:: guess
+.. code-block:: bash
 
    {
     "output": {
@@ -698,7 +698,7 @@ A successful response will look like this:
 
 In case of failure an error message will be provided:
 
-.. code-block:: guess
+.. code-block:: bash
 
    {
     "output": {
@@ -712,7 +712,7 @@ Delete a snapshot
 
 To delete the snapshot named "snapshot1" instead run:
 
-.. code-block:: guess
+.. code-block:: bash
 
  curl -X POST \
   http://localhost:8181/restconf/operations/snapshot-manager:delete-snapshot \
@@ -727,7 +727,7 @@ To delete the snapshot named "snapshot1" instead run:
 
 A successful response will look like this:
 
-.. code-block:: guess
+.. code-block:: bash
 
    {
     "output": {
@@ -740,7 +740,7 @@ Unmount device
 
 To unmount device R1 run:
 
-.. code-block:: guess
+.. code-block:: bash
 
  curl -X DELETE \
   http://localhost:8181/restconf/config/network-topology:network-topology/topology/topology-netconf/node/R1 \
@@ -764,7 +764,7 @@ For junos device is necessary just to add a whitelist and it is not needed to bl
 
 To set the whitelist run:
 
-.. code-block:: guess
+.. code-block:: bash
 
  curl -X PUT \
   http://localhost:8181/restconf/config/direct-unit-matcher:direct-unit-matchers/direct-unit-matcher/junos \
@@ -787,7 +787,7 @@ Mount JunOS device
 
 This is the request to mount Junos device:
 
-.. code-block:: guess
+.. code-block:: bash
 
  curl -X PUT \
   http://localhost:8181/restconf/config/network-topology:network-topology/topology/topology-netconf/node/junos \
@@ -823,7 +823,7 @@ Show config
 
 To show all the configurations loaded in config database, run:
 
-.. code-block:: guess
+.. code-block:: bash
 
  curl -X GET \
   http://localhost:8181/restconf/config/network-topology:network-topology/topology/uniconfig/node/junos \
@@ -834,7 +834,7 @@ To show all the configurations loaded in config database, run:
 
 In case of success it will respond something similar to:
 
-.. code-block:: guess
+.. code-block:: bash
 
    {
     "node": [
@@ -1001,7 +1001,7 @@ Show interface configuration
 
 To show the configuration related to a specific interface, in this case “ge-0/0/2”, run:
 
-.. code-block:: guess
+.. code-block:: bash
 
  curl -X GET \
   http://localhost:8181/restconf/config/network-topology:network-topology/topology/uniconfig/node/junos/frinx-uniconfig-topology:configuration/configuration:configuration/interfaces/interface/ge-0%2F0%2F2 \
@@ -1012,7 +1012,7 @@ To show the configuration related to a specific interface, in this case “ge-0/
 
 The response will show the status of the interface:
 
-.. code-block:: guess
+.. code-block:: bash
 
    {
     "interface": [
@@ -1030,7 +1030,7 @@ Enable interface in configuration
 
 To enable the interface “ge-0/0/2” in config database, run:
 
-.. code-block:: guess
+.. code-block:: bash
 
  curl -X PUT \
   http://localhost:8181/restconf/config/network-topology:network-topology/topology/uniconfig/node/junos/frinx-uniconfig-topology:configuration/configuration:configuration/interfaces/interface/ge-0%2F0%2F2 \
@@ -1051,7 +1051,7 @@ Disable interface in configuration
 
 To disable the interface “ge-0/0/2” in config database, run:
 
-.. code-block:: guess
+.. code-block:: bash
 
  curl -X PUT \
   http://localhost:8181/restconf/config/network-topology:network-topology/topology/uniconfig/node/junos/frinx-uniconfig-topology:configuration/configuration:configuration/interfaces/interface/ge-0%2F0%2F2 \
