@@ -23,14 +23,14 @@ Data in the request must have a correctly set Content-Type field in the http hea
 The media type of the requested data has to be set in the Accept field. Get the media types for each resource by calling the OPTIONS operation. 
 Most of the paths of the pathsRestconf endpoints use `Instance Identifier <https://wiki.opendaylight.org/view/OpenDaylight_Controller:MD-SAL:Concepts#Instance_Identifier>`__. 
 
-**<identifier&gt>** is used in the explanation of the operations.
+**<identifier>** is used in the explanation of the operations.
 
 <identifier>
 ------------
 
-*  This must start with <moduleName&gt>:<nodeName&gt>> where <moduleName> is a name of the module and <nodeName> is the name of a node in the module. It is sufficient to just use <nodeName> after <moduleName&gt>:<nodeName&gt>. Each <nodeName> has to be separated by.
+*  This must start with <moduleName>:<nodeName>> where <moduleName> is a name of the module and <nodeName> is the name of a node in the module. It is sufficient to just use <nodeName> after <moduleName>:<nodeName>. Each <nodeName> has to be separated by.
 
-* <nodeName> can represent a data node which is a list or container yang built-in type. If the data node is a list, there must be defined keys of the list behind the data node name, for example, <nodeName&gt>/<valueOfKey1>/<valueOfKey2>.
+* <nodeName> can represent a data node which is a list or container yang built-in type. If the data node is a list, there must be defined keys of the list behind the data node name, for example, <nodeName>/<valueOfKey1>/<valueOfKey2>.
 
 *  The format <moduleName>:<nodeName> has to be used in this case as well. Module A has node A1. Module B augments node A1 by adding node X. Module C augments node A1 by adding node X. For clarity, it has to be known which node is X (for example: C:X). For more details about encoding, see: `RESTCONF 02 - Encoding YANG Instance Identifiers in the Request URI <https://tools.ietf.org/html/draft-bierman-netconf-restconf-02#section-5.3.1>`__.
 
