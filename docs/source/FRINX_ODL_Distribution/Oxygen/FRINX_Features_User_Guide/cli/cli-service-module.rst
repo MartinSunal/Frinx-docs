@@ -445,7 +445,6 @@ KeepaliveCli mechanism
 LazyCli mechanism
 ~~~~~~~~~~~~~~~~~
 
-
 * Lazy CLI strategy, unlike Keepalive, uses a *lazy-timeout* parameter to close the connection if no command was entered during waiting period
 * If the timeout period is reached, connection is silently closed, even though the CLI object acts as if the connection is still in use
 * If a command is executed while the lazy timeout window is open, the timeout period is reset

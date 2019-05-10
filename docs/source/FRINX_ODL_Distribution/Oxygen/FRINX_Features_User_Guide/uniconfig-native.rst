@@ -63,10 +63,10 @@ Enter in the FRINX ODL Distribution directory, e.g.:
 
    cd  ./distribution-karaf-4.2.1.rc1-frinx
 
-**NOTE**: Before running FRINX ODL it is recommended to set the Java Virtual Machine maximum memory. For small networks, 4GB Java Virtual Machine maximum memory is sufficient. For medium to large networks JVM max memory should be increased to 8GB or more.
-
 How to set JVM max memory
 +++++++++++++++++++++++++
+
+Before running FRINX ODL it is recommended to set the Java Virtual Machine maximum memory. For small networks, 4GB Java Virtual Machine maximum memory is sufficient. For medium to large networks JVM max memory should be increased to 8GB or more.
 
 Open the file:
 
@@ -84,10 +84,8 @@ It is valid only in form of integer number.
 
 **NOTE**: Do not forget to add memory unit symbol
 
-.. code-block:: guess
-
-   “m” or “M” to specify MB
-   “g”  or “G” to specify GB
+Use “m” or “M” to specify MB
+and “g”  or “G” to specify GB
 
 Run the FRINX ODL Distribution
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -154,7 +152,7 @@ To set the whitelist run:
 
 .. code-block:: guess
 
-   curl -X PUT \
+ curl -X PUT \
      http://localhost:8181/restconf/config/direct-unit-matcher:direct-unit-matchers/direct-unit-matcher/xr \
      -H 'Accept: application/json' \
      -H 'Authorization: Basic YWRtaW46YWRtaW4=' \
@@ -167,14 +165,13 @@ To set the whitelist run:
     	     "capability-regex-matcher":[".*Cisco.*",".*cisco.*",".*openconfig.*", ".*ietf.*"]
     	   }
        ]
-
-   }'
+ }'
 
 To set the blacklist run:
 
 .. code-block:: guess
 
-   curl -X PUT \
+ curl -X PUT \
   http://localhost:8181/restconf/config/uniconfig-manager:blacklisted-reads/blacklisted-read/xr \
   -H 'Accept: application/json' \
   -H 'Authorization: Basic YWRtaW46YWRtaW4=' \
@@ -188,7 +185,7 @@ To set the blacklist run:
             ]
         }
     }
-}'
+ }'
 
 Mounting of a device
 ++++++++++++++++++++
@@ -197,8 +194,8 @@ Now, the device can be mounted with the following request
 
 .. code-block:: guess
 
-   curl -X PUT \
-  http://localhost:8181/restconf/config/network-topology:network-topology/topology/topology-netconf/node/R1 \
+ curl -X PUT \
+   http://localhost:8181/restconf/config/network-topology:network-topology/topology/topology-netconf/node/R1 \
   -H 'Accept: application/json' \
   -H 'Authorization: Basic YWRtaW46YWRtaW4=' \
   -H 'Content-Type: application/json' \
@@ -214,15 +211,19 @@ Now, the device can be mounted with the following request
       "netconf-node-topology:username": "USERNAME",
       "netconf-node-topology:password": "PASSWORD"
     }
-  ]
-}'
+   ]
+ }'
 
 Caption:
 
 **R1** is the name of the node
+
 **192.168.1.214** is the ip address of the node
+
 **830** is the port number of the node
+
 **USERNAME** is the username to access the node
+
 **PASSWORD** it is the respective password
 
 Check if the device is mounted succesfully
@@ -232,7 +233,7 @@ After the device has been mounted, the connection can be checked with the follow
 
 .. code-block:: guess
 
-   curl -X GET \
+ curl -X GET \
   http://localhost:8181/restconf/operational/network-topology:network-topology/topology/topology-netconf/node/R1 \
   -H 'Accept: application/json' \
   -H 'Authorization: Basic YWRtaW46YWRtaW4=' \
@@ -252,7 +253,7 @@ In case the device is still connecting console will return:
             "netconf-node-topology:port": 830
         }
     ]
-   }
+ }
 
 Send again the same GET request until the device will be connected.
 
@@ -299,7 +300,7 @@ When the device is connected, the response is similar to:
             "netconf-node-topology:port": 830
         }
     ]
-   }
+ }
 
 This response body shows which are the available capabilities that have been properly loaded and which are instead the unavailable capabilities that have not been loaded with the related failing reason.
 
@@ -310,7 +311,7 @@ The following command checks that the configuration of the device is available i
 
 .. code-block:: guess
 
-   curl -X GET \
+ curl -X GET \
   http://localhost:8181/restconf/config/network-topology:network-topology/topology/UniConfig/node/R1/frinx-UniConfig-topology:configuration \
   -H 'Accept: application/json' \
   -H 'Authorization: Basic YWRtaW46YWRtaW4=' \
@@ -401,7 +402,7 @@ The example of output:
             }
         }
     }
-   }
+ }
 
 Check if an interface exists on a device
 ########################################
@@ -412,7 +413,7 @@ To check if the interface Loopback123 is available on device R1 run:
 
 .. code-block:: guess
 
-   curl -X GET \
+ curl -X GET \
   http://localhost:8181/restconf/operational/network-topology:network-topology/topology/UniConfig/node/R1/frinx-UniConfig-topology:configuration/Cisco-IOS-XR-ifmgr-cfg:interface-configurations/interface-configuration/act/Loopback123 \
   -H 'Authorization: Basic YWRtaW46YWRtaW4=' \
   -H 'Content-Type: application/json' \
@@ -433,7 +434,7 @@ If the interface exists the response is:
             ]
         }
     ]
-   }
+ }
 
 **NOTE:** If it doesn't exist, a 404 http error will be returned.
 
@@ -446,7 +447,7 @@ To sync configuration from device R1 states as follows:
 
 .. code-block:: guess
 
-   curl -X POST \
+ curl -X POST \
   http://localhost:8181/restconf/operations/uniconfig-manager:sync-from-network \
   -H 'Accept: application/json' \
   -H 'Authorization: Basic YWRtaW46YWRtaW4=' \
@@ -458,7 +459,7 @@ To sync configuration from device R1 states as follows:
 		}
 
 	}
-}'
+ }'
 
 To sync all the devices run the same command leaving the target-nodes field empty.
 
@@ -476,7 +477,7 @@ The response of a successful sync is:
             ]
         }
     }
-   }
+ }
 
 Add configuration to the config datastore
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -487,7 +488,7 @@ To add an interface "Loopback123" on the device R1, run:
 
 .. code-block:: guess
 
-   curl -X PUT \
+ curl -X PUT \
   http://localhost:8181/restconf/config/network-topology:network-topology/topology/uniconfig/node/R1/frinx-uniconfig-topology:configuration/Cisco-IOS-XR-ifmgr-cfg:interface-configurations/interface-configuration/act/Loopback123 \
   -H 'Authorization: Basic YWRtaW46YWRtaW4=' \
   -H 'Content-Type: application/json' \
@@ -512,7 +513,7 @@ To add an interface "Loopback123" on the device R1, run:
             ]
         }
     ]
-   }'
+ }'
 
 
 In case of successful addition of configuration you will be presented with **status 201**.
@@ -526,7 +527,7 @@ To commit configurations on device R1 run:
 
 .. code-block:: guess
 
-   curl -X POST \
+ curl -X POST \
   http://localhost:8181/restconf/operations/uniconfig-manager:commit \
   -H 'Accept: application/json' \
   -H 'Authorization: Basic YWRtaW46YWRtaW4=' \
@@ -538,7 +539,7 @@ To commit configurations on device R1 run:
                     "node": ["R1"]
                 }
             }
-        }'
+     }'
 
 To commit on all the mounted devices just leave empty the "target-nodes" field.
 
@@ -556,7 +557,7 @@ A successful response will look like this:
             ]
         }
     }
-   }
+ }
 
 Calculate diff
 ~~~~~~~~~~~~~~
@@ -567,7 +568,7 @@ To calculate the diff run:
 
 .. code-block:: guess
 
-   curl -X POST \
+ curl -X POST \
   http://localhost:8181/restconf/operations/uniconfig-manager:calculate-diff \
   -H 'Authorization: Basic YWRtaW46YWRtaW4=' \
   -H 'Content-Type: application/json' \
@@ -579,7 +580,7 @@ To calculate the diff run:
                     "node": ["R1"]
                 }
             }
-           }'
+     }'
 
 To calculate diff on all the mounted devices just leave empty the "target-nodes" field.
 The output will show the differences between config and operational.
@@ -595,7 +596,7 @@ To replace config with operational for the node R1, run:
 
 .. code-block:: guess
 
-   curl -X POST \
+ curl -X POST \
   http://localhost:8181/restconf/operations/UniConfig-manager:replace-config-with-operational \
   -H 'Authorization: Basic YWRtaW46YWRtaW4=' \
   -H 'Content-Type: application/json' \
@@ -607,7 +608,7 @@ To replace config with operational for the node R1, run:
                     "node": ["R1"]
                 }
             }
-           }'
+      }'
 
 To replace the config of all the mounted devices just leave the "target-nodes" field empty.
 
@@ -633,7 +634,7 @@ To create a snapshot named "snapshot1" run:
 
 .. code-block:: guess
 
-   curl -X POST \
+ curl -X POST \
   http://localhost:8181/restconf/operations/snapshot-manager:create-snapshot \
   -H 'Authorization: Basic YWRtaW46YWRtaW4=' \
   -H 'Content-Type: application/json' \
@@ -645,7 +646,7 @@ To create a snapshot named "snapshot1" run:
             "node": ["R1"]
         }
     }
-}'
+ }'
 
 To create a snapshot of all the mounted devices just leave the "target-nodes" field empty.
 
@@ -656,8 +657,8 @@ A successful response will look like this:
    {
     "output": {
         "result": "complete"
-    }
-}
+              }
+   }
 
 Replace config with snapshot
 ++++++++++++++++++++++++++++
@@ -667,7 +668,7 @@ To replace the node R1 with "snapshot1" run:
 
 .. code-block:: guess
 
-   curl -X POST \
+ curl -X POST \
   http://localhost:8181/restconf/operations/snapshot-manager:replace-config-with-snapshot \
   -H 'Accept: application/json' \
   -H 'Authorization: Basic YWRtaW46YWRtaW4=' \
@@ -681,7 +682,7 @@ To replace the node R1 with "snapshot1" run:
                     "node": ["R1"]
                 }
             }
-        }'
+     }'
 
 To replace the config of all the mounted devices just leave the "target-nodes" field empty.
 
@@ -692,8 +693,8 @@ A successful response will look like this:
    {
     "output": {
         "result": "complete"
-    }
-}
+              }
+   }
 
 In case of failure an error message will be provided:
 
@@ -704,7 +705,7 @@ In case of failure an error message will be provided:
         "error-message": "Snapshot with name snapshot1 does not exist.",
         "result": "fail"
     }
-}
+ }
 
 Delete a snapshot
 +++++++++++++++++
@@ -713,7 +714,7 @@ To delete the snapshot named "snapshot1" instead run:
 
 .. code-block:: guess
 
-   curl -X POST \
+ curl -X POST \
   http://localhost:8181/restconf/operations/snapshot-manager:delete-snapshot \
   -H 'Authorization: Basic YWRtaW46YWRtaW4=' \
   -H 'Content-Type: application/json' \
@@ -722,7 +723,7 @@ To delete the snapshot named "snapshot1" instead run:
     "input": {
         "name": "snapshot1"
     }
-}'
+ }'
 
 A successful response will look like this:
 
@@ -732,7 +733,7 @@ A successful response will look like this:
     "output": {
         "result": "complete"
     }
-}
+ }
 
 Unmount device
 ~~~~~~~~~~~~~~
@@ -741,7 +742,7 @@ To unmount device R1 run:
 
 .. code-block:: guess
 
-   curl -X DELETE \
+ curl -X DELETE \
   http://localhost:8181/restconf/config/network-topology:network-topology/topology/topology-netconf/node/R1 \
   -H 'Authorization: Basic YWRtaW46YWRtaW4=' \
   -H 'Postman-Token: c90ca034-f0ab-40b2-b386-564496773d74' \
@@ -765,7 +766,7 @@ To set the whitelist run:
 
 .. code-block:: guess
 
-   curl -X PUT \
+ curl -X PUT \
   http://localhost:8181/restconf/config/direct-unit-matcher:direct-unit-matchers/direct-unit-matcher/junos \
   -H 'Accept: application/json' \
   -H 'Authorization: Basic YWRtaW46YWRtaW4=' \
@@ -779,7 +780,7 @@ To set the whitelist run:
         }
     ]
     
-}'
+ }'
 
 Mount JunOS device
 ~~~~~~~~~~~~~~~~~~
@@ -788,7 +789,7 @@ This is the request to mount Junos device:
 
 .. code-block:: guess
 
-   curl -X PUT \
+ curl -X PUT \
   http://localhost:8181/restconf/config/network-topology:network-topology/topology/topology-netconf/node/junos \
   -H 'Accept: */*' \
   -H 'Authorization: Basic YWRtaW46YWRtaW4=' \
@@ -805,8 +806,8 @@ This is the request to mount Junos device:
       "netconf-node-topology:username": "USERNAME",
       "netconf-node-topology:password": "PASSWORD"
     }
-  ]
-}'
+   ]
+ }'
  
  
 Caption:
@@ -824,7 +825,7 @@ To show all the configurations loaded in config database, run:
 
 .. code-block:: guess
 
-   curl -X GET \
+ curl -X GET \
   http://localhost:8181/restconf/config/network-topology:network-topology/topology/uniconfig/node/junos \
   -H 'Accept: */*' \
   -H 'Authorization: Basic YWRtaW46YWRtaW4=' \
@@ -993,7 +994,7 @@ In case of success it will respond something similar to:
             }
         }
     ]
-}
+ }
 
 Show interface configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1002,7 +1003,7 @@ To show the configuration related to a specific interface, in this case “ge-0/
 
 .. code-block:: guess
 
-   curl -X GET \
+ curl -X GET \
   http://localhost:8181/restconf/config/network-topology:network-topology/topology/uniconfig/node/junos/frinx-uniconfig-topology:configuration/configuration:configuration/interfaces/interface/ge-0%2F0%2F2 \
   -H 'Accept: */*' \
   -H 'Authorization: Basic YWRtaW46YWRtaW4=' \
@@ -1022,7 +1023,7 @@ The response will show the status of the interface:
             ]
         }
     ]
-}
+ }
 
 Enable interface in configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1031,7 +1032,7 @@ To enable the interface “ge-0/0/2” in config database, run:
 
 .. code-block:: guess
 
-   curl -X PUT \
+ curl -X PUT \
   http://localhost:8181/restconf/config/network-topology:network-topology/topology/uniconfig/node/junos/frinx-uniconfig-topology:configuration/configuration:configuration/interfaces/interface/ge-0%2F0%2F2 \
   -H 'Accept: */*' \
   -H 'Authorization: Basic YWRtaW46YWRtaW4=' \
@@ -1043,7 +1044,7 @@ To enable the interface “ge-0/0/2” in config database, run:
             "name": "ge-0/0/2"
         }
     ]
-}'
+ }'
 
 Disable interface in configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1052,7 +1053,7 @@ To disable the interface “ge-0/0/2” in config database, run:
 
 .. code-block:: guess
 
-   curl -X PUT \
+ curl -X PUT \
   http://localhost:8181/restconf/config/network-topology:network-topology/topology/uniconfig/node/junos/frinx-uniconfig-topology:configuration/configuration:configuration/interfaces/interface/ge-0%2F0%2F2 \
   -H 'Accept: */*' \
   -H 'Authorization: Basic YWRtaW46YWRtaW4=' \
@@ -1067,7 +1068,7 @@ To disable the interface “ge-0/0/2” in config database, run:
             ]
         }
     ]
-}'
+ }'
 
 After the configuration changes have been done on the config database, it is possible to send to the junos device with the commit request. 
 

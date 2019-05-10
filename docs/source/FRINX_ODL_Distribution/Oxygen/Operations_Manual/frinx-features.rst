@@ -14,27 +14,11 @@ The FRINX distribution offers the following features:
     controller (without xsql)
     netconf
     aaa
-    dlux
-    topoprocessing
-    snmp
-    openflowjava
-    openflowplugin
-    neutron
-    sfc
-    ovsdb
     gbp
-    l2switch
-    bgpcep
-    lispflowmapping
     cli
     daexim
-    faas
-    genius
-    netvirt
-    honeycomb-vbd
-    l2vpn
-    l3vpn
     uniconfig
+    unitopo
 
 
 Managing features
