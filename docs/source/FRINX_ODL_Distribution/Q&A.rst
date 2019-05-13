@@ -9,31 +9,31 @@ List of content
 ---------------
 
 
-* `What is the datastore used in FRINX ODL? <#what_is_the_datastore_used_in_frinx_odl?>`__
-* `Is it true that service instances are also stored in the uniconfig layer of FRINX? <#is-it-true-that-service-instances-are-also-stored-in-the-uniconfig-layer-of-frinx?>`__
-* `When changing e.g. a translation unit of FRINX to the UNICONFIG layer is it possible to load the new models or add support for more features in run time? <#when-changing-e-g-a-translation-unit-of-frinx-to-the-uniconfig-layer-is-it-possible-to-load-the-new-models-or-add-support-for-more-features-in-run-time?>`__
-* `How does FRINX deal with model changes? <#how-does-frinx-deal-with-model-changes?>`__
-* `Does FRINX provide auto rollback on all affected devices, when a transaction fails on one device? <#does-frinx-provide-auto-rollback-on-all-affected-devices-when-a-transaction-fails-on-one-device?>`__
-* `When synchronizing configuration from a device into FRINX, is it possible to show the differences between the actual device configuration and the operational datastore? <#when-synchronizing-configuration-from-a-device-into-frinx-is-it-possible-to-show-the-differences-between-the-actual-device-configuration-and-the-operational-datastore?>`__
-* `Is any NETCONF device fully supported, or must OpenConfig be mapped to netconf as well? <#is-any-netconf-device-fully-supported-or-must-openconfig-be-mapped-to-netconf-as-well?>`__
-* `Are the libraries that are used to access the Config Data Store model driven? <#are-the-libraries-that-are-used-to-access-the-config-data-store-model-driven?>`__
-* `How would an access to the configuration data store look like in code using an eventual library? <#how-would-an-access-to-the-configuration-data-store-look-like-in-code-using-an-eventual-library?>`__
-* `Is it possible in FRINX to run transaction on two disjunct sets of devices simultaneously? <#is-it-possible-in-frinx-to-run-transaction-on-two-disjunct-sets-of-devices-simultaneously?>`__
-* `What access control measures does FRINX offer? <#what-access-control-measures-does-frinx-offer?>`__
-* `How does FRINX report problems with device interaction? <#how-does-frinx-report-problems-with-device-interaction?>`__
-* `How would you do a backup of the FRINX system? <#how-would-you-do-a-backup-of-the-frinx-system?>`__
-* `Is it possible to enforce policies over configuration changes? <#is-it-possible-to-enforce-policies-over-configuration-changes?>`__
-* `Does FRINX come with an integrated scheduler to automate repetetive tasks? <#does-frinx-come-with-an-integrated-scheduler-to-automate-repetetive-tasks?>`__
-* `In which languages are the libraries to access FRINX written? <#in-which-languages-are-the-libraries-to-access-frinx-written?>`__
-* `Are there ready made libraries for accessing the UniConfig layer? <#are-there-ready-made-libraries-for-accessing-the-uniconfig-layer?>`__
-* `Does FRINX/ODL detect if a cluster node is down on its own or does it rely on a high availability framework? <#does-frinx-odl-detect-if-a-cluster-node-is-down-on-its-own-or-does-it-rely-on-a-high-availability-framework?>`__
-* `How fast will FRINX integrate new ODL versions? <#how-fast-will-frinx-integrate-new-odl-versions?>`__
-* `Is it possible for FRINX to report problems to a network monitoring system? <#is-it-possible-for-frinx-to-report-problems-to-a-network-monitoring-system?>`__
-* `Is it possible to do logging additional to the logging provided by Karaf? <#is-it-possible-to-do-logging-additional-to-the-logging-provided-by-karaf?>`__
-* `How does the conductor server know, which APIs to contact on the FRINX/ODL distribution for each specific task? <#how-does-the-conductor-server-know-which-apis-to-contact-on-the-frinx-odl-distribution-for-each-specific-task?>`__
-* `Where do I find the status of the device and error messages, when mounting does not work? <#where-do-i-find-the-status-of-the-device-and-error-messages-when-mounting-does-not-work?>`__
-* `What does mounting exactly do? <#what-does-mounting-exactly-do?>`__
-* `Won’t rendering templates via conductor modify the configuration data store for the device in ODL? <#wont-rendering-templates-via-conductor-modify-the-configuration-data-store-for-the-device-in-odl?>`__
+* `What is the datastore used in FRINX ODL? <#what_is_the_datastore_used_in_frinx_odl->`__
+* `Is it true that service instances are also stored in the uniconfig layer of FRINX? <#is-it-true-that-service-instances-are-also-stored-in-the-uniconfig-layer-of-frinx->`__
+* `When changing e.g. a translation unit of FRINX to the UNICONFIG layer is it possible to load the new models or add support for more features in run time? <#when-changing-e-g-a-translation-unit-of-frinx-to-the-uniconfig-layer-is-it-possible-to-load-the-new-models-or-add-support-for-more-features-in-run-time->`__
+* `How does FRINX deal with model changes? <#how-does-frinx-deal-with-model-changes->`__
+* `Does FRINX provide auto rollback on all affected devices, when a transaction fails on one device? <#does-frinx-provide-auto-rollback-on-all-affected-devices-when-a-transaction-fails-on-one-device->`__
+* `When synchronizing configuration from a device into FRINX, is it possible to show the differences between the actual device configuration and the operational datastore? <#when-synchronizing-configuration-from-a-device-into-frinx-is-it-possible-to-show-the-differences-between-the-actual-device-configuration-and-the-operational-datastore->`__
+* `Is any NETCONF device fully supported, or must OpenConfig be mapped to netconf as well? <#is-any-netconf-device-fully-supported-or-must-openconfig-be-mapped-to-netconf-as-well->`__
+* `Are the libraries that are used to access the Config Data Store model driven? <#are-the-libraries-that-are-used-to-access-the-config-data-store-model-driven->`__
+* `How would an access to the configuration data store look like in code using an eventual library? <#how-would-an-access-to-the-configuration-data-store-look-like-in-code-using-an-eventual-library->`__
+* `Is it possible in FRINX to run transaction on two disjunct sets of devices simultaneously? <#is-it-possible-in-frinx-to-run-transaction-on-two-disjunct-sets-of-devices-simultaneously->`__
+* `What access control measures does FRINX offer? <#what-access-control-measures-does-frinx-offer->`__
+* `How does FRINX report problems with device interaction? <#how-does-frinx-report-problems-with-device-interaction->`__
+* `How would you do a backup of the FRINX system? <#how-would-you-do-a-backup-of-the-frinx-system->`__
+* `Is it possible to enforce policies over configuration changes? <#is-it-possible-to-enforce-policies-over-configuration-changes->`__
+* `Does FRINX come with an integrated scheduler to automate repetetive tasks? <#does-frinx-come-with-an-integrated-scheduler-to-automate-repetetive-tasks->`__
+* `In which languages are the libraries to access FRINX written? <#in-which-languages-are-the-libraries-to-access-frinx-written->`__
+* `Are there ready made libraries for accessing the UniConfig layer? <#are-there-ready-made-libraries-for-accessing-the-uniconfig-layer->`__
+* `Does FRINX/ODL detect if a cluster node is down on its own or does it rely on a high availability framework? <#does-frinx-odl-detect-if-a-cluster-node-is-down-on-its-own-or-does-it-rely-on-a-high-availability-framework->`__
+* `How fast will FRINX integrate new ODL versions? <#how-fast-will-frinx-integrate-new-odl-versions->`__
+* `Is it possible for FRINX to report problems to a network monitoring system? <#is-it-possible-for-frinx-to-report-problems-to-a-network-monitoring-system->`__
+* `Is it possible to do logging additional to the logging provided by Karaf? <#is-it-possible-to-do-logging-additional-to-the-logging-provided-by-karaf->`__
+* `How does the conductor server know, which APIs to contact on the FRINX/ODL distribution for each specific task? <#how-does-the-conductor-server-know-which-apis-to-contact-on-the-frinx-odl-distribution-for-each-specific-task->`__
+* `Where do I find the status of the device and error messages, when mounting does not work? <#where-do-i-find-the-status-of-the-device-and-error-messages-when-mounting-does-not-work->`__
+* `What does mounting exactly do? <#what-does-mounting-exactly-do->`__
+* `Won’t rendering templates via conductor modify the configuration data store for the device in ODL? <#wont-rendering-templates-via-conductor-modify-the-configuration-data-store-for-the-device-in-odl->`__
 
 What is the datastore used in FRINX ODL?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
