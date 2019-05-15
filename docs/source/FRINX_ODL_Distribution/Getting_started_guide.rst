@@ -7,7 +7,7 @@ Content:
 * `Initial information <#initial-information>`__
 * `Download the FRINX UniConfig distribution <#download-the-frinx-uniconfig-distribution>`__
 * `Activate your FRINX UniConfig Distribution <#activate-your-frinx-uniconfig-distribution>`__
-* `Non-standard setups <#nonstandard-setups>`__
+* `Non-standard setups <#non-standard-setups>`__
 
   * `Activating the FRINX UniConfig Distribution behind a proxy <#activating-the-frinx-uniconfig-distribution-behind-a-proxy>`__
   * `Activating the FRINX UniConfig Distribution on a server without Internet access <#activating-the-frinx-uniconfig-distribution-on-a-server-without-internet-access>`__
@@ -16,7 +16,7 @@ Content:
 * `UniConfig basic principles <#uniconfig-basic-principles>`__
 * `Install features <#install-features>`__
 
-  * `Features for UniConfig native <#features-for-uniconfig-native-features>`__
+  * `Features for UniConfig native <#features-for-uniconfig-native>`__
   * `Features for CLI <#features-for-cli>`__
   * `Features for NETCONF <#features-for-netconf>`__
 
