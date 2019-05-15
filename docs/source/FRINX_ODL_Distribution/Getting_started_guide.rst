@@ -99,17 +99,17 @@ For non-standard setups, use this guide :doc:`Operations_Manual/running-frinx-od
 UniConfig basic principles
 --------------------------
 
-The purpose of UniConfigis to manage the intent(desired configuration)of physical and virtual networking devices through a single network API. In addition, UniConfigenables device and network wide transactions so that the network will always remain in a well-defined state without leftovers from failed  configuration attempts. UniConfigis delivered as an applicationinthe FRINXOpenDaylight(ODL)Distributionand as a standalone application. UniConfigenables users to communicate with their network infrastructure via three different options:
+The purpose of UniConfigis to manage the intent (desired configuration) of physical and virtual networking devices through a single network API. In addition, UniConfig enables device and network wide transactions so that the network will always remain in a well-defined state without leftovers from failed  configuration attempts. UniConfig is delivered as an application in the FRINXOpenDaylight (ODL) Distribution and as a standalone application. UniConfig enables users to communicate with their network infrastructure via three different options:
 
 1) Via unstructured data through CLI
 2) Via OpenConfig API withthe help of our open source device library
 3) Via vendor YANG models native to the connected devices
 
-Option 1) gives users similar capabilities like access through Ansibleor similar toolsand allows to pass strings to the device and receive strings from the devicein a programmatic way. UniConfig provides the mechanism to authenticate and provide a channel to send and receive data but does not interpret the data.That is left for the user application to do.
+Option 1) gives users similar capabilities like access through Ansible or similar tools and allows to pass strings to the device and receive strings from the device in a programmatic way. UniConfig provides the mechanism to authenticate and provide a channel to send and receive data but does not interpret the data. That is left for the user application to do.
 
-Option 2) provides users with an OpenConfig API that is translated into device specific CLI or YANG models. Thisrequires “translation units”to be installedfor the devices under control. FRINX provides an open source device library that includes many devices from widely deployed network vendors.
+Option 2) provides users with an OpenConfig API that is translated into device specific CLI or YANG models. This requires “translation units” to be installed for the devices under control. FRINX provides an open source device library that includes many devices from widely deployed network vendors.
 
-Option 3) also called “UniConfig native”,provides the ability to configure devices with any YANGmodelthat is supported by the device. After mounting a device, UniConfig native maps the vendor models into its UniConfig data store and provides stateful configuration capabilitiesto applications and users
+Option 3) also called “UniConfig native”, provides the ability to configure devices with any YANG model that is supported by the device. After mounting a device, UniConfig native maps the vendor models into its UniConfig data store and provides stateful configuration capabilities to applications and users.
 
 .. image:: FRINX_UniConfig_solution.jpg
    :target: FRINX_UniConfig_solution.jpg
