@@ -3,24 +3,17 @@ Getting started with FRINX UniConfig
 ====================================
 
 This guide explains how to run the FRINX UniConfig for the first time.
-
 Content:
 
 * `System requirements <#system-requirements>`__
 * `Download the FRINX UniConfig distribution <#download-the-frinx-uniconfig-distribution>`__
 * `Activate your FRINX UniConfig Distribution <#activate-your-frinx-uniconfig-distribution>`__
-* `Non-standard setups <#non-standard-setups>`__
-
-  * `Activating the FRINX UniConfig Distribution behind a proxy <#activating-the-frinx-uniconfig-distribution-behind-a-proxy>`__
-  * `Activating the FRINX UniConfig Distribution on a server without Internet access <#activating-the-frinx-uniconfig-distribution-on-a-server-without-internet-access>`__
-  * `Activating the FRINX UniConfig Distribution with token read from the frinx.license.cfg file <#activating-the-frinx-uniconfig-distribution-with-token-read-from-the-frinx-license-cfg-file>`__
-
 * `UniConfig basic principles <#uniconfig-basic-principles>`__
 * `Install features <#install-features>`__
 
-  * `Features for UniConfig native <#features-for-uniconfig-native>`__
   * `Features for CLI <#features-for-cli>`__
   * `Features for NETCONF <#features-for-netconf>`__
+  * `Features for UniConfig native <#features-for-uniconfig-native>`__
 
 * `Connecting devices <#connecting-devices>`__
 
@@ -85,7 +78,7 @@ In the event of interruption, the initial state can be restored by entering the 
 **First** command forcibly kills the FRINX UniConfig karaf process
 **Second** command cleans certain directories:
 
-.. code-block:: guess
+.. code-block:: bash
 
    kill -9 $(pgrep  -o -f  karaf)
    rm  -rf  data/ snapshots/ journal/

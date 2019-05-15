@@ -1,5 +1,5 @@
 
-FRINX Features User Guide
+User Guide
 =========================
 
 .. toctree::
