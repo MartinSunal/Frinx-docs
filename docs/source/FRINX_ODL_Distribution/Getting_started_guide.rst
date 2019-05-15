@@ -27,11 +27,14 @@ Initial information
 
 This guide explains how to run the distribution for the first time.
 
-**System requirements**  
+System requirements
+~~~~~~~~~~~~~~~~~~~
 
-**RAM:** 8GB minimum; we recommend 16GB.
-**Java:** FRINX distribution requires Java 8 (Openjdk 1.8.0-171 or newer).
-**Linux:** Supported  Linux distributions are Centos7, Ubuntu 16.04 and Ubuntu 18.04.  
+**RAM:** 8GB minimum; we recommend 16GB 
+  
+**Java:** FRINX distribution requires Java 8 (Openjdk 1.8.0-171 or newer)  
+ 
+**Linux:** Supported  Linux distributions are Centos7, Ubuntu 16.04 and Ubuntu 18.04   
 
 *Note: Unless stated otherwise, this documentation assumes you are using Linux.*  
 
