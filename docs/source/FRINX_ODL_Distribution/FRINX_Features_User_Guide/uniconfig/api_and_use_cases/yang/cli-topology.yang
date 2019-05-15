@@ -1,0 +1,148 @@
+module cli-topology {
+
+    yang-version 1;
+    namespace "urn:opendaylight:params:xml:ns:yang:cli:topology";
+    prefix "cli-topo";
+
+    import network-topology { prefix nt; revision-date 2013-10-21; }
+    import yang-ext { prefix ext; revision-date "2013-07-09";}
+    import ietf-inet-types { prefix inet; revision-date "2013-07-15"; }
+    import cli-translate-registry { prefix trans-reg; revision-date "2017-05-20"; }
+
+    revision "2017-05-20" {
+        description "Initial revision";
+    }
+
+    grouping cli-node-credentials {
+
+        choice credentials {
+            config true;
+            case login-password {
+                leaf username {
+                    type string;
+                }
+
+                leaf password {
+                    type string;
+                }
+            }
+        }
+
+        choice privileged-mode-credentials {
+            config true;
+            case ios-enable-password {
+                leaf secret {
+                    type string;
+                    description
+                        "Privileged EXEC mode password for Cisco IOS devices. If not set credentials
+                        password will be used";
+                }
+            }
+        }
+    }
+
+    grouping cli-node-connection-parameters {
+
+        leaf host {
+            type inet:host;
+        }
+
+        leaf port {
+            type inet:port-number;
+        }
+
+        leaf transport-type {
+            type enumeration {
+                enum ssh;
+                enum telnet;
+            }
+        }
+
+        leaf keepalive-delay {
+            type uint16;
+            default 60;
+        }
+
+        leaf keepalive-timeout {
+            type uint16;
+            default 60;
+        }
+
+        leaf keepalive-initial-delay{
+            type uint16;
+            default 120;
+        }
+
+        uses trans-reg:device;
+    }
+
+    grouping cli-node-tracing-parameters {
+
+        leaf journal-size {
+            type uint16;
+            default 0;
+            description "Size of the cli mountpoint jounral. Journal keeps track of executed commands and makes
+                         them available for users/apps for debugging purposes. Value 0 disables journaling";
+        }
+
+        leaf dry-run-journal-size {
+            type uint16;
+            default 0;
+            description "Size of the DRY RUN cli mountpoint jounral. DRY RUN journal captures commands that would be
+                         executed when reading/writing some configuration. However the commands are not actually sent
+                         to the device";
+        }
+    }
+
+    grouping cli-node-connection-status {
+
+        leaf connection-status {
+            config false;
+            type enumeration {
+                enum connecting;
+                enum connected;
+                enum unable-to-connect;
+            }
+        }
+
+        leaf connected-message {
+            config false;
+            type string;
+        }
+
+        container available-capabilities {
+            config false;
+            leaf-list available-capability {
+                type string;
+            }
+        }
+
+        container pass-through {
+            when "../connection-status = connected";
+            description
+                "When the underlying node is connected, its cli context
+                is available verbatim under this container through the
+                mount extension.";
+        }
+
+    }
+
+
+    grouping cli-node-fields {
+
+      uses cli-node-credentials;
+
+      uses cli-node-connection-parameters;
+
+      uses cli-node-tracing-parameters;
+
+      uses cli-node-connection-status;
+    }
+
+    augment "/nt:network-topology/nt:topology/nt:node" {
+      when "../../nt:topology-types/cli";
+      ext:augment-identifier "cli-node";
+
+      uses cli-node-fields;
+    }
+}

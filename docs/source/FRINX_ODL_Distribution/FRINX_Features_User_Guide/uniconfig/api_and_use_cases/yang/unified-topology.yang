@@ -1,0 +1,47 @@
+module unified-topology {
+
+    yang-version 1;
+    namespace "urn:opendaylight:params:xml:ns:yang:unified:topology";
+    prefix "uni-topo";
+
+    import network-topology { prefix nt; revision-date 2013-10-21; }
+    import yang-ext { prefix ext; revision-date "2013-07-09";}
+
+    revision "2017-05-20" {
+        description "Initial revision";
+    }
+
+    grouping unified-node-status {
+        leaf connection-status {
+            config false;
+            type enumeration {
+                enum disconnected;
+                enum connected;
+            }
+        }
+        container available-capabilities {
+            config false;
+            leaf-list available-capability {
+                type string;
+            }
+        }
+    }
+
+    grouping unified-node-fields {
+      uses unified-node-status;
+    }
+
+    augment "/nt:network-topology/nt:topology/nt:topology-types" {
+        ext:augment-identifier "unified-topo";
+        container unified {
+        }
+    }
+
+    augment "/nt:network-topology/nt:topology/nt:node" {
+      when "../../nt:topology-types/unified";
+      ext:augment-identifier "unitopo-node";
+
+      uses unified-node-fields;
+    }
+
+}

@@ -1,0 +1,610 @@
+
+FRINX ODL Oxygen 4.2.0. Base feature content
+============================================
+
+.. list-table::
+   :header-rows: 1
+
+   * - Name
+     - Version
+   * - frinx-unified-topology-translate-registry-api
+     - 4.2.0.frinx
+   * - odl-restconf
+     - 1.7.2.Oxygen-SR2_4_2_0-frinxodl
+   * - features-netconf-connector
+     - 1.4.2.Oxygen-SR2_4_2_0-frinxodl
+   * - odl-mdsal-binding-api
+     - 2.4.2.Oxygen-SR2_4_2_0-frinxodl
+   * - odl-netconf-console
+     - 1.4.2.Oxygen-SR2_4_2_0-frinxodl
+   * - frinx-openconfig-vlan
+     - 4.2.0.frinx
+   * - odl-config-core
+     - 0.8.2.Oxygen-SR2_4_2_0-frinxodl
+   * - odl-mdsal-broker-local
+     - 1.7.2.Oxygen-SR2_4_2_0-frinxodl
+   * - odl-mdsal-all
+     - 1.7.2.Oxygen-SR2_4_2_0-frinxodl
+   * - odl-netconf-callhome-ssh
+     - 1.4.2.Oxygen-SR2_4_2_0-frinxodl
+   * - frinx-openconfig-cdp
+     - 4.2.0.frinx
+   * - odl-jersey-1
+     - 3.1.1.Oxygen-SR2_4_2_0-frinxodl
+   * - odl-aaa-jersey-1
+     - 0.7.2.Oxygen-SR2_4_2_0-frinxodl
+   * - pax-jdbc-spec
+     - 01.01.2000
+   * - pax-jdbc
+     - 01.01.2000
+   * - pax-jdbc-config
+     - 01.01.2000
+   * - pax-jdbc-db2
+     - 01.01.2000
+   * - pax-jdbc-teradata
+     - 01.01.2000
+   * - pax-jdbc-derby
+     - 01.01.2000
+   * - pax-jdbc-derbyclient
+     - 01.01.2000
+   * - pax-jdbc-h2
+     - 01.01.2000
+   * - pax-jdbc-hsqldb
+     - 01.01.2000
+   * - pax-jdbc-mariadb
+     - 01.01.2000
+   * - pax-jdbc-mysql
+     - 01.01.2000
+   * - pax-jdbc-oracle
+     - 01.01.2000
+   * - pax-jdbc-postgresql
+     - 01.01.2000
+   * - pax-jdbc-sqlite
+     - 01.01.2000
+   * - pax-jdbc-mssql
+     - 01.01.2000
+   * - pax-jdbc-jtds
+     - 01.01.2000
+   * - pax-jdbc-pool-dbcp2
+     - 01.01.2000
+   * - pax-jdbc-pool-c3p0
+     - 01.01.2000
+   * - pax-jdbc-pool-hikaricp
+     - 01.01.2000
+   * - pax-jdbc-pool-aries
+     - 01.01.2000
+   * - pax-jdbc-pool-narayana
+     - 01.01.2000
+   * - frinx-cli-southbound-translate-registry-model
+     - 4.2.0.frinx
+   * - odl-akka-scala-2.12
+     - 3.1.1.Oxygen-SR2_4_2_0-frinxodl
+   * - odl-config-persister
+     - 0.8.2.Oxygen-SR2_4_2_0-frinxodl
+   * - frinx-cli-southbound-translate-registry-api
+     - 4.2.0.frinx
+   * - odl-netconf-impl
+     - 1.4.2.Oxygen-SR2_4_2_0-frinxodl
+   * - odl-mdsal-dom-api
+     - 2.4.2.Oxygen-SR2_4_2_0-frinxodl
+   * - odl-mdsal-remoterpc-connector
+     - 1.7.2.Oxygen-SR2_4_2_0-frinxodl
+   * - frinx-cli-southbound-io-api
+     - 4.2.0.frinx
+   * - odl-akka-persistence-2.5
+     - 3.1.1.Oxygen-SR2_4_2_0-frinxodl
+   * - frinx-openconfig-acl
+     - 4.2.0.frinx
+   * - odl-mdsal-binding-runtime
+     - 2.4.2.Oxygen-SR2_4_2_0-frinxodl
+   * - frinx-openconfig-hsrp
+     - 4.2.0.frinx
+   * - frinx-openconfig-mpls
+     - 4.2.0.frinx
+   * - pax-jetty
+     - 9.3.21.v20170918
+   * - pax-jetty-http2
+     - 6.0.9
+   * - pax-http-jetty
+     - 6.0.9
+   * - pax-http
+     - 6.0.9
+   * - pax-http-whiteboard
+     - 6.0.9
+   * - pax-war
+     - 6.0.9
+   * - pax-http-tomcat
+     - 6.0.9
+   * - pax-war-tomcat
+     - 6.0.9
+   * - pax-jsf-support
+     - 6.0.9
+   * - pax-jsf-resources-support
+     - 6.0.9
+   * - undertow
+     - 1.3.25.1
+   * - pax-http-undertow
+     - 6.0.9
+   * - frinx-openconfig-bgp
+     - 4.2.0.frinx
+   * - frinx-uniconfig-model
+     - 4.2.0.frinx
+   * - odl-distribution-version
+     - 4.2.0.frinx
+   * - features-aaa-jradius
+     - 0.7.2.Oxygen-SR2_4_2_0-frinxodl
+   * - features-mdsal-benchmark
+     - 1.5.2.Oxygen-SR2_4_2_0-frinxodl
+   * - odl-yangtools-data
+     - 2.0.5.Oxygen-SR2_4_2_0-frinxodl
+   * - odl-lmax-3
+     - 3.1.1.Oxygen-SR2_4_2_0-frinxodl
+   * - frinx-uniconfig-native
+     - 4.2.0.frinx
+   * - odl-netconf-tcp
+     - 1.4.2.Oxygen-SR2_4_2_0-frinxodl
+   * - features-yanglib
+     - 1.4.2.Oxygen-SR2_4_2_0-frinxodl
+   * - odl-netconf-mapping-api
+     - 1.4.2.Oxygen-SR2_4_2_0-frinxodl
+   * - odl-mdsal-singleton-common
+     - 2.4.2.Oxygen-SR2_4_2_0-frinxodl
+   * - frinx-openconfig-netflow
+     - 4.2.0.frinx
+   * - frinx-cli-unit-ios-common-handlers
+     - 4.2.0.frinx
+   * - frinx-unified-topology-unit-base
+     - 4.2.0.frinx
+   * - odl-mdsal-common
+     - 2.4.2.Oxygen-SR2_4_2_0-frinxodl
+   * - frinx-openconfig-policy
+     - 4.2.0.frinx
+   * - odl-mdsal-broker
+     - 1.7.2.Oxygen-SR2_4_2_0-frinxodl
+   * - odl-mdsal-trace
+     - 1.7.2.Oxygen-SR2_4_2_0-frinxodl
+   * - odl-karaf-feat-war
+     - 3.1.1.Oxygen-SR2_4_2_0-frinxodl
+   * - features-netconf
+     - 1.4.2.Oxygen-SR2_4_2_0-frinxodl
+   * - odl-mdsal-models
+     - 0.12.2.Oxygen-SR2_4_2_0-frinxodl
+   * - features-odlparent
+     - 3.1.1.Oxygen-SR2_4_2_0-frinxodl
+   * - frinx-unified-topology-all-units
+     - 4.2.0.frinx
+   * - features-restconf
+     - 1.7.2.Oxygen-SR2_4_2_0-frinxodl
+   * - frinx-openconfig-models
+     - 4.2.0.frinx
+   * - odl-akka-leveldb-0.7
+     - 3.1.1.Oxygen-SR2_4_2_0-frinxodl
+   * - pax-cdi
+     - 1.0.0.RC2
+   * - pax-cdi-weld
+     - 1.0.0.RC2
+   * - pax-cdi-openwebbeans
+     - 1.0.0.RC2
+   * - pax-cdi-web
+     - 1.0.0.RC2
+   * - pax-cdi-web-weld
+     - 1.0.0.RC2
+   * - pax-cdi-web-openwebbeans
+     - 1.0.0.RC2
+   * - deltaspike-core
+     - 01.04.2002
+   * - deltaspike-jpa
+     - 01.04.2002
+   * - deltaspike-proxy
+     - 01.04.2002
+   * - deltaspike-partial-bean
+     - 01.04.2002
+   * - deltaspike-data
+     - 01.04.2002
+   * - frinx-cli-unit-ios-xr-lldp
+     - 4.2.0.frinx
+   * - frinx-cli-unit-brocade
+     - 4.2.0.frinx
+   * - frinx-cli-unit-ios-initializer
+     - 4.2.0.frinx
+   * - frinx-openconfig-configuration-metadata
+     - 4.2.0.frinx
+   * - frinx-cli-southbound-unit-generic
+     - 4.2.0.frinx
+   * - daexim-features
+     - 1.1.0.Oxygen-SR2_4_2_0-frinxodl
+   * - odl-toaster
+     - 1.7.2.Oxygen-SR2_4_2_0-frinxodl
+   * - frinx-openconfig-lacp
+     - 4.2.0.frinx
+   * - frinx-openconfig-logging
+     - 4.2.0.frinx
+   * - hibernate-orm
+     - 5.2.9.Final
+   * - hibernate-envers
+     - 5.2.9.Final
+   * - hibernate-infinispan
+     - 5.2.9.Final
+   * - hibernate-ehcache
+     - 5.2.9.Final
+   * - frinx-openconfig-platform
+     - 4.2.0.frinx
+   * - frinx-cli-southbound-translate-registry
+     - 4.2.0.frinx
+   * - features-aaa
+     - 0.7.2.Oxygen-SR2_4_2_0-frinxodl
+   * - odl-mdsal-dom
+     - 2.4.2.Oxygen-SR2_4_2_0-frinxodl
+   * - odl-yangtools-common
+     - 2.0.5.Oxygen-SR2_4_2_0-frinxodl
+   * - odl-netty-4
+     - 3.1.1.Oxygen-SR2_4_2_0-frinxodl
+   * - frinx-cli-unit-ios-xr-initializer
+     - 4.2.0.frinx
+   * - odl-mdsal-clustering
+     - 1.7.2.Oxygen-SR2_4_2_0-frinxodl
+   * - hibernate-validator
+     - 5.3.4.Final
+   * - hibernate-validator-paranamer
+     - 5.3.4.Final
+   * - odl-aaa-cli
+     - 0.7.2.Oxygen-SR2_4_2_0-frinxodl
+   * - odl-mdsal-eos-dom
+     - 2.4.2.Oxygen-SR2_4_2_0-frinxodl
+   * - uniconfig-features
+     - 4.2.0.frinx
+   * - odl-guava-23
+     - 3.1.1.Oxygen-SR2_4_2_0-frinxodl
+   * - odl-daexim
+     - 1.1.0.Oxygen-SR2_4_2_0-frinxodl
+   * - frinx-openconfig-qos
+     - 4.2.0.frinx
+   * - odl-akka-clustering-2.5
+     - 3.1.1.Oxygen-SR2_4_2_0-frinxodl
+   * - frinx-unified-topology-unit-junos-18-2
+     - 4.2.0.frinx
+   * - odl-karaf-feat-jetty
+     - 3.1.1.Oxygen-SR2_4_2_0-frinxodl
+   * - odl-aaa-netconf-plugin
+     - 1.4.2.Oxygen-SR2_4_2_0-frinxodl
+   * - odl-aaa-encryption-service
+     - 0.7.2.Oxygen-SR2_4_2_0-frinxodl
+   * - odl-mdsal-binding-base
+     - 2.4.2.Oxygen-SR2_4_2_0-frinxodl
+   * - frinx-cli-topology
+     - 4.2.0.frinx
+   * - features-extras
+     - 1.10.2.Oxygen-SR2_4_2_0-frinxodl
+   * - odl-netconf-connector
+     - 1.4.2.Oxygen-SR2_4_2_0-frinxodl
+   * - odl-restconf-nb-rfc8040-noauth
+     - 1.7.2.Oxygen-SR2_4_2_0-frinxodl
+   * - frinx-openconfig-snmp
+     - 4.2.0.frinx
+   * - frinx-unified-topology-unit-xr-7
+     - 4.2.0.frinx
+   * - frinx-cli-southbound-io
+     - 4.2.0.frinx
+   * - frinx-cli-unit-junos
+     - 4.2.0.frinx
+   * - features-index
+     - 4.2.0.frinx
+   * - odl-mdsal-eos-common
+     - 2.4.2.Oxygen-SR2_4_2_0-frinxodl
+   * - odl-yangtools-export
+     - 2.0.5.Oxygen-SR2_4_2_0-frinxodl
+   * - odl-restconf-fallback-context
+     - 1.7.2.Oxygen-SR2_4_2_0-frinxodl
+   * - odl-mdsal-dom-broker
+     - 2.4.2.Oxygen-SR2_4_2_0-frinxodl
+   * - unified-topology-units-features
+     - 4.2.0.frinx
+   * - odl-mdsal-singleton-dom
+     - 2.4.2.Oxygen-SR2_4_2_0-frinxodl
+   * - frinx-openconfig-if-ip
+     - 4.2.0.frinx
+   * - odl-benchmark-api
+     - 1.5.2.Oxygen-SR2_4_2_0-frinxodl
+   * - odl-netconf-netty-util
+     - 1.4.2.Oxygen-SR2_4_2_0-frinxodl
+   * - odl-config-all
+     - 0.8.2.Oxygen-SR2_4_2_0-frinxodl
+   * - odl-daexim-all
+     - 1.1.0.Oxygen-SR2_4_2_0-frinxodl
+   * - frinx-openconfig-lldp
+     - 4.2.0.frinx
+   * - frinx-openconfig-bfd
+     - 4.2.0.frinx
+   * - odl-yangtools-data-api
+     - 2.0.5.Oxygen-SR2_4_2_0-frinxodl
+   * - odl-restconf-nb-rfc8040-all
+     - 1.7.2.Oxygen-SR2_4_2_0-frinxodl
+   * - odl-aaa-netconf-plugin-no-cluster
+     - 1.4.2.Oxygen-SR2_4_2_0-frinxodl
+   * - odl-yangtools-util
+     - 2.0.5.Oxygen-SR2_4_2_0-frinxodl
+   * - odl-akka-system-2.5
+     - 3.1.1.Oxygen-SR2_4_2_0-frinxodl
+   * - frinx-unified-topology-unit-junos-17-3
+     - 4.2.0.frinx
+   * - frinx-cli-unit-nexus
+     - 4.2.0.frinx
+   * - odl-yangtools-codec
+     - 2.0.5.Oxygen-SR2_4_2_0-frinxodl
+   * - odl-config-util
+     - 0.8.2.Oxygen-SR2_4_2_0-frinxodl
+   * - odl-akka-all
+     - 3.1.1.Oxygen-SR2_4_2_0-frinxodl
+   * - odl-netconf-util
+     - 1.4.2.Oxygen-SR2_4_2_0-frinxodl
+   * - odl-config-startup
+     - 0.8.2.Oxygen-SR2_4_2_0-frinxodl
+   * - transaction-api
+     - 01.02.2000
+   * - transaction-manager-geronimo
+     - 01.03.2003
+   * - transaction-manager-narayana
+     - 5.5.2.Final
+   * - transaction
+     - 2.0.0
+   * - connector
+     - 03.01.2001
+   * - jpa
+     - 02.06.2001
+   * - openjpa
+     - 02.04.2002
+   * - hibernate
+     - 5.2.9.Final
+   * - eclipselink
+     - 02.07.2001
+   * - jndi
+     - 4.1.5.1-frinx-SNAPSHOT
+   * - jdbc
+     - 4.1.5.1-frinx-SNAPSHOT
+   * - jms
+     - 4.1.5.1-frinx-SNAPSHOT
+   * - application-without-isolation
+     - 1.0.0
+   * - subsystems
+     - 2.0.10
+   * - odl-restconf-noauth
+     - 1.7.2.Oxygen-SR2_4_2_0-frinxodl
+   * - frinx-openconfig-ospf
+     - 4.2.0.frinx
+   * - odl-netconf-all
+     - 1.4.2.Oxygen-SR2_4_2_0-frinxodl
+   * - odl-triemap
+     - 1.0.5.Oxygen-SR2_4_2_0-frinxodl
+   * - frinx-cli-unit-ios
+     - 4.2.0.frinx
+   * - odl-netconf-mdsal
+     - 1.7.2.Oxygen-SR2_4_2_0-frinxodl
+   * - odl-extras-all
+     - 1.10.2.Oxygen-SR2_4_2_0-frinxodl
+   * - frinx-unified-topology-translate-registry-model
+     - 4.2.0.frinx
+   * - frinx-lldp-topology
+     - 4.2.0.frinx
+   * - odl-config-manager
+     - 0.8.2.Oxygen-SR2_4_2_0-frinxodl
+   * - odl-netconf-clustered-topology
+     - 1.4.2.Oxygen-SR2_4_2_0-frinxodl
+   * - odl-netconf-monitoring
+     - 1.4.2.Oxygen-SR2_4_2_0-frinxodl
+   * - odl-clustering-test-app
+     - 1.7.2.Oxygen-SR2_4_2_0-frinxodl
+   * - odl-yangtools-parser
+     - 2.0.5.Oxygen-SR2_4_2_0-frinxodl
+   * - 6e31e1d5-0af5-47ff-8018-b68ed5b1d01a
+     - 0.0.0
+   * - odl-config-netty
+     - 0.8.2.Oxygen-SR2_4_2_0-frinxodl
+   * - odl-restconf-all
+     - 1.7.2.Oxygen-SR2_4_2_0-frinxodl
+   * - odl-netconf-notifications-impl
+     - 1.4.2.Oxygen-SR2_4_2_0-frinxodl
+   * - odl-ntfbenchmark
+     - 1.5.2.Oxygen-SR2_4_2_0-frinxodl
+   * - openconfig-features
+     - 4.2.0.frinx
+   * - frinx-uniconfig-node-manager
+     - 4.2.0.frinx
+   * - odl-yanglib
+     - 1.4.2.Oxygen-SR2_4_2_0-frinxodl
+   * - odl-mdsal-eos-binding
+     - 2.4.2.Oxygen-SR2_4_2_0-frinxodl
+   * - odl-config-manager-facade-xml
+     - 0.8.2.Oxygen-SR2_4_2_0-frinxodl
+   * - odl-config-netconf-connector
+     - 1.4.2.Oxygen-SR2_4_2_0-frinxodl
+   * - cli-units-features
+     - 4.2.0.frinx
+   * - frinx-cli-topology-api
+     - 4.2.0.frinx
+   * - frinx-openconfig-interfaces
+     - 4.2.0.frinx
+   * - odl-aaa-shiro
+     - 0.7.2.Oxygen-SR2_4_2_0-frinxodl
+   * - features-mdsal-trace
+     - 1.7.2.Oxygen-SR2_4_2_0-frinxodl
+   * - odl-netconf-notifications-api
+     - 1.4.2.Oxygen-SR2_4_2_0-frinxodl
+   * - odl-netconf-topology
+     - 1.4.2.Oxygen-SR2_4_2_0-frinxodl
+   * - framework-security
+     - 4.1.5.1-frinx-SNAPSHOT
+   * - service-security
+     - 4.1.5.1-frinx-SNAPSHOT
+   * - aries-proxy
+     - 4.1.5.1-frinx-SNAPSHOT
+   * - aries-blueprint
+     - 4.1.5.1-frinx-SNAPSHOT
+   * - feature
+     - 4.1.5.1-frinx-SNAPSHOT
+   * - shell
+     - 4.1.5.1-frinx-SNAPSHOT
+   * - shell-compat
+     - 4.1.5.1-frinx-SNAPSHOT
+   * - deployer
+     - 4.1.5.1-frinx-SNAPSHOT
+   * - wrapper
+     - 4.1.5.1-frinx-SNAPSHOT
+   * - service-wrapper
+     - 4.1.5.1-frinx-SNAPSHOT
+   * - obr
+     - 4.1.5.1-frinx-SNAPSHOT
+   * - bundle
+     - 4.1.5.1-frinx-SNAPSHOT
+   * - config
+     - 4.1.5.1-frinx-SNAPSHOT
+   * - diagnostic
+     - 4.1.5.1-frinx-SNAPSHOT
+   * - instance
+     - 4.1.5.1-frinx-SNAPSHOT
+   * - jaas
+     - 4.1.5.1-frinx-SNAPSHOT
+   * - log
+     - 4.1.5.1-frinx-SNAPSHOT
+   * - package
+     - 4.1.5.1-frinx-SNAPSHOT
+   * - service
+     - 4.1.5.1-frinx-SNAPSHOT
+   * - system
+     - 4.1.5.1-frinx-SNAPSHOT
+   * - http
+     - 4.1.5.1-frinx-SNAPSHOT
+   * - httplite
+     - 4.1.5.1-frinx-SNAPSHOT
+   * - pax-http-service
+     - 0.0.0
+   * - http-whiteboard
+     - 4.1.5.1-frinx-SNAPSHOT
+   * - war
+     - 4.1.5.1-frinx-SNAPSHOT
+   * - jetty
+     - 9.3.21.v20170918
+   * - jetty
+     - 8.1.14.v20131031
+   * - kar
+     - 4.1.5.1-frinx-SNAPSHOT
+   * - webconsole
+     - 4.1.5.1-frinx-SNAPSHOT
+   * - ssh
+     - 4.1.5.1-frinx-SNAPSHOT
+   * - management
+     - 4.1.5.1-frinx-SNAPSHOT
+   * - scheduler
+     - 4.1.5.1-frinx-SNAPSHOT
+   * - eventadmin
+     - 4.1.5.1-frinx-SNAPSHOT
+   * - jasypt-encryption
+     - 4.1.5.1-frinx-SNAPSHOT
+   * - scr
+     - 4.1.5.1-frinx-SNAPSHOT
+   * - blueprint-web
+     - 4.1.5.1-frinx-SNAPSHOT
+   * - wrap
+     - 0.0.0
+   * - profile
+     - 4.1.5.1-frinx-SNAPSHOT
+   * - jolokia
+     - 01.03.2005
+   * - standard
+     - 4.1.5.1-frinx-SNAPSHOT
+   * - minimal
+     - 4.1.5.1-frinx-SNAPSHOT
+   * - odl-mdsal-clustering-commons
+     - 1.7.2.Oxygen-SR2_4_2_0-frinxodl
+   * - odl-controller-model-topology
+     - 1.7.2.Oxygen-SR2_4_2_0-frinxodl
+   * - odl-aaa-api
+     - 0.7.2.Oxygen-SR2_4_2_0-frinxodl
+   * - odl-restconf-common
+     - 1.7.2.Oxygen-SR2_4_2_0-frinxodl
+   * - odl-mdsal-binding
+     - 2.4.2.Oxygen-SR2_4_2_0-frinxodl
+   * - odl-dsbenchmark
+     - 1.5.2.Oxygen-SR2_4_2_0-frinxodl
+   * - frinx-cli-all-units
+     - 4.2.0.frinx
+   * - frinx-openconfig-types
+     - 4.2.0.frinx
+   * - odl-mdsal-model-inventory
+     - 1.7.2.Oxygen-SR2_4_2_0-frinxodl
+   * - odl-netconf-ssh
+     - 1.4.2.Oxygen-SR2_4_2_0-frinxodl
+   * - odl-yangtools-parser-api
+     - 2.0.5.Oxygen-SR2_4_2_0-frinxodl
+   * - odl-netconf-client
+     - 1.4.2.Oxygen-SR2_4_2_0-frinxodl
+   * - cli-features
+     - 4.2.0.frinx
+   * - odl-karaf-feat-jdbc
+     - 3.1.1.Oxygen-SR2_4_2_0-frinxodl
+   * - frinx-unified-topology
+     - 4.2.0.frinx
+   * - odl-config-api
+     - 0.8.2.Oxygen-SR2_4_2_0-frinxodl
+   * - features-akka
+     - 3.1.1.Oxygen-SR2_4_2_0-frinxodl
+   * - odl-mdsal-benchmark
+     - 1.5.2.Oxygen-SR2_4_2_0-frinxodl
+   * - frinx-cli-unit-ios-xr
+     - 4.2.0.frinx
+   * - odl-protocol-framework
+     - 1.1.2.Oxygen-SR2_4_2_0-frinxodl
+   * - frinx-unified-topology-translate-registry
+     - 4.2.0.frinx
+   * - odl-netconf-connector-all
+     - 1.4.2.Oxygen-SR2_4_2_0-frinxodl
+   * - frinx-unified-topology-api
+     - 4.2.0.frinx
+   * - odl-mdsal-distributed-datastore
+     - 1.7.2.Oxygen-SR2_4_2_0-frinxodl
+   * - features-distribution
+     - 4.2.0.frinx
+   * - odl-message-bus-collector
+     - 1.7.2.Oxygen-SR2_4_2_0-frinxodl
+   * - odl-aaa-cert
+     - 0.7.2.Oxygen-SR2_4_2_0-frinxodl
+   * - frinx-cli-southbound-plugin
+     - 4.2.0.frinx
+   * - frinx-openconfig-probes
+     - 4.2.0.frinx
+   * - odl-mdsal-apidocs
+     - 1.7.2.Oxygen-SR2_4_2_0-frinxodl
+   * - frinx-openconfig-network-instance
+     - 4.2.0.frinx
+   * - odl-message-bus
+     - 1.4.2.Oxygen-SR2_4_2_0-frinxodl
+   * - odl-mdsal-binding-dom-adapter
+     - 2.4.2.Oxygen-SR2_4_2_0-frinxodl
+   * - odl-config-netty-config-api
+     - 0.8.2.Oxygen-SR2_4_2_0-frinxodl
+   * - features-mdsal
+     - 1.7.2.Oxygen-SR2_4_2_0-frinxodl
+   * - odl-controller-mdsal-common
+     - 1.7.2.Oxygen-SR2_4_2_0-frinxodl
+   * - odl-netconf-api
+     - 1.4.2.Oxygen-SR2_4_2_0-frinxodl
+   * - frinx-cli-unit-dasan
+     - 4.2.0.frinx
+   * - odl-jolokia
+     - 1.10.2.Oxygen-SR2_4_2_0-frinxodl
+   * - frinx-openconfig-policy-forwarding
+     - 4.2.0.frinx
+   * - odl-netconf-connector-ssh
+     - 1.4.2.Oxygen-SR2_4_2_0-frinxodl
+   * - frinx-unified-topology-unit-xr-6
+     - 4.2.0.frinx
+   * - frinx-cli-unit-ios-xr-utils
+     - 4.2.0.frinx
+   * - odl-restconf-nb-rfc8040
+     - 1.7.2.Oxygen-SR2_4_2_0-frinxodl
+   * - frinx-cli-unit-huawei
+     - 4.2.0.frinx
+   * - odl-javassist-3
+     - 3.1.1.Oxygen-SR2_4_2_0-frinxodl
+   * - frinx-cli-unit-ios-utils
+     - 4.2.0.frinx
+
