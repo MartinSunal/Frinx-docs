@@ -2,9 +2,11 @@
 Getting started with FRINX UniConfig
 ====================================
 
+This guide explains how to run the FRINX UniConfig for the first time.
+
 Content:
 
-* `Initial information <#initial-information>`__
+* `System requirements <#system-requirements>`__
 * `Download the FRINX UniConfig distribution <#download-the-frinx-uniconfig-distribution>`__
 * `Activate your FRINX UniConfig Distribution <#activate-your-frinx-uniconfig-distribution>`__
 * `Non-standard setups <#non-standard-setups>`__
@@ -22,13 +24,10 @@ Content:
 
 * `Connecting devices <#connecting-devices>`__
 
-Initial information
--------------------
 
-This guide explains how to run the distribution for the first time.
 
 System requirements
-~~~~~~~~~~~~~~~~~~~
+-------------------
 
 **RAM:** 8GB minimum; we recommend 16GB 
   
@@ -99,7 +98,7 @@ For non-standard setups, use this guide :doc:`Operations_Manual/running-frinx-od
 UniConfig basic principles
 --------------------------
 
-The purpose of UniConfigis to manage the intent (desired configuration) of physical and virtual networking devices through a single network API. In addition, UniConfig enables device and network wide transactions so that the network will always remain in a well-defined state without leftovers from failed  configuration attempts. UniConfig is delivered as an application in the FRINXOpenDaylight (ODL) Distribution and as a standalone application. UniConfig enables users to communicate with their network infrastructure via three different options:
+The purpose of UniConfig is to manage the intent (desired configuration) of physical and virtual networking devices through a single network API. In addition, UniConfig enables device and network wide transactions so that the network will always remain in a well-defined state without leftovers from failed  configuration attempts. UniConfig is delivered as an application in the FRINXOpenDaylight (ODL) Distribution and as a standalone application. UniConfig enables users to communicate with their network infrastructure via three different options:
 
 1) Via unstructured data through CLI
 2) Via OpenConfig API withthe help of our open source device library
@@ -118,6 +117,22 @@ Option 3) also called “UniConfig native”, provides the ability to configure 
 Install features
 ----------------
 
+
+Features for CLI
+~~~~~~~~~~~~~~~~
+
+.. code-block:: guess
+
+   frinx-user@root>feature:install cli-southbound-all-units odl-restconf odl-netconf-connector-all unified-topology-all-units frinx-installer-backend uniconfig-node-manager
+
+Features for NETCONF
+~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: guess
+
+   frinx-user@root>feature:install odl-netconf-connector-all
+
+
 Features for UniConfig native
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -127,19 +142,6 @@ Install the features necessary to use UniConfig-native with command below:
 
    frinx-user@root>feature:install frinx-UniConfig-native frinx-unified-topology odl-netconf-topology
 
-Features for CLI
-~~~~~~~~~~~~~~~~
-
-.. code-block:: guess
-
-   feature:install cli-southbound-all-units odl-restconf odl-netconf-connector-all unified-topology-all-units frinx-installer-backend uniconfig-node-manager
-
-Features for NETCONF
-~~~~~~~~~~~~~~~~~~~~
-
-.. code-block:: guess
-
-   feature:install odl-netconf-connector-all
 
 Connecting devices
 ------------------
