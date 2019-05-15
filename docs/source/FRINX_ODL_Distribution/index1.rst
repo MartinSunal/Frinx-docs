@@ -25,8 +25,8 @@ FRINX ODL distribution
 *  `List of supported projects <https://docs.frinx.io/FRINX_ODL_Distribution/Oxygen/Release_Notes/frinx-odl-base-feature-content-rel-4-2-0.html>`__  
 *  `Public ODL Oxygen documentatioin <https://docs.opendaylight.org/en/stable-oxygen>`__  
    
-Previous Releases:
-------------------
+Previous Releases
+-----------------
 
 *  :doc:`Carbon/index1`
 *  :doc:`Beryllium/index1`
