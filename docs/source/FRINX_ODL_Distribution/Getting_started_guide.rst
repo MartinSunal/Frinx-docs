@@ -20,7 +20,7 @@ Content:
   * `Features for CLI <#features-for-cli>`__
   * `Features for NETCONF <#features-for-netconf>`__
 
-* Connecting devices <#connecting-devices>`__
+* `Connecting devices <#connecting-devices>`__
 
 Initial information
 -------------------
