@@ -21,7 +21,7 @@ FRINX UniConfig is a suite of applications aimed at network configuration manage
 FRINX ODL distribution
 ----------------------
 
-*   Getting_started_guide_no_features.rst 
+    Getting_started_guide_no_features.rst 
 *  `List of supported projects <https://docs.frinx.io/FRINX_ODL_Distribution/Oxygen/Release_Notes/frinx-odl-base-feature-content-rel-4-2-0.html>`__  
 *  `Public ODL Oxygen documentatioin <https://docs.opendaylight.org/en/stable-oxygen>`__  
    

@@ -114,12 +114,16 @@ Install features
 Features for CLI
 ~~~~~~~~~~~~~~~~
 
+Install the features necessary to use CLI with command below:
+
 .. code-block:: guess
 
    frinx-user@root>feature:install cli-southbound-all-units odl-restconf odl-netconf-connector-all unified-topology-all-units frinx-installer-backend uniconfig-node-manager
 
 Features for NETCONF
 ~~~~~~~~~~~~~~~~~~~~
+
+Install the features necessary to use NETCONF with command below:
 
 .. code-block:: guess
 

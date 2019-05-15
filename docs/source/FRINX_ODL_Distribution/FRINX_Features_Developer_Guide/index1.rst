@@ -14,4 +14,4 @@ Developer Guide
    cli/cli-service-module-devguide.rst
 
 
-   `Translation Units Docs <https://frinxio.github.io/translation-units-docs>`__
+*  `Translation Units Docs <https://frinxio.github.io/translation-units-docs>`__
