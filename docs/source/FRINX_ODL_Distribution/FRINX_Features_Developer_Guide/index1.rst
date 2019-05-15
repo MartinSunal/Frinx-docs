@@ -12,6 +12,4 @@ Developer Guide
    :glob:
    
    cli/cli-service-module-devguide.rst
-
-
 *  `Translation Units Docs <https://frinxio.github.io/translation-units-docs>`__
