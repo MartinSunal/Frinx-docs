@@ -34,5 +34,5 @@ Previous Releases
 Other documentation
 -------------------
 
-`Translation Units docs <https://frinxio.github.io/translation-units-docs>`__
+   `Translation Units docs <https://frinxio.github.io/translation-units-docs>`__
 
