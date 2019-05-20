@@ -36,7 +36,7 @@ CentOS: Run a terminal and insert a command below:
 
 Ubuntu: Run a terminal and insert a command below:
 
-.. code-block:: guess
+.. code-block:: bash
 
    sudo apt-get install openjdk-8-jre
 
