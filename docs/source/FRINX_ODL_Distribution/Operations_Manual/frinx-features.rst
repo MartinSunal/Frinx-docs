@@ -2,8 +2,6 @@
 FRINX ODL Distribution Features
 ===============================
 
-* `Managing features <#managing-features>`__
-
 The FRINX distribution offers the following features:
 
 .. code-block:: guess
