@@ -73,7 +73,7 @@ In the event of interruption, the initial state can be restored by entering the 
 **First** command forcibly kills the FRINX UniConfig karaf process
 **Second** command cleans certain directories:
 
-.. code-block:: shell
+.. code-block:: abap
 
    kill -9 $(pgrep  -o -f  karaf)
    rm  -rf  data/ snapshots/ journal/
