@@ -7,7 +7,7 @@ Content:
 
 * `System requirements <#system-requirements>`__
 * `Download the FRINX UniConfig distribution <#download-the-frinx-uniconfig-distribution>`__
-* `Activate your FRINX UniConfig Distribution <#activate-your-frinx-uniconfig-distribution>`__
+* `Activate your FRINX UniConfig distribution <#activate-your-frinx-uniconfig-distribution>`__
 * `UniConfig basic principles <#uniconfig-basic-principles>`__
 * `Install features <#install-features>`__
 
@@ -17,27 +17,16 @@ Content:
 
 * `Connecting devices <#connecting-devices>`__
 
-
-
 System requirements
 -------------------
 
-**RAM:** 8GB minimum; we recommend 16GB 
-  
-**Java:** FRINX distribution requires Java 8 (Openjdk 1.8.0-171 or newer)  
+*  **RAM:** 8GB minimum; 16GB recommended
+*  **Linux:** Supported  Linux distributions are Centos7, Ubuntu 16.04 and Ubuntu 18.04   
+*  **Java:** FRINX distribution requires Java 8 (Openjdk 1.8.0-171 or newer)  
  
-**Linux:** Supported  Linux distributions are Centos7, Ubuntu 16.04 and Ubuntu 18.04   
-
 *Note: Unless stated otherwise, this documentation assumes you are using Linux.*  
 
 **To install Java:**
-
-Ubuntu: Run a terminal and insert a command below:
-
-.. code-block:: guess
-
-   sudo apt-get install openjdk-8-jre
-
 
 CentOS: Run a terminal and insert a command below:
 
@@ -45,16 +34,22 @@ CentOS: Run a terminal and insert a command below:
 
    sudo yum install java-1.8.0-openjdk
 
+Ubuntu: Run a terminal and insert a command below:
+
+.. code-block:: guess
+
+   sudo apt-get install openjdk-8-jre
+
 Download the FRINX UniConfig distribution
 -----------------------------------------
 
-Please click on the following link to download a zip archive of the latest Oxygen FRINX UniConfig Distribution:
+Please click on the following link to download a zip archive of the latest Oxygen FRINX UniConfig distribution:
 
 **Oxygen**: `distribution-karaf-4.2.0.frinx.zip <https://license.frinx.io/download/distribution-karaf-4.2.0.frinx.zip>`__
 
 By downloading the file you accept the FRINX software agreement: `EULA <7793505-v7-Frinx-ODL-Distribution-Software-End-User-License-Agreement.pdf>`__
 
-Activate your FRINX UniConfig Distribution
+Activate your FRINX UniConfig distribution
 ------------------------------------------
 
 To activate your installation, unzip the file and open the directory.
@@ -91,17 +86,17 @@ For non-standard setups, use this guide :doc:`Operations_Manual/running-frinx-od
 UniConfig basic principles
 --------------------------
 
-The purpose of UniConfig is to manage the intent (desired configuration) of physical and virtual networking devices through a single network API. In addition, UniConfig enables device and network wide transactions so that the network will always remain in a well-defined state without leftovers from failed  configuration attempts. UniConfig is delivered as an application in the FRINXOpenDaylight (ODL) Distribution and as a standalone application. UniConfig enables users to communicate with their network infrastructure via three different options:
+The purpose of UniConfig is to manage the intent (desired configuration) of physical and virtual networking devices through a single network API. In addition, UniConfig enables device and network wide transactions so that the network will always remain in a well-defined state without leftovers from failed  configuration attempts. UniConfig is delivered as an application in the FRINXOpenDaylight (ODL) distribution and as a standalone application. UniConfig enables users to communicate with their network infrastructure via three different options:
 
 1) Via unstructured data through CLI
 2) Via OpenConfig API withthe help of our open source device library
 3) Via vendor YANG models native to the connected devices
 
-Option 1) gives users similar capabilities like access through Ansible or similar tools and allows to pass strings to the device and receive strings from the device in a programmatic way. UniConfig provides the mechanism to authenticate and provide a channel to send and receive data but does not interpret the data. That is left for the user application to do.
+**Option 1)** gives users similar capabilities like access through Ansible or similar tools and allows to pass strings to the device and receive strings from the device in a programmatic way. UniConfig provides the mechanism to authenticate and provide a channel to send and receive data but does not interpret the data. That is left for the user application to do.
 
-Option 2) provides users with an OpenConfig API that is translated into device specific CLI or YANG models. This requires “translation units” to be installed for the devices under control. FRINX provides an open source device library that includes many devices from widely deployed network vendors.
+**Option 2)** provides users with an OpenConfig API that is translated into device specific CLI or YANG models. This requires “translation units” to be installed for the devices under control. FRINX provides an open source device library that includes many devices from widely deployed network vendors.
 
-Option 3) also called “UniConfig native”, provides the ability to configure devices with any YANG model that is supported by the device. After mounting a device, UniConfig native maps the vendor models into its UniConfig data store and provides stateful configuration capabilities to applications and users.
+**Option 3)** also called “UniConfig native”, provides the ability to configure devices with any YANG model that is supported by the device. After mounting a device, UniConfig native maps the vendor models into its UniConfig data store and provides stateful configuration capabilities to applications and users.
 
 .. image:: FRINX_UniConfig_solution.jpg
    :target: FRINX_UniConfig_solution.jpg
