@@ -32,7 +32,7 @@ CentOS: Run a terminal and insert a command below:
 
 .. code-block:: guess
 
-   sudo yum install java-1.8.0-openjdk
+   $ sudo yum install java-1.8.0-openjdk
 
 Ubuntu: Run a terminal and insert a command below:
 
