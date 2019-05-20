@@ -8,7 +8,6 @@ List of content
 
 * `What is the datastore used in FRINX ODL? <#what-is-the-datastore-used-in-frinx-odl>`__
 * `Are service instances stored in the UniConfig layer of FRINX? <#are-service-instances-stored-in-the-uniconfig-layer-of-frinx>`__
-* `When changing e.g. a translation unit of FRINX to the UNICONFIG layer is it possible to load the new models or add support for more features in run time? <#when-changing-e-g-a-translation-unit-of-frinx-to-the-uniconfig-layer-is-it-possible-to-load-the-new-models-or-add-support-for-more-features-in-run-time>`__
 * `How does FRINX deal with model changes? <#how-does-frinx-deal-with-model-changes>`__
 * `Does FRINX provide auto rollback on all affected devices, when a transaction fails on one device? <#does-frinx-provide-auto-rollback-on-all-affected-devices-when-a-transaction-fails-on-one-device>`__
 * `When synchronizing configuration from a device into FRINX, is it possible to show the differences between the actual device configuration and the operational datastore? <#when-synchronizing-configuration-from-a-device-into-frinx-is-it-possible-to-show-the-differences-between-the-actual-device-configuration-and-the-operational-datastore>`__
