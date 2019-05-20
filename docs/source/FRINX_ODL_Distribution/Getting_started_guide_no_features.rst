@@ -27,14 +27,14 @@ System requirements
 
 Ubuntu: Run a terminal and insert a command below:
 
-.. code-block:: guess
+.. code-block:: abap
 
    sudo apt-get install openjdk-8-jre
 
 
 CentOS: Run a terminal and insert a command below:
 
-.. code-block:: guess
+.. code-block:: abap
 
    sudo yum install java-1.8.0-openjdk
 
@@ -56,7 +56,7 @@ Enter the following commands in a terminal to start and activate FRINX UniConf
 **Note**: The token is unique to your user account on frinx.io and cannot be shared with other users.
 It can be found `here <https://frinx.io/my-licenses-information>`__ (you need to be logged in frinx.io to view your token)
 
-.. code-block:: guess
+.. code-block:: abap
 
    ./bin/karaf frinx.createtoken [frinx-license_secret-token]
 
@@ -71,7 +71,7 @@ In the event of interruption, the initial state can be restored by entering the 
 **First** command forcibly kills the FRINX UniConfig karaf process
 **Second** command cleans certain directories:
 
-.. code-block:: bash
+.. code-block:: abap
 
    kill -9 $(pgrep  -o -f  karaf)
    rm  -rf  data/ snapshots/ journal/
