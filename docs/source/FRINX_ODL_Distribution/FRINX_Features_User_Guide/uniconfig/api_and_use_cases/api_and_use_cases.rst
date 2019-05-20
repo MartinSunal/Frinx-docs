@@ -9,7 +9,7 @@ Mounting CLI or NETCONF network element.
 
 
 .. image:: drawing/UNM/CLI_NETCONF_mount.png
-   :target: drawing/UNM/CLI_NETCONF_mount.png
+   :target: drawing/UNM/CLI_NETCONF_mount.html
    :alt: Mount CLI or NETCONF device
 
 
