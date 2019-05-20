@@ -11,5 +11,9 @@ Operating FRINX UniConfig ODL
    :caption: Content
    :glob:
    
-   Operations_Manual/*
-   *
+   running-frinx-odl-initial.rst
+   running-frinx-odl-after-activation.rst
+   frinx-features.rst
+   karaf-logging.rst
+   clustering-overview.rst
+   elastic-search.rst
