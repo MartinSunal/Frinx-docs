@@ -30,13 +30,13 @@ System requirements
 
 CentOS: Run a terminal and insert a command below:
 
-.. code-block:: abap
+.. code-block:: text
 
    sudo yum install java-1.8.0-openjdk
 
 Ubuntu: Run a terminal and insert a command below:
 
-.. code-block:: abap
+.. code-block:: text
 
    sudo apt-get install openjdk-8-jre
 
@@ -58,7 +58,7 @@ Enter the following commands in a terminal to start and activate FRINX UniConf
 **Note**: The token is unique to your user account on frinx.io and cannot be shared with other users.
 It can be found `here <https://frinx.io/my-licenses-information>`__ (you need to be logged in frinx.io to view your token)
 
-.. code-block:: abap
+.. code-block:: text
 
    ./bin/karaf frinx.createtoken [frinx-license_secret-token]
 
@@ -73,7 +73,7 @@ In the event of interruption, the initial state can be restored by entering the 
 **First** command forcibly kills the FRINX UniConfig karaf process
 **Second** command cleans certain directories:
 
-.. code-block:: abap
+.. code-block:: text
 
    kill -9 $(pgrep  -o -f  karaf)
    rm  -rf  data/ snapshots/ journal/
@@ -111,7 +111,7 @@ Features for CLI
 
 Install the features necessary to use CLI with command below:
 
-.. code-block:: abap
+.. code-block:: text
 
    frinx-user@root>feature:install cli-southbound-all-units odl-restconf odl-netconf-connector-all unified-topology-all-units frinx-installer-backend uniconfig-node-manager
 
@@ -120,7 +120,7 @@ Features for NETCONF
 
 Install the features necessary to use NETCONF with command below:
 
-.. code-block:: abap
+.. code-block:: text
 
    frinx-user@root>feature:install odl-netconf-connector-all
 
@@ -130,7 +130,7 @@ Features for UniConfig native
 
 Install the features necessary to use UniConfig-native with command below:
 
-.. code-block:: abap
+.. code-block:: text
 
    frinx-user@root>feature:install frinx-UniConfig-native frinx-unified-topology odl-netconf-topology
 
