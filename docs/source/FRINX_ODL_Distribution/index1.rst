@@ -6,7 +6,7 @@ FRINX UniConfig is a suite of applications aimed at network configuration manage
 
 .. toctree::
    :maxdepth: 1
-   :caption: Projects
+   :caption: Content
 
    Getting_started_guide.rst
    API.rst

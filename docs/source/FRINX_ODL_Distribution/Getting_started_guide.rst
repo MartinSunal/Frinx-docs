@@ -30,13 +30,13 @@ System requirements
 
 CentOS: Run a terminal and insert a command below:
 
-.. code-block:: shell
+.. code-block:: abap
 
    sudo yum install java-1.8.0-openjdk
 
 Ubuntu: Run a terminal and insert a command below:
 
-.. code-block:: shell
+.. code-block:: abap
 
    sudo apt-get install openjdk-8-jre
 
@@ -47,7 +47,7 @@ Please click on the following link to download a zip archive of the latest Oxyge
 
 **Oxygen**: `distribution-karaf-4.2.0.frinx.zip <https://license.frinx.io/download/distribution-karaf-4.2.0.frinx.zip>`__
 
-By downloading the file you accept the FRINX software agreement: `EULA <7793505-v7-Frinx-ODL-Distribution-Software-End-User-License-Agreement.pdf>`__
+By downloading the file you accept the FRINX software agreement: `EULA <https://frinx.io/wp-content/uploads/2017/01/EULA_ODL_20170104_v102.pdf>`__
 
 Activate your FRINX UniConfig distribution
 ------------------------------------------
@@ -58,7 +58,7 @@ Enter the following commands in a terminal to start and activate FRINX UniConf
 **Note**: The token is unique to your user account on frinx.io and cannot be shared with other users.
 It can be found `here <https://frinx.io/my-licenses-information>`__ (you need to be logged in frinx.io to view your token)
 
-.. code-block:: shell
+.. code-block:: abap
 
    ./bin/karaf frinx.createtoken [frinx-license_secret-token]
 
@@ -111,7 +111,7 @@ Features for CLI
 
 Install the features necessary to use CLI with command below:
 
-.. code-block:: shell
+.. code-block:: abap
 
    frinx-user@root>feature:install cli-southbound-all-units odl-restconf odl-netconf-connector-all unified-topology-all-units frinx-installer-backend uniconfig-node-manager
 
@@ -120,7 +120,7 @@ Features for NETCONF
 
 Install the features necessary to use NETCONF with command below:
 
-.. code-block:: shell
+.. code-block:: abap
 
    frinx-user@root>feature:install odl-netconf-connector-all
 
@@ -130,7 +130,7 @@ Features for UniConfig native
 
 Install the features necessary to use UniConfig-native with command below:
 
-.. code-block:: shell
+.. code-block:: abap
 
    frinx-user@root>feature:install frinx-UniConfig-native frinx-unified-topology odl-netconf-topology
 
