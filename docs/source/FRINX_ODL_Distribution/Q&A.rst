@@ -81,13 +81,13 @@ How would an access to the configuration data store look like in code using an e
 
 A: Just to demonstrate API, in this example InterfaceConfigurations is read from CONF DS and put back to CONF DS.
 
-..code_block:: abap
+..code_block:: text
 
-ReadWriteTransaction rwTx = dataBroker.newReadWriteTransaction();
-InstanceIdentifier`<InterfaceConfigurations>` iid = InstanceIdentifier.create(InterfaceConfigurations.class);
-InterfaceConfigurations ifcConfig = xrNodeReadTx.read(LogicalDatastoreType.CONFIGURATION, iid).checkedGet();
-rwTx.put(LogicalDatastoreType.CONFIGURATION, iid, ifcConfig);
-rwTx.submit();
+ ReadWriteTransaction rwTx = dataBroker.newReadWriteTransaction();
+ InstanceIdentifier`<InterfaceConfigurations>` iid = InstanceIdentifier.create(InterfaceConfigurations.class);
+ InterfaceConfigurations ifcConfig = xrNodeReadTx.read(LogicalDatastoreType.CONFIGURATION, iid).checkedGet();
+ rwTx.put(LogicalDatastoreType.CONFIGURATION, iid, ifcConfig);
+ rwTx.submit();
 
 Is it possible in FRINX to run transaction on two disjunct sets of devices simultaneously?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

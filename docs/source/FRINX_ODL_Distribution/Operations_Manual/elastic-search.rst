@@ -18,7 +18,7 @@ Installation
 
 In the unpackaged folder, start elasticsearch with
 
-.. code-block:: guess
+.. code-block:: text
 
    ./bin/elasticsearch
 
@@ -26,7 +26,7 @@ In the unpackaged folder, start elasticsearch with
 
 3. `Install Kibana <https://www.elastic.co/downloads/kibana>`__ - download the version appropriate to your system. For the Linuz-64 bit tar.gz download file, unpackage it with
 
-.. code-block:: guess
+.. code-block:: text
 
    tar -xvf filename
 
@@ -34,7 +34,7 @@ In the unpackaged folder, start elasticsearch with
 
 In the unpackaged folder, start kibana with
 
-.. code-block:: guess
+.. code-block:: text
 
    ./bin/kibana
 
@@ -44,7 +44,7 @@ In the unpackaged folder, start kibana with
 
 For the Linuz-64 bit tar.gz download file, unpackage it with
 
-.. code-block:: guess
+.. code-block:: text
 
    tar -xvf filename
 
@@ -61,7 +61,7 @@ Configure Log4j
 Within the home directory of your FRINX ODL distribution, go to the **etc** directory.
 Backup your old config file:  
 
-.. code-block:: guess
+.. code-block:: text
 
    cp org.ops4j.pax.logging.cfg org.ops4j.pax.logging.cfg.bkp
 
@@ -75,7 +75,7 @@ We must now configure socket listener for Logstash:
 
 From your logstash directory(the directory created from unpackaging the download file at the start of this guide), move into the config directory:
 
-.. code-block:: guess
+.. code-block:: text
 
    cd config
 
@@ -92,13 +92,13 @@ We started elasticsearch and kibana after downloading them (see the start of thi
 
 We now need to start logstash. Move to your main logstash folder:
 
-.. code-block:: guess
+.. code-block:: text
 
    cd ..
 
 The start logstash with
 
-.. code-block:: guess
+.. code-block:: text
 
    ./bin/logstash -f config/frinx.conf
 
@@ -109,7 +109,7 @@ We have already started elasticsearch, kibana, and logstash. Now start karaf as 
 
 Then type
 
-.. code-block:: guess
+.. code-block:: text
 
    ./bin/karaf
 

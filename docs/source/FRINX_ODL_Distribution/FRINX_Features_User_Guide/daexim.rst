@@ -32,14 +32,14 @@ FRINX daexim solves those problems by using many small transactions and triggeri
 
 Once import is done, karaf will continue booting other features. A consequence of running import before installing all bundles is that not all yang models are available. Thus, both import and export use the new folder:
 
-.. code-block:: guess
+.. code-block:: text
 
    ${karaf.home}/schemas
 
 
 where all yang files are extracted from karaf's system folder and loaded during karaf startup. Json files that contain actual data are stored and read from the following folder:
 
-.. code-block:: guess
+.. code-block:: text
 
    ${karaf.home}/daexim
 
@@ -49,7 +49,7 @@ org.opendaylight.daexim.cfg
 
 The defaults that affect daexim are stored in the file etc/org.opendaylight.daexim.cfg. The defaults are:
 
-.. code-block:: guess
+.. code-block:: text
 
    daexim.importOnInit=false
    daexim.importBatchSize=1500
@@ -59,21 +59,21 @@ Enabling automatic import during startup
 
 To enable automatic import, place the backed up json files into
 
-.. code-block:: guess
+.. code-block:: text
 
    ${karaf.home}/daexim
 
 
 ,yang schemas into
 
-.. code-block:: guess
+.. code-block:: text
 
    ${karaf.home}/schemas
 
 
 and make sure org.opendaylight.daexim.cfg contains the following on all nodes:
 
-.. code-block:: guess
+.. code-block:: text
 
    daexim.importOnInit=true
 
@@ -85,14 +85,14 @@ The changes mentioned here are already in place in the official FRINX distributi
 
 Because frinx daexim needs to start before all other ODL features, the featuresBoot specified in
 
-.. code-block:: guess
+.. code-block:: text
 
    ${karaf.home}/etc/org.apache.karaf.features.cfg
 
 
 must be split into two properties:
 
-.. code-block:: guess
+.. code-block:: text
 
    (config,standard,region,package,kar,ssh,management,odl-jolokia),(odl-restconf),(odl-daexim-all)
    odlFeaturesBoot=odl-netconf-topology,customer-feature1
@@ -103,19 +103,19 @@ Property featuresBoot must only contain core features necessary for loading daex
 
 Since karaf loads bundles of previously started features before loading featuresBoot, we must delete the following directory before every start:
 
-.. code-block:: guess
+.. code-block:: text
 
    ${karaf.home}/data/cache
 
 
 This can be automated by changing a line in the file
 
-.. code-block:: guess
+.. code-block:: text
 
    ${karaf.home}/etc/system.properties
 
 
-.. code-block:: guess
+.. code-block:: text
 
    karaf.clean.cache=true
 
@@ -130,7 +130,7 @@ Export
 
 Daexim export was changed so that it is executed only on the node which was contacted via restconf:
 
-.. code-block:: bash
+.. code-block:: text
 
    curl -u admin:admin  "ODL_NODE_1:8181/restconf/operations/data-export-import:simple-export" -X POST -H "Content-Type: application/json" -d '{"input": {}}' -v
 
@@ -141,14 +141,14 @@ Exporting from leader node
 
 Reading the whole datastore within a cluster can be slow and can cause pressure on the system leading to intermittent node failures. Therefore it is advised to run the export on the shard leader. This way all data will be read from local memory. To determine the node that contains the leaders of both shards (default-operational, default-config), call the following:
 
-.. code-block:: bash
+.. code-block:: text
 
    curl -u admin:admin  "ODL_NODE_1:8181/jolokia/read/org.opendaylight.controller:Category=ShardManager,name=shard-manager-config,type=DistributedConfigDatastore
    curl -u admin:admin  "ODL_NODE_1:8181/jolokia/read/org.opendaylight.controller:Category=ShardManager,name=shard-manager-operational,type=DistributedOperationalDatastore
 
 Example output:
 
-.. code-block:: json
+.. code-block:: text
 
    {
        "request": {
@@ -188,7 +188,7 @@ Note that leaderId points to the node containing the shard leader, attributes sh
 
 Details about both shards can be obtained by calling:
 
-.. code-block:: bash
+.. code-block:: text
 
    ID=1
    SHARD_NAME=default-operational

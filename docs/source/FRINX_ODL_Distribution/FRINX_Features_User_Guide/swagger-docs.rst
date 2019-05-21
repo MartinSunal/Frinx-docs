@@ -108,7 +108,7 @@ How to launch Swagger-UI
 
 4. Run following command in your terminal:
 
-.. code-block:: guess
+.. code-block:: text
 
    sudo docker run -p 80:8080 -e SWAGGER_JSON=/foo/uniconfig.yaml -v $PWD:/foo swaggerapi/swagger-ui
 

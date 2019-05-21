@@ -72,7 +72,7 @@ PUT /restconf/config/<identifier>
 
 Example:  
 
-.. code-block:: guess
+.. code-block:: text
 
    PUT http://<controllerIP>:8080/restconf/config/module1:foo/bar
    Content-Type: applicaton/xml
@@ -82,7 +82,7 @@ Example:
 
 Example with mount point:  
 
-.. code-block:: guess
+.. code-block:: text
 
    PUT http://<controllerIP>:8080/restconf/config/module1:foo1/foo2/yang-ext:mount/module2:foo/bar
    Content-Type: applicaton/xml
@@ -97,7 +97,7 @@ Creates the data if it does not exist
 
 Example:  
 
-.. code-block:: guess
+.. code-block:: text
 
    POST URL: http://localhost:8080/restconf/config/
    content-type: application/yang.data+json
@@ -121,7 +121,7 @@ POST /restconf/config/<identifier>
 
 Example:  
 
-.. code-block:: guess
+.. code-block:: text
 
    POST http://<controllerIP>:8080/restconf/config/module1:foo
    Content-Type: applicaton/xml/
@@ -131,7 +131,7 @@ Example:
 
 Example with mount point:  
 
-.. code-block:: guess
+.. code-block:: text
 
    http://<controllerIP>:8080/restconf/config/module1:foo1/foo2/yang-ext:mount/module2:foo
    Content-Type: applicaton/xml
@@ -149,7 +149,7 @@ POST /restconf/operations/<moduleName>:<rpcName>
 
 Example:  
 
-.. code-block:: guess
+.. code-block:: text
 
    POST http://<controllerIP>:8080/restconf/operations/module1:fooRpc
    Content-Type: applicaton/xml
@@ -160,7 +160,7 @@ Example:
 
 The answer from the server could be:  
 
-.. code-block:: guess
+.. code-block:: text
 
    <output>
      …
@@ -168,7 +168,7 @@ The answer from the server could be:
 
 An example using a JSON payload:  
 
-.. code-block:: guess
+.. code-block:: text
 
    POST http://localhost:8080/restconf/operations/toaster:make-toast
    Content-Type: application/yang.data+json

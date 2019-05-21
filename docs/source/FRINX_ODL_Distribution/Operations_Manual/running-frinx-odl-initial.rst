@@ -23,14 +23,14 @@ This guide explains how to run the distribution for the first time. If you have 
 
 Ubuntu: Run a terminal and insert a command below:
 
-.. code-block:: guess
+.. code-block:: text
 
    sudo apt-get install openjdk-8-jre
 
 
 CentOS: Run a terminal and insert a command below:
 
-.. code-block:: guess
+.. code-block:: text
 
    sudo yum install java-1.8.0-openjdk
 
@@ -53,7 +53,7 @@ Enter the following commands in a terminal to start and activate FRINX ODL
 **Note**: The token is unique to your user account on frinx.io and cannot be shared with other users.
 It can be found `here <https://frinx.io/my-licenses-information>`__ (you need to be logged in frinx.io to view your token)
 
-.. code-block:: guess
+.. code-block:: text
 
    ./bin/karaf frinx.createtoken [frinx-license_secret-token]
 
@@ -69,7 +69,7 @@ In the event of interruption, the initial state can be restored by entering the 
 **First** command forcibly kills the FRINX ODL karaf process
 **Second** command cleans certain directories:
 
-.. code-block:: guess
+.. code-block:: text
 
    kill -9 $(pgrep  -o -f  karaf)
    rm  -rf  data/ snapshots/ journal/
@@ -87,7 +87,7 @@ Please set up java system properties as described here: https://docs.oracle.com/
 
 This means running karaf with something like this:
 
-.. code-block:: guess
+.. code-block:: text
 
    JAVA_OPTS="-Dhttp.proxyHost=10.0.0.100 -Dhttp.proxyPort=8800" bin/karaf frinx.createtoken
 
@@ -98,7 +98,7 @@ Activating the FRINX ODL Distribution on a server without Internet access
 
 Let's call the connected computer ONLINE and the one where you want to run karaf OFFLINE.
 
-.. code-block:: guess
+.. code-block:: text
 
    OFFLINE# TOKEN="insert your token here"
    OFFLINE# KARAF_HOME="insert path to karaf"
@@ -109,7 +109,7 @@ Let's call the connected computer ONLINE and the one where you want to run karaf
 
 Generate fingerprint json to a local file:
 
-.. code-block:: guess
+.. code-block:: text
 
    OFFLINE# $KARAF_HOME/bin/karaf frinx.fingerprint > fingerprint.txt
 
@@ -117,7 +117,7 @@ Generate fingerprint json to a local file:
 
 Now, copy fingerprint.txt to the ONLINE machine:
 
-.. code-block:: guess
+.. code-block:: text
 
     ONLINE# curl https://license.frinx.io/api/v1/obtain-license -d "@fingerprint.txt"  -H 'Content-Type: application/json' -X PUT > frinx.license.cfg
 
@@ -125,7 +125,7 @@ Now, copy fingerprint.txt to the ONLINE machine:
 
 Copy frinx.license.cfg back to OFFLINE machine, replacing the file in karaf's etc folder. You will be able to start karaf normally:
 
-.. code-block:: guess
+.. code-block:: text
 
    OFFLINE# $KARAF_HOME/bin/karaf
 
@@ -137,13 +137,13 @@ In the event of activating FRINX ODL multiple times it might be tedious to repea
 
 To avoid that you can just create file frinx.license.cfg at $HOME/.local/share/frinx_odl/frinx.license.cfg with the content:
 
-.. code-block:: guess
+.. code-block:: text
 
    token=<YOUR SECRET TOKEN>
 
 
 For example token=fasf6a4f664f6sa4f64asf. This will provide your FRINX ODL your token whenever needed. After you created the file you may run FRINX ODL with clean install just with:
 
-.. code-block:: guess
+.. code-block:: text
 
    ./bin/karaf

@@ -4,7 +4,7 @@ FRINX ODL Distribution Features
 
 The FRINX distribution offers the following features:
 
-.. code-block:: guess
+.. code-block:: text
 
     odlparent
     yangtools
@@ -34,20 +34,20 @@ odlFeaturesBoot=odl-restconf,odl-netconf-connector-all
 
 For a list of available features, first start FRINX ODL see our guide (:doc:`running-frinx-odl-after-activation`) and enter the following command within the karaf terminal:
 
-.. code-block:: guess
+.. code-block:: text
 
    feature:list
 
 
 A list of installed features can be displayed with the command:
 
-.. code-block:: guess
+.. code-block:: text
 
    feature:list -i
 
 
 For a list of features whose names include a particular word e.g. 'restconf' you can use grep e.g.
 
-.. code-block:: guess
+.. code-block:: text
 
    feature:list | grep restconf

@@ -7,7 +7,7 @@ FRINX ODL - Install features
 
 To use this functionality, run the following command in the karaf console:
 
-.. code-block:: guess
+.. code-block:: text
 
    feature:install frinx-installer-backend
 
@@ -38,7 +38,7 @@ With Postman REST call ``features list`` which is already set up as follows:
 * GET. (username: admin password: admin).  
 * Issue the call by hitting **Send**.
 
-.. code-block:: guess
+.. code-block:: text
 
    http://[host]:[port]/restconf/operational/installer:features
 
@@ -50,13 +50,13 @@ Example output:
 
 * Or by typing the following in a terminal window:
   
-.. code-block:: bash
+.. code-block:: text
 
      curl 'http://localhost:8181/restconf/operational/installer:features' -H 'Host: localhost:8181' -H 'Accept: application/json, text/plain, */*' -H 'Accept-Language: en-US,en;q=0.5' -H 'Authorization: Basic YWRtaW46YWRtaW4=' -X get
 
 Whether using curl or Postman, output will be in the following format: (if using curl, the output can be passed through a JSON formatter to achieve the formatting below):  
 
-.. code-block:: guess
+.. code-block:: text
 
    {  
       "features":{  
@@ -148,7 +148,7 @@ With Postman REST call ``monitor-resources`` which is already set up as follows:
 * POST. (username: admin password: admin).  
 * Issue the call by hitting **Send**.
 
-.. code-block:: guess
+.. code-block:: text
 
    http://[host]:[port]/restconf/operations/installer:monitor-resources
 
@@ -161,13 +161,13 @@ Example output:
 
 
 * Or by typing the following in a terminal window:
-  .. code-block:: bash
+  .. code-block:: text
 
      curl 'http://localhost:8181/restconf/operations/installer:monitor-resources' -H 'Host: localhost:8181' -H 'Content-Type: application/json;charset=utf-8' -H 'Authorization: Basic YWRtaW46YWRtaW4=' -X post
 
 In each case, output will be in the following format (if using curl, the output can be passed through a JSON formatter to achieve the formatting below):
 
-.. code-block:: guess
+.. code-block:: text
 
    {  
       "output":{  
@@ -252,7 +252,7 @@ Upload a KAR file
 
 This function allows the user to easily upload any KAR file to the Karaf distribution. Before installing, the KAR file is validated. There is an HTTP servlet which listens on
 
-.. code-block:: guess
+.. code-block:: text
 
    http://[host]:[port]/kar-uploader
 
@@ -261,7 +261,7 @@ The POST request contains one parameter which indicates the binary data of the K
 
 For example the CURL has a function to convert file location to binary data. You can upload a KAR file by typing the following in a terminal window:
 
-.. code-block:: bash
+.. code-block:: text
 
        curl 'http://localhost:8181/restconf/operations/installer:upload-kar' -H 'Host: localhost:8181' -H 'Content-Type: application/yang.data+json;charset=utf-8' -H 'Authorization: Basic YWRtaW46YWRtaW4=' -X post -d '{"input":{"data":"'"$(base64 --wrap=0 upload/dummy-1.0.0.kar)"'"}}' -H 'Connection: keep-alive' -H "Expect:"
 
@@ -269,7 +269,7 @@ For example the CURL has a function to convert file location to binary data. You
 
 This will give the following output which confirms that the file has been uploaded correctly:
 
-.. code-block:: guess
+.. code-block:: text
 
        {
           "output":{

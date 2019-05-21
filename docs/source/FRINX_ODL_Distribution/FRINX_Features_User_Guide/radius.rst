@@ -22,13 +22,13 @@ Within the FRINX distribution, the AAA feature extends authentication capabiliti
 
 To download the freeRADIUS image:
 
-.. code-block:: bash
+.. code-block:: text
 
    docker pull docker.io/unico/freeradius
 
 To run the freeRADIUS server:
 
-.. code-block:: bash
+.. code-block:: text
 
    docker run -it docker.io/unico/freeradius
 
@@ -37,7 +37,7 @@ RADIUS configuration
 
 Within your FRINX distribution directory structure, go to the /etc directory and edit the *shiro.ini* file. Under "[main]" enter the following four lines of text:
 
-.. code-block:: guess
+.. code-block:: text
 
    radiusRealm = org.opendaylight.aaa.shiro.realm.RadiusRealm securityManager.realms = $radiusRealm
    radiusRealm.serverIp = 172.17.0.2
@@ -51,13 +51,13 @@ Prepare the environment
 
 Start the controller Karaf container:
 
-.. code-block:: bash
+.. code-block:: text
 
    bin/karaf frinx.createtoken <user token>
 
 Check the installed bundle for RADIUS authentication. It must be in ACTIVE state:
 
-.. code-block:: bash
+.. code-block:: text
 
    la | grep -i aaa-authn-radius
 
@@ -70,13 +70,13 @@ Change RADIUS credentials
 
 Start the freeRADIUS docker image:
 
-.. code-block:: bash
+.. code-block:: text
 
    docker exec -it <CONTAINER_ID> /bin/bash
 
 Go to /etc/freeradius and open the users file:
 
-.. code-block:: bash
+.. code-block:: text
 
    vi /etc/freeradius/users
 
@@ -86,7 +86,7 @@ admin Cleartext-Password := "password"
 
 Change the username and password and save the file. Next, exit from the container and restart the docker image:
 
-.. code-block:: bash
+.. code-block:: text
 
    docker stop <CONTAINER_ID>   
    docker start <CONTAINER_ID>

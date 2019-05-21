@@ -18,13 +18,13 @@ After `starting FRINX ODL <running-frinx-odl-after-activation>`__ , first check 
 
 Within the karaf console type:
 
-.. code-block:: guess
+.. code-block:: text
 
    log:list
 
 This will display output similar to the following:
 
-.. code-block:: guess
+.. code-block:: text
 
    Logger                                                           | Level
    ------------------------------------------------------------------------
@@ -42,19 +42,19 @@ Add or change logging level for a particular feature
 
 To add or change the logging level for a particular feature e.g. io.frinx.cli type
 
-.. code-block:: guess
+.. code-block:: text
 
    log:set INFO io.frinx.cli
 
 You will see the logging level has been updated when you again type
 
-.. code-block:: guess
+.. code-block:: text
 
    log:list
 
 The output will now be similar to the following, with the level for io.frinx.cli having been changed from DEBUG to INFO:
 
-.. code-block:: guess
+.. code-block:: text
 
    Logger                                                           | Level
    ------------------------------------------------------------------------
@@ -70,7 +70,7 @@ The output will now be similar to the following, with the level for io.frinx.cli
 
 To begin viewing the log type:
 
-.. code-block:: guess
+.. code-block:: text
 
    log:tail
 

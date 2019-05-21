@@ -115,14 +115,14 @@ Main releases
 
 Distinct versions of the FRINX Postman API files are `available here <https://github.com/FRINXio/Postman/releases>`__ , and named in the following format to correspond to analogous FRINX ODL distributions:  
 
-.. code-block:: guess
+.. code-block:: text
 
    release-x.x.x.frinx  
 
 
 for example 
 
-.. code-block:: guess
+.. code-block:: text
 
    release-3.1.1.frinx
 
@@ -132,14 +132,14 @@ Release candidates
 
 Between releases we also publish release candidate (RC) zip files `in the same location <https://github.com/FRINXio/Postman/releases>`__ which are pre-release versions in the development stage. These correspond with pre-release versions of FRINX ODL. The naming format is:  
 
-.. code-block:: guess
+.. code-block:: text
 
    release-x.x.x.rcx-frinx
 
 
 for example
 
-.. code-block:: guess
+.. code-block:: text
 
    release-3.1.1.rc2-frinx
 
@@ -260,7 +260,7 @@ How to launch Swagger-UI
 
 4. Run following command in your terminal:
 
-.. code-block:: guess
+.. code-block:: text
 
    sudo docker run -p 80:8080 -e SWAGGER_JSON=/foo/uniconfig.yaml -v $PWD:/foo swaggerapi/swagger-ui
 

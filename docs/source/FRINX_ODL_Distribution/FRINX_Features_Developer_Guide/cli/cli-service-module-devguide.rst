@@ -27,10 +27,16 @@ CLI
 
 This document provides developer-level details for the FRINX CLI southbound plugin, both for the framework itself as well as for the pluggable translation units.
 
-Pre-requisite reading: - Honeycomb design documentation:
+Pre-requisite reading
+~~~~~~~~~~~~~~~~~~~~~
+
+*  Honeycomb design documentation:
+
 https://wiki.fd.io/view/Honeycomb
 https://docs.fd.io/honeycomb/1.17.04/release-notes-aggregator/release_notes.html
-CLI plugin available presentations:
+
+*  CLI plugin available presentations:
+
 https://frinxhelpdesk.atlassian.net/wiki/display/~mmarsalek/CLI+southbound+plugin+docs
 `CLI plugin user guide <../../FRINX_Features_User_Guide/cli/cli-service-module.html>`__  
 
@@ -128,7 +134,7 @@ Installing to Opendaylight
 
 For how to run Opendaylight with the CLI southbound plugin, please refer to the `user guide <../../FRINX_Features_User_Guide/cli/cli-service-module.html>`__. To install a bundle with a new unit (e.g. previously built with maven) it is sufficient to run the following command in the karaf console:
 
-.. code-block:: guess
+.. code-block:: text
 
    bundle:install -s file:///home/devel/ios-vrfs-unit/target/ios-vrfs-unit-1.0-SNAPSHOT.jar
 
@@ -173,7 +179,7 @@ The following sample shows a CLI translation unit with dependency between 2
 writers. The unit is dedicated for interface configuration on a Cisco IOS
 device.
 
-.. code-block:: guess
+.. code-block:: text
 
    R2(config)#interface loopback 1
    R2(config-if)#ip address 10.0.0.1 255.255.255.255
@@ -187,7 +193,7 @@ translating the *interface* command and `Ipv4ConfigWriter <https://github.com/FR
 the *ip address* command. `IosInterfaceUnit <https://github.com/FRINXio/cli-units/blob/master/ios/interface/src/main/java/io/frinx/cli/unit/ios/ifc/IosInterfaceUnit.java>`__ contains registration of these
 writers where dependency between writers is described:
 
-.. code-block:: guess
+.. code-block:: text
 
    wRegistry.add(new GenericWriter<>(IIDs.IN_IN_CONFIG, new InterfaceConfigWriter(cli)));
    wRegistry.addAfter(new GenericWriter<>(SUBIFC_IPV4_CFG_ID, new Ipv4ConfigWriter(cli)), IIDs.IN_IN_CONFIG);
@@ -217,7 +223,7 @@ To do so, first make sure to generate an appropriate Opendaylight application us
 
 Next make sure to add a Mountpoint service as a dependency of the application, so update your blueprint:
 
-.. code-block:: guess
+.. code-block:: text
 
    <reference id="mountpointService"
               interface="org.opendaylight.mdsal.binding.api.MountPointService"/>
@@ -226,7 +232,7 @@ Next make sure to add a Mountpoint service as a dependency of the application, s
 
 and add an argument to your component:
 
-.. code-block:: guess
+.. code-block:: text
 
    <bean id="SOMEBEAN"
      class="PACKAGE.SOMEBEAN"
@@ -240,7 +246,7 @@ and add an argument to your component:
 
 Also add that argument to your constructor:
 
-.. code-block:: guess
+.. code-block:: text
 
      final MountPointService mountpointService
 
@@ -248,7 +254,7 @@ Also add that argument to your constructor:
 
 So now to get a connected mountpoint from the service:
 
-.. code-block:: guess
+.. code-block:: text
 
    Optional [MountPoint] mountPoint = a.getMountPoint(InstanceIdentifier.create(NetworkTopology.class) .child(Topology.class, new TopologyKey(new TopologyId("cli"))) .child(Node.class, new NodeKey(new NodeId("IOS1"))));
 
@@ -266,7 +272,7 @@ So now to get a connected mountpoint from the service:
 
 And finally DataBroker service can be used to manage the device:
 
-.. code-block:: guess
+.. code-block:: text
 
    ReadWriteTransaction readWriteTransaction = dataBroker.get().newReadWriteTransaction(); // Perform read // reading operational data straight from device CheckedFuture<Optional<Version>, ReadFailedException> read = readWriteTransaction.read(LogicalDatastoreType.OPERATIONAL, InstanceIdentifier.create(Version.class)); try { Version version = read.get().get(); } catch (InterruptedException | ExecutionException e) { e.printStackTrace(); }
 

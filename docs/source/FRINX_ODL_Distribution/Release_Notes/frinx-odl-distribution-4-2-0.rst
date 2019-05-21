@@ -8,14 +8,14 @@ This document describes the latest changes, additions, known issues, and fixes f
 To install Java:\ :raw-html-m2r:`<br>`
 Ubuntu: In a terminal type
 
-.. code-block:: guess
+.. code-block:: text
 
    sudo apt-get install openjdk-8-jre
 
 
 CentOS: In a terminal type
 
-.. code-block:: guess
+.. code-block:: text
 
    sudo yum install java-1.8.0-openjdk
 

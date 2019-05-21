@@ -48,7 +48,7 @@ Find the line that begins with ``#odlFeaturesBoot``. Remove ``#`` and add the fe
 
 The format of that line of the file should be as follows:
 
-.. code-block:: guess
+.. code-block:: text
 
    odlFeaturesBoot=odl-mdsal-clustering
 
@@ -57,7 +57,7 @@ Save the file.
 
 **4.** Run Karaf and Ii your main FRINX ODL directory, type:
 
-.. code-block:: guess
+.. code-block:: text
 
    ./bin/karaf
 
@@ -66,7 +66,7 @@ Save the file.
 
 To check whether odl-mdsal-clustering has finished installing, type the following within the karaf terminal
 
-.. code-block:: guess
+.. code-block:: text
 
    feature:list |grep odl-mdsal-clustering
 
@@ -89,21 +89,21 @@ When you run the command on each machine you list the same three IP addresses ea
 
 On the first machine you run:
 
-.. code-block:: guess
+.. code-block:: text
 
    ./configure_cluster.sh 1 10.10.199.6 10.10.199.7 10.10.199.8
 
 
 On the second machine you run:
 
-.. code-block:: guess
+.. code-block:: text
 
    ./configure_cluster.sh 2 10.10.199.6 10.10.199.7 10.10.199.8
 
 
 On the third machine you run:   
 
-.. code-block:: guess
+.. code-block:: text
 
    ./configure_cluster.sh 3 10.10.199.6 10.10.199.7 10.10.199.8
 
@@ -115,7 +115,7 @@ Wait for three minutes.
 
 Then, in the terminal window, in the ``{FRINX ODL main}/bin`` directory, type:
 
-.. code-block:: guess
+.. code-block:: text
 
    ./karaf
 
@@ -135,7 +135,7 @@ If prompted, enter "admin" as both the username and password.
 **HTTP: EXPECTED RESPONSE**
 The request should return the following information:  
 
-.. code-block:: json
+.. code-block:: text
 
    {  
       "timestamp":1410524741,

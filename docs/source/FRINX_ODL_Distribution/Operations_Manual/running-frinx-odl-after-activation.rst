@@ -36,7 +36,7 @@ In the event of interruption, the initial state can be restored by entering the 
 **First** command forcibly kills the Frinx ODL karaf process
 **Second** command cleans certain directories:
 
-.. code-block:: guess
+.. code-block:: text
 
    kill -9 $(pgrep  -o -f  karaf)
    rm  -rf  data/ snapshots/ journal/
@@ -49,7 +49,7 @@ Starting in regular mode
 
 In your Frinx ODL Distribution directory, for example /home/username/distribution-karaf-3.1.0.frinx, type
 
-.. code-block:: guess
+.. code-block:: text
 
    ./bin/karaf
 
@@ -63,13 +63,13 @@ To stop from within the karaf console there are three options:
 1. Hold the 'CTRL' key and press the 'd' key
 2. Type:
 
-.. code-block:: guess
+.. code-block:: text
 
        halt
 
 3. Type:
 
-.. code-block:: guess
+.. code-block:: text
 
        shutdown
 
@@ -83,7 +83,7 @@ Starting in background
 
 In your Frinx ODL Distribution directory, for example /home/username/distribution-karaf-3.1.0.frinx, type
 
-.. code-block:: guess
+.. code-block:: text
 
        ./bin/start
 
@@ -94,7 +94,7 @@ Confirming karaf is running in gackground
 
 Type
 
-.. code-block:: guess
+.. code-block:: text
 
        ./bin/status
 
@@ -103,7 +103,7 @@ Connecting to the background process
 
 Type
 
-.. code-block:: guess
+.. code-block:: text
 
        ./bin/client
 
@@ -114,7 +114,7 @@ You can use ``--help`` command to get details about these options.
 
 or use command below
 
-.. code-block:: guess
+.. code-block:: text
 
        ssh karaf@localhost -p 8101
 
@@ -124,13 +124,13 @@ This connection can be local or remote.
 
 When connected to the background process, you can logout (this closes only the ./bin/client process, but not the FRINX ODL server) by typing
 
-.. code-block:: guess
+.. code-block:: text
 
        logout
 
 When connected to the background process, you can shutdown the FRINX ODL server by typing  
 
-.. code-block:: guess
+.. code-block:: text
 
        shutdown
 
@@ -139,7 +139,7 @@ Stopping in background
 
 Type
 
-.. code-block:: guess
+.. code-block:: text
 
        ./bin/stop
 
@@ -151,7 +151,7 @@ Starting in server mode
 
 Start in your FRINX ODL Distribution directory, for example /home/username/distribution-karaf-3.1.0.frinx, type:
 
-.. code-block:: guess
+.. code-block:: text
 
        ./bin/karaf server &
 
@@ -160,7 +160,7 @@ Confirming karaf is running
 
 Type
 
-.. code-block:: guess
+.. code-block:: text
 
        ./bin/status
 
@@ -169,7 +169,7 @@ Stopping the background process
 
 With karaf running in the background (from using ./bin/start), stop it from within a terminal by typing
 
-.. code-block:: guess
+.. code-block:: text
 
        ./bin/stop
 
@@ -180,7 +180,7 @@ The ODL distribution directory example: /home/username/distribution-karaf-3.1.0.
 
 To 'reset' your distribution to a clean state and to delete any features previously installed, within your FRINX ODL distribution directory use the following command:
 
-.. code-block:: guess
+.. code-block:: text
 
        rm -rf data/ cache/ journal/ snapshots/
 
@@ -192,6 +192,6 @@ Uncomment the relevant line and set the variable as required:
 
 *E.g. to set the location of your Java home directory, uncomment the JAVA_HOME variable and point it to the appropriate folder depending on your Java installation*\ :
 
-.. code-block:: guess
+.. code-block:: text
 
        export JAVA_HOME=/opt/jdk1.8.0_151

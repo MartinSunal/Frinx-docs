@@ -82,7 +82,7 @@ refreshed.
 
 RPC request:
 
-.. code-block:: abap
+.. code-block:: text
 
    curl -X POST \
      http://192.168.56.11:8181/restconf/operations/uniconfig-manager:sync-from-network \
@@ -97,7 +97,7 @@ RPC request:
 
 RPC response - success:
 
-.. code-block:: abap
+.. code-block:: text
 
    {
        "output": {
@@ -146,7 +146,7 @@ RPC commit input has one target node and output describes result of commit.
 
 RPC request:
 
-.. code-block:: abap
+.. code-block:: text
 
    curl -X POST \
      http://192.168.56.11:8181/restconf/operations/uniconfig-manager:commit \
@@ -162,7 +162,7 @@ RPC request:
 
 RPC response - success:
 
-.. code-block:: abap
+.. code-block:: text
 
    {
        "output": {
@@ -214,7 +214,7 @@ RPC commit input has one target node and output describes result of checked-comm
 
 RPC request:
 
-.. code-block:: abap
+.. code-block:: text
 
    curl -X POST \
      http://192.168.56.11:8181/restconf/operations/uniconfig-manager:checked-commit 
@@ -230,7 +230,7 @@ RPC request:
 
 RPC response - success:
 
-.. code-block:: abap
+.. code-block:: text
 
    {
        "output": {
@@ -268,7 +268,7 @@ diff.
 
 RPC request:
 
-.. code-block:: abap
+.. code-block:: text
 
    curl -X POST \
      http://192.168.56.11:8181/restconf/operations/uniconfig-manager:calculate-diff \
@@ -284,7 +284,7 @@ RPC request:
 
 RPC response - success:
 
-.. code-block:: abap
+.. code-block:: text
 
    <output xmlns="urn:opendaylight:params:xml:ns:yang:uniconfig:manager">
        <node-with-diff>
@@ -326,7 +326,7 @@ RPC commit input has one target node and RPC output contains result of operation
 
 RPC request:
 
-.. code-block:: abap
+.. code-block:: text
 
    curl -X POST \
      http://192.168.56.11:8181/restconf/operations/uniconfig-manager:replace-config-with-operational \
@@ -341,7 +341,7 @@ RPC request:
 
 RPC response - success:
 
-.. code-block:: abap
+.. code-block:: text
 
    {
        "output": {
@@ -373,7 +373,7 @@ and list of created snapshots with date of creation.
 
 RPC request:
 
-.. code-block:: abap
+.. code-block:: text
 
    curl -X GET \
      http://192.168.56.11:8181/restconf/config/snapshot-manager:snapshots-metadata \
@@ -381,7 +381,7 @@ RPC request:
 
 RPC response - success:
 
-.. code-block:: abap
+.. code-block:: text
 
    {
        "snapshots-metadata": {
@@ -409,7 +409,7 @@ result of operation.
 
 RPC request:
 
-.. code-block:: abap
+.. code-block:: text
 
    curl -X POST \
      http://192.168.56.11:8181/restconf/operations/snapshot-manager:maximum-snapshot-limit \
@@ -422,7 +422,7 @@ RPC request:
 
 RPC response - success:
 
-.. code-block:: abap
+.. code-block:: text
 
    {
        "output": {
@@ -452,7 +452,7 @@ result of operation.
 
 RPC request:
 
-.. code-block:: abap
+.. code-block:: text
 
    curl -X POST \
      http://192.168.56.11:8181/restconf/operations/snapshot-manager:create-snapshot \
@@ -465,7 +465,7 @@ RPC request:
 
 RPC response - success:
 
-.. code-block:: abap
+.. code-block:: text
 
    {
        "output": {
@@ -494,7 +494,7 @@ RPC output contains result of operation.
 
 RPC request:
 
-.. code-block:: abap
+.. code-block:: text
 
    curl -X POST \
      http://192.168.56.11:8181/restconf/operations/snapshot-manager:delete-snapshot \
@@ -507,7 +507,7 @@ RPC request:
 
 RPC response - success:
 
-.. code-block:: abap
+.. code-block:: text
 
    {
        "output": {
@@ -537,7 +537,7 @@ topology in config datastore. RPC output contains result of operation.
 
 RPC request:
 
-.. code-block:: abap
+.. code-block:: text
 
    curl -X POST \
      http://192.168.56.11:8181/restconf/operations/snapshot-manager:replace-config-with-snapshot \
@@ -553,7 +553,7 @@ RPC request:
 
 RPC response - success:
 
-.. code-block:: abap
+.. code-block:: text
 
    {
        "output": {
@@ -599,7 +599,7 @@ would be send to device if RPC commit/checked-commit was called.
 
 RPC request:
 
-.. code-block:: abap
+.. code-block:: text
 
    curl -X POST \
      http://192.168.56.11:8181/restconf/operations/dryrun-manager:dryrun-commit \
@@ -615,7 +615,7 @@ RPC request:
 
 RPC response - success:
 
-.. code-block:: abap
+.. code-block:: text
 
    <output xmlns="urn:opendaylight:params:xml:ns:yang:dryrun:manager">
        <overall-configuration-status>complete</overall-configuration-status>
