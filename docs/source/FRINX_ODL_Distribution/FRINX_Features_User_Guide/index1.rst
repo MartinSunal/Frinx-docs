@@ -1,6 +1,6 @@
 
 User Guide
-=========================
+==========
 
 .. toctree::
    :maxdepth: 1
@@ -17,4 +17,7 @@ User Guide
    netconf-intro.rst
    netconf-clustering.rst
    swagger-docs.rst
-   *
+
+   Translation Units Docs <https://frinxio.github.io/translation-units-docs>
+
+
