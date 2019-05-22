@@ -12,7 +12,6 @@ User Guide
    uniconfig-native.rst
    daexim.rst
    radius.rst
-   using-the-frinx-api-bundle.rst
    restconf.rst
    netconf-intro.rst
    netconf-clustering.rst
