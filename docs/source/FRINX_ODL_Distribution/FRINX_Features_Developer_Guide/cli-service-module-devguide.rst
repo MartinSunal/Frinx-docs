@@ -1,6 +1,6 @@
 
-CLI
-===
+Developer Guide
+===============
 
 * `Building on honeycomb <#building-on-honeycomb>`__
 * `Major components <#major-components>`__
